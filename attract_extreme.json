@@ -1,0 +1,2431 @@
+{
+  "meta": {
+    "magic": "LMB",
+    "textureId": 16,
+    "resourceId": 268501504,
+    "totalFileLen": 7204,
+    "width": 1920,
+    "height": 1080,
+    "framerate": 60,
+    "unknown": {
+      "numPadding": 2,
+      "unknown4": 0,
+      "unknown5": 0,
+      "maxCharacterId": 7,
+      "entryCharacterId": 7,
+      "maxDepth": 2,
+      "unknownProperties": {
+        "unknown2": 4294967295,
+        "unknown3": 0
+      }
+    }
+  },
+  "resources": {
+    "symbols": [
+      {
+        "id": 0,
+        "value": ""
+      },
+      {
+        "id": 1,
+        "value": "lmf"
+      },
+      {
+        "id": 2,
+        "value": "9"
+      },
+      {
+        "id": 3,
+        "value": "Notice_Mode_mc"
+      },
+      {
+        "id": 4,
+        "value": "Start"
+      },
+      {
+        "id": 5,
+        "value": "End"
+      },
+      {
+        "id": 6,
+        "value": "attract_mc"
+      },
+      {
+        "id": 7,
+        "value": "extreme_base_s.png"
+      },
+      {
+        "id": 8,
+        "value": "extreme_title_s.png"
+      }
+    ],
+    "colors": [
+      {
+        "id": 0,
+        "r": 256,
+        "g": 256,
+        "b": 256,
+        "a": 256
+      },
+      {
+        "id": 1,
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 0
+      },
+      {
+        "id": 2,
+        "r": 256,
+        "g": 256,
+        "b": 256,
+        "a": 0
+      },
+      {
+        "id": 3,
+        "r": 256,
+        "g": 256,
+        "b": 256,
+        "a": 43
+      },
+      {
+        "id": 4,
+        "r": 256,
+        "g": 256,
+        "b": 256,
+        "a": 85
+      },
+      {
+        "id": 5,
+        "r": 256,
+        "g": 256,
+        "b": 256,
+        "a": 128
+      },
+      {
+        "id": 6,
+        "r": 256,
+        "g": 256,
+        "b": 256,
+        "a": 171
+      },
+      {
+        "id": 7,
+        "r": 256,
+        "g": 256,
+        "b": 256,
+        "a": 213
+      },
+      {
+        "id": 8,
+        "r": 256,
+        "g": 256,
+        "b": 256,
+        "a": 192
+      },
+      {
+        "id": 9,
+        "r": 256,
+        "g": 256,
+        "b": 256,
+        "a": 64
+      }
+    ],
+    "transforms": [],
+    "positions": [
+      {
+        "id": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": 1,
+        "x": 0,
+        "y": -3
+      },
+      {
+        "id": 2,
+        "x": 43,
+        "y": 28
+      },
+      {
+        "id": 3,
+        "x": 730,
+        "y": -3
+      },
+      {
+        "id": 4,
+        "x": 673.8499755859375,
+        "y": -3
+      },
+      {
+        "id": 5,
+        "x": 617.7000122070312,
+        "y": -3
+      },
+      {
+        "id": 6,
+        "x": 561.5499877929688,
+        "y": -3
+      },
+      {
+        "id": 7,
+        "x": 505.3999938964844,
+        "y": -3
+      },
+      {
+        "id": 8,
+        "x": 449.25,
+        "y": -3
+      },
+      {
+        "id": 9,
+        "x": 393.1000061035156,
+        "y": -3
+      },
+      {
+        "id": 10,
+        "x": 336.8999938964844,
+        "y": -3
+      },
+      {
+        "id": 11,
+        "x": 280.75,
+        "y": -3
+      },
+      {
+        "id": 12,
+        "x": 224.60000610351562,
+        "y": -3
+      },
+      {
+        "id": 13,
+        "x": 168.4499969482422,
+        "y": -3
+      },
+      {
+        "id": 14,
+        "x": 112.30000305175781,
+        "y": -3
+      },
+      {
+        "id": 15,
+        "x": 56.150001525878906,
+        "y": -3
+      },
+      {
+        "id": 16,
+        "x": 63,
+        "y": 28
+      },
+      {
+        "id": 17,
+        "x": 59.650001525878906,
+        "y": 28
+      },
+      {
+        "id": 18,
+        "x": 56.349998474121094,
+        "y": 28
+      },
+      {
+        "id": 19,
+        "x": 53,
+        "y": 28
+      },
+      {
+        "id": 20,
+        "x": 49.650001525878906,
+        "y": 28
+      },
+      {
+        "id": 21,
+        "x": 46.349998474121094,
+        "y": 28
+      },
+      {
+        "id": 22,
+        "x": 48,
+        "y": 28
+      },
+      {
+        "id": 23,
+        "x": 58,
+        "y": 28
+      },
+      {
+        "id": 24,
+        "x": 121.6500015258789,
+        "y": -3
+      },
+      {
+        "id": 25,
+        "x": 243.35000610351562,
+        "y": -3
+      },
+      {
+        "id": 26,
+        "x": 365,
+        "y": -3
+      },
+      {
+        "id": 27,
+        "x": 486.6499938964844,
+        "y": -3
+      },
+      {
+        "id": 28,
+        "x": 608.3499755859375,
+        "y": -3
+      },
+      {
+        "id": 29,
+        "x": 1336,
+        "y": 872
+      },
+      {
+        "id": 30,
+        "x": 1336,
+        "y": 869
+      },
+      {
+        "id": 31,
+        "x": 1379,
+        "y": 900
+      },
+      {
+        "id": 32,
+        "x": 2066,
+        "y": 869
+      },
+      {
+        "id": 33,
+        "x": 2009.8499755859375,
+        "y": 869
+      },
+      {
+        "id": 34,
+        "x": 1953.699951171875,
+        "y": 869
+      },
+      {
+        "id": 35,
+        "x": 1897.550048828125,
+        "y": 869
+      },
+      {
+        "id": 36,
+        "x": 1841.4000244140625,
+        "y": 869
+      },
+      {
+        "id": 37,
+        "x": 1785.25,
+        "y": 869
+      },
+      {
+        "id": 38,
+        "x": 1729.0999755859375,
+        "y": 869
+      },
+      {
+        "id": 39,
+        "x": 1672.9000244140625,
+        "y": 869
+      },
+      {
+        "id": 40,
+        "x": 1616.75,
+        "y": 869
+      },
+      {
+        "id": 41,
+        "x": 1560.5999755859375,
+        "y": 869
+      },
+      {
+        "id": 42,
+        "x": 1504.449951171875,
+        "y": 869
+      },
+      {
+        "id": 43,
+        "x": 1448.300048828125,
+        "y": 869
+      },
+      {
+        "id": 44,
+        "x": 1392.1500244140625,
+        "y": 869
+      },
+      {
+        "id": 45,
+        "x": 1399,
+        "y": 900
+      },
+      {
+        "id": 46,
+        "x": 1395.6500244140625,
+        "y": 900
+      },
+      {
+        "id": 47,
+        "x": 1392.3499755859375,
+        "y": 900
+      },
+      {
+        "id": 48,
+        "x": 1389,
+        "y": 900
+      },
+      {
+        "id": 49,
+        "x": 1385.6500244140625,
+        "y": 900
+      },
+      {
+        "id": 50,
+        "x": 1382.3499755859375,
+        "y": 900
+      },
+      {
+        "id": 51,
+        "x": 1384,
+        "y": 900
+      },
+      {
+        "id": 52,
+        "x": 1394,
+        "y": 900
+      },
+      {
+        "id": 53,
+        "x": 1457.6500244140625,
+        "y": 869
+      },
+      {
+        "id": 54,
+        "x": 1579.3499755859375,
+        "y": 869
+      },
+      {
+        "id": 55,
+        "x": 1701,
+        "y": 869
+      },
+      {
+        "id": 56,
+        "x": 1822.6500244140625,
+        "y": 869
+      },
+      {
+        "id": 57,
+        "x": 1944.3499755859375,
+        "y": 869
+      }
+    ],
+    "bounds": [
+      {
+        "id": 0,
+        "x": 0,
+        "y": 0,
+        "width": 724,
+        "height": 128
+      },
+      {
+        "id": 1,
+        "x": 0,
+        "y": 0,
+        "width": 528,
+        "height": 64
+      }
+    ],
+    "textureAtlases": [
+      {
+        "id": 0,
+        "nameSymbolId": 7,
+        "width": 724,
+        "height": 128,
+        "name": "extreme_base_s.png"
+      },
+      {
+        "id": 1,
+        "nameSymbolId": 8,
+        "width": 528,
+        "height": 64,
+        "name": "extreme_title_s.png"
+      }
+    ]
+  },
+  "definitions": {
+    "sprites": [
+      {
+        "characterId": 5,
+        "nameSymbolId": 0,
+        "boundsId": 0,
+        "numFrames": 1,
+        "numKeyframes": 0,
+        "numFrameLabels": 0,
+        "frameLabels": {},
+        "timeline": [
+          {
+            "frameIndex": 0,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 3,
+                "placementId": 0,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 0,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          }
+        ],
+        "name": ""
+      },
+      {
+        "characterId": 6,
+        "nameSymbolId": 0,
+        "boundsId": 0,
+        "numFrames": 39,
+        "numKeyframes": 2,
+        "numFrameLabels": 2,
+        "frameLabels": {
+          "Start": 1,
+          "End": 27
+        },
+        "timeline": [
+          {
+            "frameIndex": 0,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 1,
+                "placementId": 1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 1,
+                "positionFlags": 32768,
+                "colorMultId": 2,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              },
+              {
+                "type": "placeObject",
+                "characterId": 5,
+                "placementId": 2,
+                "depth": 1,
+                "nameId": 3,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 2,
+                "positionFlags": 32768,
+                "colorMultId": 2,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [
+              {
+                "type": "doAction",
+                "actionId": 0
+              }
+            ],
+            "removeList": []
+          },
+          {
+            "frameIndex": 1,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 3,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 2,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 4,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 3,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 5,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 4,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 6,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 5,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 7,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 6,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 8,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 7,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 9,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 8,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 10,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 9,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 11,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 10,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 12,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 11,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 13,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 12,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 14,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 13,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 15,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 14,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 1,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              },
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 16,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 15,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 17,
+                "positionFlags": 32768,
+                "colorMultId": 3,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 16,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 18,
+                "positionFlags": 32768,
+                "colorMultId": 4,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 17,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 19,
+                "positionFlags": 32768,
+                "colorMultId": 5,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 18,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 20,
+                "positionFlags": 32768,
+                "colorMultId": 6,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 19,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 21,
+                "positionFlags": 32768,
+                "colorMultId": 7,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 20,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 2,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 21,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 22,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 23,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 24,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 25,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 26,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [
+              {
+                "type": "doAction",
+                "actionId": 0
+              }
+            ],
+            "removeList": []
+          },
+          {
+            "frameIndex": 27,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 28,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 22,
+                "positionFlags": 32768,
+                "colorMultId": 8,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 29,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 19,
+                "positionFlags": 32768,
+                "colorMultId": 5,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 30,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 23,
+                "positionFlags": 32768,
+                "colorMultId": 9,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 31,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 16,
+                "positionFlags": 32768,
+                "colorMultId": 2,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 32,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 24,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 33,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 25,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 34,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 26,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 35,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 27,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 36,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 28,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 37,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 3,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 38,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [
+              {
+                "type": "doAction",
+                "actionId": 0
+              }
+            ],
+            "removeList": [
+              {
+                "type": "removeObject",
+                "depth": 0
+              },
+              {
+                "type": "removeObject",
+                "depth": 1
+              }
+            ]
+          },
+          {
+            "frameIndex": 39,
+            "isKeyframe": true,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 1,
+                "placementId": 1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 3,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              },
+              {
+                "type": "placeObject",
+                "characterId": 5,
+                "placementId": 2,
+                "depth": 1,
+                "nameId": 3,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 2,
+                "positionFlags": 32768,
+                "colorMultId": 2,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 40,
+            "isKeyframe": true,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 1,
+                "placementId": 1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 1,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              },
+              {
+                "type": "placeObject",
+                "characterId": 5,
+                "placementId": 2,
+                "depth": 1,
+                "nameId": 3,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 2,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          }
+        ],
+        "name": ""
+      },
+      {
+        "characterId": 7,
+        "nameSymbolId": 0,
+        "boundsId": 0,
+        "numFrames": 38,
+        "numKeyframes": 2,
+        "numFrameLabels": 2,
+        "frameLabels": {
+          "Start": 1,
+          "End": 27
+        },
+        "timeline": [
+          {
+            "frameIndex": 0,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 6,
+                "placementId": 3,
+                "depth": 0,
+                "nameId": 6,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 29,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              },
+              {
+                "type": "placeObject",
+                "characterId": 1,
+                "placementId": 4,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 30,
+                "positionFlags": 32768,
+                "colorMultId": 2,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              },
+              {
+                "type": "placeObject",
+                "characterId": 5,
+                "placementId": 5,
+                "depth": 2,
+                "nameId": 3,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 31,
+                "positionFlags": 32768,
+                "colorMultId": 2,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [
+              {
+                "type": "doAction",
+                "actionId": 0
+              }
+            ],
+            "removeList": []
+          },
+          {
+            "frameIndex": 1,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 32,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": [
+              {
+                "type": "removeObject",
+                "depth": 0
+              }
+            ]
+          },
+          {
+            "frameIndex": 2,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 33,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 3,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 34,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 4,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 35,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 5,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 36,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 6,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 37,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 7,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 38,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 8,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 39,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 9,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 40,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 10,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 41,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 11,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 42,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 12,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 43,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 13,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 44,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 14,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 30,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              },
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 2,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 45,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 15,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 2,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 46,
+                "positionFlags": 32768,
+                "colorMultId": 3,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 16,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 2,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 47,
+                "positionFlags": 32768,
+                "colorMultId": 4,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 17,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 2,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 48,
+                "positionFlags": 32768,
+                "colorMultId": 5,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 18,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 2,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 49,
+                "positionFlags": 32768,
+                "colorMultId": 6,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 19,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 2,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 50,
+                "positionFlags": 32768,
+                "colorMultId": 7,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 20,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 2,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 31,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 21,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 22,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 23,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 24,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 25,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 26,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [
+              {
+                "type": "doAction",
+                "actionId": 0
+              }
+            ],
+            "removeList": []
+          },
+          {
+            "frameIndex": 27,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 28,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 2,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 51,
+                "positionFlags": 32768,
+                "colorMultId": 8,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 29,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 2,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 48,
+                "positionFlags": 32768,
+                "colorMultId": 5,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 30,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 2,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 52,
+                "positionFlags": 32768,
+                "colorMultId": 9,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 31,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 2,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 45,
+                "positionFlags": 32768,
+                "colorMultId": 2,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 32,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 53,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 33,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 54,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 34,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 55,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 35,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 56,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 36,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 57,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 37,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 0,
+                "placementId": -1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "MOVE",
+                "blendMode": "NORMAL",
+                "positionId": 32,
+                "positionFlags": 32768,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [
+              {
+                "type": "doAction",
+                "actionId": 0
+              }
+            ],
+            "removeList": []
+          },
+          {
+            "frameIndex": 38,
+            "isKeyframe": true,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 1,
+                "placementId": 4,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 32,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              },
+              {
+                "type": "placeObject",
+                "characterId": 5,
+                "placementId": 5,
+                "depth": 2,
+                "nameId": 3,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 31,
+                "positionFlags": 32768,
+                "colorMultId": 2,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 39,
+            "isKeyframe": true,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 1,
+                "placementId": 4,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 30,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              },
+              {
+                "type": "placeObject",
+                "characterId": 5,
+                "placementId": 5,
+                "depth": 2,
+                "nameId": 3,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 31,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          }
+        ],
+        "name": ""
+      }
+    ],
+    "texts": [],
+    "buttons": [
+      {
+        "characterId": 1,
+        "trackAsMenu": false,
+        "boundsId": 0,
+        "actionOffset": 0,
+        "graphics": [
+          {
+            "atlasId": 0,
+            "fillType": 65,
+            "vertices": [
+              {
+                "x": 0,
+                "y": 128,
+                "u": 0,
+                "v": 1
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "u": 0,
+                "v": 0
+              },
+              {
+                "x": 724,
+                "y": 0,
+                "u": 1,
+                "v": 0
+              },
+              {
+                "x": 724,
+                "y": 128,
+                "u": 1,
+                "v": 1
+              }
+            ],
+            "indices": [
+              0,
+              1,
+              2,
+              3,
+              0,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "characterId": 3,
+        "trackAsMenu": false,
+        "boundsId": 1,
+        "actionOffset": 0,
+        "graphics": [
+          {
+            "atlasId": 1,
+            "fillType": 65,
+            "vertices": [
+              {
+                "x": 0,
+                "y": 64,
+                "u": 0,
+                "v": 1
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "u": 0,
+                "v": 0
+              },
+              {
+                "x": 528,
+                "y": 0,
+                "u": 1,
+                "v": 0
+              },
+              {
+                "x": 528,
+                "y": 64,
+                "u": 1,
+                "v": 1
+              }
+            ],
+            "indices": [
+              0,
+              1,
+              2,
+              3,
+              0,
+              2
+            ]
+          }
+        ]
+      }
+    ],
+    "graphics": [],
+    "unknowns": []
+  },
+  "timeline": {
+    "rootSpriteId": 7
+  }
+}

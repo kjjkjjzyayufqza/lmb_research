@@ -1,0 +1,2206 @@
+{
+  "meta": {
+    "magic": "LMB",
+    "textureId": 16,
+    "resourceId": 268501504,
+    "totalFileLen": 67016,
+    "width": 1360,
+    "height": 768,
+    "framerate": 60,
+    "unknown": {
+      "numPadding": 2,
+      "unknown4": 0,
+      "unknown5": 0,
+      "maxCharacterId": 9,
+      "entryCharacterId": 9,
+      "maxDepth": 1,
+      "unknownProperties": {
+        "unknown2": 4294967295,
+        "unknown3": 0
+      }
+    }
+  },
+  "resources": {
+    "symbols": [
+      {
+        "id": 0,
+        "value": ""
+      },
+      {
+        "id": 1,
+        "value": "lmf"
+      },
+      {
+        "id": 2,
+        "value": "9"
+      },
+      {
+        "id": 3,
+        "value": "scn00"
+      },
+      {
+        "id": 4,
+        "value": "mc_allnet_icon_sel00"
+      },
+      {
+        "id": 5,
+        "value": "__Packages.MCInOut"
+      },
+      {
+        "id": 6,
+        "value": "T3gothe.ttc"
+      },
+      {
+        "id": 7,
+        "value": "RgGothic-XB_26pt_st"
+      },
+      {
+        "id": 8,
+        "value": "cmn_allnet_icon00.tga"
+      },
+      {
+        "id": 9,
+        "value": "cmn_allnet_icon01.tga"
+      },
+      {
+        "id": 10,
+        "value": "this"
+      },
+      {
+        "id": 11,
+        "value": "_visible"
+      },
+      {
+        "id": 12,
+        "value": "_parent"
+      },
+      {
+        "id": 13,
+        "value": "Main"
+      },
+      {
+        "id": 14,
+        "value": "_global"
+      },
+      {
+        "id": 15,
+        "value": "MCInOut"
+      },
+      {
+        "id": 16,
+        "value": "InMoveCount"
+      },
+      {
+        "id": 17,
+        "value": "InMoveMap"
+      },
+      {
+        "id": 18,
+        "value": "StartScale"
+      },
+      {
+        "id": 19,
+        "value": "MainThreadInsName"
+      },
+      {
+        "id": 20,
+        "value": "sel00"
+      },
+      {
+        "id": 21,
+        "value": "flgStartupAnime"
+      },
+      {
+        "id": 22,
+        "value": "flgInAnimeOK"
+      },
+      {
+        "id": 23,
+        "value": "flgOutAnimeOK"
+      },
+      {
+        "id": 24,
+        "value": "flgLoadMovieArea"
+      },
+      {
+        "id": 25,
+        "value": "flgLoadedAllMovie"
+      },
+      {
+        "id": 26,
+        "value": "mcMain"
+      },
+      {
+        "id": 27,
+        "value": "GetMainMovieClip"
+      },
+      {
+        "id": 28,
+        "value": "mcLoadChkMovieAreas"
+      },
+      {
+        "id": 29,
+        "value": "_alpha"
+      },
+      {
+        "id": 30,
+        "value": "InOutClassInitMD"
+      },
+      {
+        "id": 31,
+        "value": "_x"
+      },
+      {
+        "id": 32,
+        "value": "MainMcPos"
+      },
+      {
+        "id": 33,
+        "value": "_y"
+      },
+      {
+        "id": 34,
+        "value": "InitPos"
+      },
+      {
+        "id": 35,
+        "value": "_name"
+      },
+      {
+        "id": 36,
+        "value": "flgLoadedClass"
+      },
+      {
+        "id": 37,
+        "value": "[MCInOut:Const] INFO:["
+      },
+      {
+        "id": 38,
+        "value": "PRG_NAME"
+      },
+      {
+        "id": 39,
+        "value": "][InitPos["
+      },
+      {
+        "id": 40,
+        "value": "]:"
+      },
+      {
+        "id": 41,
+        "value": "][flgLoadedClass["
+      },
+      {
+        "id": 42,
+        "value": "]"
+      },
+      {
+        "id": 43,
+        "value": "LogMes"
+      },
+      {
+        "id": 44,
+        "value": "MovieClip"
+      },
+      {
+        "id": 45,
+        "value": "prototype"
+      },
+      {
+        "id": 46,
+        "value": "InitSysDrive"
+      },
+      {
+        "id": 47,
+        "value": "doWait"
+      },
+      {
+        "id": 48,
+        "value": "StateReset"
+      },
+      {
+        "id": 49,
+        "value": "LastSelectedID"
+      },
+      {
+        "id": 50,
+        "value": "["
+      },
+      {
+        "id": 51,
+        "value": "] doWait"
+      },
+      {
+        "id": 52,
+        "value": "gotoAndStop"
+      },
+      {
+        "id": 53,
+        "value": "doIn"
+      },
+      {
+        "id": 54,
+        "value": "ChkLoadedAllMovies"
+      },
+      {
+        "id": 55,
+        "value": "mcSelIcon"
+      },
+      {
+        "id": 56,
+        "value": "NowSelID"
+      },
+      {
+        "id": 57,
+        "value": "flgSelAnime"
+      },
+      {
+        "id": 58,
+        "value": "GetOtherIn"
+      },
+      {
+        "id": 59,
+        "value": "onEnterFrame"
+      },
+      {
+        "id": 60,
+        "value": "flgUnion"
+      },
+      {
+        "id": 61,
+        "value": "$get_scene_flag_in"
+      },
+      {
+        "id": 62,
+        "value": "get_scene_flag_in"
+      },
+      {
+        "id": 63,
+        "value": "onEndIn"
+      },
+      {
+        "id": 64,
+        "value": "onIn"
+      },
+      {
+        "id": 65,
+        "value": "] stop doIn"
+      },
+      {
+        "id": 66,
+        "value": "doOut"
+      },
+      {
+        "id": 67,
+        "value": "flgSelOutAnime"
+      },
+      {
+        "id": 68,
+        "value": "GetOtherOut"
+      },
+      {
+        "id": 69,
+        "value": "$get_scene_flag_out"
+      },
+      {
+        "id": 70,
+        "value": "get_scene_flag_out"
+      },
+      {
+        "id": 71,
+        "value": "onEndOut"
+      },
+      {
+        "id": 72,
+        "value": "onOut"
+      },
+      {
+        "id": 73,
+        "value": "] stop doOut"
+      },
+      {
+        "id": 74,
+        "value": "doInScale"
+      },
+      {
+        "id": 75,
+        "value": "_xscale"
+      },
+      {
+        "id": 76,
+        "value": "_yscale"
+      },
+      {
+        "id": 77,
+        "value": "] stop doInScale"
+      },
+      {
+        "id": 78,
+        "value": "doOutScale"
+      },
+      {
+        "id": 79,
+        "value": "] stop doOutScale"
+      },
+      {
+        "id": 80,
+        "value": "swipeIn_R"
+      },
+      {
+        "id": 81,
+        "value": "WindowSize"
+      },
+      {
+        "id": 82,
+        "value": "] stop swipeIn_R"
+      },
+      {
+        "id": 83,
+        "value": "swipeOut_R"
+      },
+      {
+        "id": 84,
+        "value": "] stop swipeOut_R"
+      },
+      {
+        "id": 85,
+        "value": "swipeIn_L"
+      },
+      {
+        "id": 86,
+        "value": "] stop swipeIn_L"
+      },
+      {
+        "id": 87,
+        "value": "swipeOut_L"
+      },
+      {
+        "id": 88,
+        "value": "] stop swipeOut_L"
+      },
+      {
+        "id": 89,
+        "value": "swipeIn_Up"
+      },
+      {
+        "id": 90,
+        "value": "] stop swipeIn_Up"
+      },
+      {
+        "id": 91,
+        "value": "swipeOut_Up"
+      },
+      {
+        "id": 92,
+        "value": "] stop swipeOut_Up"
+      },
+      {
+        "id": 93,
+        "value": "swipeIn_Down"
+      },
+      {
+        "id": 94,
+        "value": "] stop swipeIn_Down"
+      },
+      {
+        "id": 95,
+        "value": "swipeOut_Down"
+      },
+      {
+        "id": 96,
+        "value": "] stop swipeOut_Down"
+      },
+      {
+        "id": 97,
+        "value": "fixAspectScaleIn_Exp"
+      },
+      {
+        "id": 98,
+        "value": "FixAspectScaleLimit"
+      },
+      {
+        "id": 99,
+        "value": "] stop fixAspectScaleIn_Exp"
+      },
+      {
+        "id": 100,
+        "value": "fixAspectScaleOut_Exp"
+      },
+      {
+        "id": 101,
+        "value": "] stop fixAspectScaleOut_Exp"
+      },
+      {
+        "id": 102,
+        "value": "fixAspectScaleIn_Red"
+      },
+      {
+        "id": 103,
+        "value": "] stop fixAspectScaleIn_Red"
+      },
+      {
+        "id": 104,
+        "value": "fixAspectScaleOut_Red"
+      },
+      {
+        "id": 105,
+        "value": "] stop fixAspectScaleOut_Red"
+      },
+      {
+        "id": 106,
+        "value": "noAnimeIn"
+      },
+      {
+        "id": 107,
+        "value": "] stop noAnimeIn"
+      },
+      {
+        "id": 108,
+        "value": "noAnimeOut"
+      },
+      {
+        "id": 109,
+        "value": "] stop noAnimeOut"
+      },
+      {
+        "id": 110,
+        "value": "flgThisRoot"
+      },
+      {
+        "id": 111,
+        "value": "[Class:MCInOut]["
+      },
+      {
+        "id": 112,
+        "value": "][func:GetMainMovieClip] INFO:[main mc:"
+      },
+      {
+        "id": 113,
+        "value": "WinInOutConf"
+      },
+      {
+        "id": 114,
+        "value": "length"
+      },
+      {
+        "id": 115,
+        "value": "isIn"
+      },
+      {
+        "id": 116,
+        "value": "isOut"
+      },
+      {
+        "id": 117,
+        "value": "GetOtherWait"
+      },
+      {
+        "id": 118,
+        "value": "isWait"
+      },
+      {
+        "id": 119,
+        "value": "isLoadedAll"
+      },
+      {
+        "id": 120,
+        "value": "SysLoadMovieInfo"
+      },
+      {
+        "id": 121,
+        "value": "mc_areas"
+      },
+      {
+        "id": 122,
+        "value": "isSyncLoad"
+      },
+      {
+        "id": 123,
+        "value": "push"
+      },
+      {
+        "id": 124,
+        "value": "isIn2"
+      },
+      {
+        "id": 125,
+        "value": "get_scene_inout"
+      },
+      {
+        "id": 126,
+        "value": "$get_scene_inout"
+      },
+      {
+        "id": 127,
+        "value": "ResetMvLoadChkFlag"
+      },
+      {
+        "id": 128,
+        "value": "ResetMvLoadChkInfo"
+      },
+      {
+        "id": 129,
+        "value": "tVAR_TYPE_NUMBER"
+      },
+      {
+        "id": 130,
+        "value": "tVAR_TYPE_STRING"
+      },
+      {
+        "id": 131,
+        "value": "tICON_STATE_ENABLE"
+      },
+      {
+        "id": 132,
+        "value": "tICON_STATE_DISABLE"
+      },
+      {
+        "id": 133,
+        "value": "tICON_STATE_HIDE"
+      },
+      {
+        "id": 134,
+        "value": "tICON_STATE_EXPLICIT_ENABLE"
+      },
+      {
+        "id": 135,
+        "value": "tICON_STATE_EXPLICIT_DISABLE"
+      },
+      {
+        "id": 136,
+        "value": "tICON_STATE_ZYUNBI"
+      },
+      {
+        "id": 137,
+        "value": "tICON_STATE_USER_CHALLENGE"
+      },
+      {
+        "id": 138,
+        "value": "tICON_STATE_USER_LOCK"
+      },
+      {
+        "id": 139,
+        "value": "tICON_STATE_TUTORIAL_LOCK"
+      },
+      {
+        "id": 140,
+        "value": "tLMODE_JP"
+      },
+      {
+        "id": 141,
+        "value": "tLMODE_EN"
+      },
+      {
+        "id": 142,
+        "value": "tLMODE_CH"
+      },
+      {
+        "id": 143,
+        "value": "tLMODE_OC"
+      },
+      {
+        "id": 144,
+        "value": "ASSetPropFlags"
+      },
+      {
+        "id": 145,
+        "value": "Object"
+      },
+      {
+        "id": 146,
+        "value": "registerClass"
+      },
+      {
+        "id": 147,
+        "value": "mcVarSetTarget"
+      },
+      {
+        "id": 148,
+        "value": "main"
+      },
+      {
+        "id": 149,
+        "value": "main2"
+      },
+      {
+        "id": 150,
+        "value": "mcSettingTarget"
+      },
+      {
+        "id": 151,
+        "value": "allnet_icon"
+      },
+      {
+        "id": 152,
+        "value": "btn_states"
+      },
+      {
+        "id": 153,
+        "value": "99999"
+      },
+      {
+        "id": 154,
+        "value": "GetDirectStatesA"
+      },
+      {
+        "id": 155,
+        "value": ":"
+      },
+      {
+        "id": 156,
+        "value": ","
+      },
+      {
+        "id": 157,
+        "value": "split"
+      },
+      {
+        "id": 158,
+        "value": "etc_states"
+      },
+      {
+        "id": 159,
+        "value": "GetDirectStatesB"
+      },
+      {
+        "id": 160,
+        "value": "i"
+      },
+      {
+        "id": 161,
+        "value": "ArrayIndex"
+      },
+      {
+        "id": 162,
+        "value": "shift"
+      },
+      {
+        "id": 163,
+        "value": "_"
+      },
+      {
+        "id": 164,
+        "value": "_stnum"
+      },
+      {
+        "id": 165,
+        "value": "_st"
+      },
+      {
+        "id": 166,
+        "value": "func 'GetDirectStatesA' info : RetData["
+      },
+      {
+        "id": 167,
+        "value": "] = "
+      },
+      {
+        "id": 168,
+        "value": "func 'GetDirectStatesA' function complete!! : RetData = "
+      },
+      {
+        "id": 169,
+        "value": "_st0"
+      },
+      {
+        "id": 170,
+        "value": "func 'GetDirectStatesB' info : RetData["
+      },
+      {
+        "id": 171,
+        "value": " / setnum..."
+      },
+      {
+        "id": 172,
+        "value": "func 'GetDirectStatesB' function complete!! : RetData = "
+      },
+      {
+        "id": 173,
+        "value": "_currentframe"
+      },
+      {
+        "id": 174,
+        "value": "CheckOfVarsDef"
+      },
+      {
+        "id": 175,
+        "value": "][func:SetVarNumber] ERROR:Target movie-clip not found."
+      },
+      {
+        "id": 176,
+        "value": "][func:SetVarNumber] INFO:Set complete. -> [$Value:"
+      },
+      {
+        "id": 177,
+        "value": "][func:GetVarNumber] ERROR:Target movie-clip not found."
+      },
+      {
+        "id": 178,
+        "value": "][func:GetVarNumber] ERROR:Variable not found."
+      },
+      {
+        "id": 179,
+        "value": "][func:GetVarNumber] INFO:Get complete. -> [RetData:"
+      },
+      {
+        "id": 180,
+        "value": "][func:SetVarString] ERROR:Target movie-clip not found."
+      },
+      {
+        "id": 181,
+        "value": "][func:SetVarString] INFO:Set complete. -> [$Value:"
+      },
+      {
+        "id": 182,
+        "value": "-- undefined --"
+      },
+      {
+        "id": 183,
+        "value": "][func:GetVarString] ERROR:Target movie-clip not found."
+      },
+      {
+        "id": 184,
+        "value": "][func:GetVarString] ERROR:Variable not found."
+      },
+      {
+        "id": 185,
+        "value": "][func:GetVarString] INFO:Get complete. -> [RetData:"
+      },
+      {
+        "id": 186,
+        "value": "SelectChkLR"
+      },
+      {
+        "id": 187,
+        "value": "isChkSelOK"
+      },
+      {
+        "id": 188,
+        "value": "isChkDecision"
+      },
+      {
+        "id": 189,
+        "value": "isChkDeviceControl"
+      },
+      {
+        "id": 190,
+        "value": "GetSceneInout"
+      },
+      {
+        "id": 191,
+        "value": "flgNowScroll"
+      },
+      {
+        "id": 192,
+        "value": "RePushAccel"
+      },
+      {
+        "id": 193,
+        "value": "DeviceInputMD"
+      },
+      {
+        "id": 194,
+        "value": "onAccel"
+      },
+      {
+        "id": 195,
+        "value": "$get_scene_back"
+      },
+      {
+        "id": 196,
+        "value": "get_scene_back"
+      },
+      {
+        "id": 197,
+        "value": "control"
+      },
+      {
+        "id": 198,
+        "value": "RePushBrake"
+      },
+      {
+        "id": 199,
+        "value": "onBrake"
+      },
+      {
+        "id": 200,
+        "value": "onViewBtn"
+      },
+      {
+        "id": 201,
+        "value": "onVsBtn"
+      },
+      {
+        "id": 202,
+        "value": "onShiftL"
+      },
+      {
+        "id": 203,
+        "value": "onShiftR"
+      },
+      {
+        "id": 204,
+        "value": "onShiftUP"
+      },
+      {
+        "id": 205,
+        "value": "onShiftDOWN"
+      },
+      {
+        "id": 206,
+        "value": "onShift"
+      },
+      {
+        "id": 207,
+        "value": "onHandleL"
+      },
+      {
+        "id": 208,
+        "value": "flgModeScroll"
+      },
+      {
+        "id": 209,
+        "value": "$sel_select00"
+      },
+      {
+        "id": 210,
+        "value": "sel_select00"
+      },
+      {
+        "id": 211,
+        "value": "ScrCntR"
+      },
+      {
+        "id": 212,
+        "value": "ScrIDMAP"
+      },
+      {
+        "id": 213,
+        "value": "onHandleR"
+      },
+      {
+        "id": 214,
+        "value": "SelIconTotal"
+      },
+      {
+        "id": 215,
+        "value": "ModeTrace"
+      },
+      {
+        "id": 216,
+        "value": "] "
+      },
+      {
+        "id": 217,
+        "value": "ScrInMode"
+      },
+      {
+        "id": 218,
+        "value": "SelID_to_IndexIDMap"
+      },
+      {
+        "id": 219,
+        "value": "GetSelSelect00"
+      },
+      {
+        "id": 220,
+        "value": "GetSceneBack"
+      },
+      {
+        "id": 221,
+        "value": "flgExecSelAnime"
+      },
+      {
+        "id": 222,
+        "value": "flgSetScrStartPos"
+      },
+      {
+        "id": 223,
+        "value": "get_scene_flag_scroll"
+      },
+      {
+        "id": 224,
+        "value": "mcScrTarget"
+      },
+      {
+        "id": 225,
+        "value": "ScrPosMap"
+      },
+      {
+        "id": 226,
+        "value": "ScrollSpeed"
+      },
+      {
+        "id": 227,
+        "value": "ScrWidth_1Icon"
+      },
+      {
+        "id": 228,
+        "value": "ScrSpdFrame"
+      },
+      {
+        "id": 229,
+        "value": "flgScrSkip"
+      },
+      {
+        "id": 230,
+        "value": "ScrID_HoseiMAP"
+      },
+      {
+        "id": 231,
+        "value": "StartSelAnime"
+      },
+      {
+        "id": 232,
+        "value": "UpdateSelIconAll"
+      },
+      {
+        "id": 233,
+        "value": "StartOutAnime"
+      },
+      {
+        "id": 234,
+        "value": "$re_push_accel_ret"
+      },
+      {
+        "id": 235,
+        "value": "Click_Accel"
+      },
+      {
+        "id": 236,
+        "value": "re_push_accel_ret"
+      },
+      {
+        "id": 237,
+        "value": "$re_push_brake_ret"
+      },
+      {
+        "id": 238,
+        "value": "Click_Brake"
+      },
+      {
+        "id": 239,
+        "value": "re_push_brake_ret"
+      },
+      {
+        "id": 240,
+        "value": "cursol00"
+      },
+      {
+        "id": 241,
+        "value": "CursolL"
+      },
+      {
+        "id": 242,
+        "value": "CursolR"
+      },
+      {
+        "id": 243,
+        "value": "ScrIcoPutPosAnimMD"
+      },
+      {
+        "id": 244,
+        "value": "ScrIcoPutPosTBL_B"
+      },
+      {
+        "id": 245,
+        "value": "ScrIcoPosHoseiSPD"
+      },
+      {
+        "id": 246,
+        "value": "ScrIcoPutPosTBL_A"
+      },
+      {
+        "id": 247,
+        "value": "scr_icon_id00"
+      },
+      {
+        "id": 248,
+        "value": "scr_icon_id01"
+      },
+      {
+        "id": 249,
+        "value": "scr_icon_id02"
+      },
+      {
+        "id": 250,
+        "value": "scr_icon_id03"
+      },
+      {
+        "id": 251,
+        "value": "scr_icon_id04"
+      },
+      {
+        "id": 252,
+        "value": "scr_icon_id05"
+      },
+      {
+        "id": 253,
+        "value": "scr_icon_id06"
+      },
+      {
+        "id": 254,
+        "value": "scr_icon_id07"
+      },
+      {
+        "id": 255,
+        "value": "scr_icon_id08"
+      },
+      {
+        "id": 256,
+        "value": "scr_icon_id09"
+      },
+      {
+        "id": 257,
+        "value": "scr_icon_id10"
+      },
+      {
+        "id": 258,
+        "value": "scr_icon_info_id00"
+      },
+      {
+        "id": 259,
+        "value": "MakingFrame"
+      },
+      {
+        "id": 260,
+        "value": "scr_icon_info_id01"
+      },
+      {
+        "id": 261,
+        "value": "scr_icon_info_id02"
+      },
+      {
+        "id": 262,
+        "value": "scr_icon_info_id03"
+      },
+      {
+        "id": 263,
+        "value": "scr_icon_info_id04"
+      },
+      {
+        "id": 264,
+        "value": "scr_icon_info_id05"
+      },
+      {
+        "id": 265,
+        "value": "scr_icon_info_id06"
+      },
+      {
+        "id": 266,
+        "value": "scr_icon_info_id07"
+      },
+      {
+        "id": 267,
+        "value": "scr_icon_info_id08"
+      },
+      {
+        "id": 268,
+        "value": "scr_icon_info_id09"
+      },
+      {
+        "id": 269,
+        "value": "scr_icon_info_id10"
+      },
+      {
+        "id": 270,
+        "value": "ScrIconMax"
+      },
+      {
+        "id": 271,
+        "value": "IconStatus"
+      },
+      {
+        "id": 272,
+        "value": "items_max"
+      },
+      {
+        "id": 273,
+        "value": "$items_max"
+      },
+      {
+        "id": 274,
+        "value": "UpdateIconStatus"
+      },
+      {
+        "id": 275,
+        "value": "CreateScrIDMAP"
+      },
+      {
+        "id": 276,
+        "value": "CreateScrPosMap"
+      },
+      {
+        "id": 277,
+        "value": "NowPutIconNum"
+      },
+      {
+        "id": 278,
+        "value": "CreateSelIcon"
+      },
+      {
+        "id": 279,
+        "value": "DeleteSelIcon"
+      },
+      {
+        "id": 280,
+        "value": "[func:UpdateSelIconAll] ERROR:\"ScrID_HoseiMAP["
+      },
+      {
+        "id": 281,
+        "value": "]\" not found."
+      },
+      {
+        "id": 282,
+        "value": "UpdateCursol"
+      },
+      {
+        "id": 283,
+        "value": "SetupToGlobalAll"
+      },
+      {
+        "id": 284,
+        "value": "mc_item"
+      },
+      {
+        "id": 285,
+        "value": "scn_item00"
+      },
+      {
+        "id": 286,
+        "value": "mcScrSelIconPutPlace"
+      },
+      {
+        "id": 287,
+        "value": "attachMovie"
+      },
+      {
+        "id": 288,
+        "value": "[func:CreateSelIcon] INFO:Create ok! -> IconID-"
+      },
+      {
+        "id": 289,
+        "value": "[func:CreateSelIcon] INFO:No create. -> IconID-"
+      },
+      {
+        "id": 290,
+        "value": "removeMovieClip"
+      },
+      {
+        "id": 291,
+        "value": "[func:DeleteSelIcon] INFO:Delete ok! -> IconID-"
+      },
+      {
+        "id": 292,
+        "value": "$scnwipe_inout"
+      },
+      {
+        "id": 293,
+        "value": "scnwipe_inout"
+      },
+      {
+        "id": 294,
+        "value": "GetGlobalVars"
+      },
+      {
+        "id": 295,
+        "value": "flgSetIn"
+      },
+      {
+        "id": 296,
+        "value": "InNameTBL"
+      },
+      {
+        "id": 297,
+        "value": "Scene IN(B). / [local:"
+      },
+      {
+        "id": 298,
+        "value": "][global:"
+      },
+      {
+        "id": 299,
+        "value": "SetupConfData"
+      },
+      {
+        "id": 300,
+        "value": "flgSetSelIcon"
+      },
+      {
+        "id": 301,
+        "value": "SetMcPath"
+      },
+      {
+        "id": 302,
+        "value": "Select"
+      },
+      {
+        "id": 303,
+        "value": "ScrollMain"
+      },
+      {
+        "id": 304,
+        "value": "ScreenUpdate"
+      },
+      {
+        "id": 305,
+        "value": "ScrNotice"
+      },
+      {
+        "id": 306,
+        "value": "$scnwipe_flag_in"
+      },
+      {
+        "id": 307,
+        "value": "$scnwipe_flag_out"
+      },
+      {
+        "id": 308,
+        "value": "scnwipe_flag_in"
+      },
+      {
+        "id": 309,
+        "value": "scnwipe_flag_out"
+      },
+      {
+        "id": 310,
+        "value": "SysTextBoundConfig"
+      },
+      {
+        "id": 311,
+        "value": "SysTextAlwaysChkIdx"
+      },
+      {
+        "id": 312,
+        "value": "__idx_str"
+      },
+      {
+        "id": 313,
+        "value": "SysText_AlwaysCheck"
+      },
+      {
+        "id": 314,
+        "value": "Main_ADD_AFTER"
+      },
+      {
+        "id": 315,
+        "value": "ScriptMode"
+      },
+      {
+        "id": 316,
+        "value": "$get_scene_flag_scroll"
+      },
+      {
+        "id": 317,
+        "value": "$flg_sel_out_anime"
+      },
+      {
+        "id": 318,
+        "value": "$prg_name"
+      },
+      {
+        "id": 319,
+        "value": "$set_button_off"
+      },
+      {
+        "id": 320,
+        "value": "$movieclip_event"
+      },
+      {
+        "id": 321,
+        "value": "flg_sel_out_anime"
+      },
+      {
+        "id": 322,
+        "value": "prg_name"
+      },
+      {
+        "id": 323,
+        "value": "set_button_off"
+      },
+      {
+        "id": 324,
+        "value": "movieclip_event"
+      },
+      {
+        "id": 325,
+        "value": "SetCenterIconIndexID"
+      },
+      {
+        "id": 326,
+        "value": "ScrIcoPutPosTBL"
+      },
+      {
+        "id": 327,
+        "value": "onInit"
+      },
+      {
+        "id": 328,
+        "value": "onLoad. -> Union-Mode. ->Mode:"
+      },
+      {
+        "id": 329,
+        "value": "Terminal"
+      },
+      {
+        "id": 330,
+        "value": "Drive"
+      },
+      {
+        "id": 331,
+        "value": "onLoad. ->Mode:"
+      },
+      {
+        "id": 332,
+        "value": "Drive Flash"
+      },
+      {
+        "id": 333,
+        "value": "CursolPosHosei"
+      },
+      {
+        "id": 334,
+        "value": "CursolC_OutFrame"
+      },
+      {
+        "id": 335,
+        "value": "BTN_ID_CNT"
+      },
+      {
+        "id": 336,
+        "value": "BTN_ON_OFF_CONFIG"
+      },
+      {
+        "id": 337,
+        "value": "BTN_STATE_CONTROL_BREAK"
+      },
+      {
+        "id": 338,
+        "value": "GetSceneNext"
+      },
+      {
+        "id": 339,
+        "value": "GetIconStates"
+      },
+      {
+        "id": 340,
+        "value": "system update."
+      },
+      {
+        "id": 341,
+        "value": "GetItemsMax"
+      },
+      {
+        "id": 342,
+        "value": "GlobalVars"
+      },
+      {
+        "id": 343,
+        "value": "SetupToGlobalAll_ADD"
+      },
+      {
+        "id": 344,
+        "value": "Re-setup of a global variable is completed!!"
+      },
+      {
+        "id": 345,
+        "value": "SetMcPath_ADD"
+      },
+      {
+        "id": 346,
+        "value": "$get_scene_next"
+      },
+      {
+        "id": 347,
+        "value": "get_scene_next"
+      },
+      {
+        "id": 348,
+        "value": "$icon_states"
+      },
+      {
+        "id": 349,
+        "value": "icon_states"
+      },
+      {
+        "id": 350,
+        "value": "$"
+      },
+      {
+        "id": 351,
+        "value": "GetGlobalVars_ADD"
+      },
+      {
+        "id": 352,
+        "value": "UpdateSelSelect00"
+      },
+      {
+        "id": 353,
+        "value": "onScrUpdate"
+      },
+      {
+        "id": 354,
+        "value": "screen update -> sel_select00."
+      },
+      {
+        "id": 355,
+        "value": "onEndWait"
+      },
+      {
+        "id": 356,
+        "value": "onWait"
+      },
+      {
+        "id": 357,
+        "value": "Scene WAIT. / [local:"
+      },
+      {
+        "id": 358,
+        "value": "Scene IN(A). / [local:"
+      },
+      {
+        "id": 359,
+        "value": "OutNameTBL"
+      },
+      {
+        "id": 360,
+        "value": "Scene OUT. / [local:"
+      },
+      {
+        "id": 361,
+        "value": "Scene ???. / [local:"
+      },
+      {
+        "id": 362,
+        "value": "UpdateSceneInout"
+      },
+      {
+        "id": 363,
+        "value": "UpdateSceneBack"
+      },
+      {
+        "id": 364,
+        "value": "variable update -> get_scene_back."
+      },
+      {
+        "id": 365,
+        "value": "UpdateSceneNext"
+      },
+      {
+        "id": 366,
+        "value": "variable update -> get_scene_next."
+      },
+      {
+        "id": 367,
+        "value": "GetStatesA"
+      },
+      {
+        "id": 368,
+        "value": "_stAll"
+      },
+      {
+        "id": 369,
+        "value": "IconStatusALL"
+      },
+      {
+        "id": 370,
+        "value": "UpdateIcon"
+      },
+      {
+        "id": 371,
+        "value": "MYID"
+      },
+      {
+        "id": 372,
+        "value": "UpdateIconStates"
+      },
+      {
+        "id": 373,
+        "value": "screen update -> icon_states."
+      },
+      {
+        "id": 374,
+        "value": "SetScrIconMax"
+      },
+      {
+        "id": 375,
+        "value": "UpdateItemsMax"
+      },
+      {
+        "id": 376,
+        "value": "screen update -> items_max."
+      },
+      {
+        "id": 377,
+        "value": "screen update -> "
+      },
+      {
+        "id": 378,
+        "value": "."
+      },
+      {
+        "id": 379,
+        "value": "ScreenUpdate_ADD"
+      },
+      {
+        "id": 380,
+        "value": "select NG.("
+      },
+      {
+        "id": 381,
+        "value": ")"
+      },
+      {
+        "id": 382,
+        "value": "StartSelCanselAnime"
+      },
+      {
+        "id": 383,
+        "value": "StartSelOutAnime"
+      },
+      {
+        "id": 384,
+        "value": "flgSelCanselAnime"
+      },
+      {
+        "id": 385,
+        "value": "DisplaySize"
+      },
+      {
+        "id": 386,
+        "value": "SelAnimeConfig"
+      },
+      {
+        "id": 387,
+        "value": "flg_play"
+      },
+      {
+        "id": 388,
+        "value": "stop_frame"
+      },
+      {
+        "id": 389,
+        "value": "cmn_allnet_icon00"
+      },
+      {
+        "id": 390,
+        "value": "flgMakeingLoop"
+      },
+      {
+        "id": 391,
+        "value": "SelIconMakingTargetName"
+      },
+      {
+        "id": 392,
+        "value": "GetAllNetIcon"
+      },
+      {
+        "id": 393,
+        "value": "StateChangeTargetName"
+      },
+      {
+        "id": 394,
+        "value": "EnableChangeConf"
+      },
+      {
+        "id": 395,
+        "value": "DisableChangeConf"
+      },
+      {
+        "id": 396,
+        "value": "ZyunbiChangeConf"
+      },
+      {
+        "id": 397,
+        "value": "SelAnimeFrame"
+      },
+      {
+        "id": 398,
+        "value": "Load complete -> cmn_get_states"
+      },
+      {
+        "id": 399,
+        "value": "flash"
+      },
+      {
+        "id": 400,
+        "value": "external"
+      },
+      {
+        "id": 401,
+        "value": "ExternalInterface"
+      },
+      {
+        "id": 402,
+        "value": "addCallback"
+      },
+      {
+        "id": 403,
+        "value": "SetVarNumber"
+      },
+      {
+        "id": 404,
+        "value": "GetVarNumber"
+      },
+      {
+        "id": 405,
+        "value": "SetVarString"
+      },
+      {
+        "id": 406,
+        "value": "GetVarString"
+      },
+      {
+        "id": 407,
+        "value": "isEnableSelID"
+      },
+      {
+        "id": 408,
+        "value": "isEnableDecisionID"
+      },
+      {
+        "id": 409,
+        "value": "isEnableDeviceControl"
+      },
+      {
+        "id": 410,
+        "value": "GetEnableSelectNumL"
+      },
+      {
+        "id": 411,
+        "value": "GetEnableSelectNumR"
+      },
+      {
+        "id": 412,
+        "value": "Click_View"
+      },
+      {
+        "id": 413,
+        "value": "Click_Vs"
+      },
+      {
+        "id": 414,
+        "value": "Click_Shift_L"
+      },
+      {
+        "id": 415,
+        "value": "Click_Shift_R"
+      },
+      {
+        "id": 416,
+        "value": "Click_Shift_UP"
+      },
+      {
+        "id": 417,
+        "value": "Click_Shift_DOWN"
+      },
+      {
+        "id": 418,
+        "value": "Click_Shift"
+      },
+      {
+        "id": 419,
+        "value": "Click_Handle_L"
+      },
+      {
+        "id": 420,
+        "value": "Click_Handle_R"
+      },
+      {
+        "id": 421,
+        "value": "---------------------------------------------------------------------------"
+      },
+      {
+        "id": 422,
+        "value": "    Wmn2DMenuFramework for Flash - 1.30(REV:0031)"
+      },
+      {
+        "id": 423,
+        "value": "Init"
+      },
+      {
+        "id": 424,
+        "value": "$StatesData"
+      },
+      {
+        "id": 425,
+        "value": "$VarName"
+      },
+      {
+        "id": 426,
+        "value": "GetStatesB"
+      },
+      {
+        "id": 427,
+        "value": "$Value"
+      },
+      {
+        "id": 428,
+        "value": "$TargetName"
+      },
+      {
+        "id": 429,
+        "value": "$SelID"
+      },
+      {
+        "id": 430,
+        "value": "$IconID"
+      },
+      {
+        "id": 431,
+        "value": "$RepeatFlg"
+      },
+      {
+        "id": 432,
+        "value": "$ProsSkip"
+      },
+      {
+        "id": 433,
+        "value": "$ShiftNum"
+      },
+      {
+        "id": 434,
+        "value": "$Message"
+      },
+      {
+        "id": 435,
+        "value": "$EnableMode"
+      },
+      {
+        "id": 436,
+        "value": "$IconNums"
+      },
+      {
+        "id": 437,
+        "value": "GetSelOK_IconID_List"
+      },
+      {
+        "id": 438,
+        "value": "isNowScroll"
+      }
+    ],
+    "colors": [
+      {
+        "id": 0,
+        "r": 256,
+        "g": 256,
+        "b": 256,
+        "a": 256
+      },
+      {
+        "id": 1,
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 0
+      },
+      {
+        "id": 2,
+        "r": 256,
+        "g": 256,
+        "b": 256,
+        "a": 0
+      }
+    ],
+    "transforms": [],
+    "positions": [
+      {
+        "id": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": 1,
+        "x": -638,
+        "y": 340
+      },
+      {
+        "id": 2,
+        "x": 680,
+        "y": 384
+      }
+    ],
+    "bounds": [
+      {
+        "id": 0,
+        "x": -16,
+        "y": -16,
+        "width": 16,
+        "height": 16
+      }
+    ],
+    "textureAtlases": [
+      {
+        "id": 0,
+        "nameSymbolId": 8,
+        "width": 32,
+        "height": 32,
+        "name": "cmn_allnet_icon00.tga"
+      },
+      {
+        "id": 1,
+        "nameSymbolId": 9,
+        "width": 32,
+        "height": 32,
+        "name": "cmn_allnet_icon01.tga"
+      }
+    ]
+  },
+  "definitions": {
+    "sprites": [
+      {
+        "characterId": 5,
+        "nameSymbolId": 0,
+        "boundsId": 0,
+        "numFrames": 2,
+        "numKeyframes": 0,
+        "numFrameLabels": 0,
+        "frameLabels": {},
+        "timeline": [
+          {
+            "frameIndex": 0,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 1,
+                "placementId": 0,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 0,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [
+              {
+                "type": "doAction",
+                "actionId": 0
+              }
+            ],
+            "removeList": []
+          },
+          {
+            "frameIndex": 1,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 3,
+                "placementId": 1,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "UNKNOWN",
+                "blendMode": "NORMAL",
+                "positionId": -1,
+                "positionFlags": 65535,
+                "colorMultId": -1,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          }
+        ],
+        "name": ""
+      },
+      {
+        "characterId": 6,
+        "nameSymbolId": 0,
+        "boundsId": 3,
+        "numFrames": 1,
+        "numKeyframes": 0,
+        "numFrameLabels": 0,
+        "frameLabels": {},
+        "timeline": [
+          {
+            "frameIndex": 0,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 5,
+                "placementId": 2,
+                "depth": 0,
+                "nameId": 4,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 1,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [
+              {
+                "type": "doAction",
+                "actionId": 0
+              }
+            ],
+            "removeList": []
+          }
+        ],
+        "name": ""
+      },
+      {
+        "characterId": 7,
+        "nameSymbolId": 0,
+        "boundsId": 0,
+        "numFrames": 3,
+        "numKeyframes": 0,
+        "numFrameLabels": 0,
+        "frameLabels": {},
+        "timeline": [
+          {
+            "frameIndex": 0,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [
+              {
+                "type": "doAction",
+                "actionId": 1
+              }
+            ],
+            "removeList": []
+          },
+          {
+            "frameIndex": 1,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [
+              {
+                "type": "doAction",
+                "actionId": 2
+              }
+            ],
+            "removeList": []
+          },
+          {
+            "frameIndex": 2,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [
+              {
+                "type": "doAction",
+                "actionId": 3
+              }
+            ],
+            "removeList": []
+          }
+        ],
+        "name": ""
+      },
+      {
+        "characterId": 8,
+        "nameSymbolId": 0,
+        "boundsId": 5,
+        "numFrames": 1,
+        "numKeyframes": 0,
+        "numFrameLabels": 0,
+        "frameLabels": {},
+        "timeline": [
+          {
+            "frameIndex": 0,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [],
+            "removeList": []
+          }
+        ],
+        "name": ""
+      },
+      {
+        "characterId": 9,
+        "nameSymbolId": 0,
+        "boundsId": 0,
+        "numFrames": 3,
+        "numKeyframes": 0,
+        "numFrameLabels": 0,
+        "frameLabels": {},
+        "timeline": [
+          {
+            "frameIndex": 0,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 7,
+                "placementId": 3,
+                "depth": 0,
+                "nameId": 0,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 2,
+                "positionFlags": 32768,
+                "colorMultId": 2,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [
+              {
+                "type": "doAction",
+                "actionId": 4
+              },
+              {
+                "type": "doAction",
+                "actionId": 5
+              },
+              {
+                "type": "doAction",
+                "actionId": 6
+              }
+            ],
+            "removeList": []
+          },
+          {
+            "frameIndex": 1,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 6,
+                "placementId": 4,
+                "depth": 1,
+                "nameId": 3,
+                "placementMode": "PLACE",
+                "blendMode": "NORMAL",
+                "positionId": 2,
+                "positionFlags": 32768,
+                "colorMultId": 0,
+                "colorAddId": 1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          },
+          {
+            "frameIndex": 2,
+            "isKeyframe": false,
+            "displayList": [],
+            "actions": [],
+            "removeList": [
+              {
+                "type": "removeObject",
+                "depth": 1
+              }
+            ]
+          }
+        ],
+        "name": ""
+      }
+    ],
+    "texts": [],
+    "buttons": [
+      {
+        "characterId": 1,
+        "trackAsMenu": false,
+        "boundsId": 0,
+        "actionOffset": 0,
+        "graphics": [
+          {
+            "atlasId": 0,
+            "fillType": 65,
+            "vertices": [
+              {
+                "x": -16,
+                "y": 16,
+                "u": 0,
+                "v": 1
+              },
+              {
+                "x": -16,
+                "y": -16,
+                "u": 0,
+                "v": 0
+              },
+              {
+                "x": 16,
+                "y": -16,
+                "u": 1,
+                "v": 0
+              },
+              {
+                "x": 16,
+                "y": 16,
+                "u": 1,
+                "v": 1
+              }
+            ],
+            "indices": [
+              0,
+              1,
+              2,
+              3,
+              0,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "characterId": 3,
+        "trackAsMenu": false,
+        "boundsId": 0,
+        "actionOffset": 0,
+        "graphics": [
+          {
+            "atlasId": 1,
+            "fillType": 65,
+            "vertices": [
+              {
+                "x": -16,
+                "y": 16,
+                "u": 0,
+                "v": 1
+              },
+              {
+                "x": -16,
+                "y": -16,
+                "u": 0,
+                "v": 0
+              },
+              {
+                "x": 16,
+                "y": -16,
+                "u": 1,
+                "v": 0
+              },
+              {
+                "x": 16,
+                "y": 16,
+                "u": 1,
+                "v": 1
+              }
+            ],
+            "indices": [
+              0,
+              1,
+              2,
+              3,
+              0,
+              2
+            ]
+          }
+        ]
+      }
+    ],
+    "graphics": [],
+    "unknowns": []
+  },
+  "timeline": {
+    "rootSpriteId": 9
+  }
+}
