@@ -38,16 +38,16 @@
 
 ## 技術方案選擇
 
-- **最終方案：HTML + JavaScript + WebGL 渲染**
+- **最終方案：React + Vite + WebGL 渲染**
 
 說明：
 
-- 使用 HTML + JS 作為工具外殼（控制面板、檔案載入、除錯 UI）。
+- 使用 **React** 构建 UI（控制面板、档案载入、除錯 UI），利用其状态管理能力简化互动逻辑。
+- 使用 **Vite** 作为构建工具，提供快速的开发体验与现代化的打包流程。
 - **使用 WebGL 作為唯一正式的渲染後端**，保證：
   - 完整控制混合模式、color multiply/add、color matrix 等效果。
   - 可用頂點緩衝區與索引緩衝區直接對應 `graphics.vertices/indices`。
   - 可準確實現 2D 變換矩陣與座標系。
-- DOM + CSS Transform 可以在開發早期作為**內部除錯工具**，但不作為最終預覽輸出方案。
 
 ---
 
@@ -242,18 +242,16 @@ runtime 中透過 `Scene` 對應一個「當前 frame 的 display list 狀態」
 ## 檔案與目錄建議
 
 - `preview/`
-  - `index.html`：工具主頁。
-  - `preview.css`：舞台與控制面板樣式。
-  - `preview_runtime.ts`：JSON 解析與 runtime 結構（ResourceStore / SpriteDefinition / TimelinePlayer / Scene）。
-  - `preview_renderer_webgl.ts`：WebGL 渲染層（貼圖、shader、geometry）。
-  - `preview_ui.ts`：控制面板與除錯 UI。
+  - `index.html`：Vite entry point。
+  - `package.json`：專案依賴與腳本。
+  - `vite.config.ts`：Vite 設定。
+  - `src/`
+    - `main.tsx`：React entry。
+    - `App.tsx`：主應用組件。
+    - `components/`：UI 組件（如 `ControlPanel`, `LogView` 等）。
+    - `lib/`
+      - `preview_runtime.ts`：JSON 解析與 runtime 結構。
+      - `preview_renderer_webgl.ts`：WebGL 渲染層。
+    - `styles/`：CSS 樣式檔。
 
 實際打包可採用任意前端建構工具，但不影響上述結構與最終目標。
-
----
-
-## 小結
-
-- 預覽工具的**核心目標**是：基於 LMB→JSON 結構，在瀏覽器中以 HTML + JS + WebGL 100% 還原原遊戲中的 UI 與動畫表現。
-- 文件中所有設計（時間軸、渲染、顏色、腳本、互動）均以「最終可視與行為結果等價」為約束，不接受永久性的「簡化版」實作。
-- 開發可以分階段進行，但每一階段列出的能力最終都需要達成，作為後續 JSON→LMB 以及更高階編輯工具的可靠基礎。 

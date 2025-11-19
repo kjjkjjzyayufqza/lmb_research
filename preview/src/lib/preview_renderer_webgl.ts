@@ -1,6 +1,5 @@
 import {
   DisplayInstance,
-  GraphicDef,
   LmbJson,
   ResourceStore,
 } from "./preview_runtime";
@@ -80,10 +79,9 @@ export class WebGlRenderer {
     this.gl.viewport(0, 0, width, height);
   }
 
-  async loadAtlasTextures(json: LmbJson, resourceStore: ResourceStore): Promise<void> {
+  async loadAtlasTextures(json: LmbJson, resourceStore: ResourceStore, basePath: string = ""): Promise<void> {
     this.textureByAtlasId.clear();
-    const basePath = (window as any).LMB_PREVIEW_ATLAS_BASE_PATH || "";
-
+    
     const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: "base" });
     const atlases = [...json.resources.textureAtlases].sort((a, b) => {
       const aName = a.name || String(a.id);
@@ -93,15 +91,23 @@ export class WebGlRenderer {
 
     for (const atlas of atlases) {
       const fileName = atlas.name || String(atlas.id);
+      // If basePath is provided, use it. Otherwise assume relative.
+      // Removing trailing slash from basePath if present.
       const url = basePath ? `${basePath.replace(/\/+$/, "")}/${fileName}` : fileName;
-      const image = await this.loadImage(url);
-      const texture = this.createTextureFromImage(image);
-      const binding: GraphicAtlasBinding = {
-        atlasId: atlas.id,
-        width: atlas.width,
-        height: atlas.height,
-      };
-      this.textureByAtlasId.set(atlas.id, { atlas: binding, texture });
+      
+      try {
+          const image = await this.loadImage(url);
+          const texture = this.createTextureFromImage(image);
+          const binding: GraphicAtlasBinding = {
+            atlasId: atlas.id,
+            width: atlas.width,
+            height: atlas.height,
+          };
+          this.textureByAtlasId.set(atlas.id, { atlas: binding, texture });
+      } catch (e) {
+          console.error(`Failed to load texture for atlas ${atlas.id} (${fileName}):`, e);
+          // Continue loading others
+      }
     }
   }
 
@@ -123,6 +129,7 @@ export class WebGlRenderer {
       }
       const atlasBinding = this.textureByAtlasId.get(graphic.atlasId);
       if (!atlasBinding) {
+        // Texture not loaded or missing
         continue;
       }
       if (this.currentAtlasTexture !== atlasBinding.texture) {
@@ -172,6 +179,9 @@ export class WebGlRenderer {
 
       gl.vertexAttribPointer(this.positionLocation, 2, gl.FLOAT, false, 16, 0);
       gl.vertexAttribPointer(this.uvLocation, 2, gl.FLOAT, false, 16, 8);
+
+      // Handle blend modes here if needed, or assume standard premultiplied alpha blending
+      // if (instance.blendMode === 'ADD') ...
 
       gl.drawElements(gl.TRIANGLES, graphic.indices.length, gl.UNSIGNED_SHORT, 0);
     }
@@ -239,6 +249,10 @@ export class WebGlRenderer {
       uniform vec4 u_colorAdd;
       void main() {
         vec4 texColor = texture2D(u_texture, v_uv);
+        // Premultiplied alpha handling might be needed depending on texture content
+        // But assuming standard RGBA for now. 
+        // If texColor.a is 0, we might get 0 * mult + add.
+        
         vec4 color = texColor * u_colorMult + u_colorAdd;
         gl_FragColor = color;
       }
@@ -262,6 +276,7 @@ export class WebGlRenderer {
   }
 
   private buildOrthoMatrix(stageWidth: number, stageHeight: number, m: { a: number; b: number; c: number; d: number; x: number; y: number }): Float32Array {
+    // Converting 2D transform + screen coords to -1..1 NDC
     const sx = 2 / stageWidth;
     const sy = -2 / stageHeight;
     const tx = -1;
@@ -281,5 +296,4 @@ export class WebGlRenderer {
     ]);
   }
 }
-
 

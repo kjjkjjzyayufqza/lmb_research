@@ -1,59 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>LMB JSON Preview</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="preview.css" />
-</head>
-<body>
-  <div class="preview-root">
-    <header class="preview-header">
-      <h1 class="preview-title">LMB JSON Preview</h1>
-      <div class="preview-controls">
-        <label class="control-group">
-          <span>JSON file</span>
-          <input type="file" id="jsonFileInput" accept=".json" />
-        </label>
-        <label class="control-group">
-          <span>Root sprite</span>
-          <select id="rootSpriteSelect"></select>
-        </label>
-        <div class="control-group">
-          <button id="btnPlay">Play</button>
-          <button id="btnPause">Pause</button>
-          <button id="btnStop">Stop</button>
-        </div>
-        <div class="control-group frame-info">
-          <span>Frame: <span id="frameIndexLabel">0</span></span>
-          <span>Label: <span id="frameLabelLabel">-</span></span>
-        </div>
-      </div>
-    </header>
-
-    <main class="preview-main">
-      <div class="stage-wrapper">
-        <canvas id="previewCanvas"></canvas>
-      </div>
-      <aside class="preview-sidebar">
-        <section class="sidebar-section">
-          <h2>Meta</h2>
-          <pre id="metaInfo" class="info-block"></pre>
-        </section>
-        <section class="sidebar-section">
-          <h2>Current Frame Actions</h2>
-          <pre id="frameActionsInfo" class="info-block"></pre>
-        </section>
-        <section class="sidebar-section">
-          <h2>Log</h2>
-          <pre id="logView" class="info-block"></pre>
-        </section>
-      </aside>
-    </main>
-  </div>
-
-  <script type="module" src="preview_ui.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LMB JSON Preview</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
-
 
