@@ -30,7 +30,11 @@ function App() {
 
   const addLog = useCallback((msg: string) => {
     const ts = new Date().toISOString().split('T')[1].replace('Z', '');
-    setLogs(prev => [...prev, `[${ts}] ${msg}`]);
+    const line = `[${ts}] ${msg}`;
+    // Also mirror logs to console for easier debugging without opening the in-app log view.
+    // This is safe for production since it only affects developer tools.
+    console.log(line);
+    setLogs(prev => [...prev, line]);
   }, []);
 
   const handleRendererReady = useCallback((renderer: WebGlRenderer) => {
@@ -89,7 +93,9 @@ function App() {
     if (sprite.timeline.length > 0) {
       sceneRef.current.applyFrame(storeRef.current, sprite.timeline[0]);
       if (rendererRef.current) {
-        rendererRef.current.renderScene(sceneRef.current.getInstancesSorted());
+        const instances = sceneRef.current.getInstancesSorted();
+        addLog(`Initial scene instances: ${instances.length}`);
+        rendererRef.current.renderScene(instances);
       }
     }
 
@@ -134,6 +140,12 @@ function App() {
       playerRef.current.play();
       setIsPlaying(true);
       addLog('Play');
+      if (sceneRef.current && rendererRef.current) {
+        const instances = sceneRef.current.getInstancesSorted();
+        addLog(`Scene instances on Play: ${instances.length}`);
+        rendererRef.current.clear();
+        rendererRef.current.renderScene(instances);
+      }
     }
   };
 

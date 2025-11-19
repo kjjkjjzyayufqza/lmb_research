@@ -81,20 +81,17 @@ export class WebGlRenderer {
 
   async loadAtlasTextures(json: LmbJson, resourceStore: ResourceStore, basePath: string = ""): Promise<void> {
     this.textureByAtlasId.clear();
-    
-    const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: "base" });
-    const atlases = [...json.resources.textureAtlases].sort((a, b) => {
-      const aName = a.name || String(a.id);
-      const bName = b.name || String(b.id);
-      return collator.compare(aName, bName);
-    });
 
-    for (const atlas of atlases) {
-      const fileName = atlas.name || String(atlas.id);
+    const atlases = json.resources.textureAtlases;
+
+    for (let i = 0; i < atlases.length; i++) {
+      const atlas = atlases[i];
+      // Use sequential file names instead of atlas names
+      const fileName = `img-${String(i).padStart(5, '0')}.png`;
       // If basePath is provided, use it. Otherwise assume relative.
       // Removing trailing slash from basePath if present.
       const url = basePath ? `${basePath.replace(/\/+$/, "")}/${fileName}` : fileName;
-      
+
       try {
           const image = await this.loadImage(url);
           const texture = this.createTextureFromImage(image);
@@ -276,11 +273,14 @@ export class WebGlRenderer {
   }
 
   private buildOrthoMatrix(stageWidth: number, stageHeight: number, m: { a: number; b: number; c: number; d: number; x: number; y: number }): Float32Array {
-    // Converting 2D transform + screen coords to -1..1 NDC
+    // Converting 2D transform + centered stage coords to -1..1 NDC.
+    // LMB vertices are defined around (0,0) as the stage center,
+    // with X in [-width/2, width/2], Y in [-height/2, height/2] (down is positive).
+    // We therefore only scale by stage size and do not add a top-left bias.
     const sx = 2 / stageWidth;
     const sy = -2 / stageHeight;
-    const tx = -1;
-    const ty = 1;
+    const tx = 0;
+    const ty = 0;
 
     const a = m.a * sx;
     const b = m.b * sy;
