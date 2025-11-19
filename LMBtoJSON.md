@@ -1,13 +1,14 @@
 ### 目標與整體思路
 
-本文件說明如何將 LMB 資料（由 `Lmb.js` 解析後的物件樹）轉換為結構化、可讀性高的 JSON。  
+本文件說明如何將 LMB 資料（由 `Lmb.js` 解析後的物件樹）轉換為結構化、可讀性高的 JSON，並以此 JSON 作為「HTML 預覽引擎」的資料來源。  
 我們的目標不是機械地 mirror Kaitai 的 raw 樹狀結果，而是：
 
 - 提供穩定、語義清晰的 JSON 結構，方便後續做 diff、視覺化與修改。
 - 保留足夠資訊，使得未來有可能從 JSON 再組裝回合法的 LMB（二向轉換）。
 - 儘量沿用 LMB 原本的 ID/表格設計（symbols/colors/transforms/positions 等），避免丟失關聯關係。
+- 讓前端（HTML/Canvas/WebGL）可以直接基於 JSON 建立一個小型 runtime，用來預覽 UI / 動畫與簡單互動。
 
-實作上可以參考 `kaitai_struct_visualizer` 的 raw 輸出作為「資料來源」，但最終 JSON 結構會再進行一層整理與語義化。
+實作上可以參考 `kaitai_struct_visualizer` 的 raw 輸出作為「資料來源」，但最終 JSON 結構會再進行一層整理與語義化，配合 HTML 預覽的實際需要。
 
 ---
 
@@ -410,7 +411,47 @@
 - 尊重 LMB 原本的 ID 及表格設計，將 symbols/colors/transforms/positions/bounds/textureAtlases 等集中管理。
 - 透過遍歷 `Tag` 樹與其 children，重建 sprites、frames、display list 以及腳本動作等高階語義。
 - 實作上完全建立在現有 Kaitai 解析器之上，不修改 .ksy，只在第二階段進行語義重組。
-
 在此基礎上，可以逐步實作原型工具（例如 Node.js 腳本）來驗證這個 JSON 結構設計的實際可行性，並視需要做細節調整。未來若要實作 JSON→LMB 的逆向生成，也可以直接沿用這套結構與映射規則。
+
+---
+
+### 基於 JSON 的 HTML 預覽計畫（UI / 動畫）
+
+在 LMB→JSON 結構確立後，我們預期會以此為基礎，實作一套以 HTML 為載體的「預覽 runtime」，用於重現原本 Flash/SWF 風格的 UI 與動畫效果。整體方向如下：
+
+- **基本目標**
+  - 在瀏覽器中載入從 LMB 轉出的 JSON。
+  - 使用 HTML + CSS + JavaScript（或 Canvas/WebGL）重建一棵場景樹（sprites + children）。
+  - 依 `timeline` 與 `framerate` 播放動畫（frame/ keyframe / place/remove object）。
+  - 支援簡單互動：例如按鈕 hover / click、切換畫面、觸發基本事件。
+
+- **渲染策略**
+  - 第一階段可以使用 DOM + CSS transform：
+    - 每個 placeObject 對應成一個 DOM 節點（例如 `div`）。
+    - 使用 `transform: translate/scale/rotate` 來套用 position / transform。
+    - 顏色與 alpha 透過 `opacity` 或 `filter` 基本實現。
+  - 若需要更高擬真度與效能，再逐步改為 Canvas 或 WebGL：
+    - 使用 `graphic` + `textureAtlases` 直接繪製 mesh。
+    - 支援 blendMode、colorMatrix 等較進階效果。
+
+- **時間軸與互動**
+  - 實作一個簡單的 timeline 管理器：
+    - 使用 `requestAnimationFrame`，根據 `meta.framerate` 推進當前 frameIndex。
+    - 在每一幀套用對應 `placeObject` / `removeObject` / `doAction` 操作，更新場景樹。
+  - 將 `button` 與 `bounds` 對應到可點擊區域：
+    - 使用 DOM 元素的 `click`/`pointer` 事件作為互動入口。
+    - 初期只做簡單回應（例如 highlight / console log），之後再對應到 actionScript 或遊戲邏輯。
+
+- **漸進式精細化**
+  - 先完成「可以看懂結構與大致動畫」的 MVP：
+    - sprite 的進出與位移。
+    - 主要文字、按鈕位置與顏色。
+  - 後續若需要更高還原度，再根據實驗結果擴充分類：
+    - 更完整的文字排版（dynamic_text）。
+    - 更準確的 blendMode、colorMatrix、filter 效果。
+    - 部分 actionScript 行為的模擬（例如簡單的 gotoAndPlay/gotoAndStop）。
+
+透過這樣的分階段設計，我們可以先用現有 JSON 結構快速驗證 UI / 動畫預覽的可行性，再逐步增加還原度，而不需要一開始就完全重現原本引擎的所有細節。
+
 
 
