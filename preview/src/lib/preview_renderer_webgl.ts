@@ -71,6 +71,10 @@ export class WebGlRenderer {
     gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
   }
 
+  getCanvas(): HTMLCanvasElement {
+    return this.canvas;
+  }
+
   resizeForMeta(meta: LmbJson["meta"]): void {
     const width = meta.width || 512;
     const height = meta.height || 256;
@@ -177,10 +181,44 @@ export class WebGlRenderer {
       gl.vertexAttribPointer(this.positionLocation, 2, gl.FLOAT, false, 16, 0);
       gl.vertexAttribPointer(this.uvLocation, 2, gl.FLOAT, false, 16, 8);
 
-      // Handle blend modes here if needed, or assume standard premultiplied alpha blending
-      // if (instance.blendMode === 'ADD') ...
+      // Handle blend modes
+      this.setBlendMode(instance.blendMode);
 
       gl.drawElements(gl.TRIANGLES, graphic.indices.length, gl.UNSIGNED_SHORT, 0);
+    }
+  }
+
+  private setBlendMode(mode: string): void {
+    const gl = this.gl;
+    // Lmb.BlendMode strings: 
+    // normal, layer, multiply, screen, lighten, darken, difference, add, subtract, invert, alpha, erase, overlay, hard_light
+
+    switch (mode.toLowerCase()) {
+      case 'add': // 0x08
+        gl.blendEquation(gl.FUNC_ADD);
+        gl.blendFunc(gl.ONE, gl.ONE);
+        break;
+        
+      case 'multiply': // 0x03
+        gl.blendEquation(gl.FUNC_ADD);
+        gl.blendFunc(gl.DST_COLOR, gl.ONE_MINUS_SRC_ALPHA);
+        break;
+        
+      case 'screen': // 0x04
+        gl.blendEquation(gl.FUNC_ADD);
+        gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_COLOR);
+        break;
+        
+      case 'subtract': // 0x09
+        gl.blendEquation(gl.FUNC_REVERSE_SUBTRACT);
+        gl.blendFunc(gl.ONE, gl.ONE);
+        break;
+
+      case 'normal':
+      default:
+        gl.blendEquation(gl.FUNC_ADD);
+        gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+        break;
     }
   }
 

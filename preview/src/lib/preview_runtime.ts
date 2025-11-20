@@ -161,6 +161,7 @@ export interface DisplayInstance {
   colorAdd?: ColorRgba;
   blendMode: string;
   graphic?: GraphicDef;
+  text?: TextDef;
   bounds?: BoundsDef;
 }
 
@@ -223,6 +224,7 @@ export class ResourceStore {
   readonly json: LmbJson;
   private spriteById: Map<number, SpriteDef> = new Map();
   private graphicByCharacterId: Map<number, GraphicDef> = new Map();
+  private textByCharacterId: Map<number, TextDef> = new Map();
   private boundsById: Map<number, BoundsDef> = new Map();
   private buttonByCharacterId: Map<number, ButtonDef> = new Map();
 
@@ -235,6 +237,9 @@ export class ResourceStore {
       if ((g as any).characterId != null) {
         this.graphicByCharacterId.set((g as any).characterId, g);
       }
+    }
+    for (const t of json.definitions.texts) {
+      this.textByCharacterId.set(t.characterId, t);
     }
     for (const btn of json.definitions.buttons) {
       this.buttonByCharacterId.set(btn.characterId, btn);
@@ -266,6 +271,10 @@ export class ResourceStore {
       return button.graphics[0];
     }
     return undefined;
+  }
+
+  getTextForCharacter(characterId: number): TextDef | undefined {
+    return this.textByCharacterId.get(characterId);
   }
 
   getBoundsById(id: number): BoundsDef | undefined {
@@ -329,57 +338,95 @@ export class Scene {
   private nestedSpriteInstances: Map<number, NestedSpriteInstance> = new Map();
 
   applyFrame(resourceStore: ResourceStore, frame: FrameDef): void {
+    // 1. Handle Removals
     for (const rem of frame.removeList) {
-      this.instances.delete(rem.depth);
-      for (const [placementId, nested] of this.nestedSpriteInstances.entries()) {
-        if (nested && this.instances.has(rem.depth)) {
-          const inst = this.instances.get(rem.depth);
-          if (inst && inst.placementId === placementId) {
-            this.nestedSpriteInstances.delete(placementId);
-          }
+      // Fix: Only try to remove if the instance actually exists
+      if (this.instances.has(rem.depth)) {
+        const inst = this.instances.get(rem.depth)!;
+        
+        // Clean up nested sprite tracking using the instance's placementId
+        if (this.nestedSpriteInstances.has(inst.placementId)) {
+            this.nestedSpriteInstances.delete(inst.placementId);
         }
+        
+        this.instances.delete(rem.depth);
       }
     }
 
+    // 2. Handle Display List
     for (const po of frame.displayList) {
-      const transform = resourceStore.getTransformFromPlaceObject(po);
-      const colorMult = resourceStore.getColorById(po.colorMultId);
-      const colorAdd = resourceStore.getColorById(po.colorAddId);
+      const isMove = po.placementMode === "move" || po.placementMode === "MOVE";
+      const existing = this.instances.get(po.depth);
       const sprite = resourceStore.getSpriteById(po.characterId);
-      if (sprite) {
-        let nested = this.nestedSpriteInstances.get(po.placementId);
-        if (!nested || nested.sprite.characterId !== sprite.characterId) {
-          nested = {
-            placementId: po.placementId,
-            characterId: po.characterId,
-            sprite,
-            scene: new Scene(),
-            frameIndex: 0,
-          };
-          this.nestedSpriteInstances.set(po.placementId, nested);
-          if (sprite.timeline.length > 0) {
-            const initialFrame = sprite.timeline[0];
-            nested.scene.applyFrame(resourceStore, initialFrame);
-          }
+
+      // Check if this is a MOVE operation on an existing instance of the same character
+      if (isMove && existing && existing.characterId === po.characterId) {
+        // MOVE: Update properties of existing instance
+        
+        // Update Transform: Only if flags indicate it (0xffff = NO_TRANSFORM)
+        // We check if positionFlags != 0xffff. 
+        // Note: 0xffff is 65535.
+        if (po.positionFlags !== 0xffff) {
+           existing.transform = resourceStore.getTransformFromPlaceObject(po);
         }
-        const containerInstance: DisplayInstance & { childScene?: Scene } = {
-          placementId: po.placementId,
-          characterId: po.characterId,
-          depth: po.depth,
-          transform,
-          colorMult,
-          colorAdd,
-          blendMode: po.blendMode,
-          graphic: undefined,
-          bounds: undefined,
-          childScene: nested.scene,
-        };
-        this.instances.set(po.depth, containerInstance);
+
+        // Update Color Transforms
+        if (po.colorMultId !== -1) {
+           existing.colorMult = resourceStore.getColorById(po.colorMultId);
+        }
+        if (po.colorAddId !== -1) {
+           existing.colorAdd = resourceStore.getColorById(po.colorAddId);
+        }
+        
+        // Update Blend Mode
+        if (po.blendMode && po.blendMode !== 'UNKNOWN') {
+           existing.blendMode = po.blendMode;
+        }
+        
+        // Note: We do NOT create a new NestedSpriteInstance or reset its frameIndex.
+        // It keeps playing from where it was.
+        
+        // Update the instance in the map (it's the same object reference, so strictly not needed, but good for clarity)
+        this.instances.set(po.depth, existing);
+
       } else {
-        const graphic = resourceStore.getGraphicForCharacter(po.characterId);
+        // PLACE: Create new instance (or replace existing)
+        
+        // Prepare nested sprite state if it is a sprite
+        let childScene: Scene | undefined;
+        
+        if (sprite) {
+          let nested = this.nestedSpriteInstances.get(po.placementId);
+          
+          // If it's a new placement or different character, initialize new nested state
+          if (!nested || nested.sprite.characterId !== sprite.characterId) {
+            nested = {
+              placementId: po.placementId,
+              characterId: po.characterId,
+              sprite,
+              scene: new Scene(),
+              frameIndex: 0,
+            };
+            this.nestedSpriteInstances.set(po.placementId, nested);
+            
+            // Apply first frame immediately
+            if (sprite.timeline.length > 0) {
+              const initialFrame = sprite.timeline[0];
+              nested.scene.applyFrame(resourceStore, initialFrame);
+            }
+          }
+          childScene = nested.scene;
+        }
+
+        const transform = resourceStore.getTransformFromPlaceObject(po);
+        const colorMult = resourceStore.getColorById(po.colorMultId);
+        const colorAdd = resourceStore.getColorById(po.colorAddId);
+        
+        const graphic = !sprite ? resourceStore.getGraphicForCharacter(po.characterId) : undefined;
+        const text = !sprite && !graphic ? resourceStore.getTextForCharacter(po.characterId) : undefined;
         const bounds = resourceStore.getBoundsById(po.characterId);
 
-        const instance: DisplayInstance = {
+        const newInstance: DisplayInstance & { childScene?: Scene } = {
           placementId: po.placementId,
           characterId: po.characterId,
           depth: po.depth,
@@ -388,12 +435,19 @@ export class Scene {
           colorAdd,
           blendMode: po.blendMode,
           graphic,
+          text,
           bounds,
+          childScene,
         };
 
-        this.instances.set(po.depth, instance);
+        this.instances.set(po.depth, newInstance);
       }
     }
+  }
+
+  reset(): void {
+    this.instances.clear();
+    this.nestedSpriteInstances.clear();
   }
 
   advanceNestedSprites(resourceStore: ResourceStore, framesToAdvance: number): void {
@@ -441,7 +495,7 @@ export class Scene {
     const worldColorMult = combineColorMult(parentColorMult, instance.colorMult);
     const worldColorAdd = combineColorAdd(parentColorAdd, instance.colorAdd);
 
-    if (instance.graphic) {
+    if (instance.graphic || instance.text) {
       output.push({
         placementId: instance.placementId,
         characterId: instance.characterId,
@@ -451,6 +505,7 @@ export class Scene {
         colorAdd: worldColorAdd,
         blendMode: instance.blendMode,
         graphic: instance.graphic,
+        text: instance.text,
         bounds: instance.bounds,
       });
     }
@@ -474,6 +529,8 @@ export class Scene {
   }
 }
 
+import { ActionInterpreter } from "./preview_actions";
+
 export class TimelinePlayer {
   private resourceStore: ResourceStore;
   private sprite: SpriteDef;
@@ -483,22 +540,38 @@ export class TimelinePlayer {
   private lastTime = 0;
   private frameDurationMs: number;
   private onFrameChanged?: (frame: FrameDef | undefined, scene: Scene) => void;
+  private onLog?: (msg: string) => void;
+  private loop: boolean;
 
   constructor(
     resourceStore: ResourceStore,
     sprite: SpriteDef,
     scene: Scene,
-    onFrameChanged?: (frame: FrameDef | undefined, scene: Scene) => void
+    onFrameChanged?: (frame: FrameDef | undefined, scene: Scene) => void,
+    onLog?: (msg: string) => void,
+    loop: boolean = false
   ) {
     this.resourceStore = resourceStore;
     this.sprite = sprite;
     this.scene = scene;
     this.frameDurationMs = 1000 / Math.max(1, resourceStore.getMeta().framerate || 30);
     this.onFrameChanged = onFrameChanged;
+    this.onLog = onLog;
+    this.loop = loop;
   }
 
   play(): void {
-    if (this.playing) return;
+    if (this.playing) {
+      return;
+    }
+
+    const totalFrames = this.sprite.timeline.length;
+    if (!this.loop && totalFrames > 0 && this.frameIndex >= totalFrames - 1) {
+      this.frameIndex = 0;
+      this.scene.reset();
+      this.applyCurrentFrame();
+    }
+
     this.playing = true;
     this.lastTime = performance.now();
     requestAnimationFrame(this.tick);
@@ -511,6 +584,7 @@ export class TimelinePlayer {
   stop(): void {
     this.playing = false;
     this.frameIndex = 0;
+    this.scene.reset();
     this.applyCurrentFrame();
   }
 
@@ -520,6 +594,17 @@ export class TimelinePlayer {
 
   getCurrentFrame(): FrameDef | undefined {
     return this.sprite.timeline[this.frameIndex];
+  }
+
+  goToFrame(targetIndex: number): void {
+    const totalFrames = this.sprite.timeline.length;
+    if (totalFrames === 0) {
+      return;
+    }
+    const normalized =
+      ((Math.floor(targetIndex) % totalFrames) + totalFrames) % totalFrames;
+    this.frameIndex = normalized;
+    this.applyCurrentFrame();
   }
 
   private tick = (now: number): void => {
@@ -532,20 +617,86 @@ export class TimelinePlayer {
       const framesToAdvance = Math.floor(delta / this.frameDurationMs);
       this.lastTime = now;
 
-      this.frameIndex = (this.frameIndex + framesToAdvance) % Math.max(1, this.sprite.timeline.length);
-      this.applyCurrentFrame();
-      this.scene.advanceNestedSprites(this.resourceStore, framesToAdvance);
+      const totalFrames = this.sprite.timeline.length;
+      if (totalFrames > 0) {
+        let remaining = framesToAdvance;
+        let advanced = 0;
+
+        while (remaining > 0 && this.playing) {
+          if (this.frameIndex >= totalFrames - 1) {
+            if (this.loop) {
+              this.frameIndex = 0;
+            } else {
+              this.playing = false;
+              break;
+            }
+          } else {
+            this.frameIndex += 1;
+          }
+
+          this.applyCurrentFrame();
+          remaining -= 1;
+          advanced += 1;
+        }
+
+        if (advanced > 0) {
+          this.scene.advanceNestedSprites(this.resourceStore, advanced);
+        }
+      }
     }
 
-    requestAnimationFrame(this.tick);
+    if (this.playing) {
+      requestAnimationFrame(this.tick);
+    }
   };
 
-  private applyCurrentFrame(): void {
+  private applyCurrentFrame(recursionDepth = 0): void {
+    if (recursionDepth > 5) {
+      // Prevent infinite loops from GOTO actions
+      this.onLog?.("Max recursion depth reached in applyCurrentFrame. Stopping.");
+      this.playing = false;
+      return;
+    }
+
     const frame = this.getCurrentFrame();
     if (!frame) {
       return;
     }
     this.scene.applyFrame(this.resourceStore, frame);
+
+    // Execute Actions
+    if (frame.actions.length > 0) {
+      for (const action of frame.actions) {
+        const result = ActionInterpreter.execute(action, this.sprite);
+        if (result.log && this.onLog) {
+          this.onLog(result.log);
+        }
+        
+        if (result.playing !== undefined) {
+          this.playing = result.playing;
+        }
+
+        if (result.jumpToFrame !== undefined) {
+          // Jump immediately
+          // We set the frame index and recursively apply the NEW frame
+          // Note: In Flash/engines, usually actions on frame N execute, 
+          // and if they goto frame M, frame M is rendered immediately? 
+          // Or next tick?
+          // Usually immediate for "gotoAndStop", "gotoAndPlay".
+          
+          // Normalize just in case
+          const totalFrames = this.sprite.timeline.length;
+          if (totalFrames > 0) {
+            this.frameIndex = ((Math.floor(result.jumpToFrame) % totalFrames) + totalFrames) % totalFrames;
+            // Recursively apply the new frame
+            this.applyCurrentFrame(recursionDepth + 1);
+            // Stop processing actions for the OLD frame (usually)
+            return;
+          }
+        }
+      }
+    }
+
     if (this.onFrameChanged) {
       this.onFrameChanged(frame, this.scene);
     }

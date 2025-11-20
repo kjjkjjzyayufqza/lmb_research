@@ -255,3 +255,105 @@ runtime 中透過 `Scene` 對應一個「當前 frame 的 display list 狀態」
     - `styles/`：CSS 樣式檔。
 
 實際打包可採用任意前端建構工具，但不影響上述結構與最終目標。
+
+## 當前實作進度與未完成項目說明（2025-11 狀態）
+
+### 已完成的核心能力（概覽）
+
+- **JSON 結構 → Runtime 映射（初版）**
+  - 透過 `lmbtojson.ts`，已能根據 `lmb.ksy`：
+    - 建立 `meta`（含 `width/height/framerate` 等）。
+    - 建立 `resources`（`symbols/colors/transforms/positions/bounds/textureAtlases`）。
+    - 建立 `definitions.sprites/texts/buttons/graphics`。
+    - 將 `define_sprite` 旗下的 `keyframe/show_frame/place_object/remove_object/do_action/frame_label` 壓平成 `SpriteDef.timeline: FrameDef[]`。
+- **基礎 Scene / Timeline 播放**
+  - `Scene` 會依照每一幀的 `displayList/removeList` 更新 display list（以 depth 做 key），並支援巢狀 sprite。
+  - `TimelinePlayer` 會依據 `meta.framerate` 以固定頻率推進 `frameIndex`，並呼叫 `Scene.applyFrame` → WebGL 重新繪製。
+  - 已可看到靜態畫面與「線性時間軸播放」的效果。
+- **WebGL 渲染（基礎版）**
+  - 能依 `graphics.vertices/indices` 與 `textureAtlases` 正確畫出基本幾何與貼圖。
+  - 支援 `color_mult_id / color_add_id` 的乘色與加色計算（shader 中 `texColor * colorMult + colorAdd`）。
+- **基礎 Debug 能力**
+  - 控制面板可看到當前 `FrameIndex / Label`。
+  - 透過 Debug 輸入可跳到指定 `frameIndex`，或依 `displayList` 長度搜尋第一個符合條件的幀，用於檢查某些關鍵幀的畫面狀態。
+
+### 關鍵落差：尚未完成、導致與實機差異的部分
+
+- **時間軸控制與腳本行為尚未實作**
+  - 目前 `TimelinePlayer` 僅做「按 `framerate` 均速遞增 `frameIndex`，至尾端後 modulo 循環」：
+    - 未處理 `do_action` / `action_script` 之類腳本指令。
+    - 未根據 `frame_label` / `gotoAndPlay(label)` / `gotoAndStop(label)` 等控制播放流。
+  - 結果：原本在遊戲中「播一段後停住或跳轉到特定段落」的 UI，現在會被強制完整 loop，產生「不斷閃爍 / 中間過渡幀也被顯示」的現象（例如 `ex_p_001_001_c01.json`）。
+
+- **Place/Move 行為與 display list 邏輯仍為簡化版**
+  - `place_object.placement_mode`（`place` / `move`）目前僅被轉成字串欄位紀錄，runtime 尚未依此區分「建立新實例」與「移動/更新既有實例」的語義。
+  - 巢狀 sprite 與 `remove_object` 的交互邏輯仍有簡化與潛在 bug，可能導致巢狀物件生命週期與原版不一致。
+
+- **腳本指令語意未還原**
+  - `do_action.actionId` 目前僅被存成數字，沒有任何解譯層：
+    - 未對應 `goto frame`、`goto label`、`play`、`stop`、flag 切換等行為。
+    - 未處理可能影響 `visible/alpha/x/y` 等屬性的指令。
+  - `action_script` / `action_script_2` 的 bytecode 僅被 JSON 保留（或尚未導出），預覽端沒有做任何解析與執行。
+
+- **顏色、混合模式與 Color Matrix 僅實作了最小子集**
+  - BlendMode 目前僅使用固定的 `NORMAL` 對應（`SRC_ALPHA, ONE_MINUS_SRC_ALPHA`），未針對 `MULTIPLY/SCREEN/ADD/SUBTRACT/OVERLAY/...` 做完整對應。
+  - `color_matrix`（tag `0xf037`）尚未套用到 shader，相關欄位目前僅作為資料保留。
+
+- **文字與按鈕互動尚未完成**
+  - `dynamic_text` 的渲染邏輯尚未整合進 WebGL/Canvas，預覽中看不到實際文字內容與對齊排版。
+  - `button` 的 hit test、hover/click 狀態與對應腳本（按鈕行為）尚未實作，無法互動模擬。
+
+### 為達到 100% 模擬遊戲 UI 播放行為，需要的後續改動
+
+- **在 LMB→JSON 轉換層（`lmbtojson.ts`）補充資訊**
+  - **保留 / 暴露完整腳本資訊**
+    - 確認 `action_script` / `action_script_2` 的 bytecode 已被導出到 JSON（若尚未，需比照 `lmb.ksy` 補齊），以便預覽端建立對照表與簡易解譯器。
+    - 在 `DoAction` / `Frame` 中保持 `actionId` 與對應腳本區塊（若有）的關聯，方便預覽端查表。
+  - **更精確的標籤與時間軸資料**
+    - 確保 `frame_label` 的 `start_frame` 與 label 字串對應關係被準確投影到 `SpriteDef.frameLabels` 中。
+    - 若有多段 timeline 或 entry point 變化，需在 JSON 中提供足夠的 meta 資訊（例如 root sprite、入口 frame 等）。
+
+- **在 Runtime 時間軸層（`preview_runtime.ts`）引入「時間軸狀態機 + 指令解譯器」**
+  - **時間軸狀態機**
+    - 擴展 `TimelinePlayer`，將目前單純的「線性遞增 + loop」改為具備：
+      - 狀態：`playing/paused/stopped`。
+      - API：`gotoFrame(index)`、`gotoLabel(label)`、`play()`、`stop()`、`pause()`。
+    - 支援從腳本或 UI 調用這些 API，以符合原始引擎「從腳本控制 timeline」的模式。
+  - **DoAction / ActionScript 解譯器（最小 MVP）**
+    - 建立 `actionId → 行為描述` 的對照表（可配置化，如 JSON 或程式碼內 mapping），至少涵蓋：
+      - 時間軸控制：`goto frame`、`goto label`、`play`、`stop`。
+      - 顯示控制：`set visible/alpha/x/y` 等（若有）。
+    - 在 `TimelinePlayer.applyCurrentFrame` 或 `tick` 中：
+      - 取得當前幀的 `actions`，依序執行對應行為，更新 `frameIndex` 或其他狀態。
+      - 確保在同一幀內的多個行為以正確順序影響時間軸與場景。
+    - 後續再將 `action_script` bytecode 映射到較高層語意，逐步擴大還原範圍。
+
+- **強化 Scene / display list 行為**
+  - **正確處理 `placement_mode` 與 `remove_object`**
+    - 針對 `place` vs `move` 明確定義：
+      - `place`: 新建或替換該 depth 的實例。
+      - `move`: 基於既有實例更新其 transform/color 等屬性，保留其他狀態（特別是巢狀 sprite 的內部 frame 狀態）。
+    - 修正 `remove_object` 對 `nestedSpriteInstances` 的清理邏輯，避免殘留或錯誤刪除。
+  - **巢狀 sprite 時間推進**
+    - 釐清實機中巢狀 sprite 的更新規則（是否總是隨父 sprite 前進、是否會被腳本單獨控制），並對 `Scene.advanceNestedSprites` 做相應調整。
+
+- **在 WebGL 層補齊顏色與混合模式**
+  - **BlendMode 對應表**
+    - 根據 `lmb.ksy` 中的 `blend_mode` enum，建立完整的 WebGL blend state 對應：
+      - NORMAL / LAYER / MULTIPLY / SCREEN / ADD / SUBTRACT / OVERLAY / HARD_LIGHT 等。
+    - 必要時透過 shader 內部運算模擬某些複合模式。
+  - **Color Matrix 支援**
+    - 若 JSON 中存在 color matrix 定義，需在 shader 中加入 4x5 matrix 的計算，並於 instance 渲染時綁定該矩陣。
+
+- **文字與按鈕互動的還原**
+  - **Dynamic Text**
+    - 在 runtime 中為 `texts` 建立對應的渲染物件（可先使用 Canvas 2D / DOM 文字進行對位渲染），確保位置、大小與對齊接近原版。
+  - **Buttons**
+    - 依 `buttons + bounds` 定義建立 hit test 區域。
+    - 將滑鼠/觸控事件映射到對應按鈕，根據原始腳本觸發動畫或 `do_action` 行為。
+
+- **Debug / 開發工具輔助**
+  - 補充每幀的 `actions` / `actionId` 顯示，以及對應的解譯結果（例如「gotoAndStop('loop')」），方便比對與除錯。
+  - 提供「只播放到某個 label 或 frame 然後停下」的測試模式，便於對照遊戲錄影進行畫面比對。
+
+以上項目完成後，預覽工具才能在「幾何 / 顏色 / 混合」之外，於「時間軸控制與行為邏輯」層面接近原遊戲，達成對 LMB UI 播放行為的高還原度模擬。

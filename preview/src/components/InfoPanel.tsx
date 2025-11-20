@@ -4,14 +4,14 @@ import { FrameDef, MetaDef } from '../lib/preview_runtime';
 interface InfoPanelProps {
   meta: MetaDef | null;
   currentFrameDef: FrameDef | undefined;
+  onActionClick?: (actionId: number) => void;
 }
 
-export const InfoPanel: React.FC<InfoPanelProps> = ({ meta, currentFrameDef }) => {
+export const InfoPanel: React.FC<InfoPanelProps> = ({ meta, currentFrameDef, onActionClick }) => {
   const frameInfo = currentFrameDef ? {
     frameIndex: currentFrameDef.frameIndex,
     displayListCount: currentFrameDef.displayList.length,
     removeCount: currentFrameDef.removeList.length,
-    actions: currentFrameDef.actions,
   } : null;
 
   return (
@@ -27,6 +27,33 @@ export const InfoPanel: React.FC<InfoPanelProps> = ({ meta, currentFrameDef }) =
         <pre style={{ fontSize: '0.75rem', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
           {frameInfo ? JSON.stringify(frameInfo, null, 2) : '-'}
         </pre>
+        
+        {currentFrameDef && currentFrameDef.actions.length > 0 && (
+          <div style={{ marginTop: '1rem' }}>
+            <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.9rem' }}>Actions ({currentFrameDef.actions.length})</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+              {currentFrameDef.actions.map((action, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => onActionClick?.(action.actionId)}
+                  style={{
+                    background: '#444',
+                    border: 'none',
+                    color: '#eee',
+                    padding: '0.25rem 0.5rem',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    fontSize: '0.8rem',
+                    borderRadius: '3px'
+                  }}
+                  title="Click to log details"
+                >
+                  Action ID: {action.actionId}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
