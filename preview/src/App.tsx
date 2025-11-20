@@ -201,10 +201,6 @@ function App() {
                  const cy = stageHeight / 2;
                  
                  const m = inst.transform;
-                 // Apply matrix. The translation (m.x, m.y) is relative to center.
-                 // So we place element at center + translation.
-                 // CSS transform origin should be 0,0 of the element?
-                 // If we position element at (cx, cy), then apply matrix?
                  
                  el.style.left = `${cx}px`;
                  el.style.top = `${cy}px`;
