@@ -19,15 +19,29 @@ export const CanvasView: React.FC<CanvasViewProps> = ({ onRendererReady }) => {
 
   return (
     <div style={{ 
-      flex: 1, 
-      display: 'flex', 
-      justifyContent: 'center', 
-      alignItems: 'center', 
-      background: '#000', 
+      flex: 1,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      background: '#000',
       overflow: 'hidden',
-      border: '1px solid #444' 
+      border: '1px solid #444'
     }}>
-      <canvas ref={canvasRef} />
+      <canvas
+        ref={canvasRef}
+        style={{
+          // Let the canvas scale down with its container while
+          // preserving the internal resolution defined by meta.
+          // This keeps the LMB stage coordinates unchanged while
+          // allowing the UI (especially the Meta Info panel) to
+          // remain visible on smaller viewports.
+          width: '100%',
+          height: 'auto',
+          maxWidth: '100%',
+          maxHeight: '100%',
+          display: 'block',
+        }}
+      />
     </div>
   );
 };
