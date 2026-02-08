@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useMemo } from "react";
 import {
   Play,
   Pause,
@@ -17,8 +17,15 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useEditorState, useEditorDispatch } from "@/lib/editor/state";
-import type { TimelinePlayer } from "@/lib/lmb/player";
+import { type TimelinePlayer, getLabelSections } from "@/lib/lmb/player";
 
 interface TimelineBarProps {
   playerRef: React.RefObject<TimelinePlayer | null>;
@@ -26,21 +33,27 @@ interface TimelineBarProps {
 }
 
 /**
- * TimelineBar: playback controls, frame scrubber, undo/redo buttons.
- * Sits at the bottom of the application.
+ * TimelineBar: playback controls, section selector, frame scrubber,
+ * undo/redo buttons.  Sits at the bottom of the application.
  */
 export function TimelineBar({ playerRef, onRender }: TimelineBarProps) {
   const state = useEditorState();
   const dispatch = useEditorDispatch();
 
-  const totalFrames = state.currentSprite?.timeline.length ?? 0;
+  const player = playerRef.current;
+  const totalPlayable = player?.getTotalFrames() ?? 0;
   const currentLabel = state.currentFrame?.label;
 
+  const sections = useMemo(() => {
+    if (!state.currentSprite) return [];
+    return getLabelSections(state.currentSprite);
+  }, [state.currentSprite]);
+
   const handlePlay = useCallback(() => {
-    const player = playerRef.current;
-    if (!player) return;
-    player.setLoop(state.loop);
-    player.play();
+    const p = playerRef.current;
+    if (!p) return;
+    p.setLoop(state.loop);
+    p.play();
     dispatch({ type: "SET_PLAYING", playing: true });
   }, [playerRef, state.loop, dispatch]);
 
@@ -56,30 +69,30 @@ export function TimelineBar({ playerRef, onRender }: TimelineBarProps) {
   }, [playerRef, dispatch, onRender]);
 
   const handlePrevFrame = useCallback(() => {
-    const player = playerRef.current;
-    if (!player) return;
-    player.pause();
+    const p = playerRef.current;
+    if (!p) return;
+    p.pause();
     dispatch({ type: "SET_PLAYING", playing: false });
-    player.stepBackward();
+    p.stepBackward();
     onRender();
   }, [playerRef, dispatch, onRender]);
 
   const handleNextFrame = useCallback(() => {
-    const player = playerRef.current;
-    if (!player) return;
-    player.pause();
+    const p = playerRef.current;
+    if (!p) return;
+    p.pause();
     dispatch({ type: "SET_PLAYING", playing: false });
-    player.stepForward();
+    p.stepForward();
     onRender();
   }, [playerRef, dispatch, onRender]);
 
   const handleScrub = useCallback(
     (value: number[]) => {
-      const player = playerRef.current;
-      if (!player) return;
-      player.pause();
+      const p = playerRef.current;
+      if (!p) return;
+      p.pause();
       dispatch({ type: "SET_PLAYING", playing: false });
-      player.scrubToFrame(value[0]);
+      p.scrubToFrame(value[0]);
       onRender();
     },
     [playerRef, dispatch, onRender]
@@ -91,26 +104,49 @@ export function TimelineBar({ playerRef, onRender }: TimelineBarProps) {
     playerRef.current?.setLoop(newLoop);
   }, [state.loop, dispatch, playerRef]);
 
+  /**
+   * Play a specific labeled section.  This clears the old section
+   * restriction, sets the new one, and starts playback.
+   */
+  const handlePlaySection = useCallback(
+    (label: string) => {
+      const p = playerRef.current;
+      if (!p) return;
+      p.setLoop(state.loop);
+      p.playSection(label);
+      dispatch({ type: "SET_PLAYING", playing: true });
+    },
+    [playerRef, state.loop, dispatch]
+  );
+
+  /**
+   * Clear section restriction and return to full-range mode.
+   */
+  const handleClearSection = useCallback(() => {
+    const p = playerRef.current;
+    if (!p) return;
+    p.clearSection();
+  }, [playerRef]);
+
   const handleUndo = useCallback(() => {
     dispatch({ type: "UNDO" });
-    // After undo, re-scrub to current frame to update display
-    const player = playerRef.current;
-    if (player) {
-      player.scrubToFrame(state.frameIndex);
+    const p = playerRef.current;
+    if (p) {
+      p.scrubToFrame(state.frameIndex);
       onRender();
     }
   }, [dispatch, playerRef, state.frameIndex, onRender]);
 
   const handleRedo = useCallback(() => {
     dispatch({ type: "REDO" });
-    const player = playerRef.current;
-    if (player) {
-      player.scrubToFrame(state.frameIndex);
+    const p = playerRef.current;
+    if (p) {
+      p.scrubToFrame(state.frameIndex);
       onRender();
     }
   }, [dispatch, playerRef, state.frameIndex, onRender]);
 
-  const isLoaded = totalFrames > 0;
+  const isLoaded = totalPlayable > 0;
 
   return (
     <div className="flex items-center gap-2 px-4 py-2 bg-card border-t border-border">
@@ -203,12 +239,38 @@ export function TimelineBar({ playerRef, onRender }: TimelineBarProps) {
         </Tooltip>
       </div>
 
+      {/* Section selector (only when labels exist) */}
+      {sections.length > 0 && (
+        <Select
+          value=""
+          onValueChange={(val) => {
+            if (val === "__clear__") {
+              handleClearSection();
+            } else {
+              handlePlaySection(val);
+            }
+          }}
+        >
+          <SelectTrigger className="w-[140px] h-7 text-xs">
+            <SelectValue placeholder="Play Section..." />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="__clear__">Full Range</SelectItem>
+            {sections.map((sec) => (
+              <SelectItem key={sec.label} value={sec.label}>
+                {sec.label} ({sec.startFrame}-{sec.endFrame})
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      )}
+
       {/* Frame scrubber */}
       <div className="flex-1 mx-4">
         <Slider
           value={[state.frameIndex]}
           min={0}
-          max={Math.max(0, totalFrames - 1)}
+          max={Math.max(0, totalPlayable - 1)}
           step={1}
           onValueChange={handleScrub}
           disabled={!isLoaded}
@@ -218,7 +280,7 @@ export function TimelineBar({ playerRef, onRender }: TimelineBarProps) {
       {/* Frame info */}
       <div className="flex items-center gap-2 min-w-[200px] justify-end">
         <span className="text-sm text-muted-foreground tabular-nums">
-          {state.frameIndex} / {Math.max(0, totalFrames - 1)}
+          {state.frameIndex} / {Math.max(0, totalPlayable - 1)}
         </span>
         {currentLabel && (
           <Badge variant="secondary" className="text-xs">

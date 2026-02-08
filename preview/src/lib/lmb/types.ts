@@ -180,6 +180,8 @@ export interface NestedSpriteInstance {
   sprite: SpriteDef;
   scene: import("./scene").Scene;
   frameIndex: number;
+  /** When true the nested sprite has been halted by a stop() action. */
+  stopped?: boolean;
 }
 
 // ============================================================

@@ -10,6 +10,7 @@ import {
   combineColorAdd,
 } from "./types";
 import { ResourceStore } from "./store";
+import { ActionInterpreter } from "./actions";
 
 /**
  * Scene manages the display list for a single sprite timeline.
@@ -112,14 +113,59 @@ export class Scene {
     this.nestedSpriteInstances.clear();
   }
 
+  /**
+   * Advance all nested sprite instances by the given number of frames.
+   *
+   * Each nested sprite has its own independent timeline.  Only the
+   * first `numFrames` entries in the timeline are playable; the
+   * trailing keyframes are skipped.  Frame actions (e.g. stop()) are
+   * honoured: when a nested sprite hits a stop() action it freezes
+   * on its current frame until explicitly restarted.
+   */
   advanceNestedSprites(resourceStore: ResourceStore, framesToAdvance: number): void {
     if (framesToAdvance <= 0) return;
     for (const nested of this.nestedSpriteInstances.values()) {
-      if (!nested.sprite.timeline.length) continue;
-      nested.frameIndex =
-        (nested.frameIndex + framesToAdvance) % nested.sprite.timeline.length;
-      const frame = nested.sprite.timeline[nested.frameIndex];
-      nested.scene.applyFrame(resourceStore, frame);
+      const playable = nested.sprite.numFrames > 0
+        ? nested.sprite.numFrames
+        : nested.sprite.timeline.length;
+      if (playable === 0) continue;
+
+      // If this nested sprite was previously stopped by an action,
+      // keep it frozen.
+      if (nested.stopped) {
+        continue;
+      }
+
+      let remaining = framesToAdvance;
+      while (remaining > 0) {
+        const nextFrame = (nested.frameIndex + 1) % playable;
+        nested.frameIndex = nextFrame;
+        remaining -= 1;
+
+        const frame = nested.sprite.timeline[nested.frameIndex];
+        nested.scene.applyFrame(resourceStore, frame);
+
+        // Process actions for this nested frame
+        if (frame.actions.length > 0) {
+          for (const action of frame.actions) {
+            const result = ActionInterpreter.execute(action, nested.sprite);
+            if (result.playing === false) {
+              nested.stopped = true;
+              remaining = 0;
+              break;
+            }
+            if (result.jumpToFrame !== undefined) {
+              const target = Math.max(0, Math.min(result.jumpToFrame, playable - 1));
+              nested.frameIndex = target;
+              // Re-apply the jumped-to frame
+              const jumpedFrame = nested.sprite.timeline[target];
+              nested.scene.applyFrame(resourceStore, jumpedFrame);
+            }
+          }
+        }
+      }
+
+      // Recursively advance grandchild sprites
       nested.scene.advanceNestedSprites(resourceStore, framesToAdvance);
     }
   }

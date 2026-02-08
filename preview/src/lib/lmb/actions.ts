@@ -10,10 +10,21 @@ export type ActionBehavior =
 
 /**
  * Mapping from Action ID to generic behavior.
- * Intentionally minimal and conservative.
+ *
+ * Derived from empirical analysis of LMB files:
+ *   - actionId 0 appears 286 times in machineselect.lm, always at the
+ *     last frame of every labeled section, matching the classic Flash
+ *     stop() pattern.
+ *   - actionId 1 (1 occurrence) and actionId 2 (2 occurrences) are
+ *     not yet decoded; they are logged as UNKNOWN.
+ *
+ * The underlying LMB binary stores a single action_script tag whose
+ * bytecodes define the actual behavior per index.  Until a full
+ * bytecode disassembler is implemented, this table is kept
+ * conservative and only maps the patterns that have been validated.
  */
 const ACTION_MAP: Record<number, ActionBehavior> = {
-  0: { type: "GOTO_FIRST_LABEL" },
+  0: { type: "STOP" },
 };
 
 export interface ExecutionResult {

@@ -10,8 +10,94 @@ export type FrameChangeCallback = (
 ) => void;
 
 /**
+ * Compute the number of playable (non-keyframe) frames for a sprite.
+ *
+ * LMB sprites store `numFrames` regular frames followed by `numKeyframes`
+ * snapshot frames in the same `timeline` array.  Only the first
+ * `numFrames` entries are meant for sequential playback; the trailing
+ * keyframes are complete display-list snapshots used for fast random
+ * access (scrubbing / gotoAndPlay).
+ */
+function getPlayableFrameCount(sprite: SpriteDef): number {
+  // numFrames is authoritative; fall back to timeline length when missing
+  // (e.g. if the JSON was hand-crafted without the field).
+  if (sprite.numFrames > 0 && sprite.numFrames <= sprite.timeline.length) {
+    return sprite.numFrames;
+  }
+  return sprite.timeline.length;
+}
+
+/**
+ * Find the keyframe entry whose frame index is closest to (but not
+ * exceeding) the target playable frame.  Returns the keyframe's
+ * position inside the `timeline` array, or -1 if no suitable keyframe
+ * exists.
+ *
+ * Keyframes occupy indices `[numFrames .. timeline.length)` and each
+ * carries a complete display-list snapshot.  They correspond 1-to-1
+ * with the sprite's frame labels (sorted by label frame index).
+ */
+function findNearestKeyframeIndex(
+  sprite: SpriteDef,
+  targetPlayableFrame: number
+): number {
+  const numPlayable = getPlayableFrameCount(sprite);
+  const labels = Object.entries(sprite.frameLabels).sort(
+    (a, b) => a[1] - b[1]
+  );
+
+  // Keyframes start at timeline[numPlayable] and there should be one per label.
+  let bestTimelineIdx = -1;
+  for (let ki = 0; ki < labels.length; ki++) {
+    const labelFrame = labels[ki][1];
+    const timelineIdx = numPlayable + ki;
+    if (
+      timelineIdx < sprite.timeline.length &&
+      sprite.timeline[timelineIdx].isKeyframe &&
+      labelFrame <= targetPlayableFrame
+    ) {
+      bestTimelineIdx = timelineIdx;
+    }
+  }
+  return bestTimelineIdx;
+}
+
+export interface LabelSection {
+  label: string;
+  startFrame: number;
+  endFrame: number;
+}
+
+/**
+ * Build a list of labeled sections from a sprite definition.
+ * Each section spans from its label frame to the frame just before the
+ * next label (or to the last playable frame for the final section).
+ */
+export function getLabelSections(sprite: SpriteDef): LabelSection[] {
+  const numPlayable = getPlayableFrameCount(sprite);
+  if (numPlayable === 0) return [];
+
+  const entries = Object.entries(sprite.frameLabels).sort(
+    (a, b) => a[1] - b[1]
+  );
+  if (entries.length === 0) return [];
+
+  const sections: LabelSection[] = [];
+  for (let i = 0; i < entries.length; i++) {
+    const [label, startFrame] = entries[i];
+    const endFrame =
+      i < entries.length - 1
+        ? entries[i + 1][1] - 1
+        : numPlayable - 1;
+    sections.push({ label, startFrame, endFrame });
+  }
+  return sections;
+}
+
+/**
  * TimelinePlayer drives frame-by-frame playback of a sprite timeline.
- * Supports play / pause / stop / loop / scrub (deterministic rebuild).
+ * Supports play / pause / stop / loop / scrub (deterministic rebuild)
+ * and section-based playback for label-segmented UI animations.
  */
 export class TimelinePlayer {
   private resourceStore: ResourceStore;
@@ -25,6 +111,19 @@ export class TimelinePlayer {
   private onLog?: (msg: string) => void;
   private loop: boolean;
 
+  /**
+   * The number of playable frames (excludes trailing keyframes).
+   * All frame indices during playback are clamped to [0, playableCount).
+   */
+  private playableCount: number;
+
+  /**
+   * When set, playback is restricted to [sectionStart, sectionEnd]
+   * and loops (or stops) within that range.
+   */
+  private sectionStart = -1;
+  private sectionEnd = -1;
+
   constructor(
     resourceStore: ResourceStore,
     sprite: SpriteDef,
@@ -36,6 +135,7 @@ export class TimelinePlayer {
     this.resourceStore = resourceStore;
     this.sprite = sprite;
     this.scene = scene;
+    this.playableCount = getPlayableFrameCount(sprite);
     this.frameDurationMs =
       1000 / Math.max(1, resourceStore.getMeta().framerate || 30);
     this.onFrameChanged = onFrameChanged;
@@ -43,14 +143,19 @@ export class TimelinePlayer {
     this.loop = loop;
   }
 
+  // ---- Basic controls ----
+
   play(): void {
     if (this.playing) return;
-    const totalFrames = this.sprite.timeline.length;
-    if (!this.loop && totalFrames > 0 && this.frameIndex >= totalFrames - 1) {
-      this.frameIndex = 0;
-      this.scene.reset();
-      this.applyCurrentFrame();
+    const end = this.effectiveEnd();
+    if (end <= 0) return;
+
+    // If at the end, wrap around before starting
+    if (!this.loop && this.frameIndex >= end) {
+      this.frameIndex = this.effectiveStart();
+      this.rebuildToFrame(this.frameIndex);
     }
+
     this.playing = true;
     this.lastTime = performance.now();
     requestAnimationFrame(this.tick);
@@ -62,9 +167,8 @@ export class TimelinePlayer {
 
   stop(): void {
     this.playing = false;
-    this.frameIndex = 0;
-    this.scene.reset();
-    this.applyCurrentFrame();
+    this.frameIndex = this.effectiveStart();
+    this.rebuildToFrame(this.frameIndex);
   }
 
   isPlaying(): boolean {
@@ -95,53 +199,89 @@ export class TimelinePlayer {
     return this.scene;
   }
 
+  /**
+   * Returns the number of playable frames (excludes keyframes).
+   */
   getTotalFrames(): number {
-    return this.sprite.timeline.length;
+    return this.playableCount;
+  }
+
+  // ---- Section-based playback ----
+
+  /**
+   * Play a specific labeled section.  The player jumps to the section's
+   * start frame (using keyframe-accelerated scrub) and plays until the
+   * section's end frame (where a stop() action will normally halt it).
+   */
+  playSection(label: string): void {
+    const sections = getLabelSections(this.sprite);
+    const section = sections.find((s) => s.label === label);
+    if (!section) {
+      this.onLog?.(`Section "${label}" not found`);
+      return;
+    }
+
+    this.sectionStart = section.startFrame;
+    this.sectionEnd = section.endFrame;
+
+    // Scrub to start of section
+    this.rebuildToFrame(section.startFrame);
+    this.frameIndex = section.startFrame;
+
+    // Start playing
+    this.playing = true;
+    this.lastTime = performance.now();
+    requestAnimationFrame(this.tick);
   }
 
   /**
-   * Jump directly to a target frame index.
-   * Uses non-deterministic jump (just sets index and applies that single frame).
+   * Clear any active section restriction so playback covers the full
+   * range of playable frames.
+   */
+  clearSection(): void {
+    this.sectionStart = -1;
+    this.sectionEnd = -1;
+  }
+
+  getSectionStart(): number {
+    return this.sectionStart;
+  }
+
+  getSectionEnd(): number {
+    return this.sectionEnd;
+  }
+
+  // ---- Scrub / step ----
+
+  /**
+   * Jump directly to a target frame index (non-deterministic).
    */
   goToFrame(targetIndex: number): void {
-    const totalFrames = this.sprite.timeline.length;
-    if (totalFrames === 0) return;
-    this.frameIndex =
-      ((Math.floor(targetIndex) % totalFrames) + totalFrames) % totalFrames;
+    if (this.playableCount === 0) return;
+    this.frameIndex = this.clampFrame(targetIndex);
     this.applyCurrentFrame();
   }
 
   /**
-   * Deterministic rebuild: reset scene and replay frames 0..targetIndex
-   * to guarantee the display list state is identical to what it would be
-   * during sequential playback.
+   * Deterministic rebuild: reset scene and replay frames 0..targetIndex.
+   * Uses the nearest keyframe as a starting point for efficiency.
    */
   scrubToFrame(targetIndex: number): void {
-    const totalFrames = this.sprite.timeline.length;
-    if (totalFrames === 0) return;
-    const normalized =
-      ((Math.floor(targetIndex) % totalFrames) + totalFrames) % totalFrames;
-
-    this.scene.reset();
-    for (let i = 0; i <= normalized; i++) {
-      this.scene.applyFrame(this.resourceStore, this.sprite.timeline[i]);
-    }
-    this.frameIndex = normalized;
-
-    const frame = this.getCurrentFrame();
-    this.onFrameChanged?.(frame, this.scene, this.frameIndex);
+    if (this.playableCount === 0) return;
+    const clamped = this.clampFrame(targetIndex);
+    this.rebuildToFrame(clamped);
   }
 
   /**
    * Step forward by one frame.
    */
   stepForward(): void {
-    const totalFrames = this.sprite.timeline.length;
-    if (totalFrames === 0) return;
-    if (this.frameIndex < totalFrames - 1) {
+    if (this.playableCount === 0) return;
+    const end = this.effectiveEnd();
+    if (this.frameIndex < end) {
       this.frameIndex += 1;
     } else if (this.loop) {
-      this.frameIndex = 0;
+      this.frameIndex = this.effectiveStart();
       this.scene.reset();
     }
     this.applyCurrentFrame();
@@ -151,14 +291,77 @@ export class TimelinePlayer {
    * Step backward by one frame (deterministic rebuild).
    */
   stepBackward(): void {
-    const totalFrames = this.sprite.timeline.length;
-    if (totalFrames === 0) return;
-    if (this.frameIndex > 0) {
-      this.scrubToFrame(this.frameIndex - 1);
+    if (this.playableCount === 0) return;
+    const start = this.effectiveStart();
+    if (this.frameIndex > start) {
+      this.rebuildToFrame(this.frameIndex - 1);
     } else if (this.loop) {
-      this.scrubToFrame(totalFrames - 1);
+      this.rebuildToFrame(this.effectiveEnd());
     }
   }
+
+  // ---- Internal helpers ----
+
+  private effectiveStart(): number {
+    return this.sectionStart >= 0 ? this.sectionStart : 0;
+  }
+
+  private effectiveEnd(): number {
+    if (this.sectionEnd >= 0 && this.sectionEnd < this.playableCount) {
+      return this.sectionEnd;
+    }
+    return this.playableCount - 1;
+  }
+
+  private clampFrame(index: number): number {
+    const n = Math.floor(index);
+    if (n < 0) return 0;
+    if (n >= this.playableCount) return this.playableCount - 1;
+    return n;
+  }
+
+  /**
+   * Deterministic rebuild to a specific playable frame.
+   * Tries to start from the nearest keyframe for performance,
+   * falling back to replaying from frame 0.
+   */
+  private rebuildToFrame(target: number): void {
+    const clamped = this.clampFrame(target);
+
+    // Try keyframe-accelerated rebuild
+    const kfIdx = findNearestKeyframeIndex(this.sprite, clamped);
+
+    if (kfIdx >= 0) {
+      // Apply the keyframe snapshot (it contains a full display list)
+      const kfFrame = this.sprite.timeline[kfIdx];
+      this.scene.reset();
+      this.scene.applyFrame(this.resourceStore, kfFrame);
+
+      // Determine which playable frame the keyframe corresponds to.
+      // Keyframes are in order matching sorted labels.
+      const labels = Object.entries(this.sprite.frameLabels).sort(
+        (a, b) => a[1] - b[1]
+      );
+      const kfPlayableFrame = labels[kfIdx - this.playableCount]?.[1] ?? 0;
+
+      // Replay remaining frames from keyframe's label frame to the target
+      for (let i = kfPlayableFrame + 1; i <= clamped; i++) {
+        this.scene.applyFrame(this.resourceStore, this.sprite.timeline[i]);
+      }
+    } else {
+      // No suitable keyframe: full replay from frame 0
+      this.scene.reset();
+      for (let i = 0; i <= clamped; i++) {
+        this.scene.applyFrame(this.resourceStore, this.sprite.timeline[i]);
+      }
+    }
+
+    this.frameIndex = clamped;
+    const frame = this.getCurrentFrame();
+    this.onFrameChanged?.(frame, this.scene, this.frameIndex);
+  }
+
+  // ---- Playback tick ----
 
   private tick = (now: number): void => {
     if (!this.playing) return;
@@ -168,16 +371,26 @@ export class TimelinePlayer {
       const framesToAdvance = Math.floor(delta / this.frameDurationMs);
       this.lastTime = now;
 
-      const totalFrames = this.sprite.timeline.length;
-      if (totalFrames > 0) {
+      if (this.playableCount > 0) {
         let remaining = framesToAdvance;
         let advanced = 0;
+        const end = this.effectiveEnd();
+        const start = this.effectiveStart();
 
         while (remaining > 0 && this.playing) {
-          if (this.frameIndex >= totalFrames - 1) {
+          if (this.frameIndex >= end) {
             if (this.loop) {
-              this.frameIndex = 0;
+              this.frameIndex = start;
               this.scene.reset();
+              // Rebuild to start if not frame 0
+              if (start > 0) {
+                for (let i = 0; i <= start; i++) {
+                  this.scene.applyFrame(
+                    this.resourceStore,
+                    this.sprite.timeline[i]
+                  );
+                }
+              }
             } else {
               this.playing = false;
               break;
@@ -225,11 +438,8 @@ export class TimelinePlayer {
         }
 
         if (result.jumpToFrame !== undefined) {
-          const totalFrames = this.sprite.timeline.length;
-          if (totalFrames > 0) {
-            this.frameIndex =
-              ((Math.floor(result.jumpToFrame) % totalFrames) + totalFrames) %
-              totalFrames;
+          if (this.playableCount > 0) {
+            this.frameIndex = this.clampFrame(result.jumpToFrame);
             this.applyCurrentFrame(recursionDepth + 1);
             return;
           }
