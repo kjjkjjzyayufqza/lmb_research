@@ -9,6 +9,7 @@ import {
   type ColorRgba,
   type TransformMatrix,
   type PlaceObjectAction,
+  type ActionScriptEntry,
   IDENTITY_TRANSFORM,
 } from "./types";
 
@@ -25,6 +26,7 @@ export class ResourceStore {
   private textByCharacterId = new Map<number, TextDef>();
   private boundsById = new Map<number, BoundsDef>();
   private buttonByCharacterId = new Map<number, ButtonDef>();
+  private actionScriptsByIndex = new Map<number, ActionScriptEntry>();
 
   constructor(json: LmbJson) {
     this.json = json;
@@ -58,6 +60,12 @@ export class ResourceStore {
     }
     for (const b of this.json.resources.bounds) {
       this.boundsById.set(b.id, b);
+    }
+    this.actionScriptsByIndex.clear();
+    if (this.json.actionScripts) {
+      for (const entry of this.json.actionScripts) {
+        this.actionScriptsByIndex.set(entry.actionId, entry);
+      }
     }
   }
 
@@ -137,5 +145,21 @@ export class ResourceStore {
     const pos = this.json.resources.positions[posId];
     if (pos) return { a: 1, b: 0, c: 0, d: 1, x: pos.x, y: pos.y };
     return { ...IDENTITY_TRANSFORM };
+  }
+
+  /**
+   * Get the bytecodes for a given action ID.
+   * Returns undefined if no action_script data or action not found.
+   */
+  getActionBytecodes(actionId: number): number[] | undefined {
+    return this.actionScriptsByIndex.get(actionId)?.bytecodes;
+  }
+
+  /**
+   * Get the symbol string by index.
+   */
+  getSymbolById(id: number): string | undefined {
+    const sym = this.json.resources.symbols[id];
+    return sym?.value;
   }
 }

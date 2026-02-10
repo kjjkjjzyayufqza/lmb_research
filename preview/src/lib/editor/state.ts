@@ -21,7 +21,7 @@ export interface EditorState {
   loop: boolean;
 
   // Selection
-  selectedDepth: number | null;
+  selectedPlacementId: number | null;
   selectedTab: "instance" | "frame" | "resources" | "export";
 
   // History
@@ -46,7 +46,7 @@ export const initialEditorState: EditorState = {
   frameIndex: 0,
   playing: false,
   loop: false,
-  selectedDepth: null,
+  selectedPlacementId: null,
   selectedTab: "instance",
   undoStack: [],
   redoStack: [],
@@ -68,7 +68,7 @@ export type EditorAction =
   | { type: "SET_FRAME_INDEX"; frameIndex: number }
   | { type: "SET_PLAYING"; playing: boolean }
   | { type: "SET_LOOP"; loop: boolean }
-  | { type: "SELECT_DEPTH"; depth: number | null }
+  | { type: "SELECT_INSTANCE"; placementId: number | null }
   | { type: "SELECT_TAB"; tab: EditorState["selectedTab"] }
   | { type: "EXECUTE_COMMAND"; command: EditorCommand }
   | { type: "UNDO" }
@@ -112,7 +112,7 @@ export function editorReducer(
         frameIndex: 0,
         currentSprite: sprite,
         currentFrame: sprite?.timeline[0] ?? null,
-        selectedDepth: null,
+        selectedPlacementId: null,
       };
     }
 
@@ -132,8 +132,8 @@ export function editorReducer(
     case "SET_LOOP":
       return { ...state, loop: action.loop };
 
-    case "SELECT_DEPTH":
-      return { ...state, selectedDepth: action.depth };
+    case "SELECT_INSTANCE":
+      return { ...state, selectedPlacementId: action.placementId };
 
     case "SELECT_TAB":
       return { ...state, selectedTab: action.tab };

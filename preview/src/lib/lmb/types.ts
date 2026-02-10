@@ -150,11 +150,18 @@ export interface TimelineDef {
   rootSpriteId: number;
 }
 
+export interface ActionScriptEntry {
+  actionId: number;
+  byteLength: number;
+  bytecodes: number[];
+}
+
 export interface LmbJson {
   meta: MetaDef;
   resources: ResourcesDef;
   definitions: DefinitionsDef;
   timeline: TimelineDef;
+  actionScripts?: ActionScriptEntry[];
 }
 
 // ============================================================

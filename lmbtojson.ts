@@ -1,6 +1,7 @@
 import { createRequire } from 'module';
 import * as fs from 'fs';
 import * as path from 'path';
+import { decodeLmbAst, type LmbAst } from './lmbast';
 
 const require = createRequire(import.meta.url);
 
@@ -45,10 +46,18 @@ if (!Lmb) {
 // --- Type Definitions ---
 
 export interface LmbJson {
+    ast: import('./lmbast').LmbAst;
     meta: Meta;
     resources: Resources;
     definitions: Definitions;
     timeline: Timeline;
+    actionScripts: ActionScriptEntry[];
+}
+
+export interface ActionScriptEntry {
+    actionId: number;
+    byteLength: number;
+    bytecodes: number[];    // raw bytes
 }
 
 export interface Meta {
@@ -218,7 +227,7 @@ export interface Timeline {
 
 // --- Conversion Logic ---
 
-function lmbToJson(lmb: any): LmbJson {
+function lmbToJson(lmb: any, ast: LmbAst): LmbJson {
     const root = lmb.lmb;
 
     // 1. Meta
@@ -379,11 +388,45 @@ function lmbToJson(lmb: any): LmbJson {
         rootSpriteId: entryCharacterId
     };
 
+    // --- Extract action_script bytecodes ---
+    const actionScripts: ActionScriptEntry[] = [];
+    for (const tag of ast.tags) {
+        if (tag.kind === 'actionScript') {
+            const words: number[] = tag.data.bytecodeWords;
+            // Convert u32 words to LE byte array
+            const bytes: number[] = [];
+            for (const w of words) {
+                bytes.push(w & 0xFF, (w >> 8) & 0xFF, (w >> 16) & 0xFF, (w >> 24) & 0xFF);
+            }
+            // Parse: [num_actions: u32] then for each: [byteLength: u32][bytecodes padded to 4]
+            let offset = 0;
+            const numActions = bytes[offset] | (bytes[offset + 1] << 8)
+                             | (bytes[offset + 2] << 16) | (bytes[offset + 3] << 24);
+            offset += 4;
+            for (let i = 0; i < numActions; i++) {
+                if (offset + 4 > bytes.length) break;
+                const byteLen = bytes[offset] | (bytes[offset + 1] << 8)
+                              | (bytes[offset + 2] << 16) | (bytes[offset + 3] << 24);
+                offset += 4;
+                const padded = Math.ceil(byteLen / 4) * 4;
+                const bc = bytes.slice(offset, offset + byteLen);
+                offset += padded;
+                actionScripts.push({
+                    actionId: i,
+                    byteLength: byteLen,
+                    bytecodes: bc,
+                });
+            }
+        }
+    }
+
     return {
+        ast,
         meta,
         resources,
         definitions,
-        timeline
+        timeline,
+        actionScripts,
     };
 }
 
@@ -503,10 +546,10 @@ function processSpriteTimeline(children: any[], sprite: SpriteDef) {
             // We can add it to sprite.frameLabels map.
             // We need the label string, but we don't have symbols here. 
             // We'll store the nameId in the map keys for now as string "ID:<id>" or handle name resolution later?
-            // Better: let's pass resources or just store raw for now and fix up later.
+            // Better: pass resources or store the symbol ID and resolve later.
             // Actually, let's store it as `frameLabels: { [frameIndex]: nameId }` temporarily? 
             // The interface says `[label: string]: number`.
-            // We'll assume we can resolve it later or just store raw ID if needed.
+            // We'll assume we can resolve it later or store the numeric ID if needed.
             // Wait, looking at `processDefinesChildren`, I didn't pass `resources` to `processSpriteTimeline`.
             // Let's fix that in next edit. For now, let's just record what we can.
             
@@ -587,6 +630,11 @@ const argv = (globalAny.Bun && Array.isArray(globalAny.Bun.argv))
         : []);
 
 const inputPath = argv[0];
+if (!inputPath) {
+    console.error('Usage: bun lmbtojson.ts <input.lmb>');
+    process.exit(1);
+}
+
 const resolvedInputPath = path.resolve(inputPath);
 const outputPath = path.join(
     path.dirname(resolvedInputPath),
@@ -596,11 +644,12 @@ const outputPath = path.join(
 if (fs.existsSync(resolvedInputPath)) {
     console.log(`Reading ${resolvedInputPath}...`);
     const buffer = fs.readFileSync(resolvedInputPath);
+    const ast = decodeLmbAst(buffer);
     const lmb = new Lmb(new KaitaiStream(buffer));
 
     console.log('Converting to JSON...');
     try {
-        const json = lmbToJson(lmb);
+        const json = lmbToJson(lmb, ast);
 
         // Post-process to resolve frame labels if possible
         json.definitions.sprites.forEach(spr => {
@@ -642,4 +691,3 @@ if (fs.existsSync(resolvedInputPath)) {
 } else {
     console.error(`Input file not found: ${resolvedInputPath}`);
 }
-

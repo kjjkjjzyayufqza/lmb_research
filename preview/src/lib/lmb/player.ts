@@ -257,9 +257,8 @@ export class TimelinePlayer {
    * Jump directly to a target frame index (non-deterministic).
    */
   goToFrame(targetIndex: number): void {
-    if (this.playableCount === 0) return;
-    this.frameIndex = this.clampFrame(targetIndex);
-    this.applyCurrentFrame();
+    // For engine-like behavior, jumping should rebuild state from the nearest keyframe.
+    this.scrubToFrame(targetIndex);
   }
 
   /**
@@ -269,7 +268,7 @@ export class TimelinePlayer {
   scrubToFrame(targetIndex: number): void {
     if (this.playableCount === 0) return;
     const clamped = this.clampFrame(targetIndex);
-    this.rebuildToFrame(clamped);
+    this.rebuildToFrame(clamped, true);
   }
 
   /**
@@ -278,12 +277,17 @@ export class TimelinePlayer {
   stepForward(): void {
     if (this.playableCount === 0) return;
     const end = this.effectiveEnd();
-    if (this.frameIndex < end) {
-      this.frameIndex += 1;
-    } else if (this.loop) {
-      this.frameIndex = this.effectiveStart();
-      this.scene.reset();
+    const start = this.effectiveStart();
+
+    if (this.frameIndex >= end) {
+      if (this.loop) {
+        this.rebuildToFrame(start, true);
+      }
+      return;
     }
+
+    this.scene.advanceNestedSprites(this.resourceStore, 1);
+    this.frameIndex += 1;
     this.applyCurrentFrame();
   }
 
@@ -325,7 +329,7 @@ export class TimelinePlayer {
    * Tries to start from the nearest keyframe for performance,
    * falling back to replaying from frame 0.
    */
-  private rebuildToFrame(target: number): void {
+  private rebuildToFrame(target: number, notify: boolean = true): void {
     const clamped = this.clampFrame(target);
 
     // Try keyframe-accelerated rebuild
@@ -344,21 +348,28 @@ export class TimelinePlayer {
       );
       const kfPlayableFrame = labels[kfIdx - this.playableCount]?.[1] ?? 0;
 
-      // Replay remaining frames from keyframe's label frame to the target
+      // Replay remaining frames from keyframe's label frame to the target.
+      // Nested sprites advance once per root frame step (approximate engine tick).
       for (let i = kfPlayableFrame + 1; i <= clamped; i++) {
+        this.scene.advanceNestedSprites(this.resourceStore, 1);
         this.scene.applyFrame(this.resourceStore, this.sprite.timeline[i]);
       }
     } else {
       // No suitable keyframe: full replay from frame 0
       this.scene.reset();
       for (let i = 0; i <= clamped; i++) {
+        if (i > 0) {
+          this.scene.advanceNestedSprites(this.resourceStore, 1);
+        }
         this.scene.applyFrame(this.resourceStore, this.sprite.timeline[i]);
       }
     }
 
     this.frameIndex = clamped;
-    const frame = this.getCurrentFrame();
-    this.onFrameChanged?.(frame, this.scene, this.frameIndex);
+    if (notify) {
+      const frame = this.getCurrentFrame();
+      this.onFrameChanged?.(frame, this.scene, this.frameIndex);
+    }
   }
 
   // ---- Playback tick ----
@@ -380,22 +391,18 @@ export class TimelinePlayer {
         while (remaining > 0 && this.playing) {
           if (this.frameIndex >= end) {
             if (this.loop) {
-              this.frameIndex = start;
-              this.scene.reset();
-              // Rebuild to start if not frame 0
-              if (start > 0) {
-                for (let i = 0; i <= start; i++) {
-                  this.scene.applyFrame(
-                    this.resourceStore,
-                    this.sprite.timeline[i]
-                  );
-                }
-              }
+              // Looping behaves like a goto(start): deterministic rebuild from keyframe.
+              this.rebuildToFrame(start, true);
+              remaining -= 1;
+              advanced += 1;
+              continue;
             } else {
               this.playing = false;
               break;
             }
           } else {
+            // Nested sprites advance once per root frame step, before applying the new frame.
+            this.scene.advanceNestedSprites(this.resourceStore, 1);
             this.frameIndex += 1;
           }
           this.applyCurrentFrame();
@@ -403,9 +410,7 @@ export class TimelinePlayer {
           advanced += 1;
         }
 
-        if (advanced > 0) {
-          this.scene.advanceNestedSprites(this.resourceStore, advanced);
-        }
+        // Nested sprites already advanced per frame step above.
       }
     }
 
@@ -416,33 +421,71 @@ export class TimelinePlayer {
 
   private applyCurrentFrame(recursionDepth = 0): void {
     if (recursionDepth > 5) {
-      this.onLog?.(
-        "Max recursion depth reached in applyCurrentFrame. Stopping."
-      );
+      this.onLog?.("Max recursion depth reached in applyCurrentFrame. Stopping.");
       this.playing = false;
       return;
     }
 
     const frame = this.getCurrentFrame();
     if (!frame) return;
+
+    // Apply display list ops for this frame (state is cumulative across frames).
     this.scene.applyFrame(this.resourceStore, frame);
 
-    // Execute frame actions
+    // Execute actions. GOTO is handled via deterministic rebuild (keyframe-based),
+    // matching engine behavior more closely than "apply on top".
     if (frame.actions.length > 0) {
       for (const action of frame.actions) {
-        const result = ActionInterpreter.execute(action, this.sprite);
+        const result = ActionInterpreter.execute(action, this.sprite, this.resourceStore);
         if (result.log) this.onLog?.(result.log);
 
         if (result.playing !== undefined) {
           this.playing = result.playing;
         }
 
-        if (result.jumpToFrame !== undefined) {
-          if (this.playableCount > 0) {
-            this.frameIndex = this.clampFrame(result.jumpToFrame);
-            this.applyCurrentFrame(recursionDepth + 1);
-            return;
-          }
+        if (result.jumpToFrame !== undefined && this.playableCount > 0) {
+          const target = this.clampFrame(result.jumpToFrame);
+          this.rebuildToFrame(target, false);
+
+          // After jumping, execute actions on the target frame as well.
+          // We do not re-apply the target frame's display list here because rebuild already did.
+          this.applyActionsOnly(recursionDepth + 1);
+          return;
+        }
+      }
+    }
+
+    this.onFrameChanged?.(frame, this.scene, this.frameIndex);
+  }
+
+  /**
+   * Execute actions for the current frame without re-applying display list ops.
+   * This is used after deterministic rebuild jumps.
+   */
+  private applyActionsOnly(recursionDepth: number): void {
+    if (recursionDepth > 5) {
+      this.onLog?.("Max recursion depth reached in applyActionsOnly. Stopping.");
+      this.playing = false;
+      return;
+    }
+
+    const frame = this.getCurrentFrame();
+    if (!frame) return;
+
+    if (frame.actions.length > 0) {
+      for (const action of frame.actions) {
+        const result = ActionInterpreter.execute(action, this.sprite, this.resourceStore);
+        if (result.log) this.onLog?.(result.log);
+
+        if (result.playing !== undefined) {
+          this.playing = result.playing;
+        }
+
+        if (result.jumpToFrame !== undefined && this.playableCount > 0) {
+          const target = this.clampFrame(result.jumpToFrame);
+          this.rebuildToFrame(target, false);
+          this.applyActionsOnly(recursionDepth + 1);
+          return;
         }
       }
     }

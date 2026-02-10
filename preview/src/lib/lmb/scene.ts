@@ -35,12 +35,20 @@ export class Scene {
 
     // 2. Handle display list (place / move)
     for (const po of frame.displayList) {
-      const isMove = po.placementMode === "move" || po.placementMode === "MOVE";
+      const mode = String(po.placementMode || "").toLowerCase();
+      const isPlace = mode === "place";
+      const isMove = mode === "move";
       const existing = this.instances.get(po.depth);
       const sprite = resourceStore.getSpriteById(po.characterId);
 
-      if (isMove && existing && existing.characterId === po.characterId) {
-        // MOVE: update properties of existing instance
+      // Engine behavior summary (from reverse-engineering):
+      // - place: reuse instance if character matches, otherwise replace
+      // - move: carry over previous instance state, then override fields present in this tag
+      const canReuse =
+        existing != null && existing.characterId === po.characterId && (isPlace || isMove);
+
+      if (canReuse) {
+        // Reuse: update only fields that are explicitly present.
         if (po.positionFlags !== 0xffff) {
           existing.transform = resourceStore.getTransformFromPlaceObject(po);
         }
@@ -54,57 +62,80 @@ export class Scene {
           existing.blendMode = po.blendMode;
         }
         this.instances.set(po.depth, existing);
-      } else {
-        // PLACE: create new instance (or replace existing)
-        let childScene: Scene | undefined;
-
-        if (sprite) {
-          let nested = this.nestedSpriteInstances.get(po.placementId);
-          if (!nested || nested.sprite.characterId !== sprite.characterId) {
-            nested = {
-              placementId: po.placementId,
-              characterId: po.characterId,
-              sprite,
-              scene: new Scene(),
-              frameIndex: 0,
-            };
-            this.nestedSpriteInstances.set(po.placementId, nested);
-            if (sprite.timeline.length > 0) {
-              nested.scene.applyFrame(resourceStore, sprite.timeline[0]);
-            }
-          }
-          childScene = nested.scene;
-        }
-
-        const transform = resourceStore.getTransformFromPlaceObject(po);
-        const colorMult = resourceStore.getColorById(po.colorMultId);
-        const colorAdd = resourceStore.getColorById(po.colorAddId);
-        const graphic = !sprite
-          ? resourceStore.getGraphicForCharacter(po.characterId)
-          : undefined;
-        const text = !sprite && !graphic
-          ? resourceStore.getTextForCharacter(po.characterId)
-          : undefined;
-
-        // Use boundsId from the sprite definition when available,
-        // otherwise fall back to the characterId (for non-sprite placements).
-        const boundsId = sprite ? sprite.boundsId : po.characterId;
-        const bounds = resourceStore.getBoundsById(boundsId);
-
-        this.instances.set(po.depth, {
-          placementId: po.placementId,
-          characterId: po.characterId,
-          depth: po.depth,
-          transform,
-          colorMult,
-          colorAdd,
-          blendMode: po.blendMode,
-          graphic,
-          text,
-          bounds,
-          childScene,
-        });
+        continue;
       }
+
+      // Replace or place a new instance.
+      // If this is MOVE over an existing instance with a different character,
+      // approximate the engine's "carryover then override" by seeding defaults
+      // from the previous instance when the tag indicates "no change".
+      const seedFromExisting = isMove && existing != null;
+      const seededTransform =
+        seedFromExisting && po.positionFlags === 0xffff
+          ? existing.transform
+          : resourceStore.getTransformFromPlaceObject(po);
+      const seededColorMult =
+        seedFromExisting && po.colorMultId === -1
+          ? existing.colorMult
+          : resourceStore.getColorById(po.colorMultId);
+      const seededColorAdd =
+        seedFromExisting && po.colorAddId === -1
+          ? existing.colorAdd
+          : resourceStore.getColorById(po.colorAddId);
+      const seededBlendMode =
+        seedFromExisting &&
+        (!po.blendMode || po.blendMode === "UNKNOWN")
+          ? existing.blendMode
+          : po.blendMode;
+
+      // If we are replacing an old instance, clean up nested sprite tracking.
+      if (existing) {
+        if (this.nestedSpriteInstances.has(existing.placementId)) {
+          this.nestedSpriteInstances.delete(existing.placementId);
+        }
+      }
+
+      let childScene: Scene | undefined;
+      if (sprite) {
+        let nested = this.nestedSpriteInstances.get(po.placementId);
+        if (!nested || nested.sprite.characterId !== sprite.characterId) {
+          nested = {
+            placementId: po.placementId,
+            characterId: po.characterId,
+            sprite,
+            scene: new Scene(),
+            frameIndex: 0,
+          };
+          this.nestedSpriteInstances.set(po.placementId, nested);
+          if (sprite.timeline.length > 0) {
+            nested.scene.applyFrame(resourceStore, sprite.timeline[0]);
+          }
+        }
+        childScene = nested.scene;
+      }
+
+      const graphic = !sprite
+        ? resourceStore.getGraphicForCharacter(po.characterId)
+        : undefined;
+      const text = !sprite && !graphic
+        ? resourceStore.getTextForCharacter(po.characterId)
+        : undefined;
+      const boundsId = sprite ? sprite.boundsId : po.characterId;
+      const bounds = resourceStore.getBoundsById(boundsId);
+
+      this.instances.set(po.depth, {
+        placementId: po.placementId,
+        characterId: po.characterId,
+        depth: po.depth,
+        transform: seededTransform,
+        colorMult: seededColorMult,
+        colorAdd: seededColorAdd,
+        blendMode: seededBlendMode,
+        graphic,
+        text,
+        bounds,
+        childScene,
+      });
     }
   }
 
@@ -148,18 +179,26 @@ export class Scene {
         // Process actions for this nested frame
         if (frame.actions.length > 0) {
           for (const action of frame.actions) {
-            const result = ActionInterpreter.execute(action, nested.sprite);
+            const result = ActionInterpreter.execute(action, nested.sprite, resourceStore);
             if (result.playing === false) {
               nested.stopped = true;
               remaining = 0;
               break;
             }
+            if (result.playing === true) {
+              nested.stopped = false;
+            }
             if (result.jumpToFrame !== undefined) {
               const target = Math.max(0, Math.min(result.jumpToFrame, playable - 1));
               nested.frameIndex = target;
-              // Re-apply the jumped-to frame
-              const jumpedFrame = nested.sprite.timeline[target];
-              nested.scene.applyFrame(resourceStore, jumpedFrame);
+              // Re-apply the jumped-to frame via scene reset + replay for deterministic state
+              nested.scene.reset();
+              for (let fi = 0; fi <= target; fi++) {
+                if (fi > 0) {
+                  nested.scene.advanceNestedSprites(resourceStore, 1);
+                }
+                nested.scene.applyFrame(resourceStore, nested.sprite.timeline[fi]);
+              }
             }
           }
         }
@@ -176,17 +215,17 @@ export class Scene {
    */
   getInstancesSorted(): DisplayInstance[] {
     const result: DisplayInstance[] = [];
-    for (const inst of this.instances.values()) {
+    const roots = [...this.instances.values()].sort((a, b) => a.depth - b.depth);
+    for (const inst of roots) {
       this.collectInstancesRecursive(
         inst,
         IDENTITY_TRANSFORM,
         undefined,
         undefined,
-        inst.depth,
         result
       );
     }
-    return result.sort((a, b) => a.depth - b.depth);
+    return result;
   }
 
   /**
@@ -201,7 +240,6 @@ export class Scene {
     parentTransform: TransformMatrix,
     parentColorMult: ColorRgba | undefined,
     parentColorAdd: ColorRgba | undefined,
-    baseDepth: number,
     output: DisplayInstance[]
   ): void {
     const worldTransform = multiplyTransforms(parentTransform, instance.transform);
@@ -212,7 +250,7 @@ export class Scene {
       output.push({
         placementId: instance.placementId,
         characterId: instance.characterId,
-        depth: baseDepth,
+        depth: instance.depth,
         transform: worldTransform,
         colorMult: worldColorMult,
         colorAdd: worldColorAdd,
@@ -226,14 +264,15 @@ export class Scene {
     const childScene = instance.childScene;
     if (!childScene) return;
 
-    for (const child of childScene.instances.values()) {
-      const childDepth = baseDepth * 1000 + child.depth;
+    const children = [...childScene.instances.values()].sort(
+      (a, b) => a.depth - b.depth
+    );
+    for (const child of children) {
       this.collectInstancesRecursive(
         child as DisplayInstance & { childScene?: Scene },
         worldTransform,
         worldColorMult,
         worldColorAdd,
-        childDepth,
         output
       );
     }

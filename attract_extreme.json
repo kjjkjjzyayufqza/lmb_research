@@ -1,4 +1,5328 @@
 {
+  "ast": {
+    "header": {
+      "textureId": 16,
+      "resourceId": 268501504,
+      "xmdPaddingU32": 0,
+      "numPadding": 2,
+      "unknown4": 0,
+      "unknown5": 0,
+      "paddingWords": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "tags": [
+      {
+        "tagType": 61441,
+        "offset": 0,
+        "words": [
+          9,
+          0,
+          0,
+          3,
+          6712684,
+          1,
+          57,
+          14,
+          1769238350,
+          1298097507,
+          1600480367,
+          25453,
+          5,
+          1918989395,
+          116,
+          3,
+          6581829,
+          10,
+          1920234593,
+          1601463137,
+          25453,
+          18,
+          1920235621,
+          1600482661,
+          1702060386,
+          1882092383,
+          26478,
+          19,
+          1920235621,
+          1600482661,
+          1819568500,
+          779312997,
+          6778480
+        ],
+        "kind": "symbols",
+        "data": {
+          "values": [
+            "",
+            "",
+            "lmf",
+            "9",
+            "Notice_Mode_mc",
+            "Start",
+            "End",
+            "attract_mc",
+            "extreme_base_s.png"
+          ]
+        },
+        "children": []
+      },
+      {
+        "tagType": 61442,
+        "offset": 0,
+        "words": [
+          10,
+          16777472,
+          16777472,
+          0,
+          0,
+          16777472,
+          256,
+          16777472,
+          2818304,
+          16777472,
+          5570816,
+          16777472,
+          8388864,
+          16777472,
+          11206912,
+          16777472,
+          13959424,
+          16777472,
+          12583168,
+          16777472,
+          4194560
+        ],
+        "kind": "colors",
+        "data": {
+          "values": [
+            {
+              "r": 256,
+              "g": 256,
+              "b": 256,
+              "a": 256
+            },
+            {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            {
+              "r": 256,
+              "g": 256,
+              "b": 256,
+              "a": 0
+            },
+            {
+              "r": 256,
+              "g": 256,
+              "b": 256,
+              "a": 43
+            },
+            {
+              "r": 256,
+              "g": 256,
+              "b": 256,
+              "a": 85
+            },
+            {
+              "r": 256,
+              "g": 256,
+              "b": 256,
+              "a": 128
+            },
+            {
+              "r": 256,
+              "g": 256,
+              "b": 256,
+              "a": 171
+            },
+            {
+              "r": 256,
+              "g": 256,
+              "b": 256,
+              "a": 213
+            },
+            {
+              "r": 256,
+              "g": 256,
+              "b": 256,
+              "a": 192
+            },
+            {
+              "r": 256,
+              "g": 256,
+              "b": 256,
+              "a": 64
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "tagType": 61443,
+        "offset": 0,
+        "words": [
+          0
+        ],
+        "kind": "transforms",
+        "data": {
+          "values": []
+        },
+        "children": []
+      },
+      {
+        "tagType": 61699,
+        "offset": 0,
+        "words": [
+          58,
+          0,
+          0,
+          0,
+          3225419776,
+          1110179840,
+          1105199104,
+          1144422400,
+          3225419776,
+          1143502438,
+          3225419776,
+          1142582477,
+          3225419776,
+          1141662515,
+          3225419776,
+          1140634419,
+          3225419776,
+          1138794496,
+          3225419776,
+          1136954573,
+          3225419776,
+          1135113011,
+          3225419776,
+          1133273088,
+          3225419776,
+          1130404250,
+          3225419776,
+          1126724403,
+          3225419776,
+          1122015642,
+          3225419776,
+          1113627034,
+          3225419776,
+          1115422720,
+          1105199104,
+          1114544538,
+          1105199104,
+          1113679462,
+          1105199104,
+          1112801280,
+          1105199104,
+          1111923098,
+          1105199104,
+          1111058022,
+          1105199104,
+          1111490560,
+          1105199104,
+          1114112000,
+          1105199104,
+          1123241165,
+          3225419776,
+          1131633050,
+          3225419776,
+          1136033792,
+          3225419776,
+          1140020019,
+          3225419776,
+          1142429286,
+          3225419776,
+          1151795200,
+          1146748928,
+          1151795200,
+          1146699776,
+          1152147456,
+          1147207680,
+          1157701632,
+          1146699776,
+          1157315379,
+          1146699776,
+          1156855398,
+          1146699776,
+          1156395418,
+          1146699776,
+          1155935437,
+          1146699776,
+          1155475456,
+          1146699776,
+          1155015475,
+          1146699776,
+          1154555085,
+          1146699776,
+          1154095104,
+          1146699776,
+          1153635123,
+          1146699776,
+          1153175142,
+          1146699776,
+          1152715162,
+          1146699776,
+          1152255181,
+          1146699776,
+          1152311296,
+          1147207680,
+          1152283853,
+          1147207680,
+          1152256819,
+          1147207680,
+          1152229376,
+          1147207680,
+          1152201933,
+          1147207680,
+          1152174899,
+          1147207680,
+          1152188416,
+          1147207680,
+          1152270336,
+          1147207680,
+          1152791757,
+          1146699776,
+          1153788723,
+          1146699776,
+          1154785280,
+          1146699776,
+          1155781837,
+          1146699776,
+          1156778803,
+          1146699776
+        ],
+        "kind": "positions",
+        "data": {
+          "values": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 0,
+              "y": -3
+            },
+            {
+              "x": 43,
+              "y": 28
+            },
+            {
+              "x": 730,
+              "y": -3
+            },
+            {
+              "x": 673.8499755859375,
+              "y": -3
+            },
+            {
+              "x": 617.7000122070312,
+              "y": -3
+            },
+            {
+              "x": 561.5499877929688,
+              "y": -3
+            },
+            {
+              "x": 505.3999938964844,
+              "y": -3
+            },
+            {
+              "x": 449.25,
+              "y": -3
+            },
+            {
+              "x": 393.1000061035156,
+              "y": -3
+            },
+            {
+              "x": 336.8999938964844,
+              "y": -3
+            },
+            {
+              "x": 280.75,
+              "y": -3
+            },
+            {
+              "x": 224.60000610351562,
+              "y": -3
+            },
+            {
+              "x": 168.4499969482422,
+              "y": -3
+            },
+            {
+              "x": 112.30000305175781,
+              "y": -3
+            },
+            {
+              "x": 56.150001525878906,
+              "y": -3
+            },
+            {
+              "x": 63,
+              "y": 28
+            },
+            {
+              "x": 59.650001525878906,
+              "y": 28
+            },
+            {
+              "x": 56.349998474121094,
+              "y": 28
+            },
+            {
+              "x": 53,
+              "y": 28
+            },
+            {
+              "x": 49.650001525878906,
+              "y": 28
+            },
+            {
+              "x": 46.349998474121094,
+              "y": 28
+            },
+            {
+              "x": 48,
+              "y": 28
+            },
+            {
+              "x": 58,
+              "y": 28
+            },
+            {
+              "x": 121.6500015258789,
+              "y": -3
+            },
+            {
+              "x": 243.35000610351562,
+              "y": -3
+            },
+            {
+              "x": 365,
+              "y": -3
+            },
+            {
+              "x": 486.6499938964844,
+              "y": -3
+            },
+            {
+              "x": 608.3499755859375,
+              "y": -3
+            },
+            {
+              "x": 1336,
+              "y": 872
+            },
+            {
+              "x": 1336,
+              "y": 869
+            },
+            {
+              "x": 1379,
+              "y": 900
+            },
+            {
+              "x": 2066,
+              "y": 869
+            },
+            {
+              "x": 2009.8499755859375,
+              "y": 869
+            },
+            {
+              "x": 1953.699951171875,
+              "y": 869
+            },
+            {
+              "x": 1897.550048828125,
+              "y": 869
+            },
+            {
+              "x": 1841.4000244140625,
+              "y": 869
+            },
+            {
+              "x": 1785.25,
+              "y": 869
+            },
+            {
+              "x": 1729.0999755859375,
+              "y": 869
+            },
+            {
+              "x": 1672.9000244140625,
+              "y": 869
+            },
+            {
+              "x": 1616.75,
+              "y": 869
+            },
+            {
+              "x": 1560.5999755859375,
+              "y": 869
+            },
+            {
+              "x": 1504.449951171875,
+              "y": 869
+            },
+            {
+              "x": 1448.300048828125,
+              "y": 869
+            },
+            {
+              "x": 1392.1500244140625,
+              "y": 869
+            },
+            {
+              "x": 1399,
+              "y": 900
+            },
+            {
+              "x": 1395.6500244140625,
+              "y": 900
+            },
+            {
+              "x": 1392.3499755859375,
+              "y": 900
+            },
+            {
+              "x": 1389,
+              "y": 900
+            },
+            {
+              "x": 1385.6500244140625,
+              "y": 900
+            },
+            {
+              "x": 1382.3499755859375,
+              "y": 900
+            },
+            {
+              "x": 1384,
+              "y": 900
+            },
+            {
+              "x": 1394,
+              "y": 900
+            },
+            {
+              "x": 1457.6500244140625,
+              "y": 869
+            },
+            {
+              "x": 1579.3499755859375,
+              "y": 869
+            },
+            {
+              "x": 1701,
+              "y": 869
+            },
+            {
+              "x": 1822.6500244140625,
+              "y": 869
+            },
+            {
+              "x": 1944.3499755859375,
+              "y": 869
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "tagType": 61444,
+        "offset": 0,
+        "words": [
+          2,
+          0,
+          0,
+          1144324096,
+          1124073472,
+          0,
+          0,
+          1141112832,
+          1115684864
+        ],
+        "kind": "bounds",
+        "data": {
+          "values": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 724,
+              "height": 128
+            },
+            {
+              "x": 0,
+              "y": 0,
+              "width": 528,
+              "height": 64
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "tagType": 61445,
+        "offset": 0,
+        "words": [
+          1,
+          3,
+          7
+        ],
+        "kind": "actionScript",
+        "data": {
+          "bytecodeWords": [
+            1,
+            3,
+            7
+          ]
+        },
+        "children": []
+      },
+      {
+        "tagType": 61447,
+        "offset": 0,
+        "words": [
+          2,
+          0,
+          7,
+          1144324096,
+          1124073472,
+          1,
+          8,
+          1141112832,
+          1115684864
+        ],
+        "kind": "textureAtlases",
+        "data": {
+          "values": [
+            {
+              "id": 0,
+              "nameId": 7,
+              "width": 724,
+              "height": 128
+            },
+            {
+              "id": 1,
+              "nameId": 8,
+              "width": 528,
+              "height": 64
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "tagType": 61448,
+        "offset": 0,
+        "words": [
+          0
+        ],
+        "kind": "unknown",
+        "data": {
+          "words": [
+            0
+          ]
+        },
+        "children": []
+      },
+      {
+        "tagType": 61449,
+        "offset": 0,
+        "words": [
+          0
+        ],
+        "kind": "unknown",
+        "data": {
+          "words": [
+            0
+          ]
+        },
+        "children": []
+      },
+      {
+        "tagType": 61450,
+        "offset": 0,
+        "words": [
+          0
+        ],
+        "kind": "unknown",
+        "data": {
+          "words": [
+            0
+          ]
+        },
+        "children": []
+      },
+      {
+        "tagType": 10,
+        "offset": 0,
+        "words": [
+          0
+        ],
+        "kind": "fonts",
+        "data": {
+          "unknown": 0
+        },
+        "children": []
+      },
+      {
+        "tagType": 61451,
+        "offset": 0,
+        "words": [
+          1
+        ],
+        "kind": "unknown",
+        "data": {
+          "words": [
+            1
+          ]
+        },
+        "children": []
+      },
+      {
+        "tagType": 61452,
+        "offset": 0,
+        "words": [
+          0,
+          1,
+          2,
+          7,
+          4294967295,
+          7,
+          2,
+          1114636288,
+          1156579328,
+          1149698048,
+          0,
+          0
+        ],
+        "kind": "properties",
+        "data": {
+          "unknownPrefixWords": [
+            0,
+            1,
+            2
+          ],
+          "maxCharacterId": 7,
+          "unknown2": 4294967295,
+          "entryCharacterId": 7,
+          "maxDepth": 2,
+          "unknown3": 0,
+          "framerate": 60,
+          "width": 1920,
+          "height": 1080,
+          "unknownSuffixWords": [
+            0,
+            0
+          ]
+        },
+        "children": []
+      },
+      {
+        "tagType": 61453,
+        "offset": 0,
+        "words": [
+          2,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "kind": "defines",
+        "data": {
+          "numShapes": 2,
+          "unknown1": 0,
+          "numSprites": 3,
+          "unknown2": 0,
+          "numTexts": 0,
+          "unknown3Words": [
+            0,
+            0,
+            0
+          ]
+        },
+        "children": [
+          {
+            "tagType": 61474,
+            "offset": 0,
+            "words": [
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "kind": "button",
+            "data": {
+              "characterId": 1,
+              "trackAsMenu": false,
+              "unknownBits15": 0,
+              "actionOffset": 0,
+              "boundsId": 0,
+              "unknown2": 0,
+              "numGraphics": 1
+            },
+            "children": [
+              {
+                "tagType": 61476,
+                "offset": 0,
+                "words": [
+                  0,
+                  262209,
+                  6,
+                  0,
+                  1124073472,
+                  0,
+                  1065353216,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1144324096,
+                  0,
+                  1065353216,
+                  0,
+                  1144324096,
+                  1124073472,
+                  1065353216,
+                  1065353216,
+                  65536,
+                  196610,
+                  131072
+                ],
+                "kind": "graphic",
+                "data": {
+                  "atlasId": 0,
+                  "fillType": 65,
+                  "vertices": [
+                    {
+                      "x": 0,
+                      "y": 128,
+                      "u": 0,
+                      "v": 1
+                    },
+                    {
+                      "x": 0,
+                      "y": 0,
+                      "u": 0,
+                      "v": 0
+                    },
+                    {
+                      "x": 724,
+                      "y": 0,
+                      "u": 1,
+                      "v": 0
+                    },
+                    {
+                      "x": 724,
+                      "y": 128,
+                      "u": 1,
+                      "v": 1
+                    }
+                  ],
+                  "indices": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    0,
+                    2
+                  ]
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "tagType": 61474,
+            "offset": 0,
+            "words": [
+              3,
+              0,
+              1,
+              0,
+              1
+            ],
+            "kind": "button",
+            "data": {
+              "characterId": 3,
+              "trackAsMenu": false,
+              "unknownBits15": 0,
+              "actionOffset": 0,
+              "boundsId": 1,
+              "unknown2": 0,
+              "numGraphics": 1
+            },
+            "children": [
+              {
+                "tagType": 61476,
+                "offset": 0,
+                "words": [
+                  1,
+                  262209,
+                  6,
+                  0,
+                  1115684864,
+                  0,
+                  1065353216,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1141112832,
+                  0,
+                  1065353216,
+                  0,
+                  1141112832,
+                  1115684864,
+                  1065353216,
+                  1065353216,
+                  65536,
+                  196610,
+                  131072
+                ],
+                "kind": "graphic",
+                "data": {
+                  "atlasId": 1,
+                  "fillType": 65,
+                  "vertices": [
+                    {
+                      "x": 0,
+                      "y": 64,
+                      "u": 0,
+                      "v": 1
+                    },
+                    {
+                      "x": 0,
+                      "y": 0,
+                      "u": 0,
+                      "v": 0
+                    },
+                    {
+                      "x": 528,
+                      "y": 0,
+                      "u": 1,
+                      "v": 0
+                    },
+                    {
+                      "x": 528,
+                      "y": 64,
+                      "u": 1,
+                      "v": 1
+                    }
+                  ],
+                  "indices": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    0,
+                    2
+                  ]
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "tagType": 39,
+            "offset": 0,
+            "words": [
+              5,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            "kind": "defineSprite",
+            "data": {
+              "characterId": 5,
+              "nameId": 0,
+              "boundsId": 0,
+              "numFrameLabels": 0,
+              "numFrames": 1,
+              "numKeyframes": 0,
+              "numPlacedObjects": 1
+            },
+            "children": [
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  0,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 0,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      3,
+                      0,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                      2147483648,
+                      0,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 3,
+                      "placementId": 0,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 1,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 0,
+                      "positionFlags": 32768,
+                      "colorMultId": 0,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tagType": 39,
+            "offset": 0,
+            "words": [
+              6,
+              0,
+              0,
+              2,
+              39,
+              2,
+              2
+            ],
+            "kind": "defineSprite",
+            "data": {
+              "characterId": 6,
+              "nameId": 0,
+              "boundsId": 0,
+              "numFrameLabels": 2,
+              "numFrames": 39,
+              "numKeyframes": 2,
+              "numPlacedObjects": 2
+            },
+            "children": [
+              {
+                "tagType": 43,
+                "offset": 0,
+                "words": [
+                  4,
+                  1,
+                  0
+                ],
+                "kind": "frameLabel",
+                "data": {
+                  "nameId": 4,
+                  "startFrame": 1
+                },
+                "children": []
+              },
+              {
+                "tagType": 43,
+                "offset": 0,
+                "words": [
+                  5,
+                  27,
+                  0
+                ],
+                "kind": "frameLabel",
+                "data": {
+                  "nameId": 5,
+                  "startFrame": 27
+                },
+                "children": []
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  0,
+                  3
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 0,
+                  "numChildren": 3
+                },
+                "children": [
+                  {
+                    "tagType": 12,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      0
+                    ],
+                    "kind": "doAction",
+                    "data": {
+                      "actionId": 0,
+                      "unknown": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      1,
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                      2147483649,
+                      2,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 1,
+                      "placementId": 1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 1,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 1,
+                      "positionFlags": 32768,
+                      "colorMultId": 2,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      5,
+                      2,
+                      0,
+                      3,
+                      1,
+                      1,
+                      0,
+                      2147483650,
+                      2,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 5,
+                      "placementId": 2,
+                      "unknown1": 0,
+                      "nameId": 3,
+                      "placementMode": 1,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 2,
+                      "positionFlags": 32768,
+                      "colorMultId": 2,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  1,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 1,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483651,
+                      0,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 3,
+                      "positionFlags": 32768,
+                      "colorMultId": 0,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  2,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 2,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483652,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 4,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  3,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 3,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483653,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 5,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  4,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 4,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483654,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 6,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  5,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 5,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483655,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 7,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  6,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 6,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483656,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 8,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  7,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 7,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483657,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 9,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  8,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 8,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483658,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 10,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  9,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 9,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483659,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 11,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  10,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 10,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483660,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 12,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  11,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 11,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483661,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 13,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  12,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 12,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483662,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 14,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  13,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 13,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483663,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 15,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  14,
+                  2
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 14,
+                  "numChildren": 2
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483649,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 1,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483664,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 16,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  15,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 15,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483665,
+                      3,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 17,
+                      "positionFlags": 32768,
+                      "colorMultId": 3,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  16,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 16,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483666,
+                      4,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 18,
+                      "positionFlags": 32768,
+                      "colorMultId": 4,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  17,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 17,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483667,
+                      5,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 19,
+                      "positionFlags": 32768,
+                      "colorMultId": 5,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  18,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 18,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483668,
+                      6,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 20,
+                      "positionFlags": 32768,
+                      "colorMultId": 6,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  19,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 19,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483669,
+                      7,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 21,
+                      "positionFlags": 32768,
+                      "colorMultId": 7,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  20,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 20,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483650,
+                      0,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 2,
+                      "positionFlags": 32768,
+                      "colorMultId": 0,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  21,
+                  0
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 21,
+                  "numChildren": 0
+                },
+                "children": []
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  22,
+                  0
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 22,
+                  "numChildren": 0
+                },
+                "children": []
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  23,
+                  0
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 23,
+                  "numChildren": 0
+                },
+                "children": []
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  24,
+                  0
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 24,
+                  "numChildren": 0
+                },
+                "children": []
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  25,
+                  0
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 25,
+                  "numChildren": 0
+                },
+                "children": []
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  26,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 26,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 12,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      0
+                    ],
+                    "kind": "doAction",
+                    "data": {
+                      "actionId": 0,
+                      "unknown": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  27,
+                  0
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 27,
+                  "numChildren": 0
+                },
+                "children": []
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  28,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 28,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483670,
+                      8,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 22,
+                      "positionFlags": 32768,
+                      "colorMultId": 8,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  29,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 29,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483667,
+                      5,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 19,
+                      "positionFlags": 32768,
+                      "colorMultId": 5,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  30,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 30,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483671,
+                      9,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 23,
+                      "positionFlags": 32768,
+                      "colorMultId": 9,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  31,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 31,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483664,
+                      2,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 16,
+                      "positionFlags": 32768,
+                      "colorMultId": 2,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  32,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 32,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483672,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 24,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  33,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 33,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483673,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 25,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  34,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 34,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483674,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 26,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  35,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 35,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483675,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 27,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  36,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 36,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483676,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 28,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  37,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 37,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      0,
+                      0,
+                      2147483651,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 3,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  38,
+                  3
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 38,
+                  "numChildren": 3
+                },
+                "children": [
+                  {
+                    "tagType": 5,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      0
+                    ],
+                    "kind": "removeObject",
+                    "data": {
+                      "unknown1": 0,
+                      "depth": 0,
+                      "unknown2": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 5,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      1
+                    ],
+                    "kind": "removeObject",
+                    "data": {
+                      "unknown1": 0,
+                      "depth": 1,
+                      "unknown2": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 12,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      0
+                    ],
+                    "kind": "doAction",
+                    "data": {
+                      "actionId": 0,
+                      "unknown": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 61701,
+                "offset": 0,
+                "words": [
+                  1,
+                  2
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 1,
+                  "numChildren": 2
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      1,
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                      2147483651,
+                      0,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 1,
+                      "placementId": 1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 1,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 3,
+                      "positionFlags": 32768,
+                      "colorMultId": 0,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      5,
+                      2,
+                      0,
+                      3,
+                      1,
+                      1,
+                      0,
+                      2147483650,
+                      2,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 5,
+                      "placementId": 2,
+                      "unknown1": 0,
+                      "nameId": 3,
+                      "placementMode": 1,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 2,
+                      "positionFlags": 32768,
+                      "colorMultId": 2,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 61701,
+                "offset": 0,
+                "words": [
+                  27,
+                  2
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 27,
+                  "numChildren": 2
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      1,
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                      2147483649,
+                      0,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 1,
+                      "placementId": 1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 1,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 1,
+                      "positionFlags": 32768,
+                      "colorMultId": 0,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      5,
+                      2,
+                      0,
+                      3,
+                      1,
+                      1,
+                      0,
+                      2147483650,
+                      0,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 5,
+                      "placementId": 2,
+                      "unknown1": 0,
+                      "nameId": 3,
+                      "placementMode": 1,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 2,
+                      "positionFlags": 32768,
+                      "colorMultId": 0,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tagType": 39,
+            "offset": 0,
+            "words": [
+              7,
+              0,
+              0,
+              2,
+              38,
+              2,
+              3
+            ],
+            "kind": "defineSprite",
+            "data": {
+              "characterId": 7,
+              "nameId": 0,
+              "boundsId": 0,
+              "numFrameLabels": 2,
+              "numFrames": 38,
+              "numKeyframes": 2,
+              "numPlacedObjects": 3
+            },
+            "children": [
+              {
+                "tagType": 43,
+                "offset": 0,
+                "words": [
+                  4,
+                  1,
+                  0
+                ],
+                "kind": "frameLabel",
+                "data": {
+                  "nameId": 4,
+                  "startFrame": 1
+                },
+                "children": []
+              },
+              {
+                "tagType": 43,
+                "offset": 0,
+                "words": [
+                  5,
+                  27,
+                  0
+                ],
+                "kind": "frameLabel",
+                "data": {
+                  "nameId": 5,
+                  "startFrame": 27
+                },
+                "children": []
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  0,
+                  4
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 0,
+                  "numChildren": 4
+                },
+                "children": [
+                  {
+                    "tagType": 12,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      0
+                    ],
+                    "kind": "doAction",
+                    "data": {
+                      "actionId": 0,
+                      "unknown": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      6,
+                      3,
+                      0,
+                      6,
+                      1,
+                      0,
+                      0,
+                      2147483677,
+                      0,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 6,
+                      "placementId": 3,
+                      "unknown1": 0,
+                      "nameId": 6,
+                      "placementMode": 1,
+                      "blendMode": 0,
+                      "depth": 0,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 29,
+                      "positionFlags": 32768,
+                      "colorMultId": 0,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      1,
+                      4,
+                      0,
+                      0,
+                      1,
+                      1,
+                      0,
+                      2147483678,
+                      2,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 1,
+                      "placementId": 4,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 1,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 30,
+                      "positionFlags": 32768,
+                      "colorMultId": 2,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      5,
+                      5,
+                      0,
+                      3,
+                      1,
+                      2,
+                      0,
+                      2147483679,
+                      2,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 5,
+                      "placementId": 5,
+                      "unknown1": 0,
+                      "nameId": 3,
+                      "placementMode": 1,
+                      "blendMode": 0,
+                      "depth": 2,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 31,
+                      "positionFlags": 32768,
+                      "colorMultId": 2,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  1,
+                  2
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 1,
+                  "numChildren": 2
+                },
+                "children": [
+                  {
+                    "tagType": 5,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      0
+                    ],
+                    "kind": "removeObject",
+                    "data": {
+                      "unknown1": 0,
+                      "depth": 0,
+                      "unknown2": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483680,
+                      0,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 32,
+                      "positionFlags": 32768,
+                      "colorMultId": 0,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  2,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 2,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483681,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 33,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  3,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 3,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483682,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 34,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  4,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 4,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483683,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 35,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  5,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 5,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483684,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 36,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  6,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 6,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483685,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 37,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  7,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 7,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483686,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 38,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  8,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 8,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483687,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 39,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  9,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 9,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483688,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 40,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  10,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 10,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483689,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 41,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  11,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 11,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483690,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 42,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  12,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 12,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483691,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 43,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  13,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 13,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483692,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 44,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  14,
+                  2
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 14,
+                  "numChildren": 2
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483678,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 30,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      2,
+                      0,
+                      2147483693,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 2,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 45,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  15,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 15,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      2,
+                      0,
+                      2147483694,
+                      3,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 2,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 46,
+                      "positionFlags": 32768,
+                      "colorMultId": 3,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  16,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 16,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      2,
+                      0,
+                      2147483695,
+                      4,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 2,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 47,
+                      "positionFlags": 32768,
+                      "colorMultId": 4,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  17,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 17,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      2,
+                      0,
+                      2147483696,
+                      5,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 2,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 48,
+                      "positionFlags": 32768,
+                      "colorMultId": 5,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  18,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 18,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      2,
+                      0,
+                      2147483697,
+                      6,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 2,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 49,
+                      "positionFlags": 32768,
+                      "colorMultId": 6,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  19,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 19,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      2,
+                      0,
+                      2147483698,
+                      7,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 2,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 50,
+                      "positionFlags": 32768,
+                      "colorMultId": 7,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  20,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 20,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      2,
+                      0,
+                      2147483679,
+                      0,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 2,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 31,
+                      "positionFlags": 32768,
+                      "colorMultId": 0,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  21,
+                  0
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 21,
+                  "numChildren": 0
+                },
+                "children": []
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  22,
+                  0
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 22,
+                  "numChildren": 0
+                },
+                "children": []
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  23,
+                  0
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 23,
+                  "numChildren": 0
+                },
+                "children": []
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  24,
+                  0
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 24,
+                  "numChildren": 0
+                },
+                "children": []
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  25,
+                  0
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 25,
+                  "numChildren": 0
+                },
+                "children": []
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  26,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 26,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 12,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      0
+                    ],
+                    "kind": "doAction",
+                    "data": {
+                      "actionId": 0,
+                      "unknown": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  27,
+                  0
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 27,
+                  "numChildren": 0
+                },
+                "children": []
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  28,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 28,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      2,
+                      0,
+                      2147483699,
+                      8,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 2,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 51,
+                      "positionFlags": 32768,
+                      "colorMultId": 8,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  29,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 29,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      2,
+                      0,
+                      2147483696,
+                      5,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 2,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 48,
+                      "positionFlags": 32768,
+                      "colorMultId": 5,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  30,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 30,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      2,
+                      0,
+                      2147483700,
+                      9,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 2,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 52,
+                      "positionFlags": 32768,
+                      "colorMultId": 9,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  31,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 31,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      2,
+                      0,
+                      2147483693,
+                      2,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 2,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 45,
+                      "positionFlags": 32768,
+                      "colorMultId": 2,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  32,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 32,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483701,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 53,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  33,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 33,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483702,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 54,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  34,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 34,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483703,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 55,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  35,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 35,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483704,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 56,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  36,
+                  1
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 36,
+                  "numChildren": 1
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483705,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 57,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 1,
+                "offset": 0,
+                "words": [
+                  37,
+                  2
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 37,
+                  "numChildren": 2
+                },
+                "children": [
+                  {
+                    "tagType": 12,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      0
+                    ],
+                    "kind": "doAction",
+                    "data": {
+                      "actionId": 0,
+                      "unknown": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      0,
+                      4294967295,
+                      0,
+                      0,
+                      2,
+                      1,
+                      0,
+                      2147483680,
+                      4294967295,
+                      4294967295,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 0,
+                      "placementId": -1,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 2,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 32,
+                      "positionFlags": 32768,
+                      "colorMultId": -1,
+                      "colorAddId": -1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 61701,
+                "offset": 0,
+                "words": [
+                  1,
+                  2
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 1,
+                  "numChildren": 2
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      1,
+                      4,
+                      0,
+                      0,
+                      1,
+                      1,
+                      0,
+                      2147483680,
+                      0,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 1,
+                      "placementId": 4,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 1,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 32,
+                      "positionFlags": 32768,
+                      "colorMultId": 0,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      5,
+                      5,
+                      0,
+                      3,
+                      1,
+                      2,
+                      0,
+                      2147483679,
+                      2,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 5,
+                      "placementId": 5,
+                      "unknown1": 0,
+                      "nameId": 3,
+                      "placementMode": 1,
+                      "blendMode": 0,
+                      "depth": 2,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 31,
+                      "positionFlags": 32768,
+                      "colorMultId": 2,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tagType": 61701,
+                "offset": 0,
+                "words": [
+                  27,
+                  2
+                ],
+                "kind": "frame",
+                "data": {
+                  "id": 27,
+                  "numChildren": 2
+                },
+                "children": [
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      1,
+                      4,
+                      0,
+                      0,
+                      1,
+                      1,
+                      0,
+                      2147483678,
+                      0,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 1,
+                      "placementId": 4,
+                      "unknown1": 0,
+                      "nameId": 0,
+                      "placementMode": 1,
+                      "blendMode": 0,
+                      "depth": 1,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 30,
+                      "positionFlags": 32768,
+                      "colorMultId": 0,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  },
+                  {
+                    "tagType": 4,
+                    "offset": 0,
+                    "words": [
+                      5,
+                      5,
+                      0,
+                      3,
+                      1,
+                      2,
+                      0,
+                      2147483679,
+                      0,
+                      1,
+                      0,
+                      0
+                    ],
+                    "kind": "placeObject",
+                    "data": {
+                      "characterId": 5,
+                      "placementId": 5,
+                      "unknown1": 0,
+                      "nameId": 3,
+                      "placementMode": 1,
+                      "blendMode": 0,
+                      "depth": 2,
+                      "unknown2": 0,
+                      "unknown3": 0,
+                      "unknown4": 0,
+                      "positionId": 31,
+                      "positionFlags": 32768,
+                      "colorMultId": 0,
+                      "colorAddId": 1,
+                      "hasColorMatrix": 0,
+                      "hasUnknownF014": 0
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tagType": 65280,
+        "offset": 0,
+        "words": [],
+        "kind": "unknown",
+        "data": {
+          "words": []
+        },
+        "children": []
+      }
+    ]
+  },
   "meta": {
     "magic": "LMB",
     "textureId": 16,

@@ -43,13 +43,11 @@ export function Stage({ onRendererReady }: StageProps) {
       const clickX = (e.clientX - rect.left) * scaleX - canvas.width / 2;
       const clickY = (e.clientY - rect.top) * scaleY - canvas.height / 2;
 
-      // Find the topmost instance whose bounds contain the click point
-      // Iterate in reverse depth order (topmost first)
-      const sorted = [...state.displayInstances].sort(
-        (a, b) => b.depth - a.depth
-      );
-
-      for (const inst of sorted) {
+      // Find the topmost instance whose bounds contain the click point.
+      // Instances are already produced in render order; iterate from back to front.
+      const instances = state.displayInstances;
+      for (let idx = instances.length - 1; idx >= 0; idx--) {
+        const inst = instances[idx];
         if (!inst.bounds) continue;
         const t = inst.transform;
         // Approximate hit test: inverse-transform the click point
@@ -74,13 +72,13 @@ export function Stage({ onRendererReady }: StageProps) {
           localY >= by &&
           localY <= by + bh
         ) {
-          dispatch({ type: "SELECT_DEPTH", depth: inst.depth });
+          dispatch({ type: "SELECT_INSTANCE", placementId: inst.placementId });
           return;
         }
       }
 
       // Click on empty area: deselect
-      dispatch({ type: "SELECT_DEPTH", depth: null });
+      dispatch({ type: "SELECT_INSTANCE", placementId: null });
     },
     [state.resourceStore, state.displayInstances, dispatch]
   );

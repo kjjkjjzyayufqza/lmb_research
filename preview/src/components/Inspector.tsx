@@ -83,10 +83,10 @@ function InstanceTab() {
   const executeCmd = useEditorCommand();
 
   const instances = state.displayInstances;
-  const selectedDepth = state.selectedDepth;
+  const selectedPlacementId = state.selectedPlacementId;
 
-  const selectedInstance = selectedDepth !== null
-    ? instances.find((i) => i.depth === selectedDepth)
+  const selectedInstance = selectedPlacementId !== null
+    ? instances.find((i) => i.placementId === selectedPlacementId)
     : null;
 
   // Find the PlaceObjectAction for the selected instance (if in the current frame)
@@ -111,14 +111,14 @@ function InstanceTab() {
             )}
             {instances.map((inst) => (
               <InstanceRow
-                key={inst.depth}
+                key={inst.placementId}
                 instance={inst}
-                isSelected={inst.depth === selectedDepth}
+                isSelected={inst.placementId === selectedPlacementId}
                 onClick={() =>
                   dispatch({
-                    type: "SELECT_DEPTH",
-                    depth:
-                      inst.depth === selectedDepth ? null : inst.depth,
+                    type: "SELECT_INSTANCE",
+                    placementId:
+                      inst.placementId === selectedPlacementId ? null : inst.placementId,
                   })
                 }
               />
