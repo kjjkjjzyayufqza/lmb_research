@@ -457,9 +457,9 @@ export class ActionInterpreter {
         case "_totalframes":
           return obj.nested.sprite.numFrames || obj.nested.sprite.timeline.length;
         case "_visible":
-          return true; // Simplified
+          return obj.nested.visibleOverride !== undefined ? obj.nested.visibleOverride : true;
         case "_alpha":
-          return 100; // Simplified: fully opaque
+          return obj.nested.alphaOverride !== undefined ? obj.nested.alphaOverride : 100;
         case "_name":
           return obj.name;
         default:
@@ -798,16 +798,21 @@ export class ActionInterpreter {
           const memberName = toAS2String(stack.pop());
           const obj = stack.pop();
           if (isMovieClip(obj)) {
-            // Handle setting built-in properties
+            const clip = obj;
             switch (memberName) {
-              case "_visible":
-                logs.push(`${obj.name}._visible = ${val}`);
+              case "_alpha": {
+                const alphaVal = toAS2Number(val);
+                clip.nested.alphaOverride = alphaVal;
+                logs.push(`${clip.name}._alpha = ${alphaVal}`);
                 break;
-              case "_alpha":
-                logs.push(`${obj.name}._alpha = ${val}`);
+              }
+              case "_visible": {
+                clip.nested.visibleOverride = toAS2Bool(val);
+                logs.push(`${clip.name}._visible = ${val}`);
                 break;
+              }
               default:
-                logs.push(`${obj.name}.${memberName} = ${JSON.stringify(val)}`);
+                logs.push(`${clip.name}.${memberName} = ${JSON.stringify(val)}`);
                 break;
             }
           } else {
@@ -880,7 +885,17 @@ export class ActionInterpreter {
           ];
           const propName = propNames[propIndex] ?? `_prop${propIndex}`;
           if (isMovieClip(target)) {
-            logs.push(`SetProperty ${target.name}.${propName} = ${val}`);
+            // Property index 6 = _alpha, 7 = _visible
+            if (propIndex === 6) {
+              const alphaVal = toAS2Number(val);
+              target.nested.alphaOverride = alphaVal;
+              logs.push(`SetProperty ${target.name}._alpha = ${alphaVal}`);
+            } else if (propIndex === 7) {
+              target.nested.visibleOverride = toAS2Bool(val);
+              logs.push(`SetProperty ${target.name}._visible = ${val}`);
+            } else {
+              logs.push(`SetProperty ${target.name}.${propName} = ${val}`);
+            }
           }
           break;
         }

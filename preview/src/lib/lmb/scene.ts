@@ -13,6 +13,33 @@ import { ResourceStore } from "./store";
 import { ActionInterpreter, type AS2ExecutionContext } from "./actions";
 
 /**
+ * Tree node describing a nested sprite instance and its children,
+ * used by the SpriteTreePanel UI component.
+ */
+export interface NestedSpriteTreeNode {
+  /** Placement ID (unique per instance in display list). */
+  placementId: number;
+  /** Instance name (from PlaceObject nameId). */
+  name: string;
+  /** Character ID of the sprite. */
+  characterId: number;
+  /** Current frame index (0-based). */
+  frameIndex: number;
+  /** Total number of playable frames. */
+  numFrames: number;
+  /** Whether the sprite is currently stopped. */
+  stopped: boolean;
+  /** Frame labels mapping (label -> frameIndex). */
+  labels: Record<string, number>;
+  /** Alpha override set by AS2 (0-100) or undefined if not set. */
+  alphaOverride?: number;
+  /** Visibility override set by AS2 or undefined if not set. */
+  visibleOverride?: boolean;
+  /** Nested children of this sprite. */
+  children: NestedSpriteTreeNode[];
+}
+
+/**
  * Scene manages the display list for a single sprite timeline.
  * It applies frame operations (place / move / remove) and
  * recursively manages nested sprite instances.
@@ -134,7 +161,39 @@ export class Scene {
           }
 
           if (sprite.timeline.length > 0) {
-            nested.scene.applyFrame(resourceStore, sprite.timeline[0]);
+            const frame0 = sprite.timeline[0];
+            nested.scene.applyFrame(resourceStore, frame0);
+
+            // Execute frame 0 actions (e.g. stop() on the initial frame).
+            // Without this, nested sprites that begin with stop() would
+            // incorrectly stay in the "playing" state.
+            if (frame0.actions.length > 0) {
+              for (const act of frame0.actions) {
+                const actResult = ActionInterpreter.execute(
+                  act, sprite, resourceStore,
+                  { sprite, scene: nested.scene, resourceStore },
+                );
+                if (actResult.playing === false) {
+                  nested.stopped = true;
+                }
+                if (actResult.playing === true) {
+                  nested.stopped = false;
+                }
+                if (actResult.jumpToFrame !== undefined) {
+                  const playableN = sprite.numFrames > 0
+                    ? sprite.numFrames : sprite.timeline.length;
+                  const target = Math.max(0, Math.min(actResult.jumpToFrame, playableN - 1));
+                  nested.frameIndex = target;
+                  nested.scene.reset();
+                  for (let fi = 0; fi <= target; fi++) {
+                    if (fi > 0) {
+                      nested.scene.advanceNestedSprites(resourceStore, 1);
+                    }
+                    nested.scene.applyFrame(resourceStore, sprite.timeline[fi]);
+                  }
+                }
+              }
+            }
           }
         }
         childScene = nested.scene;
@@ -266,16 +325,173 @@ export class Scene {
     return this.instances as Map<number, DisplayInstance>;
   }
 
+  /**
+   * Return an iterator over all nested sprite instances at this level.
+   * Used by the SpriteTreePanel for direct access.
+   */
+  getNestedSpriteInstances(): IterableIterator<NestedSpriteInstance> {
+    return this.nestedSpriteInstances.values();
+  }
+
+  /**
+   * Build a tree representation of all nested sprite instances,
+   * recursively including their children.
+   */
+  getNestedSpriteTree(): NestedSpriteTreeNode[] {
+    const nodes: NestedSpriteTreeNode[] = [];
+    for (const nested of this.nestedSpriteInstances.values()) {
+      const playable = nested.sprite.numFrames > 0
+        ? nested.sprite.numFrames
+        : nested.sprite.timeline.length;
+      nodes.push({
+        placementId: nested.placementId,
+        name: nested.name ?? `placement_${nested.placementId}`,
+        characterId: nested.characterId,
+        frameIndex: nested.frameIndex,
+        numFrames: playable,
+        stopped: nested.stopped ?? false,
+        labels: { ...nested.sprite.frameLabels },
+        alphaOverride: nested.alphaOverride,
+        visibleOverride: nested.visibleOverride,
+        children: nested.scene.getNestedSpriteTree(),
+      });
+    }
+    return nodes;
+  }
+
+  /**
+   * Find a nested sprite instance by placementId, searching recursively
+   * through all child scenes.
+   */
+  findNestedByPlacementId(placementId: number): NestedSpriteInstance | undefined {
+    const direct = this.nestedSpriteInstances.get(placementId);
+    if (direct) return direct;
+    for (const nested of this.nestedSpriteInstances.values()) {
+      const found = nested.scene.findNestedByPlacementId(placementId);
+      if (found) return found;
+    }
+    return undefined;
+  }
+
+  /**
+   * Execute a playback method on a nested sprite identified by placementId.
+   * Searches recursively through all child scenes.
+   *
+   * @param placementId    Placement ID of the nested sprite.
+   * @param method         Method to call: gotoAndPlay, gotoAndStop, play, stop.
+   * @param arg            Frame label (string) or frame number (1-based) for goto methods.
+   * @param resourceStore  Resource store for deterministic frame rebuilding.
+   * @returns true if the operation was executed, false if the sprite was not found.
+   */
+  executeOnNestedSprite(
+    placementId: number,
+    method: "gotoAndPlay" | "gotoAndStop" | "play" | "stop",
+    arg: string | number | undefined,
+    resourceStore: ResourceStore,
+  ): boolean {
+    const nested = this.findNestedByPlacementId(placementId);
+    if (!nested) return false;
+
+    const clipSprite = nested.sprite;
+    const playable = clipSprite.numFrames > 0
+      ? clipSprite.numFrames
+      : clipSprite.timeline.length;
+
+    switch (method) {
+      case "gotoAndPlay":
+      case "gotoAndStop": {
+        let targetFrame = -1;
+        if (typeof arg === "string") {
+          const fi = clipSprite.frameLabels[arg];
+          if (fi !== undefined) targetFrame = fi;
+        } else if (typeof arg === "number") {
+          targetFrame = arg - 1; // AS2 is 1-based
+        }
+        if (targetFrame < 0 || targetFrame >= playable) return false;
+
+        nested.frameIndex = targetFrame;
+        nested.stopped = method === "gotoAndStop";
+
+        // Deterministic rebuild to target frame
+        nested.scene.reset();
+        for (let fi = 0; fi <= targetFrame; fi++) {
+          if (fi > 0) {
+            nested.scene.advanceNestedSprites(resourceStore, 1);
+          }
+          nested.scene.applyFrame(resourceStore, clipSprite.timeline[fi]);
+        }
+        return true;
+      }
+      case "play": {
+        nested.stopped = false;
+        return true;
+      }
+      case "stop": {
+        nested.stopped = true;
+        return true;
+      }
+    }
+  }
+
+  /**
+   * Set the alpha override on a nested sprite identified by placementId.
+   * Searches recursively through all child scenes.
+   * @param placementId  Placement ID.
+   * @param alpha        Alpha value (0-100, AS2 convention).
+   */
+  setNestedAlpha(placementId: number, alpha: number): boolean {
+    const nested = this.findNestedByPlacementId(placementId);
+    if (!nested) return false;
+    nested.alphaOverride = alpha;
+    return true;
+  }
+
+  /**
+   * Set the visibility override on a nested sprite identified by placementId.
+   * Searches recursively through all child scenes.
+   * @param placementId  Placement ID.
+   * @param visible      Visibility flag.
+   */
+  setNestedVisible(placementId: number, visible: boolean): boolean {
+    const nested = this.findNestedByPlacementId(placementId);
+    if (!nested) return false;
+    nested.visibleOverride = visible;
+    return true;
+  }
+
   private collectInstancesRecursive(
     instance: DisplayInstance & { childScene?: Scene },
     parentTransform: TransformMatrix,
     parentColorMult: ColorRgba | undefined,
     parentColorAdd: ColorRgba | undefined,
-    output: DisplayInstance[]
+    output: DisplayInstance[],
+    ownerScene?: Scene,
   ): void {
     const worldTransform = multiplyTransforms(parentTransform, instance.transform);
-    const worldColorMult = combineColorMult(parentColorMult, instance.colorMult);
+    let worldColorMult = combineColorMult(parentColorMult, instance.colorMult);
     const worldColorAdd = combineColorAdd(parentColorAdd, instance.colorAdd);
+
+    // Apply AS2 alpha/visible overrides from the nested sprite instance
+    const nested = ownerScene
+      ? ownerScene.nestedSpriteInstances.get(instance.placementId)
+      : this.nestedSpriteInstances.get(instance.placementId);
+
+    if (nested) {
+      // If visibleOverride is explicitly false, skip the entire subtree
+      if (nested.visibleOverride === false) return;
+
+      // Apply alphaOverride: convert AS2 _alpha (0-100) to colorMult.a (0-256)
+      if (nested.alphaOverride !== undefined) {
+        const alphaScale = Math.max(0, Math.min(256, Math.round((nested.alphaOverride / 100) * 256)));
+        const base = worldColorMult ?? { r: 256, g: 256, b: 256, a: 256 };
+        worldColorMult = {
+          r: base.r,
+          g: base.g,
+          b: base.b,
+          a: Math.max(0, Math.min(255, Math.floor((base.a * alphaScale) / 256))),
+        };
+      }
+    }
 
     if (instance.graphic || instance.text) {
       output.push({
@@ -299,12 +515,13 @@ export class Scene {
       (a, b) => a.depth - b.depth
     );
     for (const child of children) {
-      this.collectInstancesRecursive(
+      childScene.collectInstancesRecursive(
         child as DisplayInstance & { childScene?: Scene },
         worldTransform,
         worldColorMult,
         worldColorAdd,
-        output
+        output,
+        childScene,
       );
     }
   }

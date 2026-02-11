@@ -22,12 +22,15 @@ export interface EditorState {
 
   // Selection
   selectedPlacementId: number | null;
-  selectedTab: "instance" | "frame" | "resources" | "export";
+  selectedTab: "instance" | "frame" | "resources" | "export" | "sprites";
 
   // History
   undoStack: UndoEntry[];
   redoStack: UndoEntry[];
   dirty: boolean;
+
+  // Rendering options
+  forceVisible: boolean;
 
   // Runtime (not serializable, managed outside reducer)
   scene: Scene | null;
@@ -48,6 +51,7 @@ export const initialEditorState: EditorState = {
   loop: false,
   selectedPlacementId: null,
   selectedTab: "instance",
+  forceVisible: true,
   undoStack: [],
   redoStack: [],
   dirty: false,
@@ -75,7 +79,8 @@ export type EditorAction =
   | { type: "REDO" }
   | { type: "SET_RUNTIME"; scene: Scene; player: TimelinePlayer }
   | { type: "UPDATE_DISPLAY"; instances: DisplayInstance[]; frameIndex: number; frame: FrameDef | null }
-  | { type: "MARK_CLEAN" };
+  | { type: "MARK_CLEAN" }
+  | { type: "SET_FORCE_VISIBLE"; value: boolean };
 
 const MAX_UNDO_STACK = 100;
 
@@ -210,6 +215,9 @@ export function editorReducer(
 
     case "MARK_CLEAN":
       return { ...state, dirty: false };
+
+    case "SET_FORCE_VISIBLE":
+      return { ...state, forceVisible: action.value };
 
     default:
       return state;

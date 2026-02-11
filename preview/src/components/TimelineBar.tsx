@@ -8,6 +8,8 @@ import {
   Repeat,
   Undo2,
   Redo2,
+  Eye,
+  EyeOff,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
@@ -103,6 +105,12 @@ export function TimelineBar({ playerRef, onRender }: TimelineBarProps) {
     dispatch({ type: "SET_LOOP", loop: newLoop });
     playerRef.current?.setLoop(newLoop);
   }, [state.loop, dispatch, playerRef]);
+
+  const handleToggleForceVisible = useCallback(() => {
+    dispatch({ type: "SET_FORCE_VISIBLE", value: !state.forceVisible });
+    // Re-render immediately so the user sees the change
+    setTimeout(() => onRender(), 0);
+  }, [state.forceVisible, dispatch, onRender]);
 
   /**
    * Play a specific labeled section.  This clears the old section
@@ -236,6 +244,28 @@ export function TimelineBar({ playerRef, onRender }: TimelineBarProps) {
             </Button>
           </TooltipTrigger>
           <TooltipContent>Toggle Loop</TooltipContent>
+        </Tooltip>
+
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              variant={state.forceVisible ? "secondary" : "ghost"}
+              size="icon-sm"
+              onClick={handleToggleForceVisible}
+              disabled={!isLoaded}
+            >
+              {state.forceVisible ? (
+                <Eye className="h-4 w-4" />
+              ) : (
+                <EyeOff className="h-4 w-4" />
+              )}
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            {state.forceVisible
+              ? "Force Visible ON (zero-alpha elements shown)"
+              : "Force Visible OFF (respect actual alpha)"}
+          </TooltipContent>
         </Tooltip>
       </div>
 

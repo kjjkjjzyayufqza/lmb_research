@@ -11,6 +11,7 @@ import type { DisplayInstance, PlaceObjectAction } from "@/lib/lmb/types";
 import { FrameEditor } from "./FrameEditor";
 import { ResourcesEditor } from "./ResourcesEditor";
 import { ExportPanel } from "./ExportPanel";
+import { SpriteTreePanel } from "./SpriteTreePanel";
 import type { TimelinePlayer } from "@/lib/lmb/player";
 
 interface InspectorProps {
@@ -51,6 +52,9 @@ export function Inspector({ playerRef, onRender }: InspectorProps) {
           <TabsTrigger value="export" className="text-xs">
             Export
           </TabsTrigger>
+          <TabsTrigger value="sprites" className="text-xs">
+            Sprites
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="instance" className="flex-1 overflow-hidden mt-0">
@@ -67,6 +71,10 @@ export function Inspector({ playerRef, onRender }: InspectorProps) {
 
         <TabsContent value="export" className="flex-1 overflow-hidden mt-0">
           <ExportPanel />
+        </TabsContent>
+
+        <TabsContent value="sprites" className="flex-1 overflow-hidden mt-0">
+          <SpriteTreePanel playerRef={playerRef} onRender={onRender} />
         </TabsContent>
       </Tabs>
     </div>

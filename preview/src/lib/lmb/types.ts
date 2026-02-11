@@ -191,6 +191,10 @@ export interface NestedSpriteInstance {
   name?: string;
   /** When true the nested sprite has been halted by a stop() action. */
   stopped?: boolean;
+  /** Alpha override set by AS2 scripts (0-100, maps to _alpha). */
+  alphaOverride?: number;
+  /** Visibility override set by AS2 scripts (maps to _visible). */
+  visibleOverride?: boolean;
 }
 
 // ============================================================

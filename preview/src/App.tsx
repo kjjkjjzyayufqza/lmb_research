@@ -1,4 +1,4 @@
-import React, { useReducer, useRef, useCallback } from "react";
+import React, { useReducer, useRef, useCallback, useEffect } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import {
   Select,
@@ -30,6 +30,12 @@ function App() {
   const playerRef = useRef<TimelinePlayer | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  // Keep forceVisible available to the playback callback via a ref
+  const forceVisibleRef = useRef(state.forceVisible);
+  useEffect(() => {
+    forceVisibleRef.current = state.forceVisible;
+  }, [state.forceVisible]);
+
   const handleRendererReady = useCallback((renderer: WebGlRenderer) => {
     rendererRef.current = renderer;
   }, []);
@@ -45,7 +51,7 @@ function App() {
     const scene = player.getScene();
     const instances = scene.getInstancesSorted();
     renderer.clear();
-    renderer.renderScene(instances);
+    renderer.renderScene(instances, state.forceVisible);
 
     const frame = player.getCurrentFrame();
     dispatch({
@@ -54,7 +60,7 @@ function App() {
       frameIndex: player.getCurrentFrameIndex(),
       frame: frame ?? null,
     });
-  }, []);
+  }, [state.forceVisible]);
 
   /**
    * Initialize the timeline player for a given sprite.
@@ -73,12 +79,13 @@ function App() {
         sprite,
         scene,
         (_frame, scn, frameIndex) => {
-          // Playback frame callback
+          // Playback frame callback — forceVisible is read from
+          // the latest state snapshot via the closure over stateRef.
           const renderer = rendererRef.current;
           if (!renderer) return;
           const instances = scn.getInstancesSorted();
           renderer.clear();
-          renderer.renderScene(instances);
+          renderer.renderScene(instances, forceVisibleRef.current);
           dispatch({
             type: "UPDATE_DISPLAY",
             instances,
@@ -99,7 +106,7 @@ function App() {
         if (renderer) {
           const instances = scene.getInstancesSorted();
           renderer.clear();
-          renderer.renderScene(instances);
+          renderer.renderScene(instances, forceVisibleRef.current);
           dispatch({
             type: "UPDATE_DISPLAY",
             instances,

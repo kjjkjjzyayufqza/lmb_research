@@ -141,7 +141,14 @@ export class WebGlRenderer {
     gl.clear(gl.COLOR_BUFFER_BIT);
   }
 
-  renderScene(instances: DisplayInstance[]): void {
+  /**
+   * Render all display instances to the canvas.
+   * @param instances  Flat, depth-sorted display instances from Scene.
+   * @param forceVisible  When true, instances with alpha=0 are forced
+   *                      opaque so the full scene composition is visible
+   *                      for debugging/preview.  Defaults to true.
+   */
+  renderScene(instances: DisplayInstance[], forceVisible: boolean = true): void {
     const gl = this.gl;
     gl.useProgram(this.program);
 
@@ -165,11 +172,9 @@ export class WebGlRenderer {
         b: 256,
         a: 256,
       };
-      // Force alpha to opaque when the original alpha is 0.
-      // In the real game, AS2 scripts dynamically set alpha > 0 at runtime.
-      // Since we don't have a full AS2 VM, we override zero-alpha so
-      // the scene composition is visible for debugging/preview purposes.
-      const colorMult = rawColorMult.a === 0
+      // When forceVisible is on, override zero-alpha to fully opaque so
+      // that elements hidden by AS2 _alpha=0 still appear in preview.
+      const colorMult = forceVisible && rawColorMult.a === 0
         ? { ...rawColorMult, a: 256 }
         : rawColorMult;
       const colorAdd = instance.colorAdd ?? { r: 0, g: 0, b: 0, a: 0 };
