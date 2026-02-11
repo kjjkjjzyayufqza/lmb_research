@@ -159,12 +159,19 @@ export class WebGlRenderer {
         gl.uniform1i(this.textureLocation, 0);
       }
 
-      const colorMult = instance.colorMult ?? {
+      const rawColorMult = instance.colorMult ?? {
         r: 256,
         g: 256,
         b: 256,
         a: 256,
       };
+      // Force alpha to opaque when the original alpha is 0.
+      // In the real game, AS2 scripts dynamically set alpha > 0 at runtime.
+      // Since we don't have a full AS2 VM, we override zero-alpha so
+      // the scene composition is visible for debugging/preview purposes.
+      const colorMult = rawColorMult.a === 0
+        ? { ...rawColorMult, a: 256 }
+        : rawColorMult;
       const colorAdd = instance.colorAdd ?? { r: 0, g: 0, b: 0, a: 0 };
       gl.uniform4f(
         this.colorMultLocation,

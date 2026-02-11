@@ -10,7 +10,7 @@ import {
   combineColorAdd,
 } from "./types";
 import { ResourceStore } from "./store";
-import { ActionInterpreter } from "./actions";
+import { ActionInterpreter, type AS2ExecutionContext } from "./actions";
 
 /**
  * Scene manages the display list for a single sprite timeline.
@@ -20,13 +20,25 @@ import { ActionInterpreter } from "./actions";
 export class Scene {
   private instances = new Map<number, DisplayInstance & { childScene?: Scene }>();
   private nestedSpriteInstances = new Map<number, NestedSpriteInstance>();
+  /** Name-based index into nestedSpriteInstances (built during applyFrame). */
+  private nestedByName = new Map<string, NestedSpriteInstance>();
+
+  /**
+   * Look up a nested sprite instance by its instance name.
+   * Instance names come from the PlaceObject nameId field.
+   */
+  getNestedByName(name: string): NestedSpriteInstance | undefined {
+    return this.nestedByName.get(name);
+  }
 
   applyFrame(resourceStore: ResourceStore, frame: FrameDef): void {
     // 1. Handle removals
     for (const rem of frame.removeList) {
       if (this.instances.has(rem.depth)) {
         const inst = this.instances.get(rem.depth)!;
-        if (this.nestedSpriteInstances.has(inst.placementId)) {
+        const nested = this.nestedSpriteInstances.get(inst.placementId);
+        if (nested) {
+          if (nested.name) this.nestedByName.delete(nested.name);
           this.nestedSpriteInstances.delete(inst.placementId);
         }
         this.instances.delete(rem.depth);
@@ -90,7 +102,9 @@ export class Scene {
 
       // If we are replacing an old instance, clean up nested sprite tracking.
       if (existing) {
-        if (this.nestedSpriteInstances.has(existing.placementId)) {
+        const oldNested = this.nestedSpriteInstances.get(existing.placementId);
+        if (oldNested) {
+          if (oldNested.name) this.nestedByName.delete(oldNested.name);
           this.nestedSpriteInstances.delete(existing.placementId);
         }
       }
@@ -99,14 +113,26 @@ export class Scene {
       if (sprite) {
         let nested = this.nestedSpriteInstances.get(po.placementId);
         if (!nested || nested.sprite.characterId !== sprite.characterId) {
+          // Resolve instance name from nameId (symbol table index)
+          const instanceName = po.nameId >= 0
+            ? resourceStore.getSymbolById(po.nameId)
+            : undefined;
+
           nested = {
             placementId: po.placementId,
             characterId: po.characterId,
             sprite,
             scene: new Scene(),
             frameIndex: 0,
+            name: instanceName,
           };
           this.nestedSpriteInstances.set(po.placementId, nested);
+
+          // Register in name-based index
+          if (instanceName) {
+            this.nestedByName.set(instanceName, nested);
+          }
+
           if (sprite.timeline.length > 0) {
             nested.scene.applyFrame(resourceStore, sprite.timeline[0]);
           }
@@ -142,6 +168,7 @@ export class Scene {
   reset(): void {
     this.instances.clear();
     this.nestedSpriteInstances.clear();
+    this.nestedByName.clear();
   }
 
   /**
@@ -179,7 +206,11 @@ export class Scene {
         // Process actions for this nested frame
         if (frame.actions.length > 0) {
           for (const action of frame.actions) {
-            const result = ActionInterpreter.execute(action, nested.sprite, resourceStore);
+            const result = ActionInterpreter.execute(action, nested.sprite, resourceStore, {
+              sprite: nested.sprite,
+              scene: nested.scene,
+              resourceStore,
+            });
             if (result.playing === false) {
               nested.stopped = true;
               remaining = 0;

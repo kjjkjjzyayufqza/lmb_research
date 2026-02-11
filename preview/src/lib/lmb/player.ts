@@ -436,7 +436,11 @@ export class TimelinePlayer {
     // matching engine behavior more closely than "apply on top".
     if (frame.actions.length > 0) {
       for (const action of frame.actions) {
-        const result = ActionInterpreter.execute(action, this.sprite, this.resourceStore);
+        const result = ActionInterpreter.execute(action, this.sprite, this.resourceStore, {
+          sprite: this.sprite,
+          scene: this.scene,
+          resourceStore: this.resourceStore,
+        });
         if (result.log) this.onLog?.(result.log);
 
         if (result.playing !== undefined) {
@@ -474,7 +478,11 @@ export class TimelinePlayer {
 
     if (frame.actions.length > 0) {
       for (const action of frame.actions) {
-        const result = ActionInterpreter.execute(action, this.sprite, this.resourceStore);
+        const result = ActionInterpreter.execute(action, this.sprite, this.resourceStore, {
+          sprite: this.sprite,
+          scene: this.scene,
+          resourceStore: this.resourceStore,
+        });
         if (result.log) this.onLog?.(result.log);
 
         if (result.playing !== undefined) {

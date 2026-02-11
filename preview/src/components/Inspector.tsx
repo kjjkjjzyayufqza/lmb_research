@@ -109,9 +109,9 @@ function InstanceTab() {
                 No instances in current scene
               </p>
             )}
-            {instances.map((inst) => (
+            {instances.map((inst, idx) => (
               <InstanceRow
-                key={inst.placementId}
+                key={`${inst.depth}-${idx}`}
                 instance={inst}
                 isSelected={inst.placementId === selectedPlacementId}
                 onClick={() =>

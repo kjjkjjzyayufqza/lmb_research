@@ -279,27 +279,240 @@ labelString = *(qword*)(symbolTable + 8 * symbolIndex)
 
 ---
 
+## AS2 虚拟机完整操作码表
+
+### 来源
+
+通过读取引擎函数 `sub_1401D2D70` 的 switch 跳转表 `byte_1401D6D08`（160 字节），确定了引擎实际处理的所有操作码。跳转表中 `0x59` = default（未处理），其他值为 case 索引。
+
+### 完整操作码映射表（89 个 case）
+
+#### 栈操作
+
+| 操作码 | 名称 | 行为 | Preview 实现 |
+|--------|------|------|-------------|
+| `0x96` | ActionPush | 将值压入栈（支持 10 种数据类型） | ✅ 已实现 |
+| `0x17` | ActionPop | 弹出栈顶 | ✅ 已实现 |
+| `0x4C` | ActionPushDuplicate | 复制栈顶 | ✅ 已实现 |
+| `0x4D` | ActionStackSwap | 交换栈顶两元素 | ✅ 已实现 |
+
+#### 变量 / 成员访问
+
+| 操作码 | 名称 | 行为 | Preview 实现 |
+|--------|------|------|-------------|
+| `0x1C` | ActionGetVariable | 弹出变量名，压入变量值 | ✅ 已实现（this / _root / 子 clip 名） |
+| `0x1D` | ActionSetVariable | 弹出值和名称，设置变量 | ✅ 日志记录 |
+| `0x4E` | ActionGetMember | 弹出成员名和对象，压入 obj[member] | ✅ 已实现（子 MovieClip 查找 + 内置属性） |
+| `0x4F` | ActionSetMember | 弹出值、成员名、对象，设置 obj[member] | ✅ 日志记录 |
+| `0x22` | ActionGetProperty | 按属性索引获取显示对象属性 | ✅ 已实现 |
+| `0x23` | ActionSetProperty | 按属性索引设置显示对象属性 | ✅ 日志记录 |
+
+#### 函数 / 方法调用
+
+| 操作码 | 名称 | 行为 | Preview 实现 |
+|--------|------|------|-------------|
+| `0x52` | ActionCallMethod | 调用对象方法 | ✅ 已实现（gotoAndPlay/gotoAndStop/play/stop） |
+| `0x3D` | ActionCallFunction | 调用全局函数 | ⚠️ 日志 + 跳过 |
+| `0x3E` | ActionReturn | 从函数返回 | ✅ 已实现 |
+
+#### 算术
+
+| 操作码 | 名称 | Preview 实现 |
+|--------|------|-------------|
+| `0x0A` | ActionAdd | ✅ |
+| `0x0B` | ActionSubtract | ✅ |
+| `0x0C` | ActionMultiply | ✅ |
+| `0x0D` | ActionDivide | ✅ |
+| `0x3F` | ActionModulo | ✅ |
+| `0x47` | ActionAdd2 | ✅（支持字符串连接） |
+| `0x50` | ActionIncrement | ✅ |
+| `0x51` | ActionDecrement | ✅ |
+
+#### 比较 / 逻辑
+
+| 操作码 | 名称 | Preview 实现 |
+|--------|------|-------------|
+| `0x0E` | ActionEquals | ✅ |
+| `0x0F` | ActionLess | ✅ |
+| `0x10` | ActionAnd | ✅ |
+| `0x11` | ActionOr | ✅ |
+| `0x12` | ActionNot | ✅ |
+| `0x13` | ActionStringEquals | ✅ |
+| `0x29` | ActionStringLess | ✅ |
+| `0x48` | ActionLess2 | ✅ |
+| `0x49` | ActionEquals2 | ✅ |
+| `0x66` | ActionStrictEquals | ✅ |
+| `0x67` | ActionGreater | ✅ |
+| `0x68` | ActionStringGreater | ✅ |
+
+#### 位运算
+
+| 操作码 | 名称 | Preview 实现 |
+|--------|------|-------------|
+| `0x60` | ActionBitAnd | ✅ |
+| `0x61` | ActionBitOr | ✅ |
+| `0x62` | ActionBitXor | ✅ |
+| `0x63` | ActionBitLShift | ✅ |
+| `0x64` | ActionBitRShift | ✅ |
+| `0x65` | ActionBitURShift | ✅ |
+
+#### 控制流
+
+| 操作码 | 名称 | Preview 实现 |
+|--------|------|-------------|
+| `0x99` | ActionJump | ✅ |
+| `0x9D` | ActionIf | ✅ |
+
+#### 类型转换
+
+| 操作码 | 名称 | Preview 实现 |
+|--------|------|-------------|
+| `0x18` | ActionToInteger | ✅ |
+| `0x4A` | ActionToNumber | ✅ |
+| `0x4B` | ActionToString | ✅ |
+| `0x44` | ActionTypeOf | ✅ |
+
+#### 字符串
+
+| 操作码 | 名称 | Preview 实现 |
+|--------|------|-------------|
+| `0x14` | ActionStringLength | ✅ |
+| `0x15` | ActionStringExtract | ⚠️ 跳过 |
+| `0x21` | ActionStringAdd | ✅ |
+| `0x31` | ActionMBStringLength | ✅ |
+| `0x35` | ActionMBStringExtract | ⚠️ 跳过 |
+
+#### 对象
+
+| 操作码 | 名称 | Preview 实现 |
+|--------|------|-------------|
+| `0x40` | ActionNewObject | ⚠️ 日志 + 跳过 |
+| `0x42` | ActionInitArray | ✅ 消费栈参数 |
+| `0x43` | ActionInitObject | ✅ 消费栈参数 |
+| `0x3C` | ActionDefineLocal | ✅ 日志 |
+| `0x41` | ActionDefineLocal2 | ✅ 日志 |
+| `0x3A` | ActionDelete | ✅ |
+| `0x3B` | ActionDelete2 | ✅ |
+| `0x46` | ActionEnumerate | ✅ |
+| `0x55` | ActionEnumerate2 | ✅ |
+| `0x54` | ActionInstanceOf | ✅ |
+| `0x45` | ActionTargetPath | ✅ |
+| `0x69` | ActionExtends | ✅ |
+
+#### 扩展操作码（带操作数）
+
+| 操作码 | 名称 | Preview 实现 |
+|--------|------|-------------|
+| `0x87` | ActionStoreRegister | ✅ |
+| `0x88` | ActionConstantPool | ✅ 已实现 |
+| `0x8B` | ActionSetTarget | ⚠️ 跳过 |
+| `0x8E` | ActionDefineFunction2 | ⚠️ 跳过 |
+| `0x94` | ActionWith | ⚠️ 跳过 |
+| `0x9B` | ActionDefineFunction | ⚠️ 跳过 |
+| `0x9F` | ActionGotoFrame2 | ⚠️ 跳过 |
+
+#### NOP 操作码（引擎中不执行或静默处理）
+
+| 操作码 | 名称 |
+|--------|------|
+| `0x08` | ToggleQuality |
+| `0x09` | StopSounds |
+| `0x27` | StartDrag |
+| `0x28` | EndDrag |
+| `0x2A` | Throw |
+| `0x2B` | CastOp |
+| `0x2C` | ImplementsOp |
+
+### ActionPush 数据类型
+
+ActionPush (`0x96`) 的操作数数据由多个连续的 Push 条目组成，每条以类型字节开头：
+
+| 类型字节 | 名称 | 数据格式 | Preview 实现 |
+|----------|------|---------|-------------|
+| `0` | String | null-terminated 字符串 | ✅ |
+| `1` | Float | 4 bytes IEEE 32-bit | ✅ |
+| `2` | Null | 无数据 | ✅ |
+| `3` | Undefined | 无数据 | ✅ |
+| `4` | Register | 1 byte 寄存器索引 | ✅ |
+| `5` | Boolean | 1 byte (0=false, 1=true) | ✅ |
+| `6` | Double | 8 bytes IEEE 64-bit | ✅ |
+| `7` | Integer | 4 bytes 有符号整数 | ✅ |
+| `8` | Constant8 | 1 byte 常量池索引 | ✅ |
+| `9` | Constant16 | 2 bytes 常量池索引 | ✅ |
+
+**常量池解析**：Constant8/Constant16 引用的常量池可由两种方式提供：
+1. **ActionConstantPool (0x88)** — 字节码内联定义的局部常量池
+2. **符号表 (symbols)** — 当无局部常量池时，引擎使用 LMB 文件的全局符号表
+
+在 machineselect 的 Action 2 中，没有 ActionConstantPool 指令，Constant8[32] 和 Constant16[437..440] 直接引用符号表。
+
+### machineselect Action 2 字节码完整解码
+
+```
+96 0A 00    ActionPush (length=10)
+  08 20       Constant8[32] = "Start"
+  07 01 00 00 00  Integer(1)
+  09 B5 01    Constant16[437] = "this"
+1C          ActionGetVariable → pop "this", push thisClip
+96 03 00    ActionPush (length=3)
+  09 B6 01    Constant16[438] = "TitleBase_Left_mc"
+4E          ActionGetMember → pop "TitleBase_Left_mc", pop thisClip, push thisClip.TitleBase_Left_mc
+96 03 00    ActionPush (length=3)
+  09 B7 01    Constant16[439] = "gotoAndPlay"
+52          ActionCallMethod → pop "gotoAndPlay", pop clip, pop 1, pop "Start"
+                              → thisClip.TitleBase_Left_mc.gotoAndPlay("Start")
+17          ActionPop → discard return value
+
+96 0A 00    ActionPush (length=10)
+  08 20       Constant8[32] = "Start"
+  07 01 00 00 00  Integer(1)
+  09 B5 01    Constant16[437] = "this"
+1C          ActionGetVariable
+96 03 00    ActionPush (length=3)
+  09 B8 01    Constant16[440] = "TitleBase_Right_mc"
+4E          ActionGetMember
+96 03 00    ActionPush (length=3)
+  09 B7 01    Constant16[439] = "gotoAndPlay"
+52          ActionCallMethod → thisClip.TitleBase_Right_mc.gotoAndPlay("Start")
+17          ActionPop
+
+00 00       End
+```
+
+**等价 ActionScript 2 代码：**
+```actionscript
+this.TitleBase_Left_mc.gotoAndPlay("Start");
+this.TitleBase_Right_mc.gotoAndPlay("Start");
+```
+
+---
+
 ## 对 Preview 实现的影响
 
-### 需要实现的
+### 已实现
 
-1. **解析 action_script 标签**：从二进制数据中提取 `[action_id → bytecode[]]` 映射
-2. **简单字节码解释器**：实现 stop / play / gotoFrame / gotoLabel / nextFrame / prevFrame
-3. **符号表查找**：gotoLabel 需要通过 symbolIndex 查找标签名
-4. **帧标签匹配**：将标签名与 sprite 的 frameLabels 匹配，找到目标帧
+1. ✅ **解析 action_script 标签**：从二进制数据中提取 `[action_id → bytecode[]]` 映射
+2. ✅ **简单字节码解释器**：实现 stop / play / gotoFrame / gotoLabel / nextFrame / prevFrame
+3. ✅ **符号表查找**：gotoLabel 需要通过 symbolIndex 查找标签名
+4. ✅ **帧标签匹配**：将标签名与 sprite 的 frameLabels 匹配，找到目标帧
+5. ✅ **AS2 栈虚拟机**：实现 ActionPush / GetVariable / GetMember / CallMethod 等核心操作码
+6. ✅ **子 MovieClip 方法调用**：支持 gotoAndPlay / gotoAndStop / play / stop 调用子 clip
+7. ✅ **实例名称解析**：从 PlaceObject.nameId 解析实例名，用于子 clip 查找
 
 ### 可以暂不实现的
 
-1. **AS2 虚拟机**（0x96 ActionPush 等复杂操作码）—— 影响少数高级脚本
-2. **Action 队列系统**（MovieAction/LoadAction/UnloadAction 的延迟执行）—— 直接同步执行即可
-3. **Button 事件系统**（TriggerEvents 的事件掩码匹配）—— UI 交互相关
+1. **Action 队列系统**（MovieAction/LoadAction/UnloadAction 的延迟执行）—— 直接同步执行即可
+2. **Button 事件系统**（TriggerEvents 的事件掩码匹配）—— UI 交互相关
+3. **DefineFunction/DefineFunction2** — 自定义函数定义
+4. **SetTarget / With** — 作用域切换
 
 ### 预期效果
 
-实现简单操作码后，大多数 UI 动画（如 machineselect 的机体选择画面）中的嵌套 sprite 将能够：
-- 在正确的帧标签处 stop
+实现 AS2 栈虚拟机后，UI 动画（如 machineselect 的机体选择画面）中的：
+- 嵌套 sprite 在正确的帧标签处 stop
 - 通过 gotoAndPlay 切换到正确的动画段
 - 保持正确的播放/停止状态
+- AS2 脚本可以控制子 MovieClip 的跳转和播放（如 `this.TitleBase_Left_mc.gotoAndPlay("Start")`）
 
 ---
 
