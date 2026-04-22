@@ -148,10 +148,10 @@ export class TimelinePlayer {
   play(): void {
     if (this.playing) return;
     const end = this.effectiveEnd();
-    if (end <= 0) return;
 
-    // If at the end, wrap around before starting
-    if (!this.loop && this.frameIndex >= end) {
+    // Allow playback even when root sprite has only 1 frame so that
+    // nested sprites (which have their own timelines) can advance.
+    if (end > 0 && !this.loop && this.frameIndex >= end) {
       this.frameIndex = this.effectiveStart();
       this.rebuildToFrame(this.frameIndex);
     }
@@ -384,33 +384,32 @@ export class TimelinePlayer {
 
       if (this.playableCount > 0) {
         let remaining = framesToAdvance;
-        let advanced = 0;
         const end = this.effectiveEnd();
         const start = this.effectiveStart();
 
-        while (remaining > 0 && this.playing) {
-          if (this.frameIndex >= end) {
-            if (this.loop) {
-              // Looping behaves like a goto(start): deterministic rebuild from keyframe.
-              this.rebuildToFrame(start, true);
-              remaining -= 1;
-              advanced += 1;
-              continue;
+        // Single-frame root sprite: just advance nested sprites each tick.
+        if (end <= 0) {
+          this.scene.advanceNestedSprites(this.resourceStore, framesToAdvance);
+          this.onFrameChanged?.(this.getCurrentFrame(), this.scene, this.frameIndex);
+        } else {
+          while (remaining > 0 && this.playing) {
+            if (this.frameIndex >= end) {
+              if (this.loop) {
+                this.rebuildToFrame(start, true);
+                remaining -= 1;
+                continue;
+              } else {
+                this.playing = false;
+                break;
+              }
             } else {
-              this.playing = false;
-              break;
+              this.scene.advanceNestedSprites(this.resourceStore, 1);
+              this.frameIndex += 1;
             }
-          } else {
-            // Nested sprites advance once per root frame step, before applying the new frame.
-            this.scene.advanceNestedSprites(this.resourceStore, 1);
-            this.frameIndex += 1;
+            this.applyCurrentFrame();
+            remaining -= 1;
           }
-          this.applyCurrentFrame();
-          remaining -= 1;
-          advanced += 1;
         }
-
-        // Nested sprites already advanced per frame step above.
       }
     }
 

@@ -1,0 +1,2 @@
+[    1659ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-NLPANMJC.js?v=be6334f4:21550
+[   29813ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/title_ef_0060.json:0

@@ -32,6 +32,7 @@ export class WebGlRenderer {
     const gl = canvas.getContext("webgl", {
       alpha: true,
       premultipliedAlpha: true,
+      preserveDrawingBuffer: true,
     });
     if (!gl) throw new Error("WebGL is not supported");
     this.gl = gl;
@@ -346,13 +347,17 @@ export class WebGlRenderer {
     stageHeight: number,
     m: { a: number; b: number; c: number; d: number; x: number; y: number }
   ): Float32Array {
+    // LMB uses top-left origin: (0,0) = top-left, (width,height) = bottom-right.
+    // Map to NDC: x in [-1,1], y in [1,-1] (y flipped).
     const sx = 2 / stageWidth;
     const sy = -2 / stageHeight;
+    const tx = -1;
+    const ty = 1;
 
     return new Float32Array([
       m.a * sx, m.b * sy, 0,
       m.c * sx, m.d * sy, 0,
-      m.x * sx, m.y * sy, 1,
+      m.x * sx + tx, m.y * sy + ty, 1,
     ]);
   }
 }

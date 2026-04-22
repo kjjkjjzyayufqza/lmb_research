@@ -83,8 +83,12 @@ export class Scene {
       // Engine behavior summary (from reverse-engineering):
       // - place: reuse instance if character matches, otherwise replace
       // - move: carry over previous instance state, then override fields present in this tag
+      //   characterId=0 in MOVE means "keep existing character" (no character change)
+      const effectiveCharId = isMove && po.characterId === 0 && existing != null
+        ? existing.characterId
+        : po.characterId;
       const canReuse =
-        existing != null && existing.characterId === po.characterId && (isPlace || isMove);
+        existing != null && existing.characterId === effectiveCharId && (isPlace || isMove);
 
       if (canReuse) {
         // Reuse: update only fields that are explicitly present.

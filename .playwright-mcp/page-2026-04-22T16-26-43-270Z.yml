@@ -1,0 +1,115 @@
+- generic:
+  - generic:
+    - generic:
+      - banner:
+        - heading [level=1]: LMB Editor
+        - button:
+          - img
+          - text: Open JSON
+        - combobox [expanded]:
+          - generic: Sprite 20 (1f)
+          - img
+        - generic:
+          - generic: 324x64
+          - generic: 60fps
+      - generic:
+        - generic:
+          - generic:
+            - tablist:
+              - tab [selected]: Instances
+              - tab: Frame
+              - tab: Resources
+              - tab: Export
+              - tab: Sprites
+            - tabpanel:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=3]: Display List (9 instances)
+                        - generic:
+                          - button:
+                            - generic:
+                              - generic: D:0
+                              - generic: char:1
+                              - generic: graphic
+                          - button:
+                            - generic:
+                              - generic: D:0
+                              - generic: char:3
+                              - generic: graphic
+                          - button:
+                            - generic:
+                              - generic: D:1
+                              - generic: char:8
+                              - generic: graphic
+                          - button:
+                            - generic:
+                              - generic: D:0
+                              - generic: char:3
+                              - generic: graphic
+                          - button:
+                            - generic:
+                              - generic: D:1
+                              - generic: char:8
+                              - generic: graphic
+                          - button:
+                            - generic:
+                              - generic: D:0
+                              - generic: char:11
+                              - generic: graphic
+                          - button:
+                            - generic:
+                              - generic: D:0
+                              - generic: char:3
+                              - generic: graphic
+                          - button:
+                            - generic:
+                              - generic: D:0
+                              - generic: char:11
+                              - generic: graphic
+                          - button:
+                            - generic:
+                              - generic: D:0
+                              - generic: char:3
+                              - generic: graphic
+      - generic:
+        - generic:
+          - button:
+            - img
+          - button:
+            - img
+          - button:
+            - img
+          - button:
+            - img
+          - button:
+            - img
+          - button:
+            - img
+        - generic:
+          - generic:
+            - generic:
+              - slider
+        - generic:
+          - generic: 0 / 0
+        - generic:
+          - button [disabled]:
+            - img
+          - button [disabled]:
+            - img
+  - listbox [ref=e114]:
+    - option "Sprite 7 (4f)" [ref=e115]:
+      - generic [ref=e117]: Sprite 7 (4f)
+    - option "Sprite 10 (4f)" [ref=e118]:
+      - generic [ref=e120]: Sprite 10 (4f)
+    - option "Sprite 13 (4f)" [ref=e121]:
+      - generic [ref=e123]: Sprite 13 (4f)
+    - option "Sprite 18 (40f)" [ref=e124]:
+      - generic [ref=e126]: Sprite 18 (40f)
+    - option "Sprite 19 (150f)" [ref=e127]:
+      - generic [ref=e129]: Sprite 19 (150f)
+    - option "Sprite 20 (1f)" [active] [selected] [ref=e130]:
+      - img [ref=e133]
+      - generic [ref=e135]: Sprite 20 (1f)

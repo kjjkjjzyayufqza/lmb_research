@@ -1,0 +1,48 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - heading "LMB Editor" [level=1] [ref=e5]
+    - button "Open JSON" [ref=e6] [cursor=pointer]:
+      - img [ref=e7]
+      - text: Open JSON
+    - combobox [ref=e40] [cursor=pointer]:
+      - generic: Sprite 20 (1f)
+      - img [ref=e41]
+    - generic [ref=e43]:
+      - generic [ref=e44]: 324x64
+      - generic [ref=e45]: 60fps
+  - generic [ref=e13]:
+    - tablist [ref=e14]:
+      - tab "Instances" [selected] [ref=e15] [cursor=pointer]
+      - tab "Frame" [ref=e16] [cursor=pointer]
+      - tab "Resources" [ref=e17] [cursor=pointer]
+      - tab "Export" [ref=e18] [cursor=pointer]
+      - tab "Sprites" [ref=e19] [cursor=pointer]
+    - tabpanel "Instances" [ref=e20]:
+      - generic [ref=e25]:
+        - heading "Display List (1 instances)" [level=3] [ref=e157]
+        - button "D:0 char:1 graphic" [ref=e47] [cursor=pointer]:
+          - generic [ref=e48]:
+            - generic [ref=e49]: D:0
+            - generic [ref=e50]: char:1
+            - generic [ref=e51]: graphic
+  - generic [ref=e29]:
+    - generic [ref=e30]:
+      - button [ref=e92] [cursor=pointer]:
+        - img [ref=e93]
+      - button [ref=e95] [cursor=pointer]:
+        - img [ref=e154]
+      - button [ref=e98] [cursor=pointer]:
+        - img [ref=e99]
+      - button [ref=e101] [cursor=pointer]:
+        - img [ref=e102]
+      - button [ref=e104] [cursor=pointer]:
+        - img [ref=e105]
+      - button [ref=e110] [cursor=pointer]:
+        - img [ref=e111]
+    - slider [ref=e35]
+    - generic [ref=e37]: 0 / 0
+    - generic [ref=e39]:
+      - button [disabled]:
+        - img
+      - button [disabled]:
+        - img
