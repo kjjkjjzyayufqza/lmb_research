@@ -1,0 +1,89 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - heading "LMB Editor" [level=1] [ref=e5]
+    - button "Open JSON" [ref=e6] [cursor=pointer]:
+      - img [ref=e7]
+      - text: Open JSON
+    - combobox [ref=e40] [cursor=pointer]:
+      - generic: Sprite 20 (1f)
+      - img [ref=e41]
+    - generic [ref=e43]:
+      - generic [ref=e44]: 324x64
+      - generic [ref=e45]: 60fps
+  - generic [ref=e13]:
+    - tablist [ref=e14]:
+      - tab "Instances" [selected] [ref=e15] [cursor=pointer]
+      - tab "Frame" [ref=e16] [cursor=pointer]
+      - tab "Resources" [ref=e17] [cursor=pointer]
+      - tab "Export" [ref=e18] [cursor=pointer]
+      - tab "Sprites" [ref=e19] [cursor=pointer]
+    - tabpanel "Instances" [ref=e20]:
+      - generic [ref=e25]:
+        - heading "Display List (9 instances)" [level=3] [ref=e46]
+        - generic [ref=e27]:
+          - button "D:0 char:1 graphic" [ref=e47] [cursor=pointer]:
+            - generic [ref=e48]:
+              - generic [ref=e49]: D:0
+              - generic [ref=e50]: char:1
+              - generic [ref=e51]: graphic
+          - button "D:0 char:3 graphic" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115]:
+              - generic [ref=e116]: D:0
+              - generic [ref=e117]: char:3
+              - generic [ref=e118]: graphic
+          - button "D:1 char:8 graphic" [ref=e119] [cursor=pointer]:
+            - generic [ref=e120]:
+              - generic [ref=e121]: D:1
+              - generic [ref=e122]: char:8
+              - generic [ref=e123]: graphic
+          - button "D:0 char:3 graphic" [ref=e124] [cursor=pointer]:
+            - generic [ref=e125]:
+              - generic [ref=e126]: D:0
+              - generic [ref=e127]: char:3
+              - generic [ref=e128]: graphic
+          - button "D:1 char:8 graphic" [ref=e129] [cursor=pointer]:
+            - generic [ref=e130]:
+              - generic [ref=e131]: D:1
+              - generic [ref=e132]: char:8
+              - generic [ref=e133]: graphic
+          - button "D:0 char:11 graphic" [ref=e134] [cursor=pointer]:
+            - generic [ref=e135]:
+              - generic [ref=e136]: D:0
+              - generic [ref=e137]: char:11
+              - generic [ref=e138]: graphic
+          - button "D:0 char:3 graphic" [ref=e139] [cursor=pointer]:
+            - generic [ref=e140]:
+              - generic [ref=e141]: D:0
+              - generic [ref=e142]: char:3
+              - generic [ref=e143]: graphic
+          - button "D:0 char:11 graphic" [ref=e144] [cursor=pointer]:
+            - generic [ref=e145]:
+              - generic [ref=e146]: D:0
+              - generic [ref=e147]: char:11
+              - generic [ref=e148]: graphic
+          - button "D:0 char:3 graphic" [ref=e149] [cursor=pointer]:
+            - generic [ref=e150]:
+              - generic [ref=e151]: D:0
+              - generic [ref=e152]: char:3
+              - generic [ref=e153]: graphic
+  - generic [ref=e29]:
+    - generic [ref=e30]:
+      - button [ref=e92] [cursor=pointer]:
+        - img [ref=e93]
+      - button [ref=e95] [cursor=pointer]:
+        - img [ref=e154]
+      - button [ref=e98] [cursor=pointer]:
+        - img [ref=e99]
+      - button [ref=e101] [cursor=pointer]:
+        - img [ref=e102]
+      - button [ref=e104] [cursor=pointer]:
+        - img [ref=e105]
+      - button [ref=e110] [cursor=pointer]:
+        - img [ref=e156]
+    - slider [ref=e35]
+    - generic [ref=e37]: 0 / 0
+    - generic [ref=e39]:
+      - button [disabled]:
+        - img
+      - button [disabled]:
+        - img

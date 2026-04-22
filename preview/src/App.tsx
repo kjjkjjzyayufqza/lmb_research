@@ -188,6 +188,7 @@ function App() {
               onChange={(e) => {
                 const f = e.target.files?.[0];
                 if (f) handleFileSelected(f);
+                e.target.value = "";
               }}
             />
 

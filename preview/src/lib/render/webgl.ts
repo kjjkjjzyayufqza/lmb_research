@@ -105,14 +105,11 @@ export class WebGlRenderer {
     this.textureByAtlasId.clear();
     const atlases = json.resources.textureAtlases;
 
-    const defaultPattern = (index: number) =>
-      `img-${String(index).padStart(5, "0")}.png`;
-
     for (let i = 0; i < atlases.length; i++) {
       const atlas = atlases[i];
       const fileName = namePattern
         ? namePattern(i, atlas.name)
-        : defaultPattern(i);
+        : (atlas.name ?? `img-${String(i).padStart(5, "0")}.png`);
       const url = basePath
         ? `${basePath.replace(/\/+$/, "")}/${fileName}`
         : fileName;
