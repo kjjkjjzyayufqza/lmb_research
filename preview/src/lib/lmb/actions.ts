@@ -1,4 +1,4 @@
-import type { DoAction, SpriteDef, NestedSpriteInstance } from "./types";
+import type { DoAction, SpriteDef, NestedSpriteInstance, AS2Function, AS2Scope } from "./types";
 import type { ResourceStore } from "./store";
 import type { Scene } from "./scene";
 
@@ -196,6 +196,7 @@ export interface AS2ExecutionContext {
   sprite: SpriteDef;
   scene: Scene;
   resourceStore: ResourceStore;
+  scope?: AS2Scope;
 }
 
 // ============================================================
@@ -366,18 +367,45 @@ export class ActionInterpreter {
     resourceStore: ResourceStore,
     context: AS2ExecutionContext,
     logs: string[],
-  ): ExecutionResult {
-    const result: ExecutionResult = {};
+    inheritedRegisters?: AS2Value[],
+    inheritedLocals?: Map<string, AS2Value>,
+    inheritedScope?: AS2Scope,
+    inheritedConstantPool?: string[] | null,
+  ): ExecutionResult & { _returnValue?: AS2Value } {
+    const result: ExecutionResult & { _returnValue?: AS2Value } = {};
     const stack: AS2Value[] = [];
     const len = bytecodes.length;
     let pc = 0;
 
     // Constant pool — may be set by ActionConstantPool (0x88)
     // Default: use the symbol table
-    let constantPool: string[] | null = null;
+    let constantPool: string[] | null = inheritedConstantPool ?? null;
 
     // Registers (r0-r255)
-    const registers: AS2Value[] = new Array(256).fill(undefined);
+    const registers: AS2Value[] = inheritedRegisters ?? new Array(256).fill(undefined);
+
+    // Persistent scope for cross-frame variable/function storage
+    const scope: AS2Scope = inheritedScope ?? context.scope ?? { variables: new Map(), functions: new Map() };
+
+    // Local variables for the current execution frame
+    const locals: Map<string, AS2Value> = inheritedLocals ?? new Map();
+
+    // Built-in Math object
+    const mathObject = {
+      __type: "builtin" as const,
+      name: "Math",
+      random: () => Math.random(),
+      floor: (v: number) => Math.floor(v),
+      ceil: (v: number) => Math.ceil(v),
+      round: (v: number) => Math.round(v),
+      abs: (v: number) => Math.abs(v),
+      min: (a: number, b: number) => Math.min(a, b),
+      max: (a: number, b: number) => Math.max(a, b),
+      sqrt: (v: number) => Math.sqrt(v),
+      sin: (v: number) => Math.sin(v),
+      cos: (v: number) => Math.cos(v),
+      PI: Math.PI,
+    };
 
     const numFrames = sprite.numFrames > 0
       ? sprite.numFrames
@@ -413,11 +441,19 @@ export class ActionInterpreter {
     });
 
     /**
-     * Resolve a variable name. Handles "this", "_root", "_parent".
+     * Resolve a variable name. Handles "this", "_root", "_parent", locals,
+     * persistent scope, built-in objects (Math), and child clip names.
      */
     const resolveVariable = (name: string): AS2Value => {
       if (name === "this") return resolveThis();
-      if (name === "_root") return resolveThis(); // Approximate: treat _root as this
+      if (name === "_root") return resolveThis();
+      if (name === "Math") return mathObject as any;
+      // Check local variables first
+      if (locals.has(name)) return locals.get(name);
+      // Check persistent scope variables
+      if (scope.variables.has(name)) return scope.variables.get(name) as AS2Value;
+      // Check persistent scope functions (return a callable reference)
+      if (scope.functions.has(name)) return scope.functions.get(name) as any;
       // Try to find as a child clip name
       const child = context.scene.getNestedByName(name);
       if (child) {
@@ -432,10 +468,23 @@ export class ActionInterpreter {
       return undefined;
     };
 
+    const setVariable = (name: string, value: AS2Value): void => {
+      if (locals.has(name)) {
+        locals.set(name, value);
+      } else {
+        scope.variables.set(name, value);
+      }
+    };
+
     /**
-     * Resolve member access on a MovieClip.
+     * Resolve member access on a MovieClip or built-in object.
      */
     const resolveMember = (obj: AS2Value, memberName: string): AS2Value => {
+      // Handle Math object members
+      if (obj != null && typeof obj === "object" && (obj as any).__type === "builtin") {
+        const val = (obj as any)[memberName];
+        return val;
+      }
       if (!isMovieClip(obj)) return undefined;
 
       // Try to find as a child clip of this movieclip's scene
@@ -468,9 +517,43 @@ export class ActionInterpreter {
     };
 
     /**
-     * Call a method on a MovieClip. Handles gotoAndPlay, gotoAndStop, play, stop.
+     * Execute a user-defined AS2 function with arguments.
+     */
+    const executeAS2Function = (fn: AS2Function, args: AS2Value[]): AS2Value => {
+      const fnRegisters: AS2Value[] = new Array(Math.max(fn.registerCount, 4)).fill(undefined);
+      // Bind parameters to registers or locals
+      for (let pi = 0; pi < fn.paramNames.length; pi++) {
+        const val = pi < args.length ? args[pi] : undefined;
+        if (fn.paramRegisters[pi] > 0) {
+          fnRegisters[fn.paramRegisters[pi]] = val;
+        } else if (fn.paramNames[pi]) {
+          locals.set(fn.paramNames[pi], val);
+        }
+      }
+      // Execute function body using a sub-VM call
+      const fnResult = ActionInterpreter.executeAS2VM(
+        fn.body, sprite, resourceStore, context, [],
+        fnRegisters, locals, scope, constantPool,
+      );
+      return fnResult._returnValue as AS2Value;
+    };
+
+    /**
+     * Call a method on a MovieClip, built-in, or function. Handles gotoAndPlay, gotoAndStop, play, stop.
      */
     const callMethod = (obj: AS2Value, methodName: string, args: AS2Value[]): AS2Value => {
+      // Handle built-in Math methods
+      if (obj != null && typeof obj === "object" && (obj as any).__type === "builtin") {
+        const method = (obj as any)[methodName];
+        if (typeof method === "function") {
+          const numArgs = args.map(a => toAS2Number(a));
+          const ret = method(...numArgs);
+          logs.push(`Math.${methodName}(${numArgs.join(", ")}) → ${ret}`);
+          return ret;
+        }
+        logs.push(`Math.${methodName} — not a function`);
+        return undefined;
+      }
       if (!isMovieClip(obj)) {
         logs.push(`CallMethod: object is not a MovieClip, method="${methodName}"`);
         return undefined;
@@ -598,7 +681,28 @@ export class ActionInterpreter {
           return undefined;
         }
 
+        case "duplicateMovieClip": {
+          const targetName = toAS2String(args[0]);
+          const depth = toAS2Number(args[1]);
+          context.scene.duplicateMovieClip(clip.name, targetName, depth, resourceStore);
+          logs.push(`${clip.name}.duplicateMovieClip("${targetName}", ${depth})`);
+          return undefined;
+        }
+
+        case "removeMovieClip": {
+          context.scene.removeMovieClip(clip.name);
+          logs.push(`${clip.name}.removeMovieClip()`);
+          return undefined;
+        }
+
         default: {
+          // Try calling as a user-defined function from the scope
+          const scopeFn = scope.functions.get(methodName);
+          if (scopeFn) {
+            const ret = executeAS2Function(scopeFn, args);
+            logs.push(`${clip.name}.${methodName}(${args.map(a => JSON.stringify(a)).join(", ")})`);
+            return ret;
+          }
           logs.push(`${clip.name}.${methodName}(${args.map(a => JSON.stringify(a)).join(", ")}) — method not implemented`);
           return undefined;
         }
@@ -778,8 +882,7 @@ export class ActionInterpreter {
         case AS2.ACTION_SET_VARIABLE: {
           const val = stack.pop();
           const varName = toAS2String(stack.pop());
-          // Variable storage not implemented — log and discard
-          logs.push(`SetVariable "${varName}" = ${JSON.stringify(val)}`);
+          setVariable(varName, val);
           break;
         }
 
@@ -843,13 +946,21 @@ export class ActionInterpreter {
           for (let i = 0; i < argCount; i++) {
             args.push(stack.pop());
           }
-          logs.push(`CallFunction ${funcName}(${args.length} args) — not implemented`);
-          stack.push(undefined);
+          const fn = scope.functions.get(funcName);
+          if (fn) {
+            const ret = executeAS2Function(fn, args);
+            stack.push(ret);
+            logs.push(`CallFunction ${funcName}(${args.map(a => JSON.stringify(a)).join(", ")})`);
+          } else {
+            logs.push(`CallFunction ${funcName}(${args.length} args) — function not found`);
+            stack.push(undefined);
+          }
           break;
         }
 
         // ---- ActionReturn (0x3E) ----
         case AS2.ACTION_RETURN: {
+          result._returnValue = stack.pop();
           pc = len; // exit VM
           break;
         }
@@ -1184,13 +1295,13 @@ export class ActionInterpreter {
         }
         case AS2.ACTION_DEFINE_LOCAL: {
           const val = stack.pop();
-          const name = toAS2String(stack.pop());
-          logs.push(`DefineLocal "${name}" = ${JSON.stringify(val)}`);
+          const dlName = toAS2String(stack.pop());
+          locals.set(dlName, val);
           break;
         }
         case AS2.ACTION_DEFINE_LOCAL2: {
-          const name = toAS2String(stack.pop());
-          logs.push(`DefineLocal2 "${name}"`);
+          const dl2Name = toAS2String(stack.pop());
+          locals.set(dl2Name, undefined);
           break;
         }
         case AS2.ACTION_DELETE:
@@ -1280,22 +1391,132 @@ export class ActionInterpreter {
           break;
         }
         case AS2.ACTION_CLONE_SPRITE: {
-          // pop depth, pop target, pop source → no push
-          stack.pop(); stack.pop(); stack.pop();
-          logs.push("Skip CloneSprite");
+          const cloneDepth = toAS2Number(stack.pop());
+          const cloneTarget = toAS2String(stack.pop());
+          const cloneSource = toAS2String(stack.pop());
+          context.scene.duplicateMovieClip(cloneSource, cloneTarget, cloneDepth, resourceStore);
+          logs.push(`duplicateMovieClip("${cloneSource}", "${cloneTarget}", ${cloneDepth})`);
           break;
         }
         case AS2.ACTION_REMOVE_SPRITE: {
-          // pop target → no push
-          stack.pop();
-          logs.push("Skip RemoveSprite");
+          const removeTarget = toAS2String(stack.pop());
+          context.scene.removeMovieClip(removeTarget);
+          logs.push(`removeMovieClip("${removeTarget}")`);
+          break;
+        }
+
+        // ---- DefineFunction (0x9B) ----
+        case AS2.ACTION_DEFINE_FUNCTION: {
+          if (pc + 2 > len) { pc = len; break; }
+          const dfHeaderLen = bytecodes[pc] | (bytecodes[pc + 1] << 8);
+          pc += 2;
+          const dfHeaderStart = pc;
+          // Read function name (null-terminated)
+          let dfName = "";
+          while (pc < dfHeaderStart + dfHeaderLen && bytecodes[pc] !== 0) {
+            dfName += String.fromCharCode(bytecodes[pc]);
+            pc++;
+          }
+          if (pc < len) pc++; // skip null
+          // Number of params
+          const dfNumParams = pc + 2 <= len ? (bytecodes[pc] | (bytecodes[pc + 1] << 8)) : 0;
+          pc += 2;
+          // Read param names
+          const dfParamNames: string[] = [];
+          for (let pi = 0; pi < dfNumParams; pi++) {
+            let pn = "";
+            while (pc < len && bytecodes[pc] !== 0) {
+              pn += String.fromCharCode(bytecodes[pc]);
+              pc++;
+            }
+            if (pc < len) pc++;
+            dfParamNames.push(pn);
+          }
+          // Code size
+          const dfCodeSize = pc + 2 <= len ? (bytecodes[pc] | (bytecodes[pc + 1] << 8)) : 0;
+          pc += 2;
+          // Extract function body
+          const dfBody = bytecodes.slice(pc, pc + dfCodeSize);
+          pc += dfCodeSize;
+          const fnDef: AS2Function = {
+            name: dfName,
+            paramNames: dfParamNames,
+            paramRegisters: dfParamNames.map(() => 0),
+            registerCount: 4,
+            flags: 0,
+            body: dfBody,
+          };
+          if (dfName) {
+            scope.functions.set(dfName, fnDef);
+            logs.push(`DefineFunction "${dfName}" (${dfNumParams} params, ${dfCodeSize} bytes)`);
+          } else {
+            stack.push(fnDef as any);
+          }
+          break;
+        }
+
+        // ---- DefineFunction2 (0x8E) ----
+        case AS2.ACTION_DEFINE_FUNCTION2: {
+          if (pc + 2 > len) { pc = len; break; }
+          const df2HeaderLen = bytecodes[pc] | (bytecodes[pc + 1] << 8);
+          pc += 2;
+          const df2HeaderEnd = pc + df2HeaderLen;
+          // Read function name (null-terminated)
+          let df2Name = "";
+          while (pc < df2HeaderEnd && bytecodes[pc] !== 0) {
+            df2Name += String.fromCharCode(bytecodes[pc]);
+            pc++;
+          }
+          if (pc < len) pc++; // skip null
+          // Number of params (2 bytes)
+          const df2NumParams = pc + 2 <= len ? (bytecodes[pc] | (bytecodes[pc + 1] << 8)) : 0;
+          pc += 2;
+          // Register count (1 byte)
+          const df2RegCount = pc < len ? bytecodes[pc] : 4;
+          pc += 1;
+          // Flags (2 bytes)
+          const df2Flags = pc + 2 <= len ? (bytecodes[pc] | (bytecodes[pc + 1] << 8)) : 0;
+          pc += 2;
+          // Parameters: each is (register: 1 byte, name: null-terminated string)
+          const df2ParamNames: string[] = [];
+          const df2ParamRegs: number[] = [];
+          for (let pi = 0; pi < df2NumParams; pi++) {
+            const reg = pc < len ? bytecodes[pc] : 0;
+            pc += 1;
+            let pn = "";
+            while (pc < len && bytecodes[pc] !== 0) {
+              pn += String.fromCharCode(bytecodes[pc]);
+              pc++;
+            }
+            if (pc < len) pc++; // skip null
+            df2ParamRegs.push(reg);
+            df2ParamNames.push(pn);
+          }
+          // Code size (2 bytes) — at the end of header
+          const df2CodeSize = pc + 2 <= len ? (bytecodes[pc] | (bytecodes[pc + 1] << 8)) : 0;
+          pc += 2;
+          // Extract function body
+          const df2Body = bytecodes.slice(pc, pc + df2CodeSize);
+          pc += df2CodeSize;
+          const fn2Def: AS2Function = {
+            name: df2Name,
+            paramNames: df2ParamNames,
+            paramRegisters: df2ParamRegs,
+            registerCount: df2RegCount,
+            flags: df2Flags,
+            body: df2Body,
+          };
+          if (df2Name) {
+            scope.functions.set(df2Name, fn2Def);
+            logs.push(`DefineFunction2 "${df2Name}" (${df2NumParams} params, r${df2RegCount}, ${df2CodeSize} bytes)`);
+          } else {
+            stack.push(fn2Def as any);
+          }
           break;
         }
 
         // ---- Extended opcodes we skip (>= 0x80, with length prefix) ----
         case AS2.ACTION_SET_TARGET:
-        case AS2.ACTION_DEFINE_FUNCTION:
-        case AS2.ACTION_DEFINE_FUNCTION2:
         case AS2.ACTION_WITH:
         case AS2.ACTION_GET_URL:
         case AS2.ACTION_GET_URL2:

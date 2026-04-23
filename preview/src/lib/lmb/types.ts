@@ -181,6 +181,20 @@ export interface DisplayInstance {
   bounds?: BoundsDef;
 }
 
+export interface AS2Function {
+  name: string;
+  paramNames: string[];
+  paramRegisters: number[];
+  registerCount: number;
+  flags: number;
+  body: number[];
+}
+
+export interface AS2Scope {
+  variables: Map<string, unknown>;
+  functions: Map<string, AS2Function>;
+}
+
 export interface NestedSpriteInstance {
   placementId: number;
   characterId: number;
@@ -195,6 +209,8 @@ export interface NestedSpriteInstance {
   alphaOverride?: number;
   /** Visibility override set by AS2 scripts (maps to _visible). */
   visibleOverride?: boolean;
+  /** Persistent AS2 scope for cross-frame variable/function storage. */
+  as2Scope?: AS2Scope;
 }
 
 // ============================================================

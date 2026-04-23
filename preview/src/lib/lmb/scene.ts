@@ -234,6 +234,65 @@ export class Scene {
     this.nestedByName.clear();
   }
 
+  duplicateMovieClip(sourceName: string, targetName: string, depth: number, resourceStore: ResourceStore): void {
+    const sourceNested = this.nestedByName.get(sourceName);
+    if (!sourceNested) return;
+
+    const sprite = sourceNested.sprite;
+    const newScene = new Scene();
+    const placementId = 10000 + depth;
+
+    if (sprite.timeline.length > 0) {
+      newScene.applyFrame(resourceStore, sprite.timeline[0]);
+    }
+
+    const cloned: NestedSpriteInstance = {
+      placementId,
+      characterId: sourceNested.characterId,
+      sprite,
+      scene: newScene,
+      frameIndex: 0,
+      name: targetName,
+    };
+
+    this.nestedSpriteInstances.set(placementId, cloned);
+    this.nestedByName.set(targetName, cloned);
+
+    // Also create a display instance at the specified depth,
+    // inheriting transform from the source instance.
+    const sourceInstance = [...this.instances.values()].find(
+      inst => inst.placementId === sourceNested.placementId
+    );
+    if (sourceInstance) {
+      this.instances.set(depth, {
+        placementId,
+        characterId: sourceNested.characterId,
+        depth,
+        transform: { ...sourceInstance.transform },
+        colorMult: sourceInstance.colorMult ? { ...sourceInstance.colorMult } : undefined,
+        colorAdd: sourceInstance.colorAdd ? { ...sourceInstance.colorAdd } : undefined,
+        blendMode: sourceInstance.blendMode,
+        graphic: sourceInstance.graphic,
+        text: sourceInstance.text,
+        bounds: sourceInstance.bounds,
+        childScene: newScene,
+      });
+    }
+  }
+
+  removeMovieClip(name: string): void {
+    const nested = this.nestedByName.get(name);
+    if (!nested) return;
+    this.nestedByName.delete(name);
+    this.nestedSpriteInstances.delete(nested.placementId);
+    for (const [depth, inst] of this.instances) {
+      if (inst.placementId === nested.placementId) {
+        this.instances.delete(depth);
+        break;
+      }
+    }
+  }
+
   /**
    * Advance all nested sprite instances by the given number of frames.
    *

@@ -160,6 +160,10 @@ dist
 
 .vscode-test
 
+# Playwright MCP snapshots and logs
+
+.playwright-mcp/
+
 # yarn v2
 
 .yarn/cache
