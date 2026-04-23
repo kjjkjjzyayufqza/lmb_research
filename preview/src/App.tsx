@@ -14,6 +14,7 @@ import { Stage } from "@/components/Stage";
 import { TimelineBar } from "@/components/TimelineBar";
 import { Inspector } from "@/components/Inspector";
 import { GameControlPanel } from "@/components/GameControlPanel";
+import { MachineSelectPanel } from "@/components/MachineSelectPanel";
 import {
   EditorContext,
   editorReducer,
@@ -102,6 +103,29 @@ function App() {
       // Apply initial frame
       if (sprite.timeline.length > 0) {
         scene.applyFrame(store, sprite.timeline[0]);
+
+        // Auto-start nested sprites that are stopped at frame 0 with a "Start" label.
+        // This mimics the C++ controller calling gotoAndPlay("Start") on initialization.
+        // If ALL top-level nested sprites have "Start" (e.g. gamemode with 10 overlapping
+        // modes), only start the first one to avoid visual stacking. Otherwise start all.
+        const stoppedWithStart: { placementId: number }[] = [];
+        const allNested = [...scene.getNestedSpriteInstances()];
+        for (const nested of allNested) {
+          if (nested.stopped && nested.sprite.frameLabels["Start"] !== undefined) {
+            stoppedWithStart.push(nested);
+          }
+        }
+        const allHaveStart = allNested.length > 0 &&
+          stoppedWithStart.length === allNested.length;
+        const toStart = allHaveStart && stoppedWithStart.length > 1
+          ? [stoppedWithStart[0]]
+          : stoppedWithStart;
+        for (const nested of toStart) {
+          scene.executeOnNestedSprite(
+            nested.placementId, "gotoAndPlay", "Start", store
+          );
+        }
+
         const renderer = rendererRef.current;
         if (renderer) {
           const instances = scene.getInstancesSorted();
@@ -155,6 +179,8 @@ function App() {
         lm_menu: { base: "/lm_menu_dev", jsonName: "lm_menu.json" },
         staffroll: { base: "/staffroll_dev", jsonName: "staffroll.json" },
         machineselect: { base: "/machineselect_dev", jsonName: "machineselect.json" },
+        gamemode: { base: "/gamemode_dev", jsonName: "gamemode.json" },
+        gameover: { base: "/gameover_dev", jsonName: "gameover.json" },
       };
 
       const fixtureName = params.get("devFixture");
@@ -278,6 +304,8 @@ function App() {
   );
 
   const sprites = state.json?.definitions.sprites ?? [];
+  const isMachineSelect = new URLSearchParams(window.location.search).get("devFixture") === "machineselect"
+    || (state.json?.definitions.sprites.length === 81 && state.json?.definitions.buttons.length === 186);
 
   return (
     <EditorContext.Provider value={{ state, dispatch }}>
@@ -376,7 +404,11 @@ function App() {
           <div className="flex flex-1 overflow-hidden">
             <div className="flex flex-col flex-1 overflow-hidden">
               <Stage onRendererReady={handleRendererReady} />
-              <GameControlPanel playerRef={playerRef} onRender={renderCurrentScene} />
+              {isMachineSelect ? (
+                <MachineSelectPanel playerRef={playerRef} onRender={renderCurrentScene} />
+              ) : (
+                <GameControlPanel playerRef={playerRef} onRender={renderCurrentScene} />
+              )}
             </div>
             {inspectorOpen && (
               <Inspector playerRef={playerRef} onRender={renderCurrentScene} />

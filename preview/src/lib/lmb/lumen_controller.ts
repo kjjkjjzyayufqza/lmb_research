@@ -2,18 +2,6 @@ import type { Scene } from "./scene";
 import type { ResourceStore } from "./store";
 import type { NestedSpriteInstance } from "./types";
 
-/**
- * LumenController simulates the C++ COutHud* classes that drive
- * Lumen UI via path-based MovieClip resolution.
- *
- * The game engine uses three core operations:
- *   1. gotoAndStopByLabel(path, label) — resolve MC by path, jump to label
- *   2. gotoAndStopByFrame(path, frame) — resolve MC by path, jump to frame number
- *   3. replaceText(path, text) — replace dynamic text field content
- *
- * Paths use Flash-style `/root_mc/child_mc` notation, resolved against the
- * Scene's nested sprite tree via instance names.
- */
 export class LumenController {
   private scene: Scene;
   private resourceStore: ResourceStore;
@@ -29,11 +17,6 @@ export class LumenController {
     this.scene = scene;
   }
 
-  /**
-   * Resolve a MovieClip by slash-separated path.
-   * e.g. "/ControlPanel_mc/ViewMode_mc" → finds nested sprite named "ViewMode_mc"
-   * inside the sprite named "ControlPanel_mc".
-   */
   resolvePath(path: string): NestedSpriteInstance | undefined {
     const parts = path.split("/").filter(Boolean);
     if (parts.length === 0) return undefined;
@@ -75,56 +58,32 @@ export class LumenController {
     return undefined;
   }
 
-  /**
-   * Navigate a MovieClip to a labeled frame (like C++ LumenGotoAndStopByLabel).
-   */
   gotoAndStopByLabel(path: string, label: string): boolean {
     const nested = this.resolvePath(path);
-    if (!nested) {
-      this.log(`gotoAndStopByLabel: path "${path}" not found`);
-      return false;
-    }
+    if (!nested) { return false; }
 
     const targetFrame = nested.sprite.frameLabels[label];
-    if (targetFrame === undefined) {
-      this.log(`gotoAndStopByLabel: label "${label}" not found in ${path}`);
-      return false;
-    }
+    if (targetFrame === undefined) { return false; }
 
     this.rebuildToFrame(nested, targetFrame);
     nested.stopped = true;
-    this.log(`${path} → gotoAndStop("${label}") [frame ${targetFrame}]`);
     return true;
   }
 
-  /**
-   * Navigate a MovieClip to a frame number (like C++ LumenGotoAndStopByFrame).
-   * Frame numbers are 1-based (Flash convention).
-   */
   gotoAndStopByFrame(path: string, frame: number): boolean {
     const nested = this.resolvePath(path);
-    if (!nested) {
-      this.log(`gotoAndStopByFrame: path "${path}" not found`);
-      return false;
-    }
+    if (!nested) return false;
 
     const targetFrame = frame - 1;
     const playable = nested.sprite.numFrames > 0
       ? nested.sprite.numFrames : nested.sprite.timeline.length;
-    if (targetFrame < 0 || targetFrame >= playable) {
-      this.log(`gotoAndStopByFrame: frame ${frame} out of range for ${path} (0-${playable - 1})`);
-      return false;
-    }
+    if (targetFrame < 0 || targetFrame >= playable) return false;
 
     this.rebuildToFrame(nested, targetFrame);
     nested.stopped = true;
-    this.log(`${path} → gotoAndStop(${frame}) [frame ${targetFrame}]`);
     return true;
   }
 
-  /**
-   * Navigate and play from a label.
-   */
   gotoAndPlayByLabel(path: string, label: string): boolean {
     const nested = this.resolvePath(path);
     if (!nested) return false;
@@ -134,19 +93,9 @@ export class LumenController {
 
     this.rebuildToFrame(nested, targetFrame);
     nested.stopped = false;
-    this.log(`${path} → gotoAndPlay("${label}") [frame ${targetFrame}]`);
     return true;
   }
 
-  /**
-   * Set a number display by splitting digits and calling gotoAndStop on each digit MC.
-   * Used for Cost, HP, scores etc.
-   *
-   * @param basePath  Path to the number container MC
-   * @param value     The number to display
-   * @param digitPattern  Format string for digit MCs, e.g. "NumTag%d_mc"
-   * @param digitCount  Number of digits to display
-   */
   setNumberDisplay(basePath: string, value: number, digitPattern: string, digitCount: number): void {
     const digits = String(Math.abs(Math.floor(value))).padStart(digitCount, "0");
     for (let i = 0; i < digitCount && i < digits.length; i++) {
@@ -156,27 +105,7 @@ export class LumenController {
     }
   }
 
-  /**
-   * Convenience: set Cost display by choosing the right Cost label.
-   */
-  setCostLabel(path: string, cost: number): boolean {
-    const label = `Cost${cost}`;
-    return this.gotoAndStopByLabel(path, label);
-  }
-
-  /**
-   * Convenience: set Mastery display.
-   */
-  setMasteryLabel(path: string, level: number): boolean {
-    const label = level <= 0 ? "Non" : `Mastery${String(level).padStart(2, "0")}`;
-    return this.gotoAndStopByLabel(path, label);
-  }
-
-  /**
-   * List all reachable nested sprite names from the scene root.
-   * Useful for debugging path resolution.
-   */
-  listAllPaths(maxDepth = 5): string[] {
+  listAllPaths(maxDepth = 6): string[] {
     const paths: string[] = [];
     const walk = (prefix: string, scene: Scene, depth: number) => {
       if (depth > maxDepth) return;
@@ -204,9 +133,6 @@ export class LumenController {
   }
 }
 
-/**
- * MS (Mobile Suit) data loaded from ms_data.json.
- */
 export interface MsEntry {
   id: number;
   name: string;
@@ -225,15 +151,21 @@ export interface MsData {
   costTiers: number[];
 }
 
-/**
- * MachineSelectController drives the machineselect.lm UI
- * with real game data, simulating COutHudMachineSelect.
- */
+const COST_LABELS: Record<number, string> = {
+  1500: "Cost1500",
+  2000: "Cost2000",
+  2500: "Cost2500",
+  3000: "Cost3000",
+};
+
 export class MachineSelectController {
   private ctrl: LumenController;
   private data: MsData;
   private selectedIndex = 0;
+  private pageOffset = 0;
+  private readonly pageSize = 10;
   private log: (msg: string) => void;
+  private pathCache: string[] = [];
 
   constructor(ctrl: LumenController, data: MsData, log?: (msg: string) => void) {
     this.ctrl = ctrl;
@@ -253,12 +185,32 @@ export class MachineSelectController {
     return this.selectedIndex;
   }
 
-  /**
-   * Select a machine by index and update the UI.
-   */
+  getPageOffset(): number {
+    return this.pageOffset;
+  }
+
+  initialize(): void {
+    this.pathCache = this.ctrl.listAllPaths();
+    this.log(`Paths found: ${this.pathCache.length}`);
+
+    this.ctrl.gotoAndPlayByLabel("Weapon_mc", "Start");
+    this.ctrl.gotoAndStopByLabel("Select_mc", "Start");
+
+    this.applySelection();
+    this.applyPage();
+  }
+
   selectByIndex(index: number): void {
     if (index < 0 || index >= this.data.characters.length) return;
     this.selectedIndex = index;
+
+    const pageStart = this.pageOffset;
+    const pageEnd = this.pageOffset + this.pageSize;
+    if (index < pageStart || index >= pageEnd) {
+      this.pageOffset = Math.floor(index / this.pageSize) * this.pageSize;
+      this.applyPage();
+    }
+
     this.applySelection();
   }
 
@@ -270,36 +222,88 @@ export class MachineSelectController {
     this.selectByIndex((this.selectedIndex - 1 + this.data.characters.length) % this.data.characters.length);
   }
 
-  /**
-   * Apply the current selection to the Lumen sprite tree.
-   * This replicates what COutHudMachineSelect does each frame.
-   */
+  pageNext(): void {
+    const newOffset = this.pageOffset + this.pageSize;
+    if (newOffset < this.data.characters.length) {
+      this.pageOffset = newOffset;
+      this.selectedIndex = this.pageOffset;
+      this.applyPage();
+      this.applySelection();
+    }
+  }
+
+  pagePrev(): void {
+    const newOffset = this.pageOffset - this.pageSize;
+    if (newOffset >= 0) {
+      this.pageOffset = newOffset;
+      this.selectedIndex = this.pageOffset;
+      this.applyPage();
+      this.applySelection();
+    }
+  }
+
   applySelection(): void {
     const ms = this.data.characters[this.selectedIndex];
     if (!ms) return;
 
-    this.log(`Select MS: ${ms.name} (Cost=${ms.cost}, HP=${ms.hp})`);
+    this.log(`[MS] ${ms.name} Cost=${ms.cost} HP=${ms.hp}`);
 
-    const allPaths = this.ctrl.listAllPaths();
-    this.log(`Available paths (${allPaths.length}): ${allPaths.slice(0, 20).join(", ")}...`);
-  }
+    const costLabel = COST_LABELS[ms.cost] ?? "Cost2000";
+    this.ctrl.gotoAndStopByLabel("Cost_mc", costLabel);
+    this.ctrl.gotoAndStopByLabel("CostNum_mc", costLabel);
+    this.ctrl.gotoAndStopByLabel("CostNum_S_mc", costLabel);
 
-  /**
-   * Trigger the "Open" animation on the main panel.
-   */
-  triggerOpen(): void {
-    this.ctrl.gotoAndPlayByLabel("ControlPanel_mc", "Start");
-  }
+    const masteryLevel = Math.min(5, Math.floor(this.selectedIndex / 10));
+    const masteryLabel = masteryLevel > 0
+      ? `Mastery${String(masteryLevel).padStart(2, "0")}`
+      : "Non";
+    this.ctrl.gotoAndStopByLabel("Mastery_mc", masteryLabel);
+    this.ctrl.gotoAndStopByLabel("Mastery_S_mc", masteryLabel);
 
-  /**
-   * Trigger selection confirmation.
-   */
-  triggerSelect(): void {
-    const allPaths = this.ctrl.listAllPaths();
-    for (const p of allPaths) {
-      if (p.includes("Select") || p.includes("select")) {
-        this.log(`Found select-related path: ${p}`);
+    this.ctrl.gotoAndStopByLabel("MachineNew_mc", "Non");
+    this.ctrl.gotoAndStopByLabel("Charge_mc", "Charge");
+
+    for (let i = 1; i <= 5; i++) {
+      this.ctrl.gotoAndPlayByLabel(`Weapon_0${i}_mc`, "Start");
+    }
+
+    const inPageIndex = this.selectedIndex - this.pageOffset;
+    for (let i = 1; i <= this.pageSize; i++) {
+      const panelPath = `Panel${String(i).padStart(2, "0")}_mc`;
+      if (i - 1 === inPageIndex) {
+        this.ctrl.gotoAndStopByLabel(panelPath, "On");
+      } else {
+        this.ctrl.gotoAndStopByLabel(panelPath, "Off");
       }
     }
+  }
+
+  applyPage(): void {
+    for (let i = 0; i < this.pageSize; i++) {
+      const msIndex = this.pageOffset + i;
+      const ms = this.data.characters[msIndex];
+      const panelNum = String(i + 1).padStart(2, "0");
+
+      if (ms) {
+        const costLabel = COST_LABELS[ms.cost] ?? "Cost2000";
+        this.ctrl.gotoAndStopByLabel(
+          `MS_M_S_Dummy_mc`,
+          `Dummy${panelNum}`
+        );
+      }
+    }
+
+    this.ctrl.gotoAndStopByLabel("SelectArrow_Up_mc", this.pageOffset > 0 ? "On" : "Non");
+    this.ctrl.gotoAndStopByLabel("SelectArrow_Down_mc",
+      this.pageOffset + this.pageSize < this.data.characters.length ? "On" : "Non");
+  }
+
+  triggerOpen(): void {
+    this.ctrl.gotoAndPlayByLabel("Weapon_mc", "Open");
+    this.ctrl.gotoAndPlayByLabel("Select_mc", "Start");
+  }
+
+  triggerSelect(): void {
+    this.ctrl.gotoAndPlayByLabel("Select_mc", "Select");
   }
 }

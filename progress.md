@@ -1,5 +1,45 @@
 # Progress
 
+## 2026-04-23（MachineSelect 完整数据驱动交互实现）
+
+### MachineSelectController — 真实数据驱动的 UI 交互
+
+实现了从游戏数据 → LumenController → Sprite 树的完整数据绑定流程：
+
+**LumenController (lumen_controller.ts)**:
+- `resolvePath(path)` — 路径式 MovieClip 解析（支持深度搜索）
+- `gotoAndStopByLabel/gotoAndStopByFrame/gotoAndPlayByLabel` — 三个核心控制函数
+- `setNumberDisplay` — 数字逐位显示
+- `listAllPaths` — 调试用完整路径列表
+
+**MachineSelectController**:
+- 195 个真实角色数据（ガンダム、シャア専用ゲルググ、アッガイ...）
+- 选中机体时更新 Cost_mc、CostNum_mc、Mastery_mc、Charge_mc 等 sprite 状态
+- 10 个面板 Panel01-10_mc 分页管理
+- 方向箭头 SelectArrow_Up/Down_mc 状态跟踪
+
+**MachineSelectPanel (React 组件)**:
+- 搜索过滤（名称/Cost/ID）
+- 195 机体列表带 Cost 颜色标记（1500=绿, 2000=蓝, 2500=黄, 3000=红）
+- 键盘导航：↑↓ 选择，←→ 翻页，Enter 确认，O 打开
+- Page 导航显示
+- Controller Log 实时显示
+
+**machineselect Sprite 路径映射（完整符号表确认）：**
+- `Cost_mc` / `CostNum_mc` — Cost 显示（Cost1500-3000 标签）
+- `Mastery_mc` / `Mastery_S_mc` — 熟练度（Mastery01-21 / Non）
+- `MachineNew_mc` — NEW 标记
+- `Charge_mc` — 充能状态
+- `Panel01-10_mc` — 机体选择面板（On/Off 状态）
+- `Weapon_mc` + `Weapon_01-05_mc` — 武器面板
+- `MS_MN_mc` — 机体名称
+- `PilotName_mc` — 驾驶员名
+- `Timer_mc` — 计时器
+- `Select_mc` — 选择框动画
+- `SelectArrow_Up/Down/Left/Right_mc` — 方向箭头
+
+---
+
 ## 2026-04-23（代码审计 + 完整开发路线图）
 
 ### 代码全面审计结论

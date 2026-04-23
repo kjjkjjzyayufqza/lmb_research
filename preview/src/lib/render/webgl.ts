@@ -358,8 +358,8 @@ export class WebGlRenderer {
       const text = instance.text;
       if (!text) continue;
 
-      const content = text.placeholderText ?? "";
-      if (!content) continue;
+      const rawContent = text.placeholderText ?? "";
+      const hasVisibleContent = rawContent.trim().length > 0;
 
       const rawCm = instance.colorMult ?? { r: 256, g: 256, b: 256, a: 256 };
       const cm =
@@ -375,9 +375,15 @@ export class WebGlRenderer {
 
       ctx.save();
       ctx.setTransform(m.a, m.b, m.c, m.d, m.x, m.y);
-      ctx.font = `${fontSize}px sans-serif`;
-      ctx.fillStyle = `rgba(${r},${g},${b},${a})`;
       ctx.textBaseline = "top";
+
+      if (hasVisibleContent) {
+        ctx.font = `${fontSize}px sans-serif`;
+        ctx.fillStyle = `rgba(${r},${g},${b},${a})`;
+      } else {
+        ctx.font = `${fontSize}px sans-serif`;
+        ctx.fillStyle = `rgba(128,128,128,0.6)`;
+      }
 
       switch (text.alignment) {
         case 1:
@@ -391,7 +397,10 @@ export class WebGlRenderer {
           break;
       }
 
-      ctx.fillText(content, 0, 0);
+      const displayText = hasVisibleContent
+        ? rawContent
+        : `[Text #${instance.characterId}]`;
+      ctx.fillText(displayText, 0, 0);
       ctx.restore();
     }
   }
