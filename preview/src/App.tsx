@@ -181,6 +181,7 @@ function App() {
         machineselect: { base: "/machineselect_dev", jsonName: "machineselect.json" },
         gamemode: { base: "/gamemode_dev", jsonName: "gamemode.json" },
         gameover: { base: "/gameover_dev", jsonName: "gameover.json" },
+        title_ef_0060: { base: "/title_ef_0060_dev", jsonName: "title_ef_0060.json" },
       };
 
       const fixtureName = params.get("devFixture");
@@ -196,27 +197,27 @@ function App() {
             }
             const json = (await res.json()) as LmbJson;
 
+            let binding: LmbTextureBinding | undefined;
             const bindRes = await fetch(`${base}/lmb_texture_binding.json`);
-            if (!bindRes.ok) {
-              throw new Error(
-                `HTTP ${bindRes.status} loading ${base}/lmb_texture_binding.json`
-              );
-            }
-            const binding = (await bindRes.json()) as LmbTextureBinding;
-            if (!binding.byAtlasId) {
-              throw new Error("lmb_texture_binding.json must include byAtlasId");
+            if (bindRes.ok) {
+              binding = (await bindRes.json()) as LmbTextureBinding;
             }
 
+            // Collect all PNG textures from the textures/ directory listing.
+            // With binding: fetch only the files listed in it.
+            // Without binding: fetch all img-XXXXX.png for each atlas.
             const filesByName = new Map<string, File>();
-            for (const baseName of Object.values(binding.byAtlasId)) {
+            const pngNames: string[] = binding?.byAtlasId
+              ? Object.values(binding.byAtlasId)
+              : json.resources.textureAtlases.map((_: unknown, i: number) =>
+                  `img-${String(i).padStart(5, "0")}.png`
+                );
+
+            for (const baseName of pngNames) {
               const tr = await fetch(
                 `${base}/textures/${encodeURIComponent(baseName)}`
               );
-              if (!tr.ok) {
-                throw new Error(
-                  `HTTP ${tr.status} loading texture ${baseName}`
-                );
-              }
+              if (!tr.ok) continue;
               const blob = await tr.blob();
               filesByName.set(
                 baseName,
@@ -411,7 +412,7 @@ function App() {
               )}
             </div>
             {inspectorOpen && (
-              <Inspector playerRef={playerRef} onRender={renderCurrentScene} />
+              <Inspector playerRef={playerRef} rendererRef={rendererRef} onRender={renderCurrentScene} />
             )}
           </div>
 

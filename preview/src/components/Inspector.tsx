@@ -13,9 +13,11 @@ import { ResourcesEditor } from "./ResourcesEditor";
 import { ExportPanel } from "./ExportPanel";
 import { SpriteTreePanel } from "./SpriteTreePanel";
 import type { TimelinePlayer } from "@/lib/lmb/player";
+import type { WebGlRenderer } from "@/lib/render/webgl";
 
 interface InspectorProps {
   playerRef: React.RefObject<TimelinePlayer | null>;
+  rendererRef: React.RefObject<WebGlRenderer | null>;
   onRender: () => void;
 }
 
@@ -23,7 +25,7 @@ interface InspectorProps {
  * Inspector panel: tabbed interface for instance properties,
  * frame editing, resource editing, and export.
  */
-export function Inspector({ playerRef, onRender }: InspectorProps) {
+export function Inspector({ playerRef, rendererRef, onRender }: InspectorProps) {
   const state = useEditorState();
   const dispatch = useEditorDispatch();
 
@@ -66,7 +68,7 @@ export function Inspector({ playerRef, onRender }: InspectorProps) {
         </TabsContent>
 
         <TabsContent value="resources" className="flex-1 overflow-hidden mt-0">
-          <ResourcesEditor playerRef={playerRef} onRender={onRender} />
+          <ResourcesEditor playerRef={playerRef} rendererRef={rendererRef} onRender={onRender} />
         </TabsContent>
 
         <TabsContent value="export" className="flex-1 overflow-hidden mt-0">

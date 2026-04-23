@@ -8,9 +8,11 @@ import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useEditorState, useEditorCommand } from "@/lib/editor/state";
 import type { TimelinePlayer } from "@/lib/lmb/player";
+import type { WebGlRenderer } from "@/lib/render/webgl";
 
 interface ResourcesEditorProps {
   playerRef: React.RefObject<TimelinePlayer | null>;
+  rendererRef: React.RefObject<WebGlRenderer | null>;
   onRender: () => void;
 }
 
@@ -18,7 +20,7 @@ interface ResourcesEditorProps {
  * ResourcesEditor: inline-edit resource tables (colors, transforms,
  * positions, bounds, textureAtlases, symbols).
  */
-export function ResourcesEditor({ playerRef, onRender }: ResourcesEditorProps) {
+export function ResourcesEditor({ playerRef, rendererRef, onRender }: ResourcesEditorProps) {
   const state = useEditorState();
   const [subTab, setSubTab] = useState("colors");
 
@@ -65,7 +67,7 @@ export function ResourcesEditor({ playerRef, onRender }: ResourcesEditorProps) {
         <BoundsTable playerRef={playerRef} onRender={onRender} />
       </TabsContent>
       <TabsContent value="atlases" className="flex-1 overflow-hidden mt-0">
-        <AtlasesTable />
+        <AtlasesTable rendererRef={rendererRef} />
       </TabsContent>
     </Tabs>
   );
@@ -354,30 +356,128 @@ function BoundsTable({
 }
 
 // ============================================================
-// Atlases (read-only display)
+// Atlases with PNG preview cards
 // ============================================================
 
-function AtlasesTable() {
+function AtlasesTable({
+  rendererRef,
+}: {
+  rendererRef: React.RefObject<WebGlRenderer | null>;
+}) {
   const state = useEditorState();
   const atlases = state.json?.resources.textureAtlases ?? [];
+  const [selectedAtlas, setSelectedAtlas] = useState<number | null>(null);
+
+  const previewUrls = rendererRef.current?.getTexturePreviewUrls();
+  const loadedCount = previewUrls?.size ?? 0;
 
   return (
     <ScrollArea className="h-full">
-      <div className="px-2 space-y-1">
-        {atlases.map((atlas) => (
-          <div
-            key={atlas.id}
-            className="flex items-center gap-2 text-xs py-1 px-1 bg-muted rounded"
-          >
-            <Badge variant="outline" className="text-[10px]">
-              #{atlas.id}
+      <div className="px-2 py-1">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-xs text-muted-foreground">
+            {loadedCount}/{atlases.length} textures loaded
+          </span>
+          {loadedCount < atlases.length && (
+            <Badge variant="destructive" className="text-[10px]">
+              {atlases.length - loadedCount} missing
             </Badge>
-            <span className="font-mono">{atlas.name || `Atlas ${atlas.id}`}</span>
-            <span className="text-muted-foreground">
-              {atlas.width}x{atlas.height}
-            </span>
-          </div>
-        ))}
+          )}
+        </div>
+
+        <div className="grid grid-cols-3 gap-1.5">
+          {atlases.map((atlas) => {
+            const previewUrl = previewUrls?.get(atlas.id);
+            const isSelected = selectedAtlas === atlas.id;
+            return (
+              <button
+                key={atlas.id}
+                onClick={() => setSelectedAtlas(isSelected ? null : atlas.id)}
+                className={`flex flex-col items-center rounded border p-1 transition-colors ${
+                  isSelected
+                    ? "border-blue-500 bg-blue-500/10"
+                    : "border-border hover:border-muted-foreground/30 bg-muted/50"
+                }`}
+              >
+                <div
+                  className="w-full aspect-square rounded-sm overflow-hidden flex items-center justify-center"
+                  style={{
+                    background:
+                      "repeating-conic-gradient(#333 0% 25%, #444 0% 50%) 0 0/8px 8px",
+                  }}
+                >
+                  {previewUrl ? (
+                    <img
+                      src={previewUrl}
+                      alt={`Atlas ${atlas.id}`}
+                      className="max-w-full max-h-full object-contain"
+                      draggable={false}
+                    />
+                  ) : (
+                    <span className="text-[9px] text-muted-foreground">N/A</span>
+                  )}
+                </div>
+                <span className="text-[9px] font-mono mt-0.5 truncate w-full text-center">
+                  #{atlas.id}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {selectedAtlas !== null && (() => {
+          const atlas = atlases.find((a) => a.id === selectedAtlas);
+          if (!atlas) return null;
+          const previewUrl = previewUrls?.get(atlas.id);
+          return (
+            <div className="mt-2 p-2 bg-muted rounded-md space-y-2">
+              {previewUrl && (
+                <div
+                  className="w-full rounded overflow-hidden flex items-center justify-center"
+                  style={{
+                    background:
+                      "repeating-conic-gradient(#333 0% 25%, #444 0% 50%) 0 0/10px 10px",
+                    maxHeight: 200,
+                  }}
+                >
+                  <img
+                    src={previewUrl}
+                    alt={`Atlas ${atlas.id} preview`}
+                    className="max-w-full max-h-[200px] object-contain"
+                    draggable={false}
+                  />
+                </div>
+              )}
+              <div className="text-xs space-y-0.5">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Atlas ID</span>
+                  <span className="font-mono">{atlas.id}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Name</span>
+                  <span className="font-mono truncate ml-2">
+                    {atlas.name || "—"}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Size</span>
+                  <span className="font-mono">
+                    {atlas.width} × {atlas.height}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Status</span>
+                  <Badge
+                    variant={previewUrl ? "default" : "destructive"}
+                    className="text-[10px]"
+                  >
+                    {previewUrl ? "Loaded" : "Missing"}
+                  </Badge>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
       </div>
     </ScrollArea>
   );

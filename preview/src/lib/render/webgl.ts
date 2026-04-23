@@ -68,6 +68,7 @@ export class WebGlRenderer {
   private indexBuffer: WebGLBuffer;
   private currentAtlasTexture: WebGLTexture | null = null;
   private textureByAtlasId = new Map<number, LoadedTexture>();
+  private texturePreviewByAtlasId = new Map<number, string>();
   private textCanvas: HTMLCanvasElement | null = null;
   private textCtx: CanvasRenderingContext2D | null = null;
 
@@ -156,6 +157,7 @@ export class WebGlRenderer {
     namePattern?: (index: number, atlasName?: string) => string
   ): Promise<void> {
     this.textureByAtlasId.clear();
+    this.texturePreviewByAtlasId.clear();
     const atlases = json.resources.textureAtlases;
 
     for (let i = 0; i < atlases.length; i++) {
@@ -172,7 +174,7 @@ export class WebGlRenderer {
 
       try {
         const image = await this.loadImage(url);
-        const texture = this.createTextureFromImage(image);
+        const texture = this.createTextureFromImage(image, atlas.id);
         this.textureByAtlasId.set(atlas.id, {
           atlasId: atlas.id,
           width: atlas.width,
@@ -203,19 +205,17 @@ export class WebGlRenderer {
     }
   ): Promise<void> {
     this.textureByAtlasId.clear();
+    this.texturePreviewByAtlasId.clear();
     const atlases = json.resources.textureAtlases;
 
-    const resolveFile = (fileName: string, atlasId: number): File => {
+    const tryResolveFile = (fileName: string): File | undefined => {
       const direct = filesByName.get(fileName);
       if (direct) return direct;
       const lower = fileName.toLowerCase();
       for (const [k, v] of filesByName) {
         if (k.toLowerCase() === lower) return v;
       }
-      const available = [...filesByName.keys()].sort().join(", ");
-      throw new Error(
-        `Missing texture "${fileName}" in textures/ folder (atlas id ${atlasId}). Available PNG basenames: ${available}`
-      );
+      return undefined;
     };
 
     for (let i = 0; i < atlases.length; i++) {
@@ -227,11 +227,21 @@ export class WebGlRenderer {
         options?.namePattern
       );
 
-      const file = resolveFile(fileName, atlas.id);
+      let file = tryResolveFile(fileName);
+      if (!file) {
+        const fallback = `img-${String(i).padStart(5, "0")}.png`;
+        file = tryResolveFile(fallback);
+      }
+      if (!file) {
+        console.warn(
+          `Missing texture for atlas ${atlas.id} ("${fileName}", fallback img-${String(i).padStart(5, "0")}.png). Skipping.`
+        );
+        continue;
+      }
       const objectUrl = URL.createObjectURL(file);
       try {
         const image = await this.loadImage(objectUrl);
-        const texture = this.createTextureFromImage(image);
+        const texture = this.createTextureFromImage(image, atlas.id);
         this.textureByAtlasId.set(atlas.id, {
           atlasId: atlas.id,
           width: atlas.width,
@@ -446,7 +456,7 @@ export class WebGlRenderer {
     });
   }
 
-  private createTextureFromImage(image: HTMLImageElement): WebGLTexture {
+  private createTextureFromImage(image: HTMLImageElement, atlasId?: number): WebGLTexture {
     const gl = this.gl;
     const texture = gl.createTexture();
     if (!texture) throw new Error("Failed to create WebGL texture");
@@ -456,7 +466,27 @@ export class WebGlRenderer {
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+
+    if (atlasId !== undefined) {
+      const maxDim = 128;
+      const scale = Math.min(1, maxDim / Math.max(image.width, image.height, 1));
+      const tw = Math.max(1, Math.round(image.width * scale));
+      const th = Math.max(1, Math.round(image.height * scale));
+      const c = document.createElement("canvas");
+      c.width = tw;
+      c.height = th;
+      const ctx = c.getContext("2d");
+      if (ctx) {
+        ctx.drawImage(image, 0, 0, tw, th);
+        this.texturePreviewByAtlasId.set(atlasId, c.toDataURL("image/png"));
+      }
+    }
+
     return texture;
+  }
+
+  getTexturePreviewUrls(): Map<number, string> {
+    return this.texturePreviewByAtlasId;
   }
 
   private createShader(type: number, source: string): WebGLShader {

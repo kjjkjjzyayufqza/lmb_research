@@ -93,6 +93,7 @@ export async function pickLmbAssetFolder(): Promise<LmbFolderPayload> {
     if (handle.kind !== "file") continue;
     const name = handle.name;
     if (!name.toLowerCase().endsWith(".json")) continue;
+    if (name.toLowerCase() === BINDING_FILENAME.toLowerCase()) continue;
     const file = await handle.getFile();
     jsonEntries.push({ name, file });
   }
@@ -101,7 +102,7 @@ export async function pickLmbAssetFolder(): Promise<LmbFolderPayload> {
 
   if (jsonEntries.length === 0) {
     throw new Error(
-      "No JSON file found in the selected folder. Place exactly one *.json at the folder root."
+      "No JSON file found in the selected folder. Convert the .lm file first with: bun lmbtojson.ts <input.lm>"
     );
   }
   if (jsonEntries.length > 1) {
