@@ -1,0 +1,5936 @@
+{
+  "characters": [
+    {
+      "characterId": 1001001,
+      "indexInSeries": 0,
+      "name": "ガンダム",
+      "seriesId": "0000ef1e",
+      "msState": -1097293021,
+      "cardIconIndex": 216132800,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0000eea6",
+      "lmbBoostHash": "b1f4e069",
+      "selectPilotLmbHash": "366109c2",
+      "unkStr9": "tT�",
+      "unkStr10": "ガンダム",
+      "unkStr12": "ガンダム",
+      "cost": 2000,
+      "hp": 620
+    },
+    {
+      "characterId": 1002001,
+      "indexInSeries": 4,
+      "name": "シャア専用ゲルググ",
+      "seriesId": "0000f06f",
+      "msState": -1245387746,
+      "cardIconIndex": 216132800,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0000effe",
+      "lmbBoostHash": "b1f4e069",
+      "selectPilotLmbHash": "47ea3fc0",
+      "unkStr9": "W�",
+      "unkStr10": "シャア専用ゲルググ",
+      "unkStr12": "シャア専用ゲルググ",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 1003001,
+      "indexInSeries": 2,
+      "name": "アッガイ",
+      "seriesId": "0000f1eb",
+      "msState": -1097293021,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0000f194",
+      "lmbBoostHash": "b1f4e069",
+      "selectPilotLmbHash": "8ce8d366",
+      "unkStr9": "�",
+      "unkStr10": "アッガイ",
+      "unkStr11": "W�",
+      "unkStr12": "アッガイ",
+      "cost": 1500,
+      "hp": 480
+    },
+    {
+      "characterId": 1004001,
+      "indexInSeries": 1,
+      "name": "ジオング",
+      "seriesId": "0000f2e8",
+      "msState": -1245387746,
+      "cardIconIndex": 216132800,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0000f28f",
+      "lmbBoostHash": "b1f4e069",
+      "selectPilotLmbHash": "8667751a",
+      "unkStr10": "ジオング",
+      "unkStr11": "tT�",
+      "unkStr12": "ジオング",
+      "cost": 2500,
+      "hp": 580
+    },
+    {
+      "characterId": 1005001,
+      "indexInSeries": 5,
+      "name": "ギャン",
+      "seriesId": "0000f3e8",
+      "msState": -1097293021,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0000f3a7",
+      "lmbBoostHash": "b1f4e069",
+      "selectPilotLmbHash": "dce03eac",
+      "unkStr10": "ギャン",
+      "unkStr12": "ギャン",
+      "cost": 2000,
+      "hp": 560
+    },
+    {
+      "characterId": 1006001,
+      "indexInSeries": 3,
+      "name": "ガンダム（Gメカ）",
+      "seriesId": "0000f504",
+      "msState": -1097293021,
+      "cardIconIndex": 216132800,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0000f496",
+      "lmbBoostHash": "b1f4e069",
+      "selectPilotLmbHash": "72706239",
+      "unkStr10": "ガンダム（Gメカ）",
+      "unkStr11": "�",
+      "unkStr12": "ガンダム（Gメカ）",
+      "cost": 2000,
+      "hp": 620
+    },
+    {
+      "characterId": 1007001,
+      "indexInSeries": 8,
+      "name": "ザクⅡ",
+      "seriesId": "0000f61d",
+      "msState": -1097293021,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0000f5d2",
+      "lmbBoostHash": "b1f4e069",
+      "selectPilotLmbHash": "4b77e0c5",
+      "unkStr10": "ザクⅡ",
+      "unkStr12": "ザクⅡ",
+      "cost": 1500,
+      "hp": 520
+    },
+    {
+      "characterId": 1008001,
+      "indexInSeries": 7,
+      "name": "シャア専用ザクⅡ",
+      "seriesId": "0000f723",
+      "msState": -1245387746,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0000f6c0",
+      "lmbBoostHash": "b1f4e069",
+      "selectPilotLmbHash": "22378ebb",
+      "unkStr9": "\u001e�@",
+      "unkStr10": "シャア専用ザクⅡ",
+      "unkStr12": "シャア専用ザクⅡ",
+      "cost": 2000,
+      "hp": 580
+    },
+    {
+      "characterId": 1009001,
+      "indexInSeries": 0,
+      "name": "高機動型ザクII 後期型（ジョニー・ライデン機）",
+      "seriesId": "0000f8d0",
+      "msState": -1245387746,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0000f855",
+      "lmbBoostHash": "36744129",
+      "selectPilotLmbHash": "0b0e6367",
+      "unkStr9": "3��zb�]����z8S_f?{7���;�/\u0013&����sG\u000e�CS\u001b<�^S�?@JnB)��ZR�?�\u0003%{\u0019�ac��q�2���|�~��\r��",
+      "unkStr10": "高機動ザクII（ライデン）",
+      "unkStr12": "高機動ザクII（ライデン）",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 1010001,
+      "indexInSeries": 1,
+      "name": "高機動型ザクII 改（シン・マツナガ機）",
+      "seriesId": "0000fa91",
+      "msState": -1245387746,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0000fa19",
+      "lmbBoostHash": "36744129",
+      "selectPilotLmbHash": "095611de",
+      "unkStr9": "��\u000b;�El\u0004\u0010�\u000b�Y�3�\t��\f����ٳ8�\u0016\u0018\u0019q���YɇNCYd�k#{�<\u001aK[j���\tͨ=9<\u0006\u001dʛ�d$\u0007�\u0003`\u000e�t\u0002",
+      "unkStr10": "高機動ザクII（マツナガ）",
+      "unkStr11": "tT�",
+      "unkStr12": "高機動ザクII（マツナガ）",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 1015001,
+      "indexInSeries": 6,
+      "name": "ガンキャノン",
+      "seriesId": "0000fc01",
+      "msState": -1097293021,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0000fba5",
+      "lmbBoostHash": "b1f4e069",
+      "selectPilotLmbHash": "c23d5b96",
+      "unkStr10": "ガンキャノン",
+      "unkStr12": "ガンキャノン",
+      "cost": 1500,
+      "hp": 450
+    },
+    {
+      "characterId": 2001001,
+      "indexInSeries": 0,
+      "name": "Zガンダム",
+      "seriesId": "0000fd0b",
+      "msState": -1090727962,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0000fca3",
+      "lmbBoostHash": "d28c8e5e",
+      "selectPilotLmbHash": "6215b544",
+      "unkStr10": "Zガンダム",
+      "unkStr12": "Zガンダム",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 2002001,
+      "indexInSeries": 1,
+      "name": "百式",
+      "seriesId": "0000fe15",
+      "msState": -1090727962,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0000fdca",
+      "lmbBoostHash": "d28c8e5e",
+      "selectPilotLmbHash": "87f4cc86",
+      "unkStr9": ">",
+      "unkStr10": "百式",
+      "unkStr11": "tT�",
+      "unkStr12": "百式",
+      "cost": 2500,
+      "hp": 580
+    },
+    {
+      "characterId": 2003001,
+      "indexInSeries": 4,
+      "name": "メッサーラ",
+      "seriesId": "0000ff11",
+      "msState": -1116202104,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0000fec7",
+      "lmbBoostHash": "d28c8e5e",
+      "selectPilotLmbHash": "c879a890",
+      "unkStr10": "メッサーラ",
+      "unkStr12": "メッサーラ",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 2004001,
+      "indexInSeries": 3,
+      "name": "ジ・O",
+      "seriesId": "0001003c",
+      "msState": -1090727962,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0000ffcb",
+      "lmbBoostHash": "d28c8e5e",
+      "selectPilotLmbHash": "990fb752",
+      "unkStr10": "ジ・O",
+      "unkStr11": "�",
+      "unkStr12": "ジ・O",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 2005001,
+      "indexInSeries": 2,
+      "name": "ガンダムMk-Ⅱ",
+      "seriesId": "0001017f",
+      "msState": -1090727962,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00010117",
+      "lmbBoostHash": "d28c8e5e",
+      "selectPilotLmbHash": "18475442",
+      "unkStr10": "ガンダムMk-Ⅱ",
+      "unkStr11": "W�",
+      "unkStr12": "ガンダムMk-Ⅱ",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 2006001,
+      "indexInSeries": 5,
+      "name": "ハンブラビ",
+      "seriesId": "000102a0",
+      "msState": -1116202104,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00010256",
+      "lmbBoostHash": "d28c8e5e",
+      "selectPilotLmbHash": "244ebe25",
+      "unkStr9": "0�",
+      "unkStr10": "ハンブラビ",
+      "unkStr12": "ハンブラビ",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 2013001,
+      "indexInSeries": 8,
+      "name": "マラサイ",
+      "seriesId": "000103c9",
+      "msState": -1116202104,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00010364",
+      "lmbBoostHash": "d28c8e5e",
+      "selectPilotLmbHash": "006a4ee2",
+      "unkStr10": "マラサイ",
+      "unkStr11": "\u001e�@",
+      "unkStr12": "マラサイ",
+      "cost": 1500,
+      "hp": 480
+    },
+    {
+      "characterId": 2014001,
+      "indexInSeries": 7,
+      "name": "ガブスレイ",
+      "seriesId": "000104ec",
+      "msState": -1116202104,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00010490",
+      "lmbBoostHash": "d28c8e5e",
+      "selectPilotLmbHash": "e54e6e26",
+      "unkStr9": "�п����%�ouZ��:+��sz�p\u000e�o��6;�@E��ܿ=N'��\u0012޿�l��{!tX�՟i��s���v\\ii-c��b&y��r\u0014��\u000fx��Xp��\"���Xr:�6\b��'��\u001e�%��7�N��\fp9�\u0002e��(-*h���QE\u001a�W�zR\u000f�&�",
+      "unkStr10": "ガブスレイ",
+      "unkStr12": "ガブスレイ",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 2016001,
+      "indexInSeries": 6,
+      "name": "バウンド・ドック",
+      "seriesId": "00010633",
+      "msState": -1090727962,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000105b9",
+      "lmbBoostHash": "d28c8e5e",
+      "selectPilotLmbHash": "523aeddd",
+      "unkStr9": "C�w���L����i���V���/��8#�����\u0001\u0015�>s��9��GH{�:�\u0015l��a���r\u0012͋~���q��i\u001bnS��厶�P��<�d3a����\u0011j\u0013_a���� ����Vxc��'���9'g0�ɒ\b�ÓAi���Kw�*h��]6Ӓ<��\u0012",
+      "unkStr10": "バウンド・ドック",
+      "unkStr12": "バウンド・ドック",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 3001001,
+      "indexInSeries": 0,
+      "name": "フルアーマーZZガンダム",
+      "seriesId": "000107b1",
+      "msState": 632496133,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00010736",
+      "lmbBoostHash": "169b49cd",
+      "selectPilotLmbHash": "91c03904",
+      "unkStr9": "��{�1���W���GeY�7O��\u000e���\u0017W�g\u001e\u0004T\u001b�����r�\u001dB����T�o$G����-�H7.�\u001e\u0015�Ŗ��ls�&b�:�N��O�\u000f��\u000b\u0007KK�DS�}�'Gw�\u0001*:rY�\u001bR���\u001e5ɜ��\u000e'�@V\u000fN\u0005�E\r�-�*�C��u�OJ�5bH",
+      "unkStr10": "FA・ZZガンダム",
+      "unkStr12": "FA・ZZガンダム",
+      "cost": 3000,
+      "hp": 680
+    },
+    {
+      "characterId": 3002001,
+      "indexInSeries": 4,
+      "name": "キュベレイMk-Ⅱ（プルツー）",
+      "seriesId": "0001093f",
+      "msState": 632496133,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000108b6",
+      "lmbBoostHash": "169b49cd",
+      "selectPilotLmbHash": "dca7ba11",
+      "unkStr9": "\u0002\t���F$Q���q5�\"�a�\u0012�|�\u0012�Qr1��W�\u000e�\u0010�6\u001bZ�{H\u0010.rW�!���\u0018��ޑ�\f��b��Ҵ'\u0019�g;ЋJc��a\u001e�����ii wY�\n��q\u0011r�W�\u001b\u0001Mxɶ��2Õl��~����c��u�Q�D��y�\u0011\u0015Nak<�vo",
+      "unkStr10": "キュベレイMk-Ⅱ（プルツー）",
+      "unkStr12": "キュベレイMk-Ⅱ（プルツー）",
+      "cost": 1500,
+      "hp": 450
+    },
+    {
+      "characterId": 3003001,
+      "indexInSeries": 3,
+      "name": "キュベレイ",
+      "seriesId": "00010ac3",
+      "msState": 632496133,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00010a51",
+      "lmbBoostHash": "169b49cd",
+      "selectPilotLmbHash": "dd215d52",
+      "unkStr9": "�~Ēs�����\u001d��w�=��8\u0007d�\\]\u001b�� Ql�nߞ'�Kt\to�G\u001bQƽ�:,��ϴNB���xT;.�Z���j1\u0013^�k9\n^z�<Ff,8Z-�\u0011Mb�,�\u001d�\u001b\u0004Q���e\u000fl�tr�x�'��\u00038�R\u0001�x9\u0014�\u00154]iw��\r�ݫc=)��\u0013B",
+      "unkStr10": "キュベレイ",
+      "unkStr11": "�",
+      "unkStr12": "キュベレイ",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 3004001,
+      "indexInSeries": 5,
+      "name": "ザクⅢ改",
+      "seriesId": "00010bde",
+      "msState": 632496133,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00010b94",
+      "lmbBoostHash": "169b49cd",
+      "selectPilotLmbHash": "0917ddf6",
+      "unkStr9": "\u0003v�\u0019���j\u0002��j\u0011��\u001aH��7�GE��\u001e��'8#@±�i\u0017�!@q�]r�ދ�D*`�c{�\u001d0\u000fW����Ҝd+�ن.)��C\u000b��s3��KK��e;(���D��]\\�\u00045�'�\u00176�\u000fV�6&��[��\u000f\u001b��՗E-\"���\u001aD�r���V�{",
+      "unkStr10": "ザクⅢ改",
+      "unkStr12": "ザクⅢ改",
+      "cost": 2000,
+      "hp": 620
+    },
+    {
+      "characterId": 3012001,
+      "indexInSeries": 1,
+      "name": "ZZガンダム",
+      "seriesId": "00010ce5",
+      "msState": 632496133,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00010c8e",
+      "lmbBoostHash": "169b49cd",
+      "selectPilotLmbHash": "36d98683",
+      "unkStr9": "\u0004���\"\u0019\u00164�\u001f�n!\u001d���<u�pF��c��.�B��'u�\t�\u0017O���-��\u0019:�\u001e�\u0013G--K9�V;�\r�R\u001b׆\u0016�\u001e�fO\u001f��\u0002��vPO\u001b\u0017��ﺸ�\u0010j�N�.l#\u001e�clL�>���5\u001e6_��/�ZD�u�4�Q�\u0016[ᬳ�",
+      "unkStr10": "ZZガンダム",
+      "unkStr11": "tT�",
+      "unkStr12": "ZZガンダム",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 3013001,
+      "indexInSeries": 2,
+      "name": "キュベレイMk-Ⅱ（プル）",
+      "seriesId": "00010e6b",
+      "msState": 632496133,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00010df4",
+      "lmbBoostHash": "169b49cd",
+      "selectPilotLmbHash": "fd41861a",
+      "unkStr9": "�V���/��8#�����\u0001\u0015�>s��9��GH{�:�\u0015l��a���r\u0012͋~���q��i\u001bnS��厶�P��<�d3a����\u0011j\u0013_a���� ����Vxc��'���9'g0�ɒ\b�ÓAi���Kw�*h��]6Ӓ<��\u0012",
+      "unkStr10": "キュベレイMk-Ⅱ（プル）",
+      "unkStr11": "W�",
+      "unkStr12": "キュベレイMk-Ⅱ（プル）",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 3015001,
+      "indexInSeries": 6,
+      "name": "ドーベン・ウルフ",
+      "seriesId": "00010fea",
+      "msState": 632496133,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00010f88",
+      "lmbBoostHash": "169b49cd",
+      "selectPilotLmbHash": "136535ec",
+      "unkStr9": "Y�7O��\u000e���\u0017W�g\u001e\u0004T\u001b�����r�\u001dB����T�o$G����-�H7.�\u001e\u0015�Ŗ��ls�&b�:�N��O�\u000f��\u000b\u0007KK�DS�}�'Gw�\u0001*:rY�\u001bR���\u001e5ɜ��\u000e'�@V\u000fN\u0005�E\r�-�*�C��u�OJ�5bH",
+      "unkStr10": "ドーベン・ウルフ",
+      "unkStr12": "ドーベン・ウルフ",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 4001001,
+      "indexInSeries": 0,
+      "name": "ガンダムF91",
+      "seriesId": "0001110e",
+      "msState": -964267600,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000110d4",
+      "lmbBoostHash": "5e1dd549",
+      "selectPilotLmbHash": "cc6ed275",
+      "unkStr9": "\u001fs\t�9�����\u0007d\b,\u001b�-�$\u0004\u00179�N�۸zDE\f�l���\u0006��1:iiZ��eٝh�%�}4�\u000f�nf����\u0010��g�zظ�9��ō��<�qc\u0019��6cb?��k����Z��T�\"�W�CD�'��\u001eʝ�",
+      "unkStr10": "F91",
+      "unkStr12": "F91",
+      "cost": 2000,
+      "hp": 540
+    },
+    {
+      "characterId": 4002001,
+      "indexInSeries": 1,
+      "name": "ベルガ・ギロス",
+      "seriesId": "00011219",
+      "msState": -964267600,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "000111ab",
+      "lmbBoostHash": "5e1dd549",
+      "selectPilotLmbHash": "ef3dd9d2",
+      "unkStr9": "\u0019�.���x\b�6�7�O��:���э�c�H\u001d\u000bwu�Z'!n\\�<*�\u0017--K��5��/t��\u0005/��\u001e#3\u0016\u001c��߈�1�\u000bN��\u0002�t����6I\u001d9�<j�r;�\u001cN)�Y\u001e�\nK�\u001a�Z�TQ�y�걞��j��",
+      "unkStr10": "ベルガ・ギロス",
+      "unkStr11": "tT�",
+      "unkStr12": "ベルガ・ギロス",
+      "cost": 1500,
+      "hp": 480
+    },
+    {
+      "characterId": 5001001,
+      "indexInSeries": 0,
+      "name": "V2ガンダム",
+      "seriesId": "0001134c",
+      "msState": -1257489004,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000112fc",
+      "lmbBoostHash": "60e970ab",
+      "selectPilotLmbHash": "46525eb5",
+      "unkStr9": "���<u�pF��c��.�B��'u�\t�\u0017O���-��\u0019:�\u001e�\u0013G--K9�V;�\r�R\u001b׆\u0016�\u001e�fO\u001f��\u0002��vPO\u001b\u0017��ﺸ�\u0010j�N�.l#\u001e�clL�>���5\u001e6_��/�ZD�u�4�Q�\u0016[ᬳ�",
+      "unkStr10": "V2",
+      "unkStr12": "V2",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 5002001,
+      "indexInSeries": 2,
+      "name": "ガンイージ",
+      "seriesId": "00011479",
+      "msState": -1257489004,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00011411",
+      "lmbBoostHash": "60e970ab",
+      "selectPilotLmbHash": "0a08364b",
+      "unkStr9": "��\u0001\u0015�>s��9��GH{�:�\u0015l��a���r\u0012͋~���q��i\u001bnS��厶�P��<�d3a����\u0011j\u0013_a���� ����Vxc��'���9'g0�ɒ\b�ÓAi���Kw�*h��]6Ӓ<��\u0012",
+      "unkStr10": "ガンイージ",
+      "unkStr11": "W�",
+      "unkStr12": "ガンイージ",
+      "cost": 1500,
+      "hp": 480
+    },
+    {
+      "characterId": 5003001,
+      "indexInSeries": 3,
+      "name": "ゴトラタン",
+      "seriesId": "000115a8",
+      "msState": -1257489004,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00011549",
+      "lmbBoostHash": "60e970ab",
+      "selectPilotLmbHash": "c1829119",
+      "unkStr9": "&���r�2\u0002\u0016�Ɩq�\t\u0002���'H�\\=\"�\u0006i\u001b�d�\u0003�uL\u001d��-�FY��4��_\u001aX�x73=|ZZ\b�V�A=l\\D�����@S\u001e9ָ���e��1��l���x�}-]�*i\u0011�^�\"E�X�\u000f���",
+      "unkStr10": "ゴトラタン",
+      "unkStr11": "�",
+      "unkStr12": "ゴトラタン",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 5004001,
+      "indexInSeries": 1,
+      "name": "ヴィクトリーガンダム",
+      "seriesId": "00011733",
+      "msState": -1257489004,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "000116aa",
+      "lmbBoostHash": "60e970ab",
+      "selectPilotLmbHash": "b3af423b",
+      "unkStr9": "\u001e\u0004T\u001b�����r�\u001dB����T�o$G����-�H7.�\u001e\u0015�Ŗ��ls�&b�:�N��O�\u000f��\u000b\u0007KK�DS�}�'Gw�\u0001*:rY�\u001bR���\u001e5ɜ��\u000e'�@V\u000fN\u0005�E\r�-�*�C��u�OJ�5bH",
+      "unkStr10": "Vダッシュ",
+      "unkStr11": "tT�",
+      "unkStr12": "Vガンダム",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 5013001,
+      "indexInSeries": 4,
+      "name": "ゲドラフ",
+      "seriesId": "0001186d",
+      "msState": -1257489004,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001180e",
+      "lmbBoostHash": "60e970ab",
+      "selectPilotLmbHash": "87d8ce3b",
+      "unkStr9": "6���� ��9Bo��\u0011\u00150K��FG\u0018����K�iN2���\u0017�����<ù��ǥ�@\u0014�c�\"���.6\u0002��m��d�+�\u001b\u0013��c��M���i�ˢ��W]�\r\"T���x+�",
+      "unkStr10": "ゲドラフ",
+      "unkStr12": "ゲドラフ",
+      "cost": 2000,
+      "hp": 580
+    },
+    {
+      "characterId": 7001001,
+      "indexInSeries": 0,
+      "name": "ガンダムDX",
+      "seriesId": "000119aa",
+      "msState": 973586282,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001192f",
+      "lmbBoostHash": "134c7eb4",
+      "selectPilotLmbHash": "c29bf2fe",
+      "unkStr9": "--K��5��/t��\u0005/��\u001e#3\u0016\u001c��߈�1�\u000bN��\u0002�t����6I\u001d9�<j�r;�\u001cN)�Y\u001e�\nK�\u001a�Z�TQ�y�걞��j��",
+      "unkStr10": "ガンダムDX",
+      "unkStr12": "ガンダムDX",
+      "cost": 3000,
+      "hp": 680
+    },
+    {
+      "characterId": 7002001,
+      "indexInSeries": 4,
+      "name": "ガンダムヴァサーゴ・チェストブレイク",
+      "seriesId": "00011b6f",
+      "msState": 973586282,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00011af5",
+      "lmbBoostHash": "134c7eb4",
+      "selectPilotLmbHash": "6553faa1",
+      "unkStr9": "�iN2���\u0017�����<ù��ǥ�@\u0014�c�\"���.6\u0002��m��d�+�\u001b\u0013��c��M���i�ˢ��W]�\r\"T���x+�",
+      "unkStr10": "ヴァサーゴ・CB",
+      "unkStr11": "W�",
+      "unkStr12": "ヴァサーゴ・CB",
+      "cost": 3000,
+      "hp": 680
+    },
+    {
+      "characterId": 7003001,
+      "indexInSeries": 1,
+      "name": "ガンダムXディバイダー",
+      "seriesId": "00011cfd",
+      "msState": 973586282,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00011c9c",
+      "lmbBoostHash": "134c7eb4",
+      "selectPilotLmbHash": "af748653",
+      "unkStr9": "-c��b&y��r\u0014��\u000fx��Xp��\"���Xr:�6\b��'��\u001e�%��7�N��\fp9�\u0002e��(-*h���QE\u001a�W�zR\u000f�&�",
+      "unkStr10": "ガンダムX DV",
+      "unkStr11": "tT�",
+      "unkStr12": "ガンダムX DV",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 7004001,
+      "indexInSeries": 3,
+      "name": "ガンダムX（ガロード＆ティファ）",
+      "seriesId": "00011eb8",
+      "msState": 973586282,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00011dfd",
+      "lmbBoostHash": "134c7eb4",
+      "selectPilotLmbHash": "be0e8ac3",
+      "unkStr9": "9�V;�\r�R\u001b׆\u0016�\u001e�fO\u001f��\u0002��vPO\u001b\u0017��ﺸ�\u0010j�N�.l#\u001e�clL�>���5\u001e6_��/�ZD�u�4�Q�\u0016[ᬳ�",
+      "unkStr10": "ガンダムX（ガロード＆ティファ）",
+      "unkStr12": "ガンダムX（ガロード＆ティファ）",
+      "cost": 2500,
+      "hp": 600
+    },
+    {
+      "characterId": 7006001,
+      "indexInSeries": 2,
+      "name": "ベルティゴ",
+      "seriesId": "00012076",
+      "msState": 973586282,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00012016",
+      "lmbBoostHash": "134c7eb4",
+      "selectPilotLmbHash": "996040d8",
+      "unkStr10": "ベルティゴ",
+      "unkStr12": "ベルティゴ",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 8001001,
+      "indexInSeries": 0,
+      "name": "ガンダムEz8",
+      "seriesId": "00012181",
+      "msState": 585032732,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00012149",
+      "lmbBoostHash": "457b15c6",
+      "selectPilotLmbHash": "431b72c6",
+      "unkStr9": "TunVE\u0016�A+��!����W�p�}�~�n?�\u0003vK^&L�?���\u001c\u0007\r�6x����~��܄R�崤�~]\fJ�2W�����5d\u000f���/���\u001a��",
+      "unkStr10": "Ez8",
+      "unkStr12": "Ez8",
+      "cost": 1500,
+      "hp": 480
+    },
+    {
+      "characterId": 8002001,
+      "indexInSeries": 1,
+      "name": "グフ・カスタム",
+      "seriesId": "000122e6",
+      "msState": 559558770,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "00012259",
+      "lmbBoostHash": "457b15c6",
+      "selectPilotLmbHash": "86403ea3",
+      "unkStr9": "\u0015#Su�f��\u0016v���\u0010 Q\u0016\u001f�\u0005�\u0003\u0012#�\u0018�&iC�gp�X02����e�\u000f����\u0006��F�[xh���\u0003E��\u0012�Qzrx\u0018:�7��H\u001c�\u0006�\u001c��\b",
+      "unkStr10": "グフ・カスタム",
+      "unkStr11": "tT�",
+      "unkStr12": "グフ・カスタム",
+      "cost": 1500,
+      "hp": 520
+    },
+    {
+      "characterId": 10001001,
+      "indexInSeries": 0,
+      "name": "∀ガンダム",
+      "seriesId": "00012474",
+      "msState": 1271614743,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000123cc",
+      "lmbBoostHash": "a9e61f99",
+      "selectPilotLmbHash": "9fc8d64e",
+      "unkStr9": "Y��4��_\u001aX�x73=|ZZ\b�V�A=l\\D�����@S\u001e9ָ���e��1��l���x�}-]�*i\u0011�^�\"E�X�\u000f���",
+      "unkStr10": "ターンエー",
+      "unkStr12": "ターンエー",
+      "cost": 3000,
+      "hp": 720
+    },
+    {
+      "characterId": 10002001,
+      "indexInSeries": 3,
+      "name": "ターンX",
+      "seriesId": "000125a2",
+      "msState": 1271614743,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00012535",
+      "lmbBoostHash": "a9e61f99",
+      "selectPilotLmbHash": "6901dfc3",
+      "unkStr9": "&b�:�N��O�\u000f��\u000b\u0007KK�DS�}�'Gw�\u0001*:rY�\u001bR���\u001e5ɜ��\u000e'�@V\u000fN\u0005�E\r�-�*�C��u�OJ�5bH",
+      "unkStr10": "ターンX",
+      "unkStr11": "�",
+      "unkStr12": "ターンX",
+      "cost": 3000,
+      "hp": 680
+    },
+    {
+      "characterId": 10003001,
+      "indexInSeries": 1,
+      "name": "ゴールドスモー",
+      "seriesId": "00012703",
+      "msState": 1271614743,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00012696",
+      "lmbBoostHash": "a9e61f99",
+      "selectPilotLmbHash": "5e474046",
+      "unkStr9": ";ЋJc��a\u001e�����ii wY�\n��q\u0011r�W�\u001b\u0001Mxɶ��2Õl��~����c��u�Q�D��y�\u0011\u0015Nak<�vo",
+      "unkStr10": "ゴールドスモー",
+      "unkStr11": "tT�",
+      "unkStr12": "ゴールドスモー",
+      "cost": 2500,
+      "hp": 650
+    },
+    {
+      "characterId": 10004001,
+      "indexInSeries": 2,
+      "name": "カプル",
+      "seriesId": "0001282f",
+      "msState": 1271614743,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000127c6",
+      "lmbBoostHash": "a9e61f99",
+      "selectPilotLmbHash": "609eefbc",
+      "unkStr9": "^�k9\n^z�<Ff,8Z-�\u0011Mb�,�\u001d�\u001b\u0004Q���e\u000fl�tr�x�'��\u00038�R\u0001�x9\u0014�\u00154]iw��\r�ݫc=)��\u0013B",
+      "unkStr10": "カプル",
+      "unkStr11": "W�",
+      "unkStr12": "カプル",
+      "cost": 1500,
+      "hp": 480
+    },
+    {
+      "characterId": 10005001,
+      "indexInSeries": 4,
+      "name": "コレンカプル",
+      "seriesId": "00012916",
+      "msState": 1271614743,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000128c6",
+      "lmbBoostHash": "a9e61f99",
+      "selectPilotLmbHash": "4874b978",
+      "unkStr9": ".)��C\u000b��s3��KK��e;(���D��]\\�\u00045�'�\u00176�\u000fV�6&��[��\u000f\u001b��՗E-\"���\u001aD�r���V�{",
+      "unkStr10": "コレンカプル",
+      "unkStr12": "コレンカプル",
+      "cost": 2000,
+      "hp": 640
+    },
+    {
+      "characterId": 12001001,
+      "indexInSeries": 0,
+      "name": "アレックス",
+      "seriesId": "00012a34",
+      "msState": 1440339082,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "000129cf",
+      "lmbBoostHash": "8104b54e",
+      "selectPilotLmbHash": "43c129ca",
+      "unkStr9": ">&����Ԥ|u���\u0019M�O��M���*c@\u0001�X|�\u00143\u0018��\u0006`�K\u001aΝ�\u0006a���\u001fǗ��xr\u001a�#\u0018��\u0019�mᡴ�S\f\u0015�[��E���`Ѭ܇#!p\r0\u0003p/� ",
+      "unkStr10": "アレックス",
+      "unkStr12": "アレックス",
+      "cost": 1500,
+      "hp": 420
+    },
+    {
+      "characterId": 12002001,
+      "indexInSeries": 1,
+      "name": "ザクⅡ改",
+      "seriesId": "00012b69",
+      "msState": 1440339082,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00012b0d",
+      "lmbBoostHash": "8104b54e",
+      "selectPilotLmbHash": "548915cb",
+      "unkStr9": "���^DVm\u0007\u0015�����Ta�(e��\u0012�9��\u0007jי����?0�i���|�=����p���\u000f6�j��\u0010��H%<�������I�F�,l<?\\���\u001f��\u001f���",
+      "unkStr10": "ザクⅡ改",
+      "unkStr11": "tT�",
+      "unkStr12": "ザクⅡ改",
+      "cost": 1500,
+      "hp": 450
+    },
+    {
+      "characterId": 12004001,
+      "indexInSeries": 2,
+      "name": "ケンプファー",
+      "seriesId": "00012c95",
+      "msState": 1440339082,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "00012c3c",
+      "lmbBoostHash": "8104b54e",
+      "selectPilotLmbHash": "9e662ad4",
+      "unkStr9": "Ky\u0011Y�8�z*�7+�\u000b3��zb�]����z8S_f?{7���;�/\u0013&����sG\u000e�CS\u001b<�^S�?@JnB)��ZR�?�\u0003%{\u0019�ac��q�2���|�~��\r��",
+      "unkStr10": "ケンプファー",
+      "unkStr11": "W�",
+      "unkStr12": "ケンプファー",
+      "cost": 1500,
+      "hp": 450
+    },
+    {
+      "characterId": 13001001,
+      "indexInSeries": 1,
+      "name": "ガンダム試作1号機フルバーニアン",
+      "seriesId": "00012df3",
+      "msState": -897635554,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00012d99",
+      "lmbBoostHash": "e569fc75",
+      "selectPilotLmbHash": "bcc408fe",
+      "unkStr9": "\r�M���\u0016������3��\u000b;�El\u0004\u0010�\u000b�Y�3�\t��\f����ٳ8�\u0016\u0018\u0019q���YɇNCYd�k#{�<\u001aK[j���\tͨ=9<\u0006\u001dʛ�d$\u0007�\u0003`\u000e�t\u0002",
+      "unkStr10": "試作1号機Fb",
+      "unkStr11": "tT�",
+      "unkStr12": "試作1号機Fb",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 13002001,
+      "indexInSeries": 2,
+      "name": "ガンダム試作2号機",
+      "seriesId": "00012f14",
+      "msState": -897635554,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00012ed4",
+      "lmbBoostHash": "e569fc75",
+      "selectPilotLmbHash": "eed926d7",
+      "unkStr9": "De���Q�ܬ�,�\u0005V�Bu'�߮��M�3���~�\u0006ٖ�L��~���\u001d8\u000e\u001a�l�cyM7�\u0001)�\t���iI+��\u0018)�d������j�\u001e7��^�?�4\u0017�",
+      "unkStr10": "試作2号機",
+      "unkStr11": "W�",
+      "unkStr12": "試作2号機",
+      "cost": 2500,
+      "hp": 680
+    },
+    {
+      "characterId": 13003001,
+      "indexInSeries": 3,
+      "name": "ガーベラ・テトラ",
+      "seriesId": "00013060",
+      "msState": -897635554,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00012ffb",
+      "lmbBoostHash": "e569fc75",
+      "selectPilotLmbHash": "3fcb989e",
+      "unkStr9": "5R>�X]TF�����,�{\u0015� ��,>e\n�\f$F\u00030�L��g��\u0003��dŏ���N\u001e9\re�\f�������Zm�\u0006�ϭH7����0�+nÑ�8�\f�8��\u0010",
+      "unkStr10": "ガーベラ・テトラ",
+      "unkStr11": "�",
+      "unkStr12": "ガーベラ・テトラ",
+      "cost": 2000,
+      "hp": 620
+    },
+    {
+      "characterId": 13004001,
+      "indexInSeries": 0,
+      "name": "ガンダム試作3号機",
+      "seriesId": "00013199",
+      "msState": -897635554,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00013144",
+      "lmbBoostHash": "e569fc75",
+      "selectPilotLmbHash": "3b0cc524",
+      "unkStr9": "[��OEW�*�f\u0014�O&\t՜��u��5���os��\u0018g��1b>��~nt�8hjc���5��\bI�$�\u001e^KJ���`�o#�\u00166\u001e�.S#x�ޏ�����\\�",
+      "unkStr10": "試作3号機",
+      "unkStr12": "試作3号機",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 14001001,
+      "indexInSeries": 1,
+      "name": "ガンダムエクシア",
+      "seriesId": "00013305",
+      "msState": 1017647428,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00013273",
+      "lmbBoostHash": "40aaf71e",
+      "selectPilotLmbHash": "1792d857",
+      "unkStr9": "�<�Jѓ��S���\u0018�rI\u0004��ɠZT�u��E�4�w�\u001b�\u001eSL\t",
+      "unkStr10": "エクシア",
+      "unkStr11": "tT�",
+      "unkStr12": "エクシア",
+      "cost": 2000,
+      "hp": 560
+    },
+    {
+      "characterId": 14002001,
+      "indexInSeries": 0,
+      "name": "ダブルオーガンダム",
+      "seriesId": "00013454",
+      "msState": 1017647428,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000133e3",
+      "lmbBoostHash": "40aaf71e",
+      "selectPilotLmbHash": "b599bab7",
+      "unkStr9": "��k\\�FxY�ؘ�|6m�j<l��W^\u0015��u՗h\u0011��,m�Yg�",
+      "unkStr10": "00ガンダム",
+      "unkStr12": "00ガンダム",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 14003001,
+      "indexInSeries": 9,
+      "name": "スサノオ",
+      "seriesId": "000135b8",
+      "msState": -2099268406,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00013541",
+      "lmbBoostHash": "40aaf71e",
+      "selectPilotLmbHash": "a589f3c0",
+      "unkStr9": "�)GNs\u000f�rN�`\u0007�J\u0010+�'�ҢCՖ�\u0015T�/ݺl�%�M1$",
+      "unkStr10": "スサノオ",
+      "unkStr12": "スサノオ",
+      "cost": 2500,
+      "hp": 650
+    },
+    {
+      "characterId": 14004001,
+      "indexInSeries": 3,
+      "name": "ケルディムガンダム",
+      "seriesId": "00013730",
+      "msState": 1017647428,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000136a3",
+      "lmbBoostHash": "40aaf71e",
+      "selectPilotLmbHash": "c12a0c74",
+      "unkStr9": "�qc\u0019��6cb?��k����Z��T�\"�W�CD�'��\u001eʝ�",
+      "unkStr10": "ケルディム",
+      "unkStr11": "�",
+      "unkStr12": "ケルディム",
+      "cost": 2500,
+      "hp": 600
+    },
+    {
+      "characterId": 14005001,
+      "indexInSeries": 11,
+      "name": "アルケーガンダム",
+      "seriesId": "000138fd",
+      "msState": -2079033823,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00013854",
+      "lmbBoostHash": "40aaf71e",
+      "selectPilotLmbHash": "b992ca65",
+      "unkStr9": "\u001d9�<j�r;�\u001cN)�Y\u001e�\nK�\u001a�Z�TQ�y�걞��j��",
+      "unkStr10": "アルケーガンダム",
+      "unkStr11": "\u0004",
+      "unkStr12": "アルケーガンダム",
+      "cost": 2500,
+      "hp": 650
+    },
+    {
+      "characterId": 14006001,
+      "indexInSeries": 4,
+      "name": "ガンダムデュナメス",
+      "seriesId": "00013a8c",
+      "msState": 1017647428,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00013a1e",
+      "lmbBoostHash": "40aaf71e",
+      "selectPilotLmbHash": "33a21ad0",
+      "unkStr9": "�d�+�\u001b\u0013��c��M���i�ˢ��W]�\r\"T���x+�",
+      "unkStr10": "デュナメス",
+      "unkStr12": "デュナメス",
+      "cost": 2000,
+      "hp": 560
+    },
+    {
+      "characterId": 14007001,
+      "indexInSeries": 10,
+      "name": "リボーンズガンダム",
+      "seriesId": "00013bf9",
+      "msState": -2079033823,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00013b65",
+      "lmbBoostHash": "40aaf71e",
+      "selectPilotLmbHash": "136c9966",
+      "unkStr9": "7�N��\fp9�\u0002e��(-*h���QE\u001a�W�zR\u000f�&�",
+      "unkStr10": "リボーンズガンダム",
+      "unkStr11": "\u001e�@",
+      "unkStr12": "リボーンズガンダム",
+      "cost": 3000,
+      "hp": 620
+    },
+    {
+      "characterId": 14008001,
+      "indexInSeries": 2,
+      "name": "ガンダムスローネドライ",
+      "seriesId": "00013d82",
+      "msState": 1017647428,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00013d0f",
+      "lmbBoostHash": "40aaf71e",
+      "selectPilotLmbHash": "fc3471d9",
+      "unkStr9": "\u001e�clL�>���5\u001e6_��/�ZD�u�4�Q�\u0016[ᬳ�",
+      "unkStr10": "スローネドライ",
+      "unkStr11": "W�",
+      "unkStr12": "スローネドライ",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 14009001,
+      "indexInSeries": 6,
+      "name": "アリオスガンダム",
+      "seriesId": "00013ecf",
+      "msState": 1017647428,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00013e75",
+      "lmbBoostHash": "40aaf71e",
+      "selectPilotLmbHash": "32609b62",
+      "unkStr9": "�9'g0�ɒ\b�ÓAi���Kw�*h��]6Ӓ<��\u0012",
+      "unkStr10": "アリオス",
+      "unkStr12": "アリオス",
+      "cost": 2500,
+      "hp": 600
+    },
+    {
+      "characterId": 14011001,
+      "indexInSeries": 3,
+      "name": "アヴァランチエクシア",
+      "seriesId": "00013ffe",
+      "msState": -2099268406,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00013fa2",
+      "lmbBoostHash": "7c70a4f0",
+      "selectPilotLmbHash": "dcf826dc",
+      "unkStr9": "���\u000e'�@V\u000fN\u0005�E\r�-�*�C��u�OJ�5bH",
+      "unkStr10": "Aエクシア",
+      "unkStr11": "W�",
+      "unkStr12": "Aエクシア",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 14012001,
+      "indexInSeries": 1,
+      "name": "ダブルオーガンダム セブンソード/G",
+      "seriesId": "0001415f",
+      "msState": -2099268406,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000140c3",
+      "lmbBoostHash": "7c70a4f0",
+      "selectPilotLmbHash": "03af49a2",
+      "unkStr9": "�~����c��u�Q�D��y�\u0011\u0015Nak<�vo",
+      "unkStr10": "00ガンダム7SG",
+      "unkStr11": "tT�",
+      "unkStr12": "00ガンダム7SG",
+      "cost": 3000,
+      "hp": 620
+    },
+    {
+      "characterId": 14014001,
+      "indexInSeries": 5,
+      "name": "ティエレンタオツー",
+      "seriesId": "000142f8",
+      "msState": -2079033823,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00014272",
+      "lmbBoostHash": "40aaf71e",
+      "selectPilotLmbHash": "d6a6c27e",
+      "unkStr9": "��[��\u000f\u001b��՗E-\"���\u001aD�r���V�{",
+      "unkStr10": "ティエレンタオツー",
+      "unkStr12": "ティエレンタオツー",
+      "cost": 1500,
+      "hp": 480
+    },
+    {
+      "characterId": 14016001,
+      "indexInSeries": 2,
+      "name": "ヤークトアルケーガンダム",
+      "seriesId": "000144ee",
+      "msState": -2079033823,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00014434",
+      "lmbBoostHash": "7c70a4f0",
+      "selectPilotLmbHash": "fb83e510",
+      "unkStr9": "rI\u0004��ɠZT�u��E�4�w�\u001b�\u001eSL\t",
+      "unkStr10": "ヤークトアルケー",
+      "unkStr11": "�",
+      "unkStr12": "ヤークトアルケー",
+      "cost": 3000,
+      "hp": 620
+    },
+    {
+      "characterId": 14017001,
+      "indexInSeries": 8,
+      "name": "ガンダムキュリオス",
+      "seriesId": "00014642",
+      "msState": 1017647428,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000145d9",
+      "lmbBoostHash": "40aaf71e",
+      "selectPilotLmbHash": "cdb119fa",
+      "unkStr9": "m�j<l��W^\u0015��u՗h\u0011��,m�Yg�",
+      "unkStr10": "キュリオス",
+      "unkStr12": "キュリオス",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 14018001,
+      "indexInSeries": 7,
+      "name": "ガンダムヴァーチェ",
+      "seriesId": "00014780",
+      "msState": 1017647428,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0001472f",
+      "lmbBoostHash": "40aaf71e",
+      "selectPilotLmbHash": "6b3d1bc4",
+      "unkStr9": "\u0010+�'�ҢCՖ�\u0015T�/ݺl�%�M1$",
+      "unkStr10": "ヴァーチェ",
+      "unkStr12": "ヴァーチェ",
+      "cost": 2000,
+      "hp": 640
+    },
+    {
+      "characterId": 15001001,
+      "indexInSeries": 1,
+      "name": "ユニコーンガンダム",
+      "seriesId": "000148b9",
+      "msState": 1672239910,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00014862",
+      "lmbBoostHash": "375b43ce",
+      "selectPilotLmbHash": "cf574601",
+      "unkStr9": "/ݺl�%�M1$",
+      "unkStr10": "ユニコーン",
+      "unkStr11": "tT�",
+      "unkStr12": "ユニコーン",
+      "cost": 3000,
+      "hp": 680
+    },
+    {
+      "characterId": 15002001,
+      "indexInSeries": 5,
+      "name": "クシャトリヤ",
+      "seriesId": "00014a02",
+      "msState": -623749516,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001498d",
+      "lmbBoostHash": "375b43ce",
+      "selectPilotLmbHash": "f36ba8ff",
+      "unkStr9": "D�'��\u001eʝ�",
+      "unkStr10": "クシャトリヤ",
+      "unkStr12": "クシャトリヤ",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 15003001,
+      "indexInSeries": 6,
+      "name": "シナンジュ",
+      "seriesId": "00014b28",
+      "msState": -623749516,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00014ad2",
+      "lmbBoostHash": "375b43ce",
+      "selectPilotLmbHash": "0bc08af5",
+      "unkStr9": "걞��j��",
+      "unkStr10": "シナンジュ",
+      "unkStr12": "シナンジュ",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 15004001,
+      "indexInSeries": 2,
+      "name": "デルタプラス",
+      "seriesId": "00014c57",
+      "msState": -623749516,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00014bef",
+      "lmbBoostHash": "375b43ce",
+      "selectPilotLmbHash": "c0e2d4ac",
+      "unkStr9": "���x+�",
+      "unkStr10": "デルタプラス",
+      "unkStr11": "W�",
+      "unkStr12": "デルタプラス",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 15005001,
+      "indexInSeries": 4,
+      "name": "バンシィ",
+      "seriesId": "00014da5",
+      "msState": 1672239910,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "00014d31",
+      "lmbBoostHash": "375b43ce",
+      "selectPilotLmbHash": "3489f153",
+      "unkStr9": "zR\u000f�&�",
+      "unkStr10": "バンシィ",
+      "unkStr12": "バンシィ",
+      "cost": 2500,
+      "hp": 600
+    },
+    {
+      "characterId": 15006001,
+      "indexInSeries": 7,
+      "name": "ローゼン・ズール",
+      "seriesId": "00014eee",
+      "msState": -623749516,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00014e7f",
+      "lmbBoostHash": "375b43ce",
+      "selectPilotLmbHash": "8a11b843",
+      "unkStr9": "[ᬳ�",
+      "unkStr10": "ローゼン・ズール",
+      "unkStr12": "ローゼン・ズール",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 15008001,
+      "indexInSeries": 0,
+      "name": "フルアーマー・ユニコーンガンダム",
+      "seriesId": "00015085",
+      "msState": 1672239910,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001500c",
+      "lmbBoostHash": "375b43ce",
+      "selectPilotLmbHash": "60b24c98",
+      "unkStr9": "���",
+      "unkStr10": "FA・ユニコーン",
+      "unkStr12": "FA・ユニコーン",
+      "cost": 3000,
+      "hp": 680
+    },
+    {
+      "characterId": 15009001,
+      "indexInSeries": 3,
+      "name": "バンシィ・ノルン",
+      "seriesId": "000151f1",
+      "msState": 1672239910,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00015172",
+      "lmbBoostHash": "375b43ce",
+      "selectPilotLmbHash": "4b7085c2",
+      "unkStr9": "bH",
+      "unkStr10": "バンシィ・ノルン",
+      "unkStr11": "�",
+      "unkStr12": "バンシィ・ノルン",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 16001001,
+      "indexInSeries": 0,
+      "name": "ウイングガンダムゼロ（EW版)",
+      "seriesId": "00015368",
+      "msState": -1563654937,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00015302",
+      "lmbBoostHash": "e92e680f",
+      "selectPilotLmbHash": "c87d26e4",
+      "unkStr9": "�Q��Ҵ�7��L�G��(y�\u001e�\u0019���ii�D5�����wl\u0010EGN�<�Jѓ��S���\u0018�rI\u0004��ɠZT�u��E�4�w�\u001b�\u001eSL\t",
+      "unkStr10": "ウイングゼロ（EW版）",
+      "unkStr12": "ウイングゼロ（EW版）",
+      "cost": 3000,
+      "hp": 620
+    },
+    {
+      "characterId": 16002001,
+      "indexInSeries": 3,
+      "name": "ガンダムヘビーアームズ改（EW版)",
+      "seriesId": "0001551b",
+      "msState": -1563654937,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00015499",
+      "lmbBoostHash": "e92e680f",
+      "selectPilotLmbHash": "e8b98942",
+      "unkStr9": "]&�ZZ�䑬vg\u001aqI6�\r,�<�̞>--\u0004�젞6.\"'�uqc ���k\\�FxY�ؘ�|6m�j<l��W^\u0015��u՗h\u0011��,m�Yg�",
+      "unkStr10": "ヘビーアームズ改（EW版）",
+      "unkStr11": "�",
+      "unkStr12": "ヘビーアームズ改（EW版）",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 16003001,
+      "indexInSeries": 2,
+      "name": "トールギスⅢ",
+      "seriesId": "000156b6",
+      "msState": -1563654937,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001565a",
+      "lmbBoostHash": "e92e680f",
+      "selectPilotLmbHash": "d209aa42",
+      "unkStr9": "��KK�6��\u00131�\u001dm'��x������\"�&���c@\u0015\u001d9����)GNs\u000f�rN�`\u0007�J\u0010+�'�ҢCՖ�\u0015T�/ݺl�%�M1$",
+      "unkStr10": "トールギスⅢ",
+      "unkStr11": "W�",
+      "unkStr12": "トールギスⅢ",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 16004001,
+      "indexInSeries": 1,
+      "name": "ガンダムデスサイズヘル（EW版)",
+      "seriesId": "00015854",
+      "msState": -1563654937,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000157be",
+      "lmbBoostHash": "e92e680f",
+      "selectPilotLmbHash": "a01ce194",
+      "unkStr9": ":iiZ��eٝh�%�}4�\u000f�nf����\u0010��g�zظ�9��ō��<�qc\u0019��6cb?��k����Z��T�\"�W�CD�'��\u001eʝ�",
+      "unkStr10": "デスサイズヘル（EW版）",
+      "unkStr11": "tT�",
+      "unkStr12": "デスサイズヘル（EW版）",
+      "cost": 2500,
+      "hp": 650
+    },
+    {
+      "characterId": 17001001,
+      "indexInSeries": 0,
+      "name": "νガンダム",
+      "seriesId": "00015a26",
+      "msState": 1362150653,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000159a7",
+      "lmbBoostHash": "ca1df9aa",
+      "selectPilotLmbHash": "6e49178d",
+      "unkStr9": "�=��8\u0007d�\\]\u001b�� Ql�nߞ'�Kt\to�G\u001bQƽ�:,��ϴNB���xT;.�Z���j1\u0013^�k9\n^z�<Ff,8Z-�\u0011Mb�,�\u001d�\u001b\u0004Q���e\u000fl�tr�x�'��\u00038�R\u0001�x9\u0014�\u00154]iw��\r�ݫc=)��\u0013B",
+      "unkStr10": "νガンダム",
+      "unkStr12": "νガンダム",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 17002001,
+      "indexInSeries": 2,
+      "name": "サザビー",
+      "seriesId": "00015b54",
+      "msState": 1362150653,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00015aec",
+      "lmbBoostHash": "ca1df9aa",
+      "selectPilotLmbHash": "2c31e400",
+      "unkStr9": "�\u001aH��7�GE��\u001e��'8#@±�i\u0017�!@q�]r�ދ�D*`�c{�\u001d0\u000fW����Ҝd+�ن.)��C\u000b��s3��KK��e;(���D��]\\�\u00045�'�\u00176�\u000fV�6&��[��\u000f\u001b��՗E-\"���\u001aD�r���V�{",
+      "unkStr10": "サザビー",
+      "unkStr11": "W�",
+      "unkStr12": "サザビー",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 17003001,
+      "indexInSeries": 1,
+      "name": "リ・ガズィ",
+      "seriesId": "00015c90",
+      "msState": 1400273572,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "00015c19",
+      "lmbBoostHash": "ca1df9aa",
+      "selectPilotLmbHash": "6fdec348",
+      "unkStr9": "�o�\u001c���ulvÀ�c��z�NZ�$�\u001d؊\u001b�B�wW?�9\t��?�Q��Ҵ�7��L�G��(y�\u001e�\u0019���ii�D5�����wl\u0010EGN�<�Jѓ��S���\u0018�rI\u0004��ɠZT�u��E�4�w�\u001b�\u001eSL\t",
+      "unkStr10": "リ・ガズィ",
+      "unkStr11": "tT�",
+      "unkStr12": "リ・ガズィ",
+      "cost": 1500,
+      "hp": 400
+    },
+    {
+      "characterId": 17004001,
+      "indexInSeries": 3,
+      "name": "ヤクト・ドーガ",
+      "seriesId": "00015dfb",
+      "msState": 1400273572,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00015d81",
+      "lmbBoostHash": "ca1df9aa",
+      "selectPilotLmbHash": "35967fdd",
+      "unkStr9": "!>��B:*'\u0013x��9��\u0001\u000b�cK���\u0001�N�\u0012{.�\u0011Q\u0003Z��2t�x]&�ZZ�䑬vg\u001aqI6�\r,�<�̞>--\u0004�젞6.\"'�uqc ���k\\�FxY�ؘ�|6m�j<l��W^\u0015��u՗h\u0011��,m�Yg�",
+      "unkStr10": "ヤクト・ドーガ",
+      "unkStr11": "�",
+      "unkStr12": "ヤクト・ドーガ",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 18001001,
+      "indexInSeries": 0,
+      "name": "ゴッドガンダム",
+      "seriesId": "00015f5d",
+      "msState": -737550778,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00015edd",
+      "lmbBoostHash": "051ec0cb",
+      "selectPilotLmbHash": "0216e936",
+      "unkStr9": "��\u0012޿�l��{!tX�՟i��s���v\\ii-c��b&y��r\u0014��\u000fx��Xp��\"���Xr:�6\b��'��\u001e�%��7�N��\fp9�\u0002e��(-*h���QE\u001a�W�zR\u000f�&�",
+      "unkStr10": "ゴッドガンダム",
+      "unkStr12": "ゴッドガンダム",
+      "cost": 3000,
+      "hp": 750
+    },
+    {
+      "characterId": 18002001,
+      "indexInSeries": 5,
+      "name": "ドラゴンガンダム",
+      "seriesId": "0001611d",
+      "msState": -737550778,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00016084",
+      "lmbBoostHash": "051ec0cb",
+      "selectPilotLmbHash": "e4405472",
+      "unkStr9": ".�B��'u�\t�\u0017O���-��\u0019:�\u001e�\u0013G--K9�V;�\r�R\u001b׆\u0016�\u001e�fO\u001f��\u0002��vPO\u001b\u0017��ﺸ�\u0010j�N�.l#\u001e�clL�>���5\u001e6_��/�ZD�u�4�Q�\u0016[ᬳ�",
+      "unkStr10": "ドラゴンガンダム",
+      "unkStr12": "ドラゴンガンダム",
+      "cost": 2000,
+      "hp": 640
+    },
+    {
+      "characterId": 18003001,
+      "indexInSeries": 3,
+      "name": "マスターガンダム",
+      "seriesId": "000162ef",
+      "msState": -737550778,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "00016235",
+      "lmbBoostHash": "051ec0cb",
+      "selectPilotLmbHash": "20b5372c",
+      "unkStr9": "H{�:�\u0015l��a���r\u0012͋~���q��i\u001bnS��厶�P��<�d3a����\u0011j\u0013_a���� ����Vxc��'���9'g0�ɒ\b�ÓAi���Kw�*h��]6Ӓ<��\u0012",
+      "unkStr10": "マスターガンダム",
+      "unkStr11": "�",
+      "unkStr12": "マスターガンダム",
+      "cost": 3000,
+      "hp": 750
+    },
+    {
+      "characterId": 18004001,
+      "indexInSeries": 6,
+      "name": "ガンダムシュピーゲル",
+      "seriesId": "000164ac",
+      "msState": -737550778,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001640b",
+      "lmbBoostHash": "051ec0cb",
+      "selectPilotLmbHash": "3598f7b7",
+      "unkStr9": "\t\u0002���'H�\\=\"�\u0006i\u001b�d�\u0003�uL\u001d��-�FY��4��_\u001aX�x73=|ZZ\b�V�A=l\\D�����@S\u001e9ָ���e��1��l���x�}-]�*i\u0011�^�\"E�X�\u000f���",
+      "unkStr10": "ガンダムシュピーゲル",
+      "unkStr12": "ガンダムシュピーゲル",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 18005001,
+      "indexInSeries": 7,
+      "name": "ノーベルガンダム",
+      "seriesId": "00016659",
+      "msState": -708070287,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "000165d6",
+      "lmbBoostHash": "051ec0cb",
+      "selectPilotLmbHash": "1542720b",
+      "unkStr9": "���T�o$G����-�H7.�\u001e\u0015�Ŗ��ls�&b�:�N��O�\u000f��\u000b\u0007KK�DS�}�'Gw�\u0001*:rY�\u001bR���\u001e5ɜ��\u000e'�@V\u000fN\u0005�E\r�-�*�C��u�OJ�5bH",
+      "unkStr10": "ノーベルガンダム",
+      "unkStr12": "ノーベルガンダム",
+      "unkStr13": "tT�",
+      "cost": 2000,
+      "hp": 640
+    },
+    {
+      "characterId": 18006001,
+      "indexInSeries": 1,
+      "name": "シャイニングガンダム",
+      "seriesId": "000167fd",
+      "msState": -708070287,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "00016774",
+      "lmbBoostHash": "051ec0cb",
+      "selectPilotLmbHash": "3531aa84",
+      "unkStr9": ".rW�!���\u0018��ޑ�\f��b��Ҵ'\u0019�g;ЋJc��a\u001e�����ii wY�\n��q\u0011r�W�\u001b\u0001Mxɶ��2Õl��~����c��u�Q�D��y�\u0011\u0015Nak<�vo",
+      "unkStr10": "シャイニングガンダム",
+      "unkStr11": "tT�",
+      "unkStr12": "シャイニングガンダム",
+      "cost": 2500,
+      "hp": 650
+    },
+    {
+      "characterId": 18007001,
+      "indexInSeries": 2,
+      "name": "ライジングガンダム",
+      "seriesId": "00016983",
+      "msState": -708070287,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "00016900",
+      "lmbBoostHash": "051ec0cb",
+      "selectPilotLmbHash": "39df29ec",
+      "unkStr9": "\u001bQƽ�:,��ϴNB���xT;.�Z���j1\u0013^�k9\n^z�<Ff,8Z-�\u0011Mb�,�\u001d�\u001b\u0004Q���e\u000fl�tr�x�'��\u00038�R\u0001�x9\u0014�\u00154]iw��\r�ݫc=)��\u0013B",
+      "unkStr10": "ライジングガンダム",
+      "unkStr11": "W�",
+      "unkStr12": "ライジングガンダム",
+      "cost": 1500,
+      "hp": 450
+    },
+    {
+      "characterId": 18008001,
+      "indexInSeries": 4,
+      "name": "ガンダムマックスター",
+      "seriesId": "00016b63",
+      "msState": -737550778,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00016a9e",
+      "lmbBoostHash": "051ec0cb",
+      "selectPilotLmbHash": "5efeac3e",
+      "unkStr9": "]r�ދ�D*`�c{�\u001d0\u000fW����Ҝd+�ن.)��C\u000b��s3��KK��e;(���D��]\\�\u00045�'�\u00176�\u000fV�6&��[��\u000f\u001b��՗E-\"���\u001aD�r���V�{",
+      "unkStr10": "ガンダムマックスター",
+      "unkStr12": "ガンダムマックスター",
+      "cost": 2000,
+      "hp": 640
+    },
+    {
+      "characterId": 20001001,
+      "indexInSeries": 2,
+      "name": "ストライクガンダム",
+      "seriesId": "00016ccc",
+      "msState": -672569619,
+      "cardIconIndex": -1150521401,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00016c5e",
+      "lmbBoostHash": "fc97d2e6",
+      "selectPilotLmbHash": "24a5f870",
+      "unkStr9": "6�\r,�<�̞>--\u0004�젞6.\"'�uqc ���k\\�FxY�ؘ�|6m�j<l��W^\u0015��u՗h\u0011��,m�Yg�",
+      "unkStr10": "ストライク",
+      "unkStr11": "W�",
+      "unkStr12": "ストライク",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 20002001,
+      "indexInSeries": 10,
+      "name": "フォビドゥンガンダム",
+      "seriesId": "00016dfd",
+      "msState": 1830010833,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00016d98",
+      "lmbBoostHash": "fc97d2e6",
+      "selectPilotLmbHash": "a868ba9e",
+      "unkStr9": "��x������\"�&���c@\u0015\u001d9����)GNs\u000f�rN�`\u0007�J\u0010+�'�ҢCՖ�\u0015T�/ݺl�%�M1$",
+      "unkStr10": "フォビドゥン",
+      "unkStr11": "\u0001",
+      "unkStr12": "フォビドゥン",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 20003001,
+      "indexInSeries": 6,
+      "name": "プロヴィデンスガンダム",
+      "seriesId": "00016f76",
+      "msState": 1830010833,
+      "cardIconIndex": 216132800,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00016ee5",
+      "lmbBoostHash": "fc97d2e6",
+      "selectPilotLmbHash": "def48811",
+      "unkStr9": "4�\u000f�nf����\u0010��g�zظ�9��ō��<�qc\u0019��6cb?��k����Z��T�\"�W�CD�'��\u001eʝ�",
+      "unkStr10": "プロヴィデンス",
+      "unkStr12": "プロヴィデンス",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 20004001,
+      "indexInSeries": 8,
+      "name": "ラゴゥ",
+      "seriesId": "000170e3",
+      "msState": -672569619,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00017093",
+      "lmbBoostHash": "fc97d2e6",
+      "selectPilotLmbHash": "469f41fc",
+      "unkStr9": "��\u001e#3\u0016\u001c��߈�1�\u000bN��\u0002�t����6I\u001d9�<j�r;�\u001cN)�Y\u001e�\nK�\u001a�Z�TQ�y�걞��j��",
+      "unkStr10": "ラゴゥ",
+      "unkStr11": "\u001e�@",
+      "unkStr12": "ラゴゥ",
+      "cost": 1500,
+      "hp": 450
+    },
+    {
+      "characterId": 20005001,
+      "indexInSeries": 0,
+      "name": "フリーダムガンダム",
+      "seriesId": "00017206",
+      "msState": 1750903124,
+      "cardIconIndex": -1150521401,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000171ad",
+      "lmbBoostHash": "fc97d2e6",
+      "selectPilotLmbHash": "56191386",
+      "unkStr9": "<ù��ǥ�@\u0014�c�\"���.6\u0002��m��d�+�\u001b\u0013��c��M���i�ˢ��W]�\r\"T���x+�",
+      "unkStr10": "フリーダム",
+      "unkStr12": "フリーダム",
+      "cost": 2500,
+      "hp": 600
+    },
+    {
+      "characterId": 20006001,
+      "indexInSeries": 5,
+      "name": "デュエルガンダムアサルトシュラウド",
+      "seriesId": "00017375",
+      "msState": 1830010833,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00017312",
+      "lmbBoostHash": "fc97d2e6",
+      "selectPilotLmbHash": "b5ea35f0",
+      "unkStr9": "x��Xp��\"���Xr:�6\b��'��\u001e�%��7�N��\fp9�\u0002e��(-*h���QE\u001a�W�zR\u000f�&�",
+      "unkStr10": "デュエルAS",
+      "unkStr12": "デュエルAS",
+      "cost": 1500,
+      "hp": 480
+    },
+    {
+      "characterId": 20008001,
+      "indexInSeries": 1,
+      "name": "パーフェクトストライクガンダム",
+      "seriesId": "000174d9",
+      "msState": 1750903124,
+      "cardIconIndex": 216132800,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001746b",
+      "lmbBoostHash": "fc97d2e6",
+      "selectPilotLmbHash": "81f0cee6",
+      "unkStr9": "3a����\u0011j\u0013_a���� ����Vxc��'���9'g0�ɒ\b�ÓAi���Kw�*h��]6Ӓ<��\u0012",
+      "unkStr10": "Pストライク",
+      "unkStr11": "tT�",
+      "unkStr12": "Pストライク",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 20009001,
+      "indexInSeries": 3,
+      "name": "ブリッツガンダム",
+      "seriesId": "000175df",
+      "msState": -672569619,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "00017589",
+      "lmbBoostHash": "fc97d2e6",
+      "selectPilotLmbHash": "d48041a7",
+      "unkStr9": "=|ZZ\b�V�A=l\\D�����@S\u001e9ָ���e��1��l���x�}-]�*i\u0011�^�\"E�X�\u000f���",
+      "unkStr10": "ブリッツ",
+      "unkStr11": "�",
+      "unkStr12": "ブリッツ",
+      "cost": 2000,
+      "hp": 540
+    },
+    {
+      "characterId": 20010001,
+      "indexInSeries": 9,
+      "name": "レイダーガンダム",
+      "seriesId": "000176e7",
+      "msState": 1830010833,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0001769d",
+      "lmbBoostHash": "fc97d2e6",
+      "selectPilotLmbHash": "dfd76180",
+      "unkStr9": "\u0007KK�DS�}�'Gw�\u0001*:rY�\u001bR���\u001e5ɜ��\u000e'�@V\u000fN\u0005�E\r�-�*�C��u�OJ�5bH",
+      "unkStr10": "レイダー",
+      "unkStr11": "\u0004",
+      "unkStr12": "レイダー",
+      "cost": 2000,
+      "hp": 620
+    },
+    {
+      "characterId": 20011001,
+      "indexInSeries": 4,
+      "name": "バスターガンダム",
+      "seriesId": "000177ec",
+      "msState": 1830010833,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00017784",
+      "lmbBoostHash": "fc97d2e6",
+      "selectPilotLmbHash": "427e9df8",
+      "unkStr9": "ii wY�\n��q\u0011r�W�\u001b\u0001Mxɶ��2Õl��~����c��u�Q�D��y�\u0011\u0015Nak<�vo",
+      "unkStr10": "バスター",
+      "unkStr12": "バスター",
+      "cost": 1500,
+      "hp": 480
+    },
+    {
+      "characterId": 20012001,
+      "indexInSeries": 7,
+      "name": "イージスガンダム",
+      "seriesId": "0001794a",
+      "msState": -672569619,
+      "cardIconIndex": -1150521401,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00017900",
+      "lmbBoostHash": "fc97d2e6",
+      "selectPilotLmbHash": "54ee05ff",
+      "unkStr9": "-�\u0011Mb�,�\u001d�\u001b\u0004Q���e\u000fl�tr�x�'��\u00038�R\u0001�x9\u0014�\u00154]iw��\r�ݫc=)��\u0013B",
+      "unkStr10": "イージス",
+      "unkStr12": "イージス",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 21001001,
+      "indexInSeries": 1,
+      "name": "ストライクフリーダムガンダム",
+      "seriesId": "00017a94",
+      "msState": 513405941,
+      "cardIconIndex": -1150521401,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00017a2f",
+      "lmbBoostHash": "36b2e6b8",
+      "selectPilotLmbHash": "35a070ad",
+      "unkStr9": "��e;(���D��]\\�\u00045�'�\u00176�\u000fV�6&��[��\u000f\u001b��՗E-\"���\u001aD�r���V�{",
+      "unkStr10": "ストライクフリーダム",
+      "unkStr11": "tT�",
+      "unkStr12": "ストライクフリーダム",
+      "cost": 3000,
+      "hp": 600
+    },
+    {
+      "characterId": 21002001,
+      "indexInSeries": 4,
+      "name": "インフィニットジャスティスガンダム",
+      "seriesId": "00017c79",
+      "msState": 513405941,
+      "cardIconIndex": -1150521401,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00017bf6",
+      "lmbBoostHash": "36b2e6b8",
+      "selectPilotLmbHash": "e1c464e7",
+      "unkStr9": "D5�����wl\u0010EGN�<�Jѓ��S���\u0018�rI\u0004��ɠZT�u��E�4�w�\u001b�\u001eSL\t",
+      "unkStr10": "∞ジャスティス",
+      "unkStr12": "∞ジャスティス",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 21003001,
+      "indexInSeries": 0,
+      "name": "デスティニーガンダム",
+      "seriesId": "00017dda",
+      "msState": -1537004855,
+      "cardIconIndex": -1150521401,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00017d7b",
+      "lmbBoostHash": "36b2e6b8",
+      "selectPilotLmbHash": "d5ba5a0a",
+      "unkStr9": "�젞6.\"'�uqc ���k\\�FxY�ؘ�|6m�j<l��W^\u0015��u՗h\u0011��,m�Yg�",
+      "unkStr10": "デスティニー",
+      "unkStr12": "デスティニー",
+      "cost": 3000,
+      "hp": 680
+    },
+    {
+      "characterId": 21004001,
+      "indexInSeries": 8,
+      "name": "ガナーザクウォーリア",
+      "seriesId": "00017f15",
+      "msState": 513405941,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00017eae",
+      "lmbBoostHash": "36b2e6b8",
+      "selectPilotLmbHash": "4833ff19",
+      "unkStr9": "&���c@\u0015\u001d9����)GNs\u000f�rN�`\u0007�J\u0010+�'�ҢCՖ�\u0015T�/ݺl�%�M1$",
+      "unkStr10": "Gザクウォーリア",
+      "unkStr11": "\u001e�@",
+      "unkStr12": "Gザクウォーリア",
+      "cost": 2000,
+      "hp": 620
+    },
+    {
+      "characterId": 21005001,
+      "indexInSeries": 2,
+      "name": "インパルスガンダム",
+      "seriesId": "000180ba",
+      "msState": -1537004855,
+      "cardIconIndex": -1150521401,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001804d",
+      "lmbBoostHash": "36b2e6b8",
+      "selectPilotLmbHash": "5ca90c1c",
+      "unkStr9": "�zظ�9��ō��<�qc\u0019��6cb?��k����Z��T�\"�W�CD�'��\u001eʝ�",
+      "unkStr10": "Fインパルス",
+      "unkStr11": "W�",
+      "unkStr12": "Fインパルス",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 21006001,
+      "indexInSeries": 5,
+      "name": "ガイアガンダム",
+      "seriesId": "000181ab",
+      "msState": 437555015,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001816a",
+      "lmbBoostHash": "36b2e6b8",
+      "selectPilotLmbHash": "3f649897",
+      "unkStr9": "\u000bN��\u0002�t����6I\u001d9�<j�r;�\u001cN)�Y\u001e�\nK�\u001a�Z�TQ�y�걞��j��",
+      "unkStr10": "ガイア",
+      "unkStr12": "ガイア",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 21007001,
+      "indexInSeries": 3,
+      "name": "レジェンドガンダム",
+      "seriesId": "000182ed",
+      "msState": 513405941,
+      "cardIconIndex": 216132800,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00018288",
+      "lmbBoostHash": "36b2e6b8",
+      "selectPilotLmbHash": "d79c92e4",
+      "unkStr9": "c�\"���.6\u0002��m��d�+�\u001b\u0013��c��M���i�ˢ��W]�\r\"T���x+�",
+      "unkStr10": "レジェンド",
+      "unkStr11": "�",
+      "unkStr12": "レジェンド",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 21011001,
+      "indexInSeries": 6,
+      "name": "グフイグナイテッド",
+      "seriesId": "0001842f",
+      "msState": 513405941,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "000183c9",
+      "lmbBoostHash": "36b2e6b8",
+      "selectPilotLmbHash": "87144763",
+      "unkStr9": "����@S\u001e9ָ���e��1��l���x�}-]�*i\u0011�^�\"E�X�\u000f���",
+      "unkStr10": "グフイグナイテッド",
+      "unkStr12": "グフイグナイテッド",
+      "cost": 2000,
+      "hp": 620
+    },
+    {
+      "characterId": 21012001,
+      "indexInSeries": 9,
+      "name": "ストライクルージュ（オオトリ装備）",
+      "seriesId": "00018676",
+      "msState": 513405941,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000185b3",
+      "lmbBoostHash": "36b2e6b8",
+      "selectPilotLmbHash": "eeea1617",
+      "unkStr9": "*:rY�\u001bR���\u001e5ɜ��\u000e'�@V\u000fN\u0005�E\r�-�*�C��u�OJ�5bH",
+      "unkStr10": "ストライクルージュ（オオトリ装備）",
+      "unkStr11": "\u0004",
+      "unkStr12": "ストライクルージュ（オオトリ装備）",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 21015001,
+      "indexInSeries": 7,
+      "name": "アカツキ",
+      "seriesId": "00018841",
+      "msState": 513405941,
+      "cardIconIndex": 216132800,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000187bf",
+      "lmbBoostHash": "36b2e6b8",
+      "selectPilotLmbHash": "86f2fc97",
+      "unkStr9": "\u00045�'�\u00176�\u000fV�6&��[��\u000f\u001b��՗E-\"���\u001aD�r���V�{",
+      "unkStr10": "アカツキ",
+      "unkStr12": "アカツキ",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 22001001,
+      "indexInSeries": 0,
+      "name": "アストレイレッドフレーム",
+      "seriesId": "00018a15",
+      "msState": -129414756,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00018977",
+      "lmbBoostHash": "a6f55770",
+      "selectPilotLmbHash": "397d3414",
+      "unkStr9": "3�\t��\f����ٳ8�\u0016\u0018\u0019q���YɇNCYd�k#{�<\u001aK[j���\tͨ=9<\u0006\u001dʛ�d$\u0007�\u0003`\u000e�t\u0002",
+      "unkStr10": "レッドフレーム",
+      "unkStr12": "レッドフレーム",
+      "cost": 2000,
+      "hp": 620
+    },
+    {
+      "characterId": 22002001,
+      "indexInSeries": 1,
+      "name": "アストレイブルーフレームセカンドL",
+      "seriesId": "00018b99",
+      "msState": -12525248,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00018b12",
+      "lmbBoostHash": "a6f55770",
+      "selectPilotLmbHash": "22be649c",
+      "unkStr9": "���~�\u0006ٖ�L��~���\u001d8\u000e\u001a�l�cyM7�\u0001)�\t���iI+��\u0018)�d������j�\u001e7��^�?�4\u0017�",
+      "unkStr10": "ブルーフレームSL",
+      "unkStr11": "tT�",
+      "unkStr12": "ブルーフレームSL",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 22003001,
+      "indexInSeries": 2,
+      "name": "アストレイゴールドフレーム天",
+      "seriesId": "00018d18",
+      "msState": -99616827,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00018ca1",
+      "lmbBoostHash": "a6f55770",
+      "selectPilotLmbHash": "af86eb28",
+      "unkStr9": "$F\u00030�L��g��\u0003��dŏ���N\u001e9\re�\f�������Zm�\u0006�ϭH7����0�+nÑ�8�\f�8��\u0010",
+      "unkStr10": "ゴールドフレーム天",
+      "unkStr11": "W�",
+      "unkStr12": "ゴールドフレーム天",
+      "cost": 2000,
+      "hp": 540
+    },
+    {
+      "characterId": 22004001,
+      "indexInSeries": 8,
+      "name": "ドレッドノートガンダム（Xアストレイ）",
+      "seriesId": "00018ea2",
+      "msState": -24999049,
+      "cardIconIndex": 216132800,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00018e3a",
+      "lmbBoostHash": "a6f55770",
+      "selectPilotLmbHash": "0740b851",
+      "unkStr9": "\f��1�4;;�\f�\u0003#.>�/+9��4�F0�md���CikM\u0018*?�!�\u0015ӓ���Ys\u000fFB�\u001a`\f�^G@",
+      "unkStr10": "ドレッドノート",
+      "unkStr12": "ドレッドノート",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 22005001,
+      "indexInSeries": 5,
+      "name": "ハイペリオンガンダム",
+      "seriesId": "0001903b",
+      "msState": -70410766,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00018fc1",
+      "lmbBoostHash": "a6f55770",
+      "selectPilotLmbHash": "20efbcea",
+      "unkStr9": "~`�җ�\u0013��z���\u0007ࡩ�\u001el/�s� %7!Jxy-)e������հ�x~�M\u0019�s{>�?�|Cq",
+      "unkStr10": "ハイペリオン",
+      "unkStr12": "ハイペリオン",
+      "cost": 2500,
+      "hp": 560
+    },
+    {
+      "characterId": 22006001,
+      "indexInSeries": 3,
+      "name": "アストレイレッドフレーム改",
+      "seriesId": "00019208",
+      "msState": -129414756,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00019161",
+      "lmbBoostHash": "a6f55770",
+      "selectPilotLmbHash": "d2dc8456",
+      "unkStr9": "?�Z���\u001c0\u000b\f���|����'��\u0019������\u000f\r��5�Q�ڄ�T��\u000f\u0003�e�x2\t�h�0\u0007�\u001d\u0001",
+      "unkStr10": "レッドフレーム改",
+      "unkStr11": "�",
+      "unkStr12": "レッドフレーム改",
+      "cost": 2500,
+      "hp": 650
+    },
+    {
+      "characterId": 22008001,
+      "indexInSeries": 6,
+      "name": "アストレイレッドフレーム（レッドドラゴン）",
+      "seriesId": "000193db",
+      "msState": -129414756,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00019368",
+      "lmbBoostHash": "a6f55770",
+      "selectPilotLmbHash": "66ccbb16",
+      "unkStr9": "iC�gp�X02����e�\u000f����\u0006��F�[xh���\u0003E��\u0012�Qzrx\u0018:�7��H\u001c�\u0006�\u001c��\b",
+      "unkStr10": "レッドフレームRD",
+      "unkStr12": "レッドフレームRD",
+      "cost": 2500,
+      "hp": 650
+    },
+    {
+      "characterId": 22009001,
+      "indexInSeries": 7,
+      "name": "アストレイゴールドフレーム天ミナ",
+      "seriesId": "000195ef",
+      "msState": -99616827,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00019545",
+      "lmbBoostHash": "a6f55770",
+      "selectPilotLmbHash": "20d9465f",
+      "unkStr9": "s��\u0018g��1b>��~nt�8hjc���5��\bI�$�\u001e^KJ���`�o#�\u00166\u001e�.S#x�ޏ�����\\�",
+      "unkStr10": "ゴールドフレーム天ミナ",
+      "unkStr12": "ゴールドフレーム天ミナ",
+      "cost": 2500,
+      "hp": 560
+    },
+    {
+      "characterId": 22010001,
+      "indexInSeries": 4,
+      "name": "アストレイブルーフレームD",
+      "seriesId": "0001977f",
+      "msState": -12525248,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00019718",
+      "lmbBoostHash": "a6f55770",
+      "selectPilotLmbHash": "821c49db",
+      "unkStr9": "y�1\u001f�O?�:p\u001c45����n�\u0004Rs\u0012I\u000f/��V�u0R��]\u000b\u001b\u000f�\u0017ԑ<no�y�~�h.�",
+      "unkStr10": "ブルーフレームD",
+      "unkStr12": "ブルーフレームD",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 23001001,
+      "indexInSeries": 1,
+      "name": "クロスボーン・ガンダムX1改",
+      "seriesId": "00019938",
+      "msState": 1269768658,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000198dc",
+      "lmbBoostHash": "23794c97",
+      "selectPilotLmbHash": "79f9c097",
+      "unkStr9": "V�Bu'�߮��M�3���~�\u0006ٖ�L��~���\u001d8\u000e\u001a�l�cyM7�\u0001)�\t���iI+��\u0018)�d������j�\u001e7��^�?�4\u0017�",
+      "unkStr10": "X1改",
+      "unkStr11": "tT�",
+      "unkStr12": "X1改",
+      "cost": 2500,
+      "hp": 600
+    },
+    {
+      "characterId": 23002001,
+      "indexInSeries": 0,
+      "name": "クロスボーン・ガンダムX1フルクロス ",
+      "seriesId": "00019a9c",
+      "msState": 1285982478,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00019a0c",
+      "lmbBoostHash": "23794c97",
+      "selectPilotLmbHash": "5ad576d2",
+      "unkStr9": "��W�p�}�~�n?�\u0003vK^&L�?���\u001c\u0007\r�6x����~��܄R�崤�~]\fJ�2W�����5d\u000f���/���\u001a��",
+      "unkStr10": "X1フルクロス",
+      "unkStr12": "X1フルクロス",
+      "cost": 3000,
+      "hp": 620
+    },
+    {
+      "characterId": 23003001,
+      "indexInSeries": 4,
+      "name": "クロスボーン・ガンダムX2改",
+      "seriesId": "00019bfc",
+      "msState": 1210840508,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00019bb4",
+      "lmbBoostHash": "23794c97",
+      "selectPilotLmbHash": "66350386",
+      "unkStr9": ",�{\u0015� ��,>e\n�\f$F\u00030�L��g��\u0003��dŏ���N\u001e9\re�\f�������Zm�\u0006�ϭH7����0�+nÑ�8�\f�8��\u0010",
+      "unkStr10": "X2改",
+      "unkStr12": "X2改",
+      "cost": 2500,
+      "hp": 580
+    },
+    {
+      "characterId": 23004001,
+      "indexInSeries": 2,
+      "name": "クロスボーン・ガンダムX3",
+      "seriesId": "00019d4b",
+      "msState": 1248676837,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00019cf1",
+      "lmbBoostHash": "23794c97",
+      "selectPilotLmbHash": "726e3fb5",
+      "unkStr9": "&\t՜��u��5���os��\u0018g��1b>��~nt�8hjc���5��\bI�$�\u001e^KJ���`�o#�\u00166\u001e�.S#x�ޏ�����\\�",
+      "unkStr10": "X3",
+      "unkStr11": "W�",
+      "unkStr12": "X3",
+      "cost": 2500,
+      "hp": 650
+    },
+    {
+      "characterId": 23005001,
+      "indexInSeries": 3,
+      "name": "ファントムガンダム",
+      "seriesId": "00019e4e",
+      "msState": 1269768658,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00019df7",
+      "lmbBoostHash": "23794c97",
+      "selectPilotLmbHash": "64346398",
+      "unkStr9": "]����f�۹��\f�Zy�1\u001f�O?�:p\u001c45����n�\u0004Rs\u0012I\u000f/��V�u0R��]\u000b\u001b\u000f�\u0017ԑ<no�y�~�h.�",
+      "unkStr10": "ファントム",
+      "unkStr11": "�",
+      "unkStr12": "ファントム",
+      "cost": 2500,
+      "hp": 650
+    },
+    {
+      "characterId": 24001001,
+      "indexInSeries": 0,
+      "name": "ブルーディスティニー1号機",
+      "seriesId": "00019fc0",
+      "msState": 1298457401,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "00019f75",
+      "lmbBoostHash": "69a26a2d",
+      "selectPilotLmbHash": "315a4247",
+      "unkStr9": "X|�\u00143\u0018��\u0006`�K\u001aΝ�\u0006a���\u001fǗ��xr\u001a�#\u0018��\u0019�mᡴ�S\f\u0015�[��E���`Ѭ܇#!p\r0\u0003p/� ",
+      "unkStr10": "ブルー1号機",
+      "unkStr12": "ブルー1号機",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 24002001,
+      "indexInSeries": 1,
+      "name": "イフリート改",
+      "seriesId": "0001a112",
+      "msState": 1298457401,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0001a079",
+      "lmbBoostHash": "69a26a2d",
+      "selectPilotLmbHash": "44133cc1",
+      "unkStr9": "\u0007jי����?0�i���|�=����p���\u000f6�j��\u0010��H%<�������I�F�,l<?\\���\u001f��\u001f���",
+      "unkStr10": "イフリート改",
+      "unkStr11": "tT�",
+      "unkStr12": "イフリート改",
+      "cost": 1500,
+      "hp": 520
+    },
+    {
+      "characterId": 25001001,
+      "indexInSeries": 0,
+      "name": "ヅダ",
+      "seriesId": "0001a211",
+      "msState": -1932874396,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0001a1cd",
+      "lmbBoostHash": "a118eb14",
+      "selectPilotLmbHash": "58b1b35c",
+      "unkStr9": "M�O��M���*c@\u0001�X|�\u00143\u0018��\u0006`�K\u001aΝ�\u0006a���\u001fǗ��xr\u001a�#\u0018��\u0019�mᡴ�S\f\u0015�[��E���`Ѭ܇#!p\r0\u0003p/� ",
+      "unkStr10": "ヅダ",
+      "unkStr12": "ヅダ",
+      "cost": 1500,
+      "hp": 480
+    },
+    {
+      "characterId": 25002001,
+      "indexInSeries": 1,
+      "name": "ヒルドルブ",
+      "seriesId": "0001a324",
+      "msState": -1932874396,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0001a2c5",
+      "lmbBoostHash": "a118eb14",
+      "selectPilotLmbHash": "08063c89",
+      "unkStr9": "Ta�(e��\u0012�9��\u0007jי����?0�i���|�=����p���\u000f6�j��\u0010��H%<�������I�F�,l<?\\���\u001f��\u001f���",
+      "unkStr10": "ヒルドルブ",
+      "unkStr11": "tT�",
+      "unkStr12": "ヒルドルブ",
+      "cost": 1500,
+      "hp": 500
+    },
+    {
+      "characterId": 26001001,
+      "indexInSeries": 0,
+      "name": "Hi-νガンダム",
+      "seriesId": "0001a4ac",
+      "msState": 1400273572,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001a421",
+      "lmbBoostHash": "bb977c0b",
+      "selectPilotLmbHash": "1e37bedd",
+      "unkStr9": "+P�`Bd0��b-hv�\u0007\u0018�\u0006F\\�\u001f^Vr��+�`���޵���֚`T~mBs*O'��G��<���4�\u0018����",
+      "unkStr10": "Hi-νガンダム",
+      "unkStr12": "Hi-νガンダム",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 26002001,
+      "indexInSeries": 1,
+      "name": "ナイチンゲール",
+      "seriesId": "0001a63f",
+      "msState": 1400273572,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001a5cb",
+      "lmbBoostHash": "bb977c0b",
+      "selectPilotLmbHash": "e557daa2",
+      "unkStr9": "_f?{7���;�/\u0013&����sG\u000e�CS\u001b<�^S�?@JnB)��ZR�?�\u0003%{\u0019�ac��q�2���|�~��\r��",
+      "unkStr10": "ナイチンゲール",
+      "unkStr11": "tT�",
+      "unkStr12": "ナイチンゲール",
+      "cost": 3000,
+      "hp": 680
+    },
+    {
+      "characterId": 27001001,
+      "indexInSeries": 0,
+      "name": "ダブルオークアンタ",
+      "seriesId": "0001a7c7",
+      "msState": 277670491,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001a753",
+      "lmbBoostHash": "a24b9ae4",
+      "selectPilotLmbHash": "72262ae2",
+      "unkStr9": "�-�*�C��u�OJ�5bH",
+      "unkStr10": "クアンタ",
+      "unkStr12": "クアンタ",
+      "cost": 3000,
+      "hp": 620
+    },
+    {
+      "characterId": 27002001,
+      "indexInSeries": 3,
+      "name": "ラファエルガンダム",
+      "seriesId": "0001a929",
+      "msState": 277670491,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0001a8cf",
+      "lmbBoostHash": "a24b9ae4",
+      "selectPilotLmbHash": "1204f59d",
+      "unkStr9": "�D��y�\u0011\u0015Nak<�vo",
+      "unkStr10": "ラファエル",
+      "unkStr11": "�",
+      "unkStr12": "ラファエル",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 27003001,
+      "indexInSeries": 4,
+      "name": "ブレイヴ指揮官用試験機",
+      "seriesId": "0001aa75",
+      "msState": 277670491,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001aa0d",
+      "lmbBoostHash": "a24b9ae4",
+      "selectPilotLmbHash": "60503c79",
+      "unkStr9": "w��\r�ݫc=)��\u0013B",
+      "unkStr10": "ブレイヴ指揮官用",
+      "unkStr12": "ブレイヴ指揮官用",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 27004001,
+      "indexInSeries": 0,
+      "name": "ダブルオークアンタフルセイバー",
+      "seriesId": "0001ac10",
+      "msState": 277670491,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001ab85",
+      "lmbBoostHash": "7c70a4f0",
+      "selectPilotLmbHash": "4dc130fe",
+      "unkStr9": "���\u001aD�r���V�{",
+      "unkStr10": "クアンタフルセイバー",
+      "unkStr12": "クアンタフルセイバー",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 27005001,
+      "indexInSeries": 1,
+      "name": "ガンダムサバーニャ",
+      "seriesId": "0001ae2b",
+      "msState": 277670491,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001ada4",
+      "lmbBoostHash": "a24b9ae4",
+      "selectPilotLmbHash": "f922a5d7",
+      "unkStr9": "�4�w�\u001b�\u001eSL\t",
+      "unkStr10": "サバーニャ",
+      "unkStr11": "tT�",
+      "unkStr12": "サバーニャ",
+      "cost": 3000,
+      "hp": 600
+    },
+    {
+      "characterId": 27006001,
+      "indexInSeries": 2,
+      "name": "ガンダムハルート",
+      "seriesId": "0001afc5",
+      "msState": 277670491,
+      "cardIconIndex": -1991455028,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001af44",
+      "lmbBoostHash": "a24b9ae4",
+      "selectPilotLmbHash": "13e7de02",
+      "unkStr9": "�h\u0011��,m�Yg�",
+      "unkStr10": "ハルート",
+      "unkStr11": "W�",
+      "unkStr12": "ハルート",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 28001001,
+      "indexInSeries": 0,
+      "name": "ウイングガンダムゼロ",
+      "seriesId": "0001b134",
+      "msState": -1559302448,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001b0d5",
+      "lmbBoostHash": "c5f99016",
+      "selectPilotLmbHash": "f227e182",
+      "unkStr9": "\u001b�B�wW?�9\t��?�Q��Ҵ�7��L�G��(y�\u001e�\u0019���ii�D5�����wl\u0010EGN�<�Jѓ��S���\u0018�rI\u0004��ɠZT�u��E�4�w�\u001b�\u001eSL\t",
+      "unkStr10": "ウイングゼロ",
+      "unkStr12": "ウイングゼロ",
+      "cost": 3000,
+      "hp": 620
+    },
+    {
+      "characterId": 28002001,
+      "indexInSeries": 3,
+      "name": "ガンダムエピオン",
+      "seriesId": "0001b2a5",
+      "msState": -1543027188,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0001b23c",
+      "lmbBoostHash": "c5f99016",
+      "selectPilotLmbHash": "b3d75b7a",
+      "unkStr9": "\u0012{.�\u0011Q\u0003Z��2t�x]&�ZZ�䑬vg\u001aqI6�\r,�<�̞>--\u0004�젞6.\"'�uqc ���k\\�FxY�ؘ�|6m�j<l��W^\u0015��u՗h\u0011��,m�Yg�",
+      "unkStr10": "エピオン",
+      "unkStr11": "�",
+      "unkStr12": "エピオン",
+      "cost": 3000,
+      "hp": 720
+    },
+    {
+      "characterId": 28009001,
+      "indexInSeries": 1,
+      "name": "アルトロンガンダム",
+      "seriesId": "0001b3d7",
+      "msState": -1559302448,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001b378",
+      "lmbBoostHash": "c5f99016",
+      "selectPilotLmbHash": "fada86ee",
+      "unkStr9": "�r\u0012͋~���q��i\u001bnS��厶�P��<�d3a����\u0011j\u0013_a���� ����Vxc��'���9'g0�ɒ\b�ÓAi���Kw�*h��]6Ӓ<��\u0012",
+      "unkStr10": "アルトロン",
+      "unkStr11": "tT�",
+      "unkStr12": "アルトロン",
+      "cost": 2500,
+      "hp": 650
+    },
+    {
+      "characterId": 28010001,
+      "indexInSeries": 2,
+      "name": "ガンダムサンドロック改",
+      "seriesId": "0001b54d",
+      "msState": -1559302448,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0001b4c6",
+      "lmbBoostHash": "c5f99016",
+      "selectPilotLmbHash": "2153c691",
+      "unkStr9": "\u001b�d�\u0003�uL\u001d��-�FY��4��_\u001aX�x73=|ZZ\b�V�A=l\\D�����@S\u001e9ָ���e��1��l���x�}-]�*i\u0011�^�\"E�X�\u000f���",
+      "unkStr10": "サンドロック改",
+      "unkStr11": "W�",
+      "unkStr12": "サンドロック改",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 28013001,
+      "indexInSeries": 4,
+      "name": "トールギスⅡ",
+      "seriesId": "0001b6c1",
+      "msState": -1543027188,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001b650",
+      "lmbBoostHash": "c5f99016",
+      "selectPilotLmbHash": "5817473c",
+      "unkStr9": "��xT;.�Z���j1\u0013^�k9\n^z�<Ff,8Z-�\u0011Mb�,�\u001d�\u001b\u0004Q���e\u000fl�tr�x�'��\u00038�R\u0001�x9\u0014�\u00154]iw��\r�ݫc=)��\u0013B",
+      "unkStr10": "トールギスⅡ",
+      "unkStr12": "トールギスⅡ",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 29001001,
+      "indexInSeries": 1,
+      "name": "ストライクノワール",
+      "seriesId": "0001b85c",
+      "msState": 1619161617,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001b7c7",
+      "lmbBoostHash": "6f6cc1c2",
+      "selectPilotLmbHash": "5b86e32f",
+      "unkStr9": "Ν�\u0006a���\u001fǗ��xr\u001a�#\u0018��\u0019�mᡴ�S\f\u0015�[��E���`Ѭ܇#!p\r0\u0003p/� ",
+      "unkStr10": "ストライクノワール",
+      "unkStr11": "tT�",
+      "unkStr12": "ストライクノワール",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 29002001,
+      "indexInSeries": 0,
+      "name": "スターゲイザー",
+      "seriesId": "0001b9fc",
+      "msState": 1619161617,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001b97f",
+      "lmbBoostHash": "6f6cc1c2",
+      "selectPilotLmbHash": "0856956d",
+      "unkStr9": "�|�=����p���\u000f6�j��\u0010��H%<�������I�F�,l<?\\���\u001f��\u001f���",
+      "unkStr10": "スターゲイザー",
+      "unkStr12": "スターゲイザー",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 30001001,
+      "indexInSeries": 0,
+      "name": "Ex-Sガンダム",
+      "seriesId": "0001bb62",
+      "msState": -234945097,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001bb0f",
+      "lmbBoostHash": "fc023944",
+      "selectPilotLmbHash": "28ed3583",
+      "unkStr9": "\u0007\u0018�\u0006F\\�\u001f^Vr��+�`���޵���֚`T~mBs*O'��G��<���4�\u0018����",
+      "unkStr10": "Ex-S",
+      "unkStr12": "Ex-S",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 31001001,
+      "indexInSeries": 0,
+      "name": "Ξガンダム",
+      "seriesId": "0001bc87",
+      "msState": -2026217706,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001bc03",
+      "lmbBoostHash": "4c34ceb5",
+      "selectPilotLmbHash": "9424b778",
+      "unkStr9": "���sG\u000e�CS\u001b<�^S�?@JnB)��ZR�?�\u0003%{\u0019�ac��q�2���|�~��\r��",
+      "unkStr10": "Ξガンダム",
+      "unkStr12": "Ξガンダム",
+      "cost": 3000,
+      "hp": 680
+    },
+    {
+      "characterId": 31002001,
+      "indexInSeries": 1,
+      "name": "ペーネロペー",
+      "seriesId": "0001bdc1",
+      "msState": -2030553823,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001bd6b",
+      "lmbBoostHash": "4c34ceb5",
+      "selectPilotLmbHash": "914efc16",
+      "unkStr9": "\u0016\u0018\u0019q���YɇNCYd�k#{�<\u001aK[j���\tͨ=9<\u0006\u001dʛ�d$\u0007�\u0003`\u000e�t\u0002",
+      "unkStr10": "ペーネロペー",
+      "unkStr11": "tT�",
+      "unkStr12": "ペーネロペー",
+      "cost": 3000,
+      "hp": 700
+    },
+    {
+      "characterId": 33001001,
+      "indexInSeries": 2,
+      "name": "ガンダムAGE-1",
+      "seriesId": "0001bf26",
+      "msState": -516549608,
+      "cardIconIndex": 1403087968,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001bebe",
+      "lmbBoostHash": "8e235d0b",
+      "selectPilotLmbHash": "49b512fc",
+      "unkStr9": "dŏ���N\u001e9\re�\f�������Zm�\u0006�ϭH7����0�+nÑ�8�\f�8��\u0010",
+      "unkStr10": "AGE-1 ノーマル",
+      "unkStr11": "W�",
+      "unkStr12": "AGE-1 ノーマル",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 33002001,
+      "indexInSeries": 1,
+      "name": "ガンダムAGE-2",
+      "seriesId": "0001c082",
+      "msState": -461831523,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001c01a",
+      "lmbBoostHash": "8e235d0b",
+      "selectPilotLmbHash": "97f70e2d",
+      "unkStr9": "t�8hjc���5��\bI�$�\u001e^KJ���`�o#�\u00166\u001e�.S#x�ޏ�����\\�",
+      "unkStr10": "AGE-2 ノーマル",
+      "unkStr11": "tT�",
+      "unkStr12": "AGE-2 ノーマル",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 33003001,
+      "indexInSeries": 0,
+      "name": "ガンダムAGE-3",
+      "seriesId": "0001c1c3",
+      "msState": -440702806,
+      "cardIconIndex": 1403087968,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001c161",
+      "lmbBoostHash": "8e235d0b",
+      "selectPilotLmbHash": "6b19f85d",
+      "unkStr9": ">�/+9��4�F0�md���CikM\u0018*?�!�\u0015ӓ���Ys\u000fFB�\u001a`\f�^G@",
+      "unkStr10": "AGE-3 ノーマル",
+      "unkStr12": "AGE-3 ノーマル",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 33004001,
+      "indexInSeries": 3,
+      "name": "ガンダムAGE-FX",
+      "seriesId": "0001c2ef",
+      "msState": -440702806,
+      "cardIconIndex": 1403087968,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001c299",
+      "lmbBoostHash": "8e235d0b",
+      "selectPilotLmbHash": "a41d0e53",
+      "unkStr9": "ࡩ�\u001el/�s� %7!Jxy-)e������հ�x~�M\u0019�s{>�?�|Cq",
+      "unkStr10": "AGE-FX",
+      "unkStr11": "�",
+      "unkStr12": "AGE-FX",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 33005001,
+      "indexInSeries": 7,
+      "name": "ゼイドラ",
+      "seriesId": "0001c3de",
+      "msState": -461831523,
+      "cardIconIndex": 1403087968,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001c38d",
+      "lmbBoostHash": "8e235d0b",
+      "selectPilotLmbHash": "d0de1714",
+      "unkStr9": "����'��\u0019������\u000f\r��5�Q�ڄ�T��\u000f\u0003�e�x2\t�h�0\u0007�\u001d\u0001",
+      "unkStr10": "ゼイドラ",
+      "unkStr12": "ゼイドラ",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 33006001,
+      "indexInSeries": 9,
+      "name": "ファルシア",
+      "seriesId": "0001c502",
+      "msState": -516549608,
+      "cardIconIndex": 1403087968,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001c490",
+      "lmbBoostHash": "8e235d0b",
+      "selectPilotLmbHash": "bf400d31",
+      "unkStr9": "�6x����~��܄R�崤�~]\fJ�2W�����5d\u000f���/���\u001a��",
+      "unkStr10": "ファルシア",
+      "unkStr12": "ファルシア",
+      "cost": 2000,
+      "hp": 580
+    },
+    {
+      "characterId": 33007001,
+      "indexInSeries": 6,
+      "name": "ガンダムレギルス",
+      "seriesId": "0001c674",
+      "msState": -461831523,
+      "cardIconIndex": 1403087968,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001c5f7",
+      "lmbBoostHash": "8e235d0b",
+      "selectPilotLmbHash": "8918baaa",
+      "unkStr9": "�\u000f����\u0006��F�[xh���\u0003E��\u0012�Qzrx\u0018:�7��H\u001c�\u0006�\u001c��\b",
+      "unkStr10": "ガンダムレギルス",
+      "unkStr12": "ガンダムレギルス",
+      "cost": 3000,
+      "hp": 600
+    },
+    {
+      "characterId": 33008001,
+      "indexInSeries": 4,
+      "name": "ガンダムAGE-2 ダークハウンド",
+      "seriesId": "0001c7d6",
+      "msState": -461831523,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001c774",
+      "lmbBoostHash": "8e235d0b",
+      "selectPilotLmbHash": "af46d542",
+      "unkStr9": "���n�\u0004Rs\u0012I\u000f/��V�u0R��]\u000b\u001b\u000f�\u0017ԑ<no�y�~�h.�",
+      "unkStr10": "ダークハウンド",
+      "unkStr12": "ダークハウンド",
+      "cost": 2500,
+      "hp": 600
+    },
+    {
+      "characterId": 33010001,
+      "indexInSeries": 5,
+      "name": "ガンダムAGE-1 フルグランサ",
+      "seriesId": "0001c9ad",
+      "msState": -440702806,
+      "cardIconIndex": 1403087968,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001c90e",
+      "lmbBoostHash": "8e235d0b",
+      "selectPilotLmbHash": "c18306a6",
+      "unkStr9": "�j��\u0010��H%<�������I�F�,l<?\\���\u001f��\u001f���",
+      "unkStr10": "AGE-1 フルグランサ",
+      "unkStr11": "\u001e�@",
+      "unkStr12": "AGE-1 フルグランサ",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 33011001,
+      "indexInSeries": 8,
+      "name": "フォーンファルシア",
+      "seriesId": "0001cb24",
+      "msState": -440702806,
+      "cardIconIndex": 1403087968,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001ca9b",
+      "lmbBoostHash": "8e235d0b",
+      "selectPilotLmbHash": "69bf3914",
+      "unkStr9": "+�`���޵���֚`T~mBs*O'��G��<���4�\u0018����",
+      "unkStr10": "フォーンファルシア",
+      "unkStr12": "フォーンファルシア",
+      "cost": 2500,
+      "hp": 600
+    },
+    {
+      "characterId": 34001001,
+      "indexInSeries": 0,
+      "name": "エクストリームガンダム エクリプス-F",
+      "seriesId": "0001ccf0",
+      "msState": -829015191,
+      "cardIconIndex": 2009596498,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001cc7c",
+      "lmbBoostHash": "525e22da",
+      "selectPilotLmbHash": "1761bfcb",
+      "unkStr9": "�k#{�<\u001aK[j���\tͨ=9<\u0006\u001dʛ�d$\u0007�\u0003`\u000e�t\u0002",
+      "unkStr10": "エクストリーム Ef",
+      "unkStr12": "エクストリーム Ef",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 34002001,
+      "indexInSeries": 1,
+      "name": "エクストリームガンダム ゼノン-F",
+      "seriesId": "0001ce7f",
+      "msState": -829015191,
+      "cardIconIndex": 2009596498,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001ce0b",
+      "lmbBoostHash": "525e22da",
+      "selectPilotLmbHash": "c8659ca1",
+      "unkStr9": "\u0001)�\t���iI+��\u0018)�d������j�\u001e7��^�?�4\u0017�",
+      "unkStr10": "エクストリーム Xf",
+      "unkStr11": "tT�",
+      "unkStr12": "エクストリーム Xf",
+      "cost": 2500,
+      "hp": 650
+    },
+    {
+      "characterId": 34003001,
+      "indexInSeries": 2,
+      "name": "エクストリームガンダム アイオス-F",
+      "seriesId": "0001d011",
+      "msState": -829015191,
+      "cardIconIndex": 2009596498,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001cf9d",
+      "lmbBoostHash": "525e22da",
+      "selectPilotLmbHash": "c3f3aa33",
+      "unkStr9": "������Zm�\u0006�ϭH7����0�+nÑ�8�\f�8��\u0010",
+      "unkStr10": "エクストリーム Af",
+      "unkStr11": "W�",
+      "unkStr12": "エクストリーム Af",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 34004001,
+      "indexInSeries": 3,
+      "name": "エクストリームガンダム type-レオスⅡ Vs.",
+      "seriesId": "0001d1b4",
+      "msState": -829015191,
+      "cardIconIndex": 2009596498,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001d137",
+      "lmbBoostHash": "525e22da",
+      "selectPilotLmbHash": "b66dc015",
+      "unkStr9": "�$�\u001e^KJ���`�o#�\u00166\u001e�.S#x�ޏ�����\\�",
+      "unkStr10": "エクストリーム Vs.",
+      "unkStr11": "�",
+      "unkStr12": "エクストリーム Vs.",
+      "cost": 3000,
+      "hp": 620
+    },
+    {
+      "characterId": 34005001,
+      "indexInSeries": 4,
+      "name": "エクストリームガンダム エクセリア",
+      "seriesId": "0001d366",
+      "msState": -829015191,
+      "cardIconIndex": 2009596498,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001d2e2",
+      "lmbBoostHash": "525e22da",
+      "selectPilotLmbHash": "2d8edac5",
+      "unkStr9": "���CikM\u0018*?�!�\u0015ӓ���Ys\u000fFB�\u001a`\f�^G@",
+      "unkStr10": "エクセリア",
+      "unkStr12": "エクセリア",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 42001001,
+      "indexInSeries": 3,
+      "name": "G-セルフ",
+      "seriesId": "0001d4bc",
+      "msState": 696576823,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0001d456",
+      "lmbBoostHash": "63b2c5ae",
+      "selectPilotLmbHash": "b6823fe0",
+      "unkStr9": "���\u0003E��\u0012�Qzrx\u0018:�7��H\u001c�\u0006�\u001c��\b",
+      "unkStr10": "G-セルフ（宇宙用）",
+      "unkStr11": "�",
+      "unkStr12": "G-セルフ（宇宙用）",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 42002001,
+      "indexInSeries": 4,
+      "name": "マックナイフ（マスク機）",
+      "seriesId": "0001d663",
+      "msState": 696576823,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001d5fe",
+      "lmbBoostHash": "63b2c5ae",
+      "selectPilotLmbHash": "0775e31a",
+      "unkStr9": "�V�u0R��]\u000b\u001b\u000f�\u0017ԑ<no�y�~�h.�",
+      "unkStr10": "マックナイフ",
+      "unkStr12": "マックナイフ",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 42003001,
+      "indexInSeries": 0,
+      "name": "G-セルフ（パーフェクトパック）",
+      "seriesId": "0001d806",
+      "msState": 696576823,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001d773",
+      "lmbBoostHash": "63b2c5ae",
+      "selectPilotLmbHash": "2b9c1cb0",
+      "unkStr9": "S\f\u0015�[��E���`Ѭ܇#!p\r0\u0003p/� ",
+      "unkStr10": "G-セルフ（パーフェクトパック）",
+      "unkStr12": "G-セルフ（パーフェクトパック）",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 42004001,
+      "indexInSeries": 1,
+      "name": "G-アルケイン（フルドレス）",
+      "seriesId": "0001d9d4",
+      "msState": 696576823,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0001d96a",
+      "lmbBoostHash": "63b2c5ae",
+      "selectPilotLmbHash": "9e32df98",
+      "unkStr9": "���I�F�,l<?\\���\u001f��\u001f���",
+      "unkStr10": "G-アルケイン",
+      "unkStr11": "tT�",
+      "unkStr12": "G-アルケイン",
+      "cost": 2000,
+      "hp": 580
+    },
+    {
+      "characterId": 42005001,
+      "indexInSeries": 5,
+      "name": "モンテーロ",
+      "seriesId": "0001db20",
+      "msState": 696576823,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001dab2",
+      "lmbBoostHash": "63b2c5ae",
+      "selectPilotLmbHash": "8aba3a78",
+      "unkStr9": "T~mBs*O'��G��<���4�\u0018����",
+      "unkStr10": "モンテーロ",
+      "unkStr12": "モンテーロ",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 42006001,
+      "indexInSeries": 2,
+      "name": "Ｇ-ルシファー",
+      "seriesId": "0001dcb5",
+      "msState": 696576823,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001dc28",
+      "lmbBoostHash": "63b2c5ae",
+      "selectPilotLmbHash": "e1f741bb",
+      "unkStr10": "Ｇ-ルシファー",
+      "unkStr11": "W�",
+      "unkStr12": "Ｇ-ルシファー",
+      "cost": 1500,
+      "hp": 450
+    },
+    {
+      "characterId": 42007001,
+      "indexInSeries": 6,
+      "name": "カバカーリー",
+      "seriesId": "0001de45",
+      "msState": 696576823,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001ddc1",
+      "lmbBoostHash": "63b2c5ae",
+      "selectPilotLmbHash": "2d930913",
+      "unkStr10": "カバカーリー",
+      "unkStr12": "カバカーリー",
+      "cost": 3000,
+      "hp": 680
+    },
+    {
+      "characterId": 43001001,
+      "indexInSeries": 2,
+      "name": "ガンダム・バルバトス",
+      "seriesId": "0001df9d",
+      "msState": 251272963,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001df27",
+      "lmbBoostHash": "dc8729b5",
+      "selectPilotLmbHash": "c61a8b5f",
+      "unkStr9": "\u0003%{\u0019�ac��q�2���|�~��\r��",
+      "unkStr10": "バルバトス",
+      "unkStr11": "W�",
+      "unkStr12": "バルバトス",
+      "cost": 2000,
+      "hp": 620
+    },
+    {
+      "characterId": 43004001,
+      "indexInSeries": 6,
+      "name": "ガンダム・キマリストルーパー",
+      "seriesId": "0001e11a",
+      "msState": 251272963,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001e08f",
+      "lmbBoostHash": "dc8729b5",
+      "selectPilotLmbHash": "c781bdf6",
+      "unkStr9": "7����0�+nÑ�8�\f�8��\u0010",
+      "unkStr10": "キマリストルーパー",
+      "unkStr12": "キマリストルーパー",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 45002001,
+      "indexInSeries": 0,
+      "name": "ペイルライダー（陸戦重装仕様）",
+      "seriesId": "0001e2be",
+      "msState": 198272323,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001e24d",
+      "lmbBoostHash": "089c7aa5",
+      "selectPilotLmbHash": "d679cbca",
+      "unkStr9": "�\u001f��\u001f���",
+      "unkStr10": "ペイルライダー（陸戦）",
+      "unkStr12": "ペイルライダー（陸戦）",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 46001001,
+      "indexInSeries": 1,
+      "name": "フルアーマー・ガンダム",
+      "seriesId": "0001e453",
+      "msState": 2046635925,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0001e3f9",
+      "lmbBoostHash": "f52d806f",
+      "selectPilotLmbHash": "92c850af",
+      "unkStr9": "^�?�4\u0017�",
+      "unkStr10": "FA・ガンダム",
+      "unkStr11": "tT�",
+      "unkStr12": "FA・ガンダム",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 46002001,
+      "indexInSeries": 3,
+      "name": "サイコ・ザク",
+      "seriesId": "0001e5be",
+      "msState": 2017412514,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001e531",
+      "lmbBoostHash": "f52d806f",
+      "selectPilotLmbHash": "1dd67964",
+      "unkStr9": "\f�8��\u0010",
+      "unkStr10": "サイコ・ザク",
+      "unkStr11": "W�",
+      "unkStr12": "サイコ・ザク",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 46003001,
+      "indexInSeries": 0,
+      "name": "アトラスガンダム",
+      "seriesId": "0001e755",
+      "msState": 2046635925,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001e6c6",
+      "lmbBoostHash": "f52d806f",
+      "selectPilotLmbHash": "316eb314",
+      "unkStr9": "���\\�",
+      "unkStr10": "アトラス",
+      "unkStr12": "アトラス",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 46004001,
+      "indexInSeries": 2,
+      "name": "アッガイ（ダリル搭乗）",
+      "seriesId": "0001e8c4",
+      "msState": 2017412514,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001e828",
+      "lmbBoostHash": "f52d806f",
+      "selectPilotLmbHash": "0c4af818",
+      "unkStr9": "�^G@",
+      "unkStr10": "アッガイ（ダリル）",
+      "unkStr11": "�",
+      "unkStr12": "アッガイ（ダリル）",
+      "cost": 2000,
+      "hp": 580
+    },
+    {
+      "characterId": 49001001,
+      "indexInSeries": 1,
+      "name": "ガンダム・バルバトスルプス",
+      "seriesId": "0001ea31",
+      "msState": 251272963,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001e9d9",
+      "lmbBoostHash": "dc8729b5",
+      "selectPilotLmbHash": "f0e158d1",
+      "unkStr9": "�\u00166\u001e�.S#x�ޏ�����\\�",
+      "unkStr10": "バルバトスルプス",
+      "unkStr11": "tT�",
+      "unkStr12": "バルバトスルプス",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 49002001,
+      "indexInSeries": 4,
+      "name": "ガンダム・グシオンリベイクフルシティ",
+      "seriesId": "0001ec01",
+      "msState": -1332888947,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001eb57",
+      "lmbBoostHash": "dc8729b5",
+      "selectPilotLmbHash": "96cf97f9",
+      "unkStr9": "ӓ���Ys\u000fFB�\u001a`\f�^G@",
+      "unkStr10": "グシオンリベイクフルシティ",
+      "unkStr12": "グシオンリベイクフルシティ",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 49003001,
+      "indexInSeries": 3,
+      "name": "ガンダム・バエル",
+      "seriesId": "0001ed99",
+      "msState": -1332888947,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001ed43",
+      "lmbBoostHash": "dc8729b5",
+      "selectPilotLmbHash": "33e0a2a5",
+      "unkStr9": "�x~�M\u0019�s{>�?�|Cq",
+      "unkStr10": "バエル",
+      "unkStr11": "�",
+      "unkStr12": "バエル",
+      "cost": 3000,
+      "hp": 720
+    },
+    {
+      "characterId": 49004001,
+      "indexInSeries": 0,
+      "name": "ガンダム・バルバトスルプスレクス",
+      "seriesId": "0001ef03",
+      "msState": -1332888947,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001ee99",
+      "lmbBoostHash": "dc8729b5",
+      "selectPilotLmbHash": "9ca63589",
+      "unkStr9": "\u000f\u0003�e�x2\t�h�0\u0007�\u001d\u0001",
+      "unkStr10": "バルバトスルプスレクス",
+      "unkStr12": "バルバトスルプスレクス",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 49005001,
+      "indexInSeries": 5,
+      "name": "ガンダム・キマリスヴィダール",
+      "seriesId": "0001f107",
+      "msState": -1332888947,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001f04e",
+      "lmbBoostHash": "dc8729b5",
+      "selectPilotLmbHash": "32aadd80",
+      "unkStr9": "��5d\u000f���/���\u001a��",
+      "unkStr10": "キマリスヴィダール",
+      "unkStr12": "キマリスヴィダール",
+      "cost": 3000,
+      "hp": 650
+    },
+    {
+      "characterId": 51001001,
+      "indexInSeries": 0,
+      "name": "ビルドストライクガンダム（フルパッケージ）",
+      "seriesId": "0001f2b1",
+      "msState": 2019240295,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001f231",
+      "lmbBoostHash": "d0b83b72",
+      "selectPilotLmbHash": "91a90292",
+      "unkStr10": "ビルドストライク",
+      "unkStr12": "ビルドストライク",
+      "cost": 2000,
+      "hp": 560
+    },
+    {
+      "characterId": 51002001,
+      "indexInSeries": 2,
+      "name": "ザクアメイジング",
+      "seriesId": "0001f41f",
+      "msState": 2019240295,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001f3c3",
+      "lmbBoostHash": "d0b83b72",
+      "selectPilotLmbHash": "f0b5c501",
+      "unkStr10": "ザクアメイジング",
+      "unkStr11": "tT�",
+      "unkStr12": "ザクアメイジング",
+      "cost": 2000,
+      "hp": 560
+    },
+    {
+      "characterId": 51003001,
+      "indexInSeries": 1,
+      "name": "ガンダムX魔王",
+      "seriesId": "0001f596",
+      "msState": 2019240295,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001f506",
+      "lmbBoostHash": "d0b83b72",
+      "selectPilotLmbHash": "d6845b7d",
+      "unkStr10": "ガンダムX魔王",
+      "unkStr12": "ガンダムX魔王",
+      "cost": 2000,
+      "hp": 600
+    },
+    {
+      "characterId": 51004001,
+      "indexInSeries": 3,
+      "name": "ウイングガンダムフェニーチェ",
+      "seriesId": "0001f785",
+      "msState": 2019240295,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001f6c3",
+      "lmbBoostHash": "d0b83b72",
+      "selectPilotLmbHash": "1aca4be7",
+      "unkStr10": "ウイングガンダムフェニーチェ",
+      "unkStr12": "ウイングガンダムフェニーチェ",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 52001001,
+      "indexInSeries": 0,
+      "name": "ホットスクランブルガンダム",
+      "seriesId": "0001f996",
+      "msState": 2019240295,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001f8fe",
+      "lmbBoostHash": "fd6f462b",
+      "selectPilotLmbHash": "ccc79b02",
+      "unkStr10": "ホットスクランブル",
+      "unkStr12": "ホットスクランブル",
+      "cost": 3000,
+      "hp": 680
+    },
+    {
+      "characterId": 53002001,
+      "indexInSeries": 0,
+      "name": "トライバーニングガンダム",
+      "seriesId": "0001fba4",
+      "msState": 2078276873,
+      "cardIconIndex": 1235879259,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0001fae1",
+      "lmbBoostHash": "1eecaac6",
+      "selectPilotLmbHash": "5ef39e50",
+      "unkStr10": "トライバーニングガンダム",
+      "unkStr12": "トライバーニングガンダム",
+      "cost": 2500,
+      "hp": 650
+    },
+    {
+      "characterId": 53003001,
+      "indexInSeries": 2,
+      "name": "ライトニングガンダムフルバーニアン",
+      "seriesId": "0001fda4",
+      "msState": 2078276873,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001fd2f",
+      "lmbBoostHash": "1eecaac6",
+      "selectPilotLmbHash": "d8ebe38e",
+      "unkStr9": "\u0001",
+      "unkStr10": "ライトニングガンダムFb",
+      "unkStr11": "W�",
+      "unkStr12": "ライトニングガンダムFb",
+      "cost": 2500,
+      "hp": 600
+    },
+    {
+      "characterId": 53004001,
+      "indexInSeries": 1,
+      "name": "スターウイニングガンダム",
+      "seriesId": "0001ff9d",
+      "msState": 2078276873,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "0001feec",
+      "lmbBoostHash": "1eecaac6",
+      "selectPilotLmbHash": "5f19cb16",
+      "unkStr10": "スターウイニングガンダム",
+      "unkStr11": "tT�",
+      "unkStr12": "スターウイニングガンダム",
+      "cost": 2500,
+      "hp": 620
+    },
+    {
+      "characterId": 55001001,
+      "indexInSeries": 0,
+      "name": "騎士ガンダム",
+      "seriesId": "0002015c",
+      "msState": -383361343,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "000200ee",
+      "lmbBoostHash": "025a8b6c",
+      "selectPilotLmbHash": "182aa62e",
+      "unkStr9": "\b",
+      "unkStr10": "騎士ガンダム",
+      "unkStr12": "騎士ガンダム",
+      "cost": 2500,
+      "hp": 650
+    },
+    {
+      "characterId": 56001001,
+      "indexInSeries": 0,
+      "name": "ナラティブガンダム",
+      "seriesId": "00020303",
+      "msState": -1641976233,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 0,
+      "lmbCutInHash": "0002028d",
+      "lmbBoostHash": "a81c19f4",
+      "selectPilotLmbHash": "047bf6a8",
+      "unkStr10": "ナラティブガンダム",
+      "unkStr12": "ナラティブガンダム",
+      "cost": 2000,
+      "hp": 580
+    },
+    {
+      "characterId": 56002001,
+      "indexInSeries": 1,
+      "name": "シナンジュ・スタイン",
+      "seriesId": "000204cf",
+      "msState": -1641976233,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00020421",
+      "lmbBoostHash": "a81c19f4",
+      "selectPilotLmbHash": "eef6f906",
+      "unkStr10": "シナンジュ・スタイン",
+      "unkStr12": "シナンジュ・スタイン",
+      "cost": 2000,
+      "hp": 580
+    },
+    {
+      "characterId": 57001001,
+      "indexInSeries": 0,
+      "name": "ガンダムダブルオーダイバーエース",
+      "seriesId": "000206c3",
+      "msState": -1464057804,
+      "cardIconIndex": 1181568967,
+      "characterIdUnique": 1,
+      "lmbCutInHash": "00020614",
+      "lmbBoostHash": "5d666f64",
+      "selectPilotLmbHash": "5fc2030d",
+      "unkStr10": "ダブルオーダイバーエース",
+      "unkStr12": "ダブルオーダイバーエース",
+      "cost": 2500,
+      "hp": 620
+    }
+  ],
+  "pilots": [
+    {
+      "pilotId": 10101,
+      "rawHex": "00000000f02a000000000000ff2a000000000000b56dde56082b000000000000"
+    },
+    {
+      "pilotId": 10102,
+      "rawHex": "000000001c2b0000000000002b2b0000000000001f2b66fa342b000000000000"
+    },
+    {
+      "pilotId": 10103,
+      "rawHex": "00000000482b000000000000572b000000000000f3c5841e602b000000000000"
+    },
+    {
+      "pilotId": 10104,
+      "rawHex": "00000000742b000000000000832b000000000000127930f78c2b000000000000"
+    },
+    {
+      "pilotId": 10105,
+      "rawHex": "00000000a02b000000000000af2b0000000000007b1b92ebb82b000000000000"
+    },
+    {
+      "pilotId": 10201,
+      "rawHex": "00000000cc2b000000000000db2b000000000000fadaa79de42b000000000000"
+    },
+    {
+      "pilotId": 10202,
+      "rawHex": "00000000f82b000000000000072c00000000000067c04fac102c000000000000"
+    },
+    {
+      "pilotId": 10203,
+      "rawHex": "00000000242c000000000000332c0000000000006f7d21b03c2c000000000000"
+    },
+    {
+      "pilotId": 10301,
+      "rawHex": "00000000502c0000000000005f2c00000000000065ba7ff6682c000000000000"
+    },
+    {
+      "pilotId": 10302,
+      "rawHex": "000000007c2c0000000000008b2c000000000000759d7733942c000000000000"
+    },
+    {
+      "pilotId": 10401,
+      "rawHex": "00000000a82c000000000000b72c000000000000f8d95228c02c000000000000"
+    },
+    {
+      "pilotId": 10402,
+      "rawHex": "00000000d42c000000000000e32c000000000000ee706873ec2c000000000000"
+    },
+    {
+      "pilotId": 10403,
+      "rawHex": "00000000002d0000000000000f2d000000000000a6b87814182d000000000000"
+    },
+    {
+      "pilotId": 10404,
+      "rawHex": "000000002c2d0000000000003b2d00000000000026075ef5442d000000000000"
+    },
+    {
+      "pilotId": 20101,
+      "rawHex": "00000000582d000000000000672d000000000000cde1901e702d000000000000"
+    },
+    {
+      "pilotId": 20103,
+      "rawHex": "00000000842d000000000000932d000000000000a50142ad9c2d000000000000"
+    },
+    {
+      "pilotId": 20104,
+      "rawHex": "00000000b02d000000000000bf2d0000000000004e187867c82d000000000000"
+    },
+    {
+      "pilotId": 20105,
+      "rawHex": "00000000dc2d000000000000eb2d00000000000073f60d4ef42d000000000000"
+    },
+    {
+      "pilotId": 20106,
+      "rawHex": "00000000082e000000000000172e0000000000009cac33e6202e000000000000"
+    },
+    {
+      "pilotId": 20201,
+      "rawHex": "00000000342e000000000000432e0000000000005a4e36b44c2e000000000000"
+    },
+    {
+      "pilotId": 20301,
+      "rawHex": "00000000602e0000000000006f2e000000000000f84caa97782e000000000000"
+    },
+    {
+      "pilotId": 20302,
+      "rawHex": "000000008c2e0000000000009b2e000000000000aaa2ab7ea42e000000000000"
+    },
+    {
+      "pilotId": 20303,
+      "rawHex": "00000000b82e000000000000c72e0000000000002b9e1ae6d02e000000000000"
+    },
+    {
+      "pilotId": 20304,
+      "rawHex": "00000000e42e000000000000f32e000000000000eea098d3fc2e000000000000"
+    },
+    {
+      "pilotId": 20306,
+      "rawHex": "00000000102f0000000000001f2f000000000000cddf4c9c282f000000000000"
+    },
+    {
+      "pilotId": 20307,
+      "rawHex": "000000003c2f0000000000004b2f000000000000e5928587542f000000000000"
+    },
+    {
+      "pilotId": 20308,
+      "rawHex": "00000000682f000000000000692f000000000000034eb843722f000000000000"
+    },
+    {
+      "pilotId": 20309,
+      "rawHex": "000000007b2f0000000000007c2f000000000000163d56ae852f000000000000"
+    },
+    {
+      "pilotId": 20310,
+      "rawHex": "000000008e2f0000000000008f2f0000000000007913db79982f000000000000"
+    },
+    {
+      "pilotId": 20311,
+      "rawHex": "00000000a12f000000000000b02f0000000000003d9081b0b92f000000000000"
+    },
+    {
+      "pilotId": 30101,
+      "rawHex": "00000000cd2f000000000000dc2f000000000000d6571249e52f000000000000"
+    },
+    {
+      "pilotId": 30103,
+      "rawHex": "00000000f92f0000000000000830000000000000cd7e80f81130000000000000"
+    },
+    {
+      "pilotId": 30104,
+      "rawHex": "00000000253000000000000034300000000000008620bb5d3d30000000000000"
+    },
+    {
+      "pilotId": 30105,
+      "rawHex": "000000005130000000000000603000000000000097f8b8526930000000000000"
+    },
+    {
+      "pilotId": 30106,
+      "rawHex": "000000007d300000000000007e30000000000000f93398d28730000000000000"
+    },
+    {
+      "pilotId": 30107,
+      "rawHex": "00000000903000000000000091300000000000002305ccc49a30000000000000"
+    },
+    {
+      "pilotId": 30201,
+      "rawHex": "00000000a330000000000000b2300000000000004a7f097cbb30000000000000"
+    },
+    {
+      "pilotId": 30202,
+      "rawHex": "00000000cf30000000000000de3000000000000051ad17dee730000000000000"
+    },
+    {
+      "pilotId": 30203,
+      "rawHex": "00000000fb30000000000000fc30000000000000d454b8dd0531000000000000"
+    },
+    {
+      "pilotId": 40101,
+      "rawHex": "000000000e310000000000001d3100000000000008e4db692631000000000000"
+    },
+    {
+      "pilotId": 40201,
+      "rawHex": "000000003a310000000000004931000000000000ae1b252a5231000000000000"
+    },
+    {
+      "pilotId": 40202,
+      "rawHex": "000000006631000000000000753100000000000008ad1f547e31000000000000"
+    },
+    {
+      "pilotId": 50101,
+      "rawHex": "000000009231000000000000a13100000000000096dc0e3baa31000000000000"
+    },
+    {
+      "pilotId": 50103,
+      "rawHex": "00000000be31000000000000bf31000000000000d1162fecc831000000000000"
+    },
+    {
+      "pilotId": 50104,
+      "rawHex": "00000000d131000000000000e0310000000000006f02efc0e931000000000000"
+    },
+    {
+      "pilotId": 50105,
+      "rawHex": "00000000fd310000000000000c32000000000000ee9dfc501532000000000000"
+    },
+    {
+      "pilotId": 50106,
+      "rawHex": "0000000029320000000000003832000000000000db5131104132000000000000"
+    },
+    {
+      "pilotId": 50107,
+      "rawHex": "000000005532000000000000643200000000000029dab2346d32000000000000"
+    },
+    {
+      "pilotId": 50108,
+      "rawHex": "00000000813200000000000090320000000000003f39e5779932000000000000"
+    },
+    {
+      "pilotId": 50201,
+      "rawHex": "00000000ad32000000000000ae320000000000006e2a3029b732000000000000"
+    },
+    {
+      "pilotId": 50202,
+      "rawHex": "00000000c032000000000000cf320000000000008a82776fd832000000000000"
+    },
+    {
+      "pilotId": 50203,
+      "rawHex": "00000000ec32000000000000ed32000000000000931f07cef632000000000000"
+    },
+    {
+      "pilotId": 80101,
+      "rawHex": "00000000ff320000000000000e33000000000000490e290a1733000000000000"
+    },
+    {
+      "pilotId": 80102,
+      "rawHex": "000000002b330000000000003a330000000000002e8020b44333000000000000"
+    },
+    {
+      "pilotId": 80103,
+      "rawHex": "0000000057330000000000006633000000000000c35097a66f33000000000000"
+    },
+    {
+      "pilotId": 80201,
+      "rawHex": "00000000833300000000000092330000000000002d41eb659b33000000000000"
+    },
+    {
+      "pilotId": 80202,
+      "rawHex": "00000000af33000000000000b033000000000000961bfc04b933000000000000"
+    },
+    {
+      "pilotId": 100101,
+      "rawHex": "00000000c233000000000000d133000000000000b01e9ab0da33000000000000"
+    },
+    {
+      "pilotId": 100102,
+      "rawHex": "00000000ee33000000000000fd3300000000000025efb2720634000000000000"
+    },
+    {
+      "pilotId": 100103,
+      "rawHex": "000000001a34000000000000293400000000000081c738c13234000000000000"
+    },
+    {
+      "pilotId": 100201,
+      "rawHex": "0000000046340000000000004734000000000000743df77a5034000000000000"
+    },
+    {
+      "pilotId": 100301,
+      "rawHex": "0000000059340000000000006834000000000000b91034287134000000000000"
+    },
+    {
+      "pilotId": 100302,
+      "rawHex": "0000000085340000000000009434000000000000818cdbd99d34000000000000"
+    },
+    {
+      "pilotId": 100303,
+      "rawHex": "00000000b134000000000000c034000000000000819fbcddc934000000000000"
+    },
+    {
+      "pilotId": 100304,
+      "rawHex": "00000000dd34000000000000ec34000000000000ef5a2fc0f534000000000000"
+    },
+    {
+      "pilotId": 130101,
+      "rawHex": "000000000935000000000000183500000000000043db087a2135000000000000"
+    },
+    {
+      "pilotId": 130103,
+      "rawHex": "0000000035350000000000004435000000000000eeaad0154d35000000000000"
+    },
+    {
+      "pilotId": 130104,
+      "rawHex": "000000006135000000000000703500000000000068c997af7935000000000000"
+    },
+    {
+      "pilotId": 130201,
+      "rawHex": "000000008d350000000000009c3500000000000094d1666ca535000000000000"
+    },
+    {
+      "pilotId": 130202,
+      "rawHex": "00000000b935000000000000ba35000000000000c1f7e0d1c335000000000000"
+    },
+    {
+      "pilotId": 140101,
+      "rawHex": "00000000cc35000000000000db35000000000000ad13727fe435000000000000"
+    },
+    {
+      "pilotId": 140102,
+      "rawHex": "00000000f835000000000000073600000000000098ec515c1036000000000000"
+    },
+    {
+      "pilotId": 140103,
+      "rawHex": "000000002436000000000000333600000000000035fc6f3e3c36000000000000"
+    },
+    {
+      "pilotId": 140104,
+      "rawHex": "0000000050360000000000005f3600000000000089a7addd6836000000000000"
+    },
+    {
+      "pilotId": 140201,
+      "rawHex": "000000007c360000000000008b36000000000000026c70339436000000000000"
+    },
+    {
+      "pilotId": 140202,
+      "rawHex": "00000000a836000000000000b736000000000000fd4f2878c036000000000000"
+    },
+    {
+      "pilotId": 140203,
+      "rawHex": "00000000d436000000000000e3360000000000000370a456ec36000000000000"
+    },
+    {
+      "pilotId": 140301,
+      "rawHex": "0000000000370000000000000f37000000000000dc01ad6c1837000000000000"
+    },
+    {
+      "pilotId": 140401,
+      "rawHex": "000000002c370000000000003b37000000000000609548684437000000000000"
+    },
+    {
+      "pilotId": 140501,
+      "rawHex": "000000005837000000000000673700000000000018cdc17f7037000000000000"
+    },
+    {
+      "pilotId": 140502,
+      "rawHex": "00000000843700000000000093370000000000005b71413f9c37000000000000"
+    },
+    {
+      "pilotId": 140601,
+      "rawHex": "00000000b037000000000000bf37000000000000d635714ac837000000000000"
+    },
+    {
+      "pilotId": 140614,
+      "rawHex": "00000000dc37000000000000eb3700000000000000000000f437000000000000"
+    },
+    {
+      "pilotId": 150101,
+      "rawHex": "0000000008380000000000001738000000000000cc301d4a2038000000000000"
+    },
+    {
+      "pilotId": 150102,
+      "rawHex": "0000000034380000000000004338000000000000723350924c38000000000000"
+    },
+    {
+      "pilotId": 150103,
+      "rawHex": "00000000603800000000000061380000000000004cd3a5206a38000000000000"
+    },
+    {
+      "pilotId": 150201,
+      "rawHex": "0000000073380000000000008238000000000000a0feb78e8b38000000000000"
+    },
+    {
+      "pilotId": 150202,
+      "rawHex": "000000009f38000000000000ae38000000000000b3a33f9cb738000000000000"
+    },
+    {
+      "pilotId": 150203,
+      "rawHex": "00000000cb38000000000000da38000000000000193d58d9e338000000000000"
+    },
+    {
+      "pilotId": 150204,
+      "rawHex": "00000000f7380000000000000639000000000000b3b154790f39000000000000"
+    },
+    {
+      "pilotId": 150301,
+      "rawHex": "0000000023390000000000002439000000000000c792fb0c2d39000000000000"
+    },
+    {
+      "pilotId": 150302,
+      "rawHex": "0000000036390000000000003739000000000000ce21b8c34039000000000000"
+    },
+    {
+      "pilotId": 150401,
+      "rawHex": "00000000493900000000000058390000000000001a86e7376139000000000000"
+    },
+    {
+      "pilotId": 150402,
+      "rawHex": "00000000753900000000000084390000000000003d76c7d88d39000000000000"
+    },
+    {
+      "pilotId": 150403,
+      "rawHex": "00000000a139000000000000a23900000000000007c49cb9ab39000000000000"
+    },
+    {
+      "pilotId": 170101,
+      "rawHex": "00000000b439000000000000c339000000000000a696c5b7cc39000000000000"
+    },
+    {
+      "pilotId": 170102,
+      "rawHex": "00000000e039000000000000ef39000000000000a55de561f839000000000000"
+    },
+    {
+      "pilotId": 170103,
+      "rawHex": "000000000c3a0000000000001b3a000000000000dedb6490243a000000000000"
+    },
+    {
+      "pilotId": 170201,
+      "rawHex": "00000000383a000000000000473a000000000000e921bc7c503a000000000000"
+    },
+    {
+      "pilotId": 170202,
+      "rawHex": "00000000643a000000000000653a000000000000d30e4a5b6e3a000000000000"
+    },
+    {
+      "pilotId": 170203,
+      "rawHex": "00000000773a000000000000863a0000000000001312e49c8f3a000000000000"
+    },
+    {
+      "pilotId": 200101,
+      "rawHex": "00000000a33a000000000000b23a00000000000083a1a445bb3a000000000000"
+    },
+    {
+      "pilotId": 200102,
+      "rawHex": "00000000cf3a000000000000de3a0000000000003e4b21b5e73a000000000000"
+    },
+    {
+      "pilotId": 200103,
+      "rawHex": "00000000fb3a0000000000000a3b0000000000001f64d3b7133b000000000000"
+    },
+    {
+      "pilotId": 200104,
+      "rawHex": "00000000273b000000000000363b000000000000b3f2edac3f3b000000000000"
+    },
+    {
+      "pilotId": 200201,
+      "rawHex": "00000000533b000000000000623b000000000000cd846a916b3b000000000000"
+    },
+    {
+      "pilotId": 200202,
+      "rawHex": "000000007f3b0000000000008e3b000000000000beb4a46b973b000000000000"
+    },
+    {
+      "pilotId": 200203,
+      "rawHex": "00000000ab3b000000000000ba3b000000000000d636cadac33b000000000000"
+    },
+    {
+      "pilotId": 200204,
+      "rawHex": "00000000d73b000000000000e63b000000000000fae9b2adef3b000000000000"
+    },
+    {
+      "pilotId": 200205,
+      "rawHex": "00000000033c000000000000043c000000000000000000000d3c000000000000"
+    },
+    {
+      "pilotId": 220101,
+      "rawHex": "00000000163c000000000000173c0000000000009990f776203c000000000000"
+    },
+    {
+      "pilotId": 220102,
+      "rawHex": "00000000293c0000000000002a3c0000000000003ac41c5e333c000000000000"
+    },
+    {
+      "pilotId": 230101,
+      "rawHex": "000000003c3c0000000000004b3c00000000000011c7d187543c000000000000"
+    },
+    {
+      "pilotId": 230102,
+      "rawHex": "00000000683c000000000000773c000000000000f8c56293803c000000000000"
+    },
+    {
+      "pilotId": 230103,
+      "rawHex": "00000000943c000000000000a33c000000000000e948a3c8ac3c000000000000"
+    },
+    {
+      "pilotId": 230104,
+      "rawHex": "00000000c03c000000000000cf3c0000000000006776040dd83c000000000000"
+    },
+    {
+      "pilotId": 230105,
+      "rawHex": "00000000ec3c000000000000fb3c00000000000000000000043d000000000000"
+    },
+    {
+      "pilotId": 260101,
+      "rawHex": "00000000183d000000000000273d000000000000c4f07955303d000000000000"
+    },
+    {
+      "pilotId": 260201,
+      "rawHex": "00000000443d000000000000533d0000000000008b47009e5c3d000000000000"
+    },
+    {
+      "pilotId": 280101,
+      "rawHex": "00000000703d0000000000007f3d0000000000000adc7b65883d000000000000"
+    },
+    {
+      "pilotId": 280102,
+      "rawHex": "000000009c3d000000000000ab3d0000000000007d0bf8cfb43d000000000000"
+    },
+    {
+      "pilotId": 280103,
+      "rawHex": "00000000c83d000000000000d73d000000000000504bc5a3e03d000000000000"
+    },
+    {
+      "pilotId": 280104,
+      "rawHex": "00000000f43d000000000000033e000000000000363596270c3e000000000000"
+    },
+    {
+      "pilotId": 280105,
+      "rawHex": "00000000203e0000000000002f3e000000000000208be451383e000000000000"
+    },
+    {
+      "pilotId": 280106,
+      "rawHex": "000000004c3e0000000000005b3e0000000000003155f2d5643e000000000000"
+    },
+    {
+      "pilotId": 280201,
+      "rawHex": "00000000783e000000000000873e000000000000786745c0903e000000000000"
+    },
+    {
+      "pilotId": 280202,
+      "rawHex": "00000000a43e000000000000b33e000000000000165c63ccbc3e000000000000"
+    },
+    {
+      "pilotId": 280203,
+      "rawHex": "00000000d03e000000000000d13e000000000000cf8acda0da3e000000000000"
+    },
+    {
+      "pilotId": 330101,
+      "rawHex": "00000000e33e000000000000f23e00000000000028dc94fefb3e000000000000"
+    },
+    {
+      "pilotId": 330102,
+      "rawHex": "000000000f3f000000000000103f000000000000fb4e6271193f000000000000"
+    },
+    {
+      "pilotId": 330103,
+      "rawHex": "00000000223f000000000000233f0000000000008f6dc0772c3f000000000000"
+    },
+    {
+      "pilotId": 330201,
+      "rawHex": "00000000353f000000000000363f0000000000009da6dd8e3f3f000000000000"
+    },
+    {
+      "pilotId": 330202,
+      "rawHex": "00000000483f000000000000493f00000000000000000000523f000000000000"
+    },
+    {
+      "pilotId": 330301,
+      "rawHex": "000000005b3f0000000000005c3f000000000000e07c7c6e653f000000000000"
+    },
+    {
+      "pilotId": 420101,
+      "rawHex": "000000006e3f0000000000007d3f000000000000036c8d8c863f000000000000"
+    },
+    {
+      "pilotId": 420102,
+      "rawHex": "000000009a3f000000000000a93f000000000000c4baac47b23f000000000000"
+    },
+    {
+      "pilotId": 420201,
+      "rawHex": "00000000c63f000000000000d53f00000000000022d5f1c2de3f000000000000"
+    },
+    {
+      "pilotId": 420301,
+      "rawHex": "00000000f23f00000000000001400000000000002ba061520a40000000000000"
+    },
+    {
+      "pilotId": 430101,
+      "rawHex": "000000001e400000000000002d4000000000000030326a4b3640000000000000"
+    },
+    {
+      "pilotId": 430102,
+      "rawHex": "000000004a400000000000005940000000000000682057fc6240000000000000"
+    },
+    {
+      "pilotId": 430201,
+      "rawHex": "0000000076400000000000008540000000000000202c4c358e40000000000000"
+    },
+    {
+      "pilotId": 450101,
+      "rawHex": "00000000a240000000000000b14000000000000011cb4ad0ba40000000000000"
+    },
+    {
+      "pilotId": 450102,
+      "rawHex": "00000000ce40000000000000cf40000000000000e16d1472d840000000000000"
+    },
+    {
+      "pilotId": 450103,
+      "rawHex": "00000000e140000000000000e240000000000000c800440beb40000000000000"
+    },
+    {
+      "pilotId": 450104,
+      "rawHex": "00000000f440000000000000034100000000000015cbcbfe0c41000000000000"
+    },
+    {
+      "pilotId": 450201,
+      "rawHex": "0000000020410000000000002f41000000000000c7a724823841000000000000"
+    },
+    {
+      "pilotId": 450202,
+      "rawHex": "000000004c410000000000004d410000000000008e268bfa5641000000000000"
+    },
+    {
+      "pilotId": 450203,
+      "rawHex": "000000005f41000000000000604100000000000029ad61026941000000000000"
+    },
+    {
+      "pilotId": 460101,
+      "rawHex": "0000000072410000000000008141000000000000400c2ad78a41000000000000"
+    },
+    {
+      "pilotId": 460102,
+      "rawHex": "000000009e41000000000000ad4100000000000000000000b641000000000000"
+    },
+    {
+      "pilotId": 460201,
+      "rawHex": "00000000ca41000000000000d941000000000000e764aab8e241000000000000"
+    },
+    {
+      "pilotId": 470101,
+      "rawHex": "00000000f641000000000000f741000000000000360b638b0042000000000000"
+    },
+    {
+      "pilotId": 470102,
+      "rawHex": "0000000009420000000000000a42000000000000cd62e1071342000000000000"
+    },
+    {
+      "pilotId": 470103,
+      "rawHex": "000000001c420000000000001d420000000000000346bafb2642000000000000"
+    },
+    {
+      "pilotId": 470201,
+      "rawHex": "000000002f420000000000003042000000000000295812c23942000000000000"
+    },
+    {
+      "pilotId": 480101,
+      "rawHex": "0000000042420000000000004342000000000000ebc7305b4c42000000000000"
+    },
+    {
+      "pilotId": 480102,
+      "rawHex": "000000005542000000000000564200000000000037859f605f42000000000000"
+    },
+    {
+      "pilotId": 480103,
+      "rawHex": "0000000068420000000000006942000000000000dc109f837242000000000000"
+    },
+    {
+      "pilotId": 480201,
+      "rawHex": "000000007b420000000000007c420000000000006b22f72e8542000000000000"
+    },
+    {
+      "pilotId": 490101,
+      "rawHex": "63d6665f8e420000000000009d420000000000002cb2eaffa642000000000000"
+    },
+    {
+      "pilotId": 500101,
+      "rawHex": "00000000ba42000000000000bb42000000000000b581799ac442000000000000"
+    },
+    {
+      "pilotId": 500201,
+      "rawHex": "00000000cd42000000000000ce42000000000000fa360051d742000000000000"
+    },
+    {
+      "pilotId": 510101,
+      "rawHex": "00000000e042000000000000e14200000000000000000000ea42000000000000"
+    },
+    {
+      "pilotId": 520101,
+      "rawHex": "b0154063f34200000000000002430000000000000c9cc1040b43000000000000"
+    },
+    {
+      "pilotId": 1010303,
+      "rawHex": "000000001f430000000000002e43000000000000000000003743000000000000"
+    },
+    {
+      "pilotId": 6011901,
+      "rawHex": "000000004b430000000000004c43000000000000d941acfc5543000000000000"
+    },
+    {
+      "pilotId": 6011902,
+      "rawHex": "000000005e430000000000005f43000000000000b13435976843000000000000"
+    },
+    {
+      "pilotId": 6011903,
+      "rawHex": "00000000714300000000000072430000000000000da992407b43000000000000"
+    },
+    {
+      "pilotId": 6021901,
+      "rawHex": "00000000844300000000000085430000000000009a15335d8e43000000000000"
+    },
+    {
+      "pilotId": 6021902,
+      "rawHex": "00000000974300000000000098430000000000005cc3df7ca143000000000000"
+    },
+    {
+      "pilotId": 6031901,
+      "rawHex": "00000000aa43000000000000ab43000000000000edea98c9b443000000000000"
+    },
+    {
+      "pilotId": 6081901,
+      "rawHex": "00000000bd43000000000000be430000000000008f410807c743000000000000"
+    },
+    {
+      "pilotId": 6081902,
+      "rawHex": "00000000d043000000000000d143000000000000b7469b22da43000000000000"
+    },
+    {
+      "pilotId": 6101901,
+      "rawHex": "00000000e343000000000000e443000000000000cac73f7bed43000000000000"
+    },
+    {
+      "pilotId": 6131901,
+      "rawHex": "00000000f643000000000000f743000000000000a7bae2650044000000000000"
+    },
+    {
+      "pilotId": 6131902,
+      "rawHex": "0000000009440000000000000a44000000000000f56566081344000000000000"
+    },
+    {
+      "pilotId": 6141901,
+      "rawHex": "000000001c440000000000001d44000000000000e19753722644000000000000"
+    },
+    {
+      "pilotId": 6141902,
+      "rawHex": "000000002f4400000000000030440000000000005e8a3f703944000000000000"
+    },
+    {
+      "pilotId": 6151901,
+      "rawHex": "00000000424400000000000043440000000000002600a7c94c44000000000000"
+    },
+    {
+      "pilotId": 6171901,
+      "rawHex": "00000000554400000000000056440000000000006f49c54c5f44000000000000"
+    }
+  ],
+  "series": [
+    {
+      "seriesId": 39488364,
+      "name": "",
+      "rawHex": "370000002c0000000100000090060000"
+    },
+    {
+      "seriesId": 85901515,
+      "name": "",
+      "rawHex": "120000000e00000001000000a5060000"
+    },
+    {
+      "seriesId": 144472741,
+      "name": "��\u0013�1�\u0003",
+      "rawHex": "2d0000002400000001000000c2060000"
+    },
+    {
+      "seriesId": 323780276,
+      "name": "",
+      "rawHex": "070000000500000001000000fa060000"
+    },
+    {
+      "seriesId": 379275725,
+      "name": "�",
+      "rawHex": "03000000020000000100000017070000"
+    },
+    {
+      "seriesId": 429057246,
+      "name": "h\u0012\tv�g�?",
+      "rawHex": "2c000000000000000000000032070000"
+    },
+    {
+      "seriesId": 476897367,
+      "name": "\u0004HR��1���\u0018",
+      "rawHex": "29000000000000000000000039070000"
+    },
+    {
+      "seriesId": 518826694,
+      "name": "",
+      "rawHex": "350000002b0000000100000040070000"
+    },
+    {
+      "seriesId": 595152023,
+      "name": "",
+      "rawHex": "17000000120000000100000071070000"
+    },
+    {
+      "seriesId": 913588521,
+      "name": "\"K��ɑ\u0010���{�b�\u0013O0",
+      "rawHex": "230000001e000000010000009f070000"
+    },
+    {
+      "seriesId": 917694136,
+      "name": "",
+      "rawHex": "150000001000000001000000bc070000"
+    },
+    {
+      "seriesId": 928728014,
+      "name": "",
+      "rawHex": "0f0000000b00000001000000e1070000"
+    },
+    {
+      "seriesId": 1084946206,
+      "name": "",
+      "rawHex": "0e0000000a00000001000000fc070000"
+    },
+    {
+      "seriesId": 1165694406,
+      "name": "��",
+      "rawHex": "08000000060000000100000017080000"
+    },
+    {
+      "seriesId": 1208645260,
+      "name": "\f",
+      "rawHex": "0900000000000000000000003e080000"
+    },
+    {
+      "seriesId": 1278529205,
+      "name": "",
+      "rawHex": "1f0000001a0000000100000045080000"
+    },
+    {
+      "seriesId": 1288606707,
+      "name": "iԔl�߽�4\t�;@�a�",
+      "rawHex": "24000000000000000000000077080000"
+    },
+    {
+      "seriesId": 1381901018,
+      "name": "\"�Z5%\u001b7���\rB!�\bvX�",
+      "rawHex": "220000001d000000010000007e080000"
+    },
+    {
+      "seriesId": 1465290954,
+      "name": "R�s���$\u0012�\u0001�\u000b�",
+      "rawHex": "2600000000000000000000008e080000"
+    },
+    {
+      "seriesId": 1534077402,
+      "name": "�����MIc���kC�$�\u0002�\u0016�",
+      "rawHex": "20000000000000000000000095080000"
+    },
+    {
+      "seriesId": 1566994276,
+      "name": "",
+      "rawHex": "390000002e000000010000009c080000"
+    },
+    {
+      "seriesId": 1579013449,
+      "name": "",
+      "rawHex": "040000000300000001000000c1080000"
+    },
+    {
+      "seriesId": 1625911467,
+      "name": "",
+      "rawHex": "050000000400000001000000dd080000"
+    },
+    {
+      "seriesId": 1672660398,
+      "name": "o[\u001a�B� ��",
+      "rawHex": "2a0000002200000001000000f7080000"
+    },
+    {
+      "seriesId": 1772251693,
+      "name": "$",
+      "rawHex": "1800000013000000010000001b090000"
+    },
+    {
+      "seriesId": 1869398466,
+      "name": "",
+      "rawHex": "1d00000018000000010000004b090000"
+    },
+    {
+      "seriesId": 1907276355,
+      "name": "V�'F@�%�����z�",
+      "rawHex": "2500000000000000000000007b090000"
+    },
+    {
+      "seriesId": 1913648603,
+      "name": "\bvX�",
+      "rawHex": "30000000000000000000000082090000"
+    },
+    {
+      "seriesId": 2087757040,
+      "name": "���ֆ!��\u0004;,�",
+      "rawHex": "28000000210000000100000089090000"
+    },
+    {
+      "seriesId": -2130397874,
+      "name": "",
+      "rawHex": "0c0000000800000001000000a5090000"
+    },
+    {
+      "seriesId": -2091473623,
+      "name": "",
+      "rawHex": "130000000000000000000000de090000"
+    },
+    {
+      "seriesId": -1910285045,
+      "name": "���emr2\u0002$)y�oL���\f",
+      "rawHex": "210000001c00000001000000e5090000"
+    },
+    {
+      "seriesId": -1592202476,
+      "name": "",
+      "rawHex": "190000001400000001000000010a0000"
+    },
+    {
+      "seriesId": -1572103452,
+      "name": "",
+      "rawHex": "1b0000001600000001000000230a0000"
+    },
+    {
+      "seriesId": -1530891767,
+      "name": "�\u0019\u0001\u0012��o�&�b�\u0006",
+      "rawHex": "270000000000000000000000680a0000"
+    },
+    {
+      "seriesId": -1495509213,
+      "name": "\u0013O0",
+      "rawHex": "3100000000000000000000006f0a0000"
+    },
+    {
+      "seriesId": -1493870736,
+      "name": "",
+      "rawHex": "160000001100000001000000760a0000"
+    },
+    {
+      "seriesId": -1474553356,
+      "name": "",
+      "rawHex": "380000002d000000010000009a0a0000"
+    },
+    {
+      "seriesId": -1444536423,
+      "name": "",
+      "rawHex": "0a0000000700000001000000b50a0000"
+    },
+    {
+      "seriesId": -1309351831,
+      "name": "tT�",
+      "rawHex": "010000000000000001000000c50a0000"
+    },
+    {
+      "seriesId": -1289294104,
+      "name": "",
+      "rawHex": "0b0000000000000000000000de0a0000"
+    },
+    {
+      "seriesId": -1147700213,
+      "name": "",
+      "rawHex": "1a0000001500000001000000e50a0000"
+    },
+    {
+      "seriesId": -973500394,
+      "name": "",
+      "rawHex": "1c0000001700000001000000360b0000"
+    },
+    {
+      "seriesId": -904005206,
+      "name": "",
+      "rawHex": "110000000d00000001000000530b0000"
+    },
+    {
+      "seriesId": -900013731,
+      "name": "",
+      "rawHex": "0600000000000000000000007f0b0000"
+    },
+    {
+      "seriesId": -816716138,
+      "name": "a�",
+      "rawHex": "320000000000000000000000860b0000"
+    },
+    {
+      "seriesId": -793232526,
+      "name": "�",
+      "rawHex": "3300000029000000010000008d0b0000"
+    },
+    {
+      "seriesId": -762540450,
+      "name": "W�",
+      "rawHex": "020000000100000001000000b50b0000"
+    },
+    {
+      "seriesId": -595121739,
+      "name": "I��{ĿL�`",
+      "rawHex": "2b0000002300000001000000cf0b0000"
+    },
+    {
+      "seriesId": -592316092,
+      "name": "L���\f",
+      "rawHex": "2f0000000000000000000000040c0000"
+    },
+    {
+      "seriesId": -446038923,
+      "name": "",
+      "rawHex": "0d00000009000000010000000b0c0000"
+    },
+    {
+      "seriesId": -382834673,
+      "name": "4",
+      "rawHex": "100000000c00000001000000380c0000"
+    },
+    {
+      "seriesId": -181567377,
+      "name": "$�\u0002�\u0016�",
+      "rawHex": "2e0000002500000001000000630c0000"
+    },
+    {
+      "seriesId": -66963132,
+      "name": "",
+      "rawHex": "1e0000001900000001000000920c0000"
+    },
+    {
+      "seriesId": -57158938,
+      "name": "\n",
+      "rawHex": "140000000f00000001000000b10c0000"
+    },
+    {
+      "seriesId": -43039189,
+      "name": "",
+      "rawHex": "340000002a00000001000000ce0c0000"
+    }
+  ],
+  "masteries": [
+    {
+      "masteryId": 18683201,
+      "field_0x0": 5000,
+      "field_0x4": 20
+    },
+    {
+      "masteryId": 45004891,
+      "field_0x0": 1500,
+      "field_0x4": 12
+    },
+    {
+      "masteryId": 108056920,
+      "field_0x0": 3000,
+      "field_0x4": 16
+    },
+    {
+      "masteryId": 589008516,
+      "field_0x0": 300,
+      "field_0x4": 6
+    },
+    {
+      "masteryId": 611732125,
+      "field_0x0": 1000,
+      "field_0x4": 10
+    },
+    {
+      "masteryId": 833495402,
+      "field_0x0": 1,
+      "field_0x4": 1
+    },
+    {
+      "masteryId": 918807923,
+      "field_0x0": 200,
+      "field_0x4": 5
+    },
+    {
+      "masteryId": 1103418853,
+      "field_0x0": 100,
+      "field_0x4": 4
+    },
+    {
+      "masteryId": 1399945739,
+      "field_0x0": 750,
+      "field_0x4": 9
+    },
+    {
+      "masteryId": 1778172399,
+      "field_0x0": 0,
+      "field_0x4": 0
+    },
+    {
+      "masteryId": 1974044877,
+      "field_0x0": 1800,
+      "field_0x4": 13
+    },
+    {
+      "masteryId": 1981425111,
+      "field_0x0": 4500,
+      "field_0x4": 19
+    },
+    {
+      "masteryId": -1683494431,
+      "field_0x0": 1250,
+      "field_0x4": 11
+    },
+    {
+      "masteryId": -1664471560,
+      "field_0x0": 2500,
+      "field_0x4": 15
+    },
+    {
+      "masteryId": -1619427102,
+      "field_0x0": 3500,
+      "field_0x4": 17
+    },
+    {
+      "masteryId": -1465421616,
+      "field_0x0": 10,
+      "field_0x4": 2
+    },
+    {
+      "masteryId": -1173168322,
+      "field_0x0": 400,
+      "field_0x4": 7
+    },
+    {
+      "masteryId": -854200408,
+      "field_0x0": 550,
+      "field_0x4": 8
+    },
+    {
+      "masteryId": -543145914,
+      "field_0x0": 50,
+      "field_0x4": 3
+    },
+    {
+      "masteryId": -394350476,
+      "field_0x0": 4000,
+      "field_0x4": 18
+    },
+    {
+      "masteryId": -338879122,
+      "field_0x0": 2100,
+      "field_0x4": 14
+    },
+    {
+      "masteryId": -100374700,
+      "field_0x0": 6000,
+      "field_0x4": 21
+    }
+  ],
+  "skills": [
+    {
+      "skillId": 351747202,
+      "field_0x0": 5,
+      "field_0x4": 1457468771,
+      "field_0x8": 2,
+      "field_0xc": 1036,
+      "field_0x10": 0,
+      "field_0x14": 698590393
+    },
+    {
+      "skillId": 405061919,
+      "field_0x0": 25,
+      "field_0x4": 368003128,
+      "field_0x8": 1,
+      "field_0xc": 1067,
+      "field_0x10": 0,
+      "field_0x14": -961259711
+    },
+    {
+      "skillId": 466685581,
+      "field_0x0": 21,
+      "field_0x4": 974538149,
+      "field_0x8": 3,
+      "field_0xc": 1091,
+      "field_0x10": 0,
+      "field_0x14": 160521765
+    },
+    {
+      "skillId": 573009553,
+      "field_0x0": 33,
+      "field_0x4": 2039062993,
+      "field_0x8": 3,
+      "field_0xc": 1119,
+      "field_0x10": 0,
+      "field_0x14": -544739038
+    },
+    {
+      "skillId": 645332999,
+      "field_0x0": 16,
+      "field_0x4": 670128886,
+      "field_0x8": 1,
+      "field_0xc": 1149,
+      "field_0x10": 0,
+      "field_0x14": -999992121
+    },
+    {
+      "skillId": 697219242,
+      "field_0x0": 7,
+      "field_0x4": 399343555,
+      "field_0x8": 1,
+      "field_0xc": 1171,
+      "field_0x10": 0,
+      "field_0x14": -1905125349
+    },
+    {
+      "skillId": 804961127,
+      "field_0x0": 10,
+      "field_0x4": -1697532893,
+      "field_0x8": 1,
+      "field_0xc": 1196,
+      "field_0x10": 0,
+      "field_0x14": 82976906
+    },
+    {
+      "skillId": 918914279,
+      "field_0x0": 3,
+      "field_0x4": -1141147973,
+      "field_0x8": 3,
+      "field_0xc": 1218,
+      "field_0x10": 0,
+      "field_0x14": 455643372
+    },
+    {
+      "skillId": 1103279217,
+      "field_0x0": 2,
+      "field_0x4": -855882195,
+      "field_0x8": 2,
+      "field_0xc": 1252,
+      "field_0x10": 0,
+      "field_0x14": 1815060602
+    },
+    {
+      "skillId": 1428184583,
+      "field_0x0": 32,
+      "field_0x4": 244224327,
+      "field_0x8": 2,
+      "field_0xc": 1286,
+      "field_0x10": 0,
+      "field_0x14": -1467956812
+    },
+    {
+      "skillId": 1569762268,
+      "field_0x0": 22,
+      "field_0x4": -2026706909,
+      "field_0x8": 1,
+      "field_0xc": 1316,
+      "field_0x10": 0,
+      "field_0x14": -138510571
+    },
+    {
+      "skillId": 1676676116,
+      "field_0x0": 6,
+      "field_0x4": 567805429,
+      "field_0x8": 3,
+      "field_0xc": 1353,
+      "field_0x10": 0,
+      "field_0x14": 1587844143
+    },
+    {
+      "skillId": 1816272241,
+      "field_0x0": 13,
+      "field_0x4": 872653140,
+      "field_0x8": 1,
+      "field_0xc": 1384,
+      "field_0x10": 0,
+      "field_0x14": -138097259
+    },
+    {
+      "skillId": 1825979931,
+      "field_0x0": 20,
+      "field_0x4": 1292989747,
+      "field_0x8": 2,
+      "field_0xc": 1406,
+      "field_0x10": 0,
+      "field_0x14": 2123787955
+    },
+    {
+      "skillId": 2068676857,
+      "field_0x0": 39,
+      "field_0x4": 52673488,
+      "field_0x8": 1,
+      "field_0xc": 1434,
+      "field_0x10": 0,
+      "field_0x14": 1176049858
+    },
+    {
+      "skillId": -2127720283,
+      "field_0x0": 26,
+      "field_0x4": -1931077246,
+      "field_0x8": 2,
+      "field_0xc": 1459,
+      "field_0x10": 0,
+      "field_0x14": 1606223611
+    },
+    {
+      "skillId": -2108916643,
+      "field_0x0": 15,
+      "field_0x4": -636632968,
+      "field_0x8": 3,
+      "field_0xc": 1483,
+      "field_0x10": 0,
+      "field_0x14": 432712889
+    },
+    {
+      "skillId": -1912705736,
+      "field_0x0": 4,
+      "field_0x4": -808033063,
+      "field_0x8": 1,
+      "field_0xc": 1505,
+      "field_0x10": 0,
+      "field_0x14": -1330973437
+    },
+    {
+      "skillId": -1790713387,
+      "field_0x0": 41,
+      "field_0x4": -315761924,
+      "field_0x8": 3,
+      "field_0xc": 1536,
+      "field_0x10": 0,
+      "field_0x14": -1474856466
+    },
+    {
+      "skillId": -1333270256,
+      "field_0x0": 8,
+      "field_0x4": -1899745671,
+      "field_0x8": 2,
+      "field_0xc": 1561,
+      "field_0x10": 0,
+      "field_0x14": 393955745
+    },
+    {
+      "skillId": -1281438992,
+      "field_0x0": 24,
+      "field_0x4": 1765574927,
+      "field_0x8": 3,
+      "field_0xc": 1586,
+      "field_0x10": 0,
+      "field_0x14": 430972473
+    },
+    {
+      "skillId": -1225528611,
+      "field_0x0": 11,
+      "field_0x4": 64546201,
+      "field_0x8": 2,
+      "field_0xc": 1623,
+      "field_0x10": 0,
+      "field_0x14": -1644465872
+    },
+    {
+      "skillId": -1082240579,
+      "field_0x0": 17,
+      "field_0x4": -1091040436,
+      "field_0x8": 2,
+      "field_0xc": 1645,
+      "field_0x10": 0,
+      "field_0x14": 1567360381
+    },
+    {
+      "skillId": -1040917941,
+      "field_0x0": 12,
+      "field_0x4": 1960826127,
+      "field_0x8": 3,
+      "field_0xc": 1667,
+      "field_0x10": 0,
+      "field_0x14": -352566874
+    },
+    {
+      "skillId": -996541850,
+      "field_0x0": 23,
+      "field_0x4": 507230617,
+      "field_0x8": 2,
+      "field_0xc": 1689,
+      "field_0x10": 0,
+      "field_0x14": 1857498799
+    },
+    {
+      "skillId": -947857018,
+      "field_0x0": 9,
+      "field_0x4": -104653073,
+      "field_0x8": 3,
+      "field_0xc": 1726,
+      "field_0x10": 0,
+      "field_0x14": 1618770231
+    },
+    {
+      "skillId": -931569365,
+      "field_0x0": 18,
+      "field_0x4": -906019878,
+      "field_0x8": 3,
+      "field_0xc": 1751,
+      "field_0x10": 0,
+      "field_0x14": 711669227
+    },
+    {
+      "skillId": -869724227,
+      "field_0x0": 31,
+      "field_0x4": -1752710915,
+      "field_0x8": 1,
+      "field_0xc": 1773,
+      "field_0x10": 0,
+      "field_0x14": 831098894
+    },
+    {
+      "skillId": -657726005,
+      "field_0x0": 1,
+      "field_0x4": 1442125719,
+      "field_0x8": 1,
+      "field_0xc": 1803,
+      "field_0x10": 0,
+      "field_0x14": -181997120
+    },
+    {
+      "skillId": -498806461,
+      "field_0x0": 40,
+      "field_0x4": -1708463510,
+      "field_0x8": 2,
+      "field_0xc": 1837,
+      "field_0x10": 0,
+      "field_0x14": -552580744
+    },
+    {
+      "skillId": -179614517,
+      "field_0x0": 14,
+      "field_0x4": -1391791890,
+      "field_0x8": 2,
+      "field_0xc": 1862,
+      "field_0x10": 0,
+      "field_0x14": 1858968623
+    },
+    {
+      "skillId": -169906271,
+      "field_0x0": 19,
+      "field_0x4": -736615287,
+      "field_0x8": 1,
+      "field_0xc": 1884,
+      "field_0x10": 0,
+      "field_0x14": -408994039
+    },
+    {
+      "skillId": -164978637,
+      "field_0x0": 27,
+      "field_0x4": -69129964,
+      "field_0x8": 3,
+      "field_0xc": 1912,
+      "field_0x10": 0,
+      "field_0x14": 683292269
+    }
+  ],
+  "awakeningParams": [
+    {
+      "awakeningId": 412207470,
+      "field_0x0": 1,
+      "field_0x4": 13,
+      "field_0x8": 0,
+      "field_0xc": 0,
+      "field_0x10": 1551702993,
+      "field_0x14": 0,
+      "field_0x18": 0,
+      "field_0x1c": 0,
+      "field_0x20": 11,
+      "field_0x24": 0,
+      "field_0x28": 3,
+      "field_0x2c": 0,
+      "field_0x30": 0,
+      "field_0x34": 1056964608,
+      "field_0x38": 1,
+      "field_0x3c": 0
+    },
+    {
+      "awakeningId": 1995376223,
+      "field_0x0": 0,
+      "field_0x4": 10,
+      "field_0x8": 0,
+      "field_0xc": 0,
+      "field_0x10": -1038512526,
+      "field_0x14": 0,
+      "field_0x18": 0,
+      "field_0x1c": 0,
+      "field_0x20": 10,
+      "field_0x24": 0,
+      "field_0x28": 1,
+      "field_0x2c": 0,
+      "field_0x30": 0,
+      "field_0x34": 0,
+      "field_0x38": 1,
+      "field_0x3c": 0
+    },
+    {
+      "awakeningId": 2067922004,
+      "field_0x0": 1,
+      "field_0x4": 13,
+      "field_0x8": 0,
+      "field_0xc": 0,
+      "field_0x10": -1256276252,
+      "field_0x14": 0,
+      "field_0x18": 0,
+      "field_0x1c": 0,
+      "field_0x20": 11,
+      "field_0x24": 0,
+      "field_0x28": 3,
+      "field_0x2c": 0,
+      "field_0x30": 1,
+      "field_0x34": 1056964608,
+      "field_0x38": 1,
+      "field_0x3c": 0
+    },
+    {
+      "awakeningId": -1092173094,
+      "field_0x0": 1,
+      "field_0x4": 13,
+      "field_0x8": 0,
+      "field_0xc": 0,
+      "field_0x10": 729426759,
+      "field_0x14": 0,
+      "field_0x18": 0,
+      "field_0x1c": 0,
+      "field_0x20": 11,
+      "field_0x24": 45,
+      "field_0x28": 3,
+      "field_0x2c": 0,
+      "field_0x30": 0,
+      "field_0x34": 1056964608,
+      "field_0x38": 1,
+      "field_0x3c": 0
+    },
+    {
+      "awakeningId": -583600160,
+      "field_0x0": 1,
+      "field_0x4": 14,
+      "field_0x8": 0,
+      "field_0xc": 0,
+      "field_0x10": -1038512526,
+      "field_0x14": 0,
+      "field_0x18": 0,
+      "field_0x1c": 0,
+      "field_0x20": 12,
+      "field_0x24": 0,
+      "field_0x28": 3,
+      "field_0x2c": 0,
+      "field_0x30": 0,
+      "field_0x34": 1056964608,
+      "field_0x38": 1,
+      "field_0x3c": 0
+    },
+    {
+      "awakeningId": -320934531,
+      "field_0x0": 1,
+      "field_0x4": 14,
+      "field_0x8": 0,
+      "field_0xc": 0,
+      "field_0x10": 1527832520,
+      "field_0x14": 0,
+      "field_0x18": 15,
+      "field_0x1c": 0,
+      "field_0x20": 12,
+      "field_0x24": 0,
+      "field_0x28": 3,
+      "field_0x2c": 10,
+      "field_0x30": 0,
+      "field_0x34": 1060320051,
+      "field_0x38": 1,
+      "field_0x3c": 1
+    }
+  ],
+  "costFiles": [],
+  "costTable": {
+    "1001001": {
+      "cost": 2000,
+      "hp": 620
+    },
+    "1002001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "1003001": {
+      "cost": 1500,
+      "hp": 480
+    },
+    "1004001": {
+      "cost": 2500,
+      "hp": 580
+    },
+    "1005001": {
+      "cost": 2000,
+      "hp": 560
+    },
+    "1006001": {
+      "cost": 2000,
+      "hp": 620
+    },
+    "1007001": {
+      "cost": 1500,
+      "hp": 520
+    },
+    "1008001": {
+      "cost": 2000,
+      "hp": 580
+    },
+    "1009001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "1010001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "1014001": {
+      "cost": 2000,
+      "hp": 540
+    },
+    "1015001": {
+      "cost": 1500,
+      "hp": 450
+    },
+    "1016001": {
+      "cost": 1500,
+      "hp": 420
+    },
+    "1017001": {
+      "cost": 1500,
+      "hp": 460
+    },
+    "2001001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "2002001": {
+      "cost": 2500,
+      "hp": 580
+    },
+    "2003001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "2004001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "2005001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "2006001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "2009001": {
+      "cost": 2000,
+      "hp": 520
+    },
+    "2011001": {
+      "cost": 1500,
+      "hp": 440
+    },
+    "2012001": {
+      "cost": 1500,
+      "hp": 380
+    },
+    "2013001": {
+      "cost": 1500,
+      "hp": 480
+    },
+    "2014001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "2015001": {
+      "cost": 1500,
+      "hp": 420
+    },
+    "2016001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "2017001": {
+      "cost": 1500,
+      "hp": 420
+    },
+    "3001001": {
+      "cost": 3000,
+      "hp": 680
+    },
+    "3002001": {
+      "cost": 1500,
+      "hp": 450
+    },
+    "3003001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "3004001": {
+      "cost": 2000,
+      "hp": 620
+    },
+    "3012001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "3013001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "3015001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "4001001": {
+      "cost": 2000,
+      "hp": 540
+    },
+    "4002001": {
+      "cost": 1500,
+      "hp": 480
+    },
+    "4004001": {
+      "cost": 1500,
+      "hp": 440
+    },
+    "5001001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "5002001": {
+      "cost": 1500,
+      "hp": 480
+    },
+    "5003001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "5004001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "5013001": {
+      "cost": 2000,
+      "hp": 580
+    },
+    "7001001": {
+      "cost": 3000,
+      "hp": 680
+    },
+    "7002001": {
+      "cost": 3000,
+      "hp": 680
+    },
+    "7003001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "7004001": {
+      "cost": 2500,
+      "hp": 600
+    },
+    "7006001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "8001001": {
+      "cost": 1500,
+      "hp": 480
+    },
+    "8002001": {
+      "cost": 1500,
+      "hp": 520
+    },
+    "8003001": {
+      "cost": 1500,
+      "hp": 460
+    },
+    "10001001": {
+      "cost": 3000,
+      "hp": 720
+    },
+    "10002001": {
+      "cost": 3000,
+      "hp": 680
+    },
+    "10003001": {
+      "cost": 2500,
+      "hp": 650
+    },
+    "10004001": {
+      "cost": 1500,
+      "hp": 480
+    },
+    "10005001": {
+      "cost": 2000,
+      "hp": 640
+    },
+    "10006001": {
+      "cost": 1500,
+      "hp": 420
+    },
+    "12001001": {
+      "cost": 1500,
+      "hp": 420
+    },
+    "12002001": {
+      "cost": 1500,
+      "hp": 450
+    },
+    "12004001": {
+      "cost": 1500,
+      "hp": 450
+    },
+    "13001001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "13002001": {
+      "cost": 2500,
+      "hp": 680
+    },
+    "13003001": {
+      "cost": 2000,
+      "hp": 620
+    },
+    "13004001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "13006001": {
+      "cost": 1500,
+      "hp": 420
+    },
+    "13007001": {
+      "cost": 1500,
+      "hp": 440
+    },
+    "14001001": {
+      "cost": 2000,
+      "hp": 560
+    },
+    "14002001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "14003001": {
+      "cost": 2500,
+      "hp": 650
+    },
+    "14004001": {
+      "cost": 2500,
+      "hp": 600
+    },
+    "14005001": {
+      "cost": 2500,
+      "hp": 650
+    },
+    "14006001": {
+      "cost": 2000,
+      "hp": 560
+    },
+    "14007001": {
+      "cost": 3000,
+      "hp": 620
+    },
+    "14008001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "14009001": {
+      "cost": 2500,
+      "hp": 600
+    },
+    "14011001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "14012001": {
+      "cost": 3000,
+      "hp": 620
+    },
+    "14014001": {
+      "cost": 1500,
+      "hp": 480
+    },
+    "14016001": {
+      "cost": 3000,
+      "hp": 620
+    },
+    "14017001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "14018001": {
+      "cost": 2000,
+      "hp": 640
+    },
+    "14019001": {
+      "cost": 2000,
+      "hp": 500
+    },
+    "14020001": {
+      "cost": 2000,
+      "hp": 560
+    },
+    "14021001": {
+      "cost": 2000,
+      "hp": 540
+    },
+    "14023001": {
+      "cost": 1500,
+      "hp": 440
+    },
+    "14024001": {
+      "cost": 2500,
+      "hp": 350
+    },
+    "15001001": {
+      "cost": 3000,
+      "hp": 680
+    },
+    "15002001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "15003001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "15004001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "15005001": {
+      "cost": 2500,
+      "hp": 600
+    },
+    "15006001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "15008001": {
+      "cost": 3000,
+      "hp": 680
+    },
+    "15009001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "15010001": {
+      "cost": 2000,
+      "hp": 540
+    },
+    "15011001": {
+      "cost": 1500,
+      "hp": 420
+    },
+    "15012001": {
+      "cost": 1500,
+      "hp": 660
+    },
+    "16001001": {
+      "cost": 3000,
+      "hp": 620
+    },
+    "16002001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "16003001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "16004001": {
+      "cost": 2500,
+      "hp": 650
+    },
+    "17001001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "17002001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "17003001": {
+      "cost": 1500,
+      "hp": 400
+    },
+    "17004001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "18001001": {
+      "cost": 3000,
+      "hp": 750
+    },
+    "18002001": {
+      "cost": 2000,
+      "hp": 640
+    },
+    "18003001": {
+      "cost": 3000,
+      "hp": 750
+    },
+    "18004001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "18005001": {
+      "cost": 2000,
+      "hp": 640
+    },
+    "18006001": {
+      "cost": 2500,
+      "hp": 650
+    },
+    "18007001": {
+      "cost": 1500,
+      "hp": 450
+    },
+    "18008001": {
+      "cost": 2000,
+      "hp": 640
+    },
+    "20001001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "20002001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "20003001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "20004001": {
+      "cost": 1500,
+      "hp": 450
+    },
+    "20005001": {
+      "cost": 2500,
+      "hp": 600
+    },
+    "20006001": {
+      "cost": 1500,
+      "hp": 480
+    },
+    "20008001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "20009001": {
+      "cost": 2000,
+      "hp": 540
+    },
+    "20010001": {
+      "cost": 2000,
+      "hp": 620
+    },
+    "20011001": {
+      "cost": 1500,
+      "hp": 480
+    },
+    "20012001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "21001001": {
+      "cost": 3000,
+      "hp": 600
+    },
+    "21002001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "21003001": {
+      "cost": 3000,
+      "hp": 680
+    },
+    "21004001": {
+      "cost": 2000,
+      "hp": 620
+    },
+    "21005001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "21006001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "21007001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "21011001": {
+      "cost": 2000,
+      "hp": 620
+    },
+    "21012001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "21015001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "22001001": {
+      "cost": 2000,
+      "hp": 620
+    },
+    "22002001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "22003001": {
+      "cost": 2000,
+      "hp": 540
+    },
+    "22004001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "22005001": {
+      "cost": 2500,
+      "hp": 560
+    },
+    "22006001": {
+      "cost": 2500,
+      "hp": 650
+    },
+    "22008001": {
+      "cost": 2500,
+      "hp": 650
+    },
+    "22009001": {
+      "cost": 2500,
+      "hp": 560
+    },
+    "22010001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "23001001": {
+      "cost": 2500,
+      "hp": 600
+    },
+    "23002001": {
+      "cost": 3000,
+      "hp": 620
+    },
+    "23003001": {
+      "cost": 2500,
+      "hp": 580
+    },
+    "23004001": {
+      "cost": 2500,
+      "hp": 650
+    },
+    "23005001": {
+      "cost": 2500,
+      "hp": 650
+    },
+    "23009001": {
+      "cost": 1500,
+      "hp": 660
+    },
+    "24001001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "24002001": {
+      "cost": 1500,
+      "hp": 520
+    },
+    "25001001": {
+      "cost": 1500,
+      "hp": 480
+    },
+    "25002001": {
+      "cost": 1500,
+      "hp": 500
+    },
+    "26001001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "26002001": {
+      "cost": 3000,
+      "hp": 680
+    },
+    "27001001": {
+      "cost": 3000,
+      "hp": 620
+    },
+    "27002001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "27003001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "27004001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "27005001": {
+      "cost": 3000,
+      "hp": 600
+    },
+    "27006001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "28001001": {
+      "cost": 3000,
+      "hp": 620
+    },
+    "28002001": {
+      "cost": 3000,
+      "hp": 720
+    },
+    "28009001": {
+      "cost": 2500,
+      "hp": 650
+    },
+    "28010001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "28011001": {
+      "cost": 2000,
+      "hp": 520
+    },
+    "28012001": {
+      "cost": 2000,
+      "hp": 540
+    },
+    "28013001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "28014001": {
+      "cost": 2000,
+      "hp": 500
+    },
+    "29001001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "29002001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "30001001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "31001001": {
+      "cost": 3000,
+      "hp": 680
+    },
+    "31002001": {
+      "cost": 3000,
+      "hp": 700
+    },
+    "33001001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "33002001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "33003001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "33004001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "33005001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "33006001": {
+      "cost": 2000,
+      "hp": 580
+    },
+    "33007001": {
+      "cost": 3000,
+      "hp": 600
+    },
+    "33008001": {
+      "cost": 2500,
+      "hp": 600
+    },
+    "33009001": {
+      "cost": 1500,
+      "hp": 660
+    },
+    "33010001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "33011001": {
+      "cost": 2500,
+      "hp": 600
+    },
+    "34001001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "34002001": {
+      "cost": 2500,
+      "hp": 650
+    },
+    "34003001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "34004001": {
+      "cost": 3000,
+      "hp": 620
+    },
+    "34005001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "42001001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "42002001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "42003001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "42004001": {
+      "cost": 2000,
+      "hp": 580
+    },
+    "42005001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "42006001": {
+      "cost": 1500,
+      "hp": 450
+    },
+    "42007001": {
+      "cost": 3000,
+      "hp": 680
+    },
+    "43001001": {
+      "cost": 2000,
+      "hp": 620
+    },
+    "43003001": {
+      "cost": 2000,
+      "hp": 540
+    },
+    "43004001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "45001001": {
+      "cost": 2000,
+      "hp": 540
+    },
+    "45002001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "45003001": {
+      "cost": 2000,
+      "hp": 540
+    },
+    "45004001": {
+      "cost": 2000,
+      "hp": 560
+    },
+    "45005001": {
+      "cost": 2000,
+      "hp": 560
+    },
+    "46001001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "46002001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "46003001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "46004001": {
+      "cost": 2000,
+      "hp": 580
+    },
+    "47001001": {
+      "cost": 1500,
+      "hp": 380
+    },
+    "48001001": {
+      "cost": 2000,
+      "hp": 540
+    },
+    "48002001": {
+      "cost": 2000,
+      "hp": 520
+    },
+    "49001001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "49002001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "49003001": {
+      "cost": 3000,
+      "hp": 720
+    },
+    "49004001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "49005001": {
+      "cost": 3000,
+      "hp": 650
+    },
+    "49006001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "50001001": {
+      "cost": 2500,
+      "hp": 660
+    },
+    "50002001": {
+      "cost": 2500,
+      "hp": 660
+    },
+    "51001001": {
+      "cost": 2000,
+      "hp": 560
+    },
+    "51002001": {
+      "cost": 2000,
+      "hp": 560
+    },
+    "51003001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "51004001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "51005001": {
+      "cost": 1500,
+      "hp": 660
+    },
+    "52001001": {
+      "cost": 3000,
+      "hp": 680
+    },
+    "53001001": {
+      "cost": 1500,
+      "hp": 660
+    },
+    "53002001": {
+      "cost": 2500,
+      "hp": 650
+    },
+    "53003001": {
+      "cost": 2500,
+      "hp": 600
+    },
+    "53004001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "55001001": {
+      "cost": 2500,
+      "hp": 650
+    },
+    "56001001": {
+      "cost": 2000,
+      "hp": 580
+    },
+    "56002001": {
+      "cost": 2000,
+      "hp": 580
+    },
+    "57001001": {
+      "cost": 2500,
+      "hp": 620
+    },
+    "101002001": {
+      "cost": 1500,
+      "hp": 3000
+    },
+    "999001001": {
+      "cost": 1500,
+      "hp": 660
+    },
+    "999002001": {
+      "cost": 2000,
+      "hp": 780
+    },
+    "999003001": {
+      "cost": 2000,
+      "hp": 680
+    },
+    "999004001": {
+      "cost": 2000,
+      "hp": 720
+    },
+    "999005001": {
+      "cost": 2500,
+      "hp": 650
+    },
+    "999006001": {
+      "cost": 1000,
+      "hp": 720
+    },
+    "999007001": {
+      "cost": 1000,
+      "hp": 1800
+    },
+    "999008001": {
+      "cost": 1500,
+      "hp": 660
+    },
+    "999009001": {
+      "cost": 1500,
+      "hp": 660
+    },
+    "999021001": {
+      "cost": 1000,
+      "hp": 765
+    },
+    "999022001": {
+      "cost": 1000,
+      "hp": 765
+    },
+    "999023001": {
+      "cost": 2000,
+      "hp": 600
+    },
+    "999500001": {
+      "cost": 1500,
+      "hp": 660
+    },
+    "999600001": {
+      "cost": 1500,
+      "hp": 660
+    },
+    "999701001": {
+      "cost": 1500,
+      "hp": 660
+    },
+    "999702001": {
+      "cost": 1500,
+      "hp": 660
+    },
+    "999703001": {
+      "cost": 1500,
+      "hp": 660
+    },
+    "999704001": {
+      "cost": 1500,
+      "hp": 660
+    }
+  }
+}

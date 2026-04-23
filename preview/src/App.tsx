@@ -1,4 +1,4 @@
-import React, { useReducer, useRef, useCallback, useEffect } from "react";
+import React, { useReducer, useRef, useCallback, useEffect, useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import {
   Select,
@@ -9,36 +9,36 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { FolderOpen } from "lucide-react";
+import { FolderOpen, PanelRightClose, PanelRight } from "lucide-react";
 import { Stage } from "@/components/Stage";
 import { TimelineBar } from "@/components/TimelineBar";
 import { Inspector } from "@/components/Inspector";
+import { GameControlPanel } from "@/components/GameControlPanel";
 import {
   EditorContext,
   editorReducer,
   initialEditorState,
 } from "@/lib/editor/state";
-import type { LmbJson } from "@/lib/lmb/types";
+import type { LmbJson, LmbTextureBinding } from "@/lib/lmb/types";
 import { ResourceStore } from "@/lib/lmb/store";
 import { Scene } from "@/lib/lmb/scene";
 import { TimelinePlayer } from "@/lib/lmb/player";
 import { WebGlRenderer } from "@/lib/render/webgl";
+import { pickLmbAssetFolder } from "@/lib/lmb/folder_loader";
 
 function App() {
   const [state, dispatch] = useReducer(editorReducer, initialEditorState);
   const rendererRef = useRef<WebGlRenderer | null>(null);
   const playerRef = useRef<TimelinePlayer | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const e2eFixtureStartedRef = useRef(false);
+  const [inspectorOpen, setInspectorOpen] = useState(true);
 
   // Keep forceVisible available to the playback callback via a ref
   const forceVisibleRef = useRef(state.forceVisible);
   useEffect(() => {
     forceVisibleRef.current = state.forceVisible;
   }, [state.forceVisible]);
-
-  const handleRendererReady = useCallback((renderer: WebGlRenderer) => {
-    rendererRef.current = renderer;
-  }, []);
 
   /**
    * Render the current scene to the WebGL canvas.
@@ -114,39 +114,157 @@ function App() {
             frame: sprite.timeline[0],
           });
         }
+
+        // Auto-play: start playback with loop after loading
+        player.setLoop(true);
+        player.play();
+        dispatch({ type: "SET_PLAYING", playing: true });
+        dispatch({ type: "SET_LOOP", loop: true });
       }
     },
     []
   );
 
+  const loadJsonIntoEditor = useCallback(
+    async (
+      json: LmbJson,
+      loadTextures: (renderer: WebGlRenderer, store: ResourceStore) => Promise<void>
+    ) => {
+      dispatch({ type: "LOAD_JSON", json });
+      const store = new ResourceStore(json);
+      const renderer = rendererRef.current;
+      if (renderer) {
+        renderer.resizeForMeta(json.meta);
+        renderer.clear();
+        await loadTextures(renderer, store);
+      }
+      attachTimeline(json.timeline.rootSpriteId, store);
+    },
+    [attachTimeline]
+  );
+
+  const handleRendererReady = useCallback(
+    (renderer: WebGlRenderer) => {
+      rendererRef.current = renderer;
+
+      if (!import.meta.env.DEV || e2eFixtureStartedRef.current) return;
+
+      const params = new URLSearchParams(window.location.search);
+
+      const FIXTURE_MAP: Record<string, { base: string; jsonName: string }> = {
+        lm_menu: { base: "/lm_menu_dev", jsonName: "lm_menu.json" },
+        staffroll: { base: "/staffroll_dev", jsonName: "staffroll.json" },
+        machineselect: { base: "/machineselect_dev", jsonName: "machineselect.json" },
+      };
+
+      const fixtureName = params.get("devFixture");
+      const fixture = fixtureName ? FIXTURE_MAP[fixtureName] : undefined;
+      if (fixture) {
+        e2eFixtureStartedRef.current = true;
+        void (async () => {
+          const { base, jsonName } = fixture;
+          try {
+            const res = await fetch(`${base}/${jsonName}`);
+            if (!res.ok) {
+              throw new Error(`HTTP ${res.status} loading ${base}/${jsonName}`);
+            }
+            const json = (await res.json()) as LmbJson;
+
+            const bindRes = await fetch(`${base}/lmb_texture_binding.json`);
+            if (!bindRes.ok) {
+              throw new Error(
+                `HTTP ${bindRes.status} loading ${base}/lmb_texture_binding.json`
+              );
+            }
+            const binding = (await bindRes.json()) as LmbTextureBinding;
+            if (!binding.byAtlasId) {
+              throw new Error("lmb_texture_binding.json must include byAtlasId");
+            }
+
+            const filesByName = new Map<string, File>();
+            for (const baseName of Object.values(binding.byAtlasId)) {
+              const tr = await fetch(
+                `${base}/textures/${encodeURIComponent(baseName)}`
+              );
+              if (!tr.ok) {
+                throw new Error(
+                  `HTTP ${tr.status} loading texture ${baseName}`
+                );
+              }
+              const blob = await tr.blob();
+              filesByName.set(
+                baseName,
+                new File([blob], baseName, { type: "image/png" })
+              );
+            }
+
+            await loadJsonIntoEditor(json, (rend, store) =>
+              rend.loadAtlasTexturesFromFiles(json, store, filesByName, {
+                binding,
+              })
+            );
+          } catch (err) {
+            console.error(`[devFixture=${fixtureName}]`, err);
+          }
+        })();
+        return;
+      }
+
+      if (params.get("e2e") !== "1") return;
+
+      e2eFixtureStartedRef.current = true;
+      void (async () => {
+        try {
+          const res = await fetch("/dev_fixtures/minimal_lmb.json");
+          if (!res.ok) {
+            throw new Error(`HTTP ${res.status} loading dev fixture`);
+          }
+          const json = (await res.json()) as LmbJson;
+          await loadJsonIntoEditor(json, (rend, store) =>
+            rend.loadAtlasTextures(json, store, "dev_fixtures/textures/")
+          );
+        } catch (err) {
+          console.error("[e2e fixture]", err);
+        }
+      })();
+    },
+    [loadJsonIntoEditor]
+  );
+
   /**
-   * Handle JSON file loading.
+   * Handle JSON file loading (textures from dev server preview/public/textures/).
    */
   const handleFileSelected = useCallback(
     async (file: File) => {
       try {
         const text = await file.text();
         const json = JSON.parse(text) as LmbJson;
-
-        dispatch({ type: "LOAD_JSON", json });
-
-        const store = new ResourceStore(json);
-
-        const renderer = rendererRef.current;
-        if (renderer) {
-          renderer.resizeForMeta(json.meta);
-          renderer.clear();
-          // Load textures from the same directory as the JSON file
-          await renderer.loadAtlasTextures(json, store, "textures/");
-        }
-
-        attachTimeline(json.timeline.rootSpriteId, store);
+        await loadJsonIntoEditor(json, (renderer, store) =>
+          renderer.loadAtlasTextures(json, store, "textures/")
+        );
       } catch (e) {
         console.error("Error loading file:", e);
       }
     },
-    [attachTimeline]
+    [loadJsonIntoEditor]
   );
+
+  /**
+   * Pick a folder with one root JSON + textures/*.png (File System Access API).
+   */
+  const handleOpenFolder = useCallback(async () => {
+    try {
+      const { json, textureFilesByName, textureBinding } =
+        await pickLmbAssetFolder();
+      await loadJsonIntoEditor(json, (renderer, store) =>
+        renderer.loadAtlasTexturesFromFiles(json, store, textureFilesByName, {
+          binding: textureBinding,
+        })
+      );
+    } catch (e) {
+      console.error("Error loading folder:", e);
+    }
+  }, [loadJsonIntoEditor]);
 
   const handleRootSpriteChange = useCallback(
     (spriteIdStr: string) => {
@@ -179,6 +297,15 @@ function App() {
             >
               <FolderOpen className="h-4 w-4" />
               Open JSON
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleOpenFolder}
+              className="gap-2"
+            >
+              <FolderOpen className="h-4 w-4" />
+              Open folder
             </Button>
             <input
               ref={fileInputRef}
@@ -229,14 +356,31 @@ function App() {
                     Modified
                   </Badge>
                 )}
+                <Button
+                  variant="ghost"
+                  size="icon-sm"
+                  onClick={() => setInspectorOpen(!inspectorOpen)}
+                  title={inspectorOpen ? "Hide Inspector" : "Show Inspector"}
+                >
+                  {inspectorOpen ? (
+                    <PanelRightClose className="h-4 w-4" />
+                  ) : (
+                    <PanelRight className="h-4 w-4" />
+                  )}
+                </Button>
               </div>
             )}
           </header>
 
           {/* Main area: Stage + Inspector */}
           <div className="flex flex-1 overflow-hidden">
-            <Stage onRendererReady={handleRendererReady} />
-            <Inspector playerRef={playerRef} onRender={renderCurrentScene} />
+            <div className="flex flex-col flex-1 overflow-hidden">
+              <Stage onRendererReady={handleRendererReady} />
+              <GameControlPanel playerRef={playerRef} onRender={renderCurrentScene} />
+            </div>
+            {inspectorOpen && (
+              <Inspector playerRef={playerRef} onRender={renderCurrentScene} />
+            )}
           </div>
 
           {/* Timeline bar */}

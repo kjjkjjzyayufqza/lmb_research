@@ -1,5 +1,47 @@
-import type { DisplayInstance, LmbJson } from "../lmb/types";
+import type {
+  DisplayInstance,
+  LmbJson,
+  LmbTextureBinding,
+} from "../lmb/types";
 import { ResourceStore } from "../lmb/store";
+
+function lookupAtlasNameBinding(
+  map: Record<string, string>,
+  atlasName: string
+): string | undefined {
+  const direct = map[atlasName];
+  if (direct !== undefined) return direct;
+  const lower = atlasName.toLowerCase();
+  for (const [k, v] of Object.entries(map)) {
+    if (k.toLowerCase() === lower) return v;
+  }
+  return undefined;
+}
+
+/**
+ * Chooses PNG basename: binding by stable atlas.id or symbol name, then URL/name rules.
+ */
+function resolveAtlasTextureBasename(
+  atlas: LmbJson["resources"]["textureAtlases"][number],
+  atlasIndex: number,
+  binding: LmbTextureBinding | undefined,
+  namePattern?: (index: number, atlasName?: string) => string
+): string {
+  const idKey = String(atlas.id);
+  if (binding?.byAtlasId?.[idKey] !== undefined) {
+    return binding.byAtlasId[idKey];
+  }
+
+  const resolvedName = atlas.name?.trim();
+  if (resolvedName && binding?.byAtlasName) {
+    const mapped = lookupAtlasNameBinding(binding.byAtlasName, resolvedName);
+    if (mapped !== undefined) return mapped;
+  }
+
+  if (namePattern) return namePattern(atlasIndex, atlas.name);
+  if (resolvedName) return resolvedName;
+  return `img-${String(atlasIndex).padStart(5, "0")}.png`;
+}
 
 interface LoadedTexture {
   atlasId: number;
@@ -26,6 +68,8 @@ export class WebGlRenderer {
   private indexBuffer: WebGLBuffer;
   private currentAtlasTexture: WebGLTexture | null = null;
   private textureByAtlasId = new Map<number, LoadedTexture>();
+  private textCanvas: HTMLCanvasElement | null = null;
+  private textCtx: CanvasRenderingContext2D | null = null;
 
   constructor(canvas: HTMLCanvasElement) {
     this.canvas = canvas;
@@ -80,12 +124,21 @@ export class WebGlRenderer {
     return this.canvas;
   }
 
+  setTextCanvas(canvas: HTMLCanvasElement): void {
+    this.textCanvas = canvas;
+    this.textCtx = canvas.getContext("2d");
+  }
+
   resizeForMeta(meta: LmbJson["meta"]): void {
     const width = meta.width || 512;
     const height = meta.height || 256;
     this.canvas.width = width;
     this.canvas.height = height;
     this.gl.viewport(0, 0, width, height);
+    if (this.textCanvas) {
+      this.textCanvas.width = width;
+      this.textCanvas.height = height;
+    }
   }
 
   /**
@@ -135,11 +188,70 @@ export class WebGlRenderer {
     }
   }
 
+  /**
+   * Load atlas images from a map of basename -> File (e.g. from a picked folder).
+   * Basename match is case-insensitive (Windows / inconsistent exporters).
+   * Optional {@link LmbTextureBinding} maps stable atlas.id or symbol name to disk PNG names.
+   */
+  async loadAtlasTexturesFromFiles(
+    json: LmbJson,
+    _store: ResourceStore,
+    filesByName: Map<string, File>,
+    options?: {
+      binding?: LmbTextureBinding;
+      namePattern?: (index: number, atlasName?: string) => string;
+    }
+  ): Promise<void> {
+    this.textureByAtlasId.clear();
+    const atlases = json.resources.textureAtlases;
+
+    const resolveFile = (fileName: string, atlasId: number): File => {
+      const direct = filesByName.get(fileName);
+      if (direct) return direct;
+      const lower = fileName.toLowerCase();
+      for (const [k, v] of filesByName) {
+        if (k.toLowerCase() === lower) return v;
+      }
+      const available = [...filesByName.keys()].sort().join(", ");
+      throw new Error(
+        `Missing texture "${fileName}" in textures/ folder (atlas id ${atlasId}). Available PNG basenames: ${available}`
+      );
+    };
+
+    for (let i = 0; i < atlases.length; i++) {
+      const atlas = atlases[i];
+      const fileName = resolveAtlasTextureBasename(
+        atlas,
+        i,
+        options?.binding,
+        options?.namePattern
+      );
+
+      const file = resolveFile(fileName, atlas.id);
+      const objectUrl = URL.createObjectURL(file);
+      try {
+        const image = await this.loadImage(objectUrl);
+        const texture = this.createTextureFromImage(image);
+        this.textureByAtlasId.set(atlas.id, {
+          atlasId: atlas.id,
+          width: atlas.width,
+          height: atlas.height,
+          texture,
+        });
+      } finally {
+        URL.revokeObjectURL(objectUrl);
+      }
+    }
+  }
+
   clear(): void {
     const gl = this.gl;
     gl.viewport(0, 0, this.canvas.width, this.canvas.height);
     gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT);
+    if (this.textCtx && this.textCanvas) {
+      this.textCtx.clearRect(0, 0, this.textCanvas.width, this.textCanvas.height);
+    }
   }
 
   /**
@@ -229,6 +341,58 @@ export class WebGlRenderer {
         gl.UNSIGNED_SHORT,
         0
       );
+    }
+
+    this.renderTextInstances(instances, forceVisible);
+  }
+
+  private renderTextInstances(
+    instances: DisplayInstance[],
+    forceVisible: boolean
+  ): void {
+    const ctx = this.textCtx;
+    const tc = this.textCanvas;
+    if (!ctx || !tc) return;
+
+    for (const instance of instances) {
+      const text = instance.text;
+      if (!text) continue;
+
+      const content = text.placeholderText ?? "";
+      if (!content) continue;
+
+      const rawCm = instance.colorMult ?? { r: 256, g: 256, b: 256, a: 256 };
+      const cm =
+        forceVisible && rawCm.a === 0 ? { ...rawCm, a: 256 } : rawCm;
+
+      const r = Math.round((cm.r / 256) * 255);
+      const g = Math.round((cm.g / 256) * 255);
+      const b = Math.round((cm.b / 256) * 255);
+      const a = cm.a / 256;
+
+      const fontSize = text.size || 12;
+      const m = instance.transform;
+
+      ctx.save();
+      ctx.setTransform(m.a, m.b, m.c, m.d, m.x, m.y);
+      ctx.font = `${fontSize}px sans-serif`;
+      ctx.fillStyle = `rgba(${r},${g},${b},${a})`;
+      ctx.textBaseline = "top";
+
+      switch (text.alignment) {
+        case 1:
+          ctx.textAlign = "center";
+          break;
+        case 2:
+          ctx.textAlign = "right";
+          break;
+        default:
+          ctx.textAlign = "left";
+          break;
+      }
+
+      ctx.fillText(content, 0, 0);
+      ctx.restore();
     }
   }
 

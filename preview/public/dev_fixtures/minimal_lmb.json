@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "magic": "LMB",
+    "textureId": 0,
+    "resourceId": 0,
+    "totalFileLen": 0,
+    "width": 128,
+    "height": 128,
+    "framerate": 60
+  },
+  "resources": {
+    "symbols": [{ "id": 0, "value": "" }],
+    "colors": [
+      { "r": 256, "g": 256, "b": 256, "a": 256 }
+    ],
+    "transforms": [
+      { "a": 1, "b": 0, "c": 0, "d": 1, "x": 10, "y": 10 }
+    ],
+    "positions": [{ "x": 0, "y": 0 }],
+    "bounds": [{ "id": 0, "x": 0, "y": 0, "width": 128, "height": 128 }],
+    "textureAtlases": [
+      {
+        "id": 0,
+        "nameSymbolId": 0,
+        "name": "atlas.png",
+        "width": 64,
+        "height": 64
+      }
+    ]
+  },
+  "definitions": {
+    "sprites": [
+      {
+        "characterId": 98,
+        "nameSymbolId": 0,
+        "name": "Root",
+        "boundsId": 0,
+        "numFrames": 1,
+        "numKeyframes": 0,
+        "numFrameLabels": 0,
+        "frameLabels": {},
+        "timeline": [
+          {
+            "frameIndex": 0,
+            "isKeyframe": false,
+            "displayList": [
+              {
+                "type": "placeObject",
+                "characterId": 1,
+                "placementId": 1,
+                "depth": 1,
+                "nameId": 0,
+                "placementMode": "place",
+                "blendMode": "normal",
+                "positionId": 0,
+                "positionFlags": 65535,
+                "colorMultId": 0,
+                "colorAddId": -1,
+                "hasColorMatrix": false,
+                "hasUnknownF014": false
+              }
+            ],
+            "actions": [],
+            "removeList": []
+          }
+        ]
+      }
+    ],
+    "texts": [],
+    "buttons": [],
+    "graphics": [
+      {
+        "characterId": 1,
+        "atlasId": 0,
+        "fillType": 0,
+        "vertices": [
+          { "x": 0, "y": 0, "u": 0, "v": 0 },
+          { "x": 48, "y": 0, "u": 1, "v": 0 },
+          { "x": 48, "y": 48, "u": 1, "v": 1 },
+          { "x": 0, "y": 48, "u": 0, "v": 1 }
+        ],
+        "indices": [0, 1, 2, 0, 2, 3]
+      }
+    ],
+    "unknowns": []
+  },
+  "timeline": {
+    "rootSpriteId": 98
+  }
+}

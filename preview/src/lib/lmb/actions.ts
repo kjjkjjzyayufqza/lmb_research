@@ -446,7 +446,12 @@ export class ActionInterpreter {
      */
     const resolveVariable = (name: string): AS2Value => {
       if (name === "this") return resolveThis();
-      if (name === "_root") return resolveThis();
+      if (name === "_root") {
+        return { ...resolveThis(), name: "_root" };
+      }
+      if (name === "_parent") {
+        return { ...resolveThis(), name: "_parent" };
+      }
       if (name === "Math") return mathObject as any;
       // Check local variables first
       if (locals.has(name)) return locals.get(name);
@@ -667,6 +672,11 @@ export class ActionInterpreter {
 
         case "nextFrame": {
           const next = (nested.frameIndex + 1) % playableCount;
+          nested.scene.reset();
+          for (let fi = 0; fi <= next; fi++) {
+            if (fi > 0) nested.scene.advanceNestedSprites(resourceStore, 1);
+            nested.scene.applyFrame(resourceStore, nested.sprite.timeline[fi]);
+          }
           nested.frameIndex = next;
           nested.stopped = true;
           logs.push(`${clip.name}.nextFrame() → frame ${next}`);
@@ -675,6 +685,11 @@ export class ActionInterpreter {
 
         case "prevFrame": {
           const prev = (playableCount + nested.frameIndex - 1) % playableCount;
+          nested.scene.reset();
+          for (let fi = 0; fi <= prev; fi++) {
+            if (fi > 0) nested.scene.advanceNestedSprites(resourceStore, 1);
+            nested.scene.applyFrame(resourceStore, nested.sprite.timeline[fi]);
+          }
           nested.frameIndex = prev;
           nested.stopped = true;
           logs.push(`${clip.name}.prevFrame() → frame ${prev}`);
@@ -1004,6 +1019,16 @@ export class ActionInterpreter {
             } else if (propIndex === 7) {
               target.nested.visibleOverride = toAS2Bool(val);
               logs.push(`SetProperty ${target.name}._visible = ${val}`);
+            } else if (propIndex === 0) {
+              logs.push(`SetProperty ${target.name}._x = ${val}`);
+            } else if (propIndex === 1) {
+              logs.push(`SetProperty ${target.name}._y = ${val}`);
+            } else if (propIndex === 2) {
+              logs.push(`SetProperty ${target.name}._xscale = ${val}`);
+            } else if (propIndex === 3) {
+              logs.push(`SetProperty ${target.name}._yscale = ${val}`);
+            } else if (propIndex === 10) {
+              logs.push(`SetProperty ${target.name}._rotation = ${val}`);
             } else {
               logs.push(`SetProperty ${target.name}.${propName} = ${val}`);
             }
@@ -1276,13 +1301,18 @@ export class ActionInterpreter {
           const count = toAS2Number(stack.pop());
           const arr: AS2Value[] = [];
           for (let i = 0; i < count; i++) arr.push(stack.pop());
-          stack.push(undefined); // arrays not fully supported
+          stack.push(arr);
           break;
         }
         case AS2.ACTION_INIT_OBJECT: {
           const count = toAS2Number(stack.pop());
-          for (let i = 0; i < count; i++) { stack.pop(); stack.pop(); }
-          stack.push(undefined); // objects not fully supported
+          const obj: Record<string, AS2Value> = {};
+          for (let i = 0; i < count; i++) {
+            const val = stack.pop();
+            const key = toAS2String(stack.pop());
+            obj[key] = val;
+          }
+          stack.push(obj);
           break;
         }
         case AS2.ACTION_NEW_OBJECT: {
@@ -1369,11 +1399,14 @@ export class ActionInterpreter {
         }
         case AS2.ACTION_STRING_EXTRACT:
         case AS2.ACTION_MB_STRING_EXTRACT: {
-          // pop count, pop index, pop string → push substring
-          stack.pop(); stack.pop();
+          const count = toAS2Number(stack.pop());
+          const index = toAS2Number(stack.pop()) - 1; // AS2 is 1-based
           const strVal = toAS2String(stack.pop());
-          stack.push(strVal); // return original string as fallback
-          logs.push(`Skip opcode 0x${opcode.toString(16)}`);
+          if (count < 0) {
+            stack.push(strVal.substring(index));
+          } else {
+            stack.push(strVal.substring(index, index + count));
+          }
           break;
         }
         case AS2.ACTION_CHAR_TO_ASCII:

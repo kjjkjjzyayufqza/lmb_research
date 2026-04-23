@@ -31,6 +31,16 @@ export interface TextureAtlasDef {
   height: number;
 }
 
+/**
+ * Optional sidecar `lmb_texture_binding.json` next to the LMB JSON when using Open folder.
+ * Maps each atlas to a PNG basename in textures/ using stable {@link TextureAtlasDef.id}
+ * (from the binary), not the order of entries in `textureAtlases`.
+ */
+export type LmbTextureBinding = {
+  byAtlasId?: Record<string, string>;
+  byAtlasName?: Record<string, string>;
+};
+
 export interface GraphicVertex {
   x: number;
   y: number;
