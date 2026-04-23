@@ -107,9 +107,12 @@ export class WebGlRenderer {
 
     for (let i = 0; i < atlases.length; i++) {
       const atlas = atlases[i];
+      const resolvedName = atlas.name?.trim();
       const fileName = namePattern
         ? namePattern(i, atlas.name)
-        : (atlas.name ?? `img-${String(i).padStart(5, "0")}.png`);
+        : (resolvedName
+            ? resolvedName
+            : `img-${String(i).padStart(5, "0")}.png`);
       const url = basePath
         ? `${basePath.replace(/\/+$/, "")}/${fileName}`
         : fileName;

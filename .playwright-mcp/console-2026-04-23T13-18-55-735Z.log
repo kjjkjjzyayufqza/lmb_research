@@ -1,0 +1,3 @@
+[     869ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-NLPANMJC.js?v=be6334f4:21550
+[    1581ms] [ERROR] Failed to load texture for atlas 1 (): Error: Failed to load image: textures/
+    at img.onerror (http://localhost:5173/src/lib/render/webgl.ts:220:34) @ http://localhost:5173/src/lib/render/webgl.ts:93
